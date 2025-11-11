@@ -1,0 +1,397 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About Us",
+    "contact": "Contact Us"
+  },
+  "hero": {
+    "badge": "Available 24/7",
+    "title": "Personalized IT Solutions",
+    "subtitle": "For Your Home and Business",
+    "description": "Modern technology services designed to simplify and enhance your everyday life and operations.",
+    "cta": "Start Your Project",
+    "learnMore": "Discover More",
+    "rating": "5.0 ★ Rating",
+    "clients": "100+ Happy Clients",
+    "projects": "500+ Completed Projects",
+    "scrollDown": "Scroll Down"
+  },
+  "services": {
+    "title": "Our Expert Services",
+    "subtitle": "Professional Technology Solutions for Every Need",
+    "learnMore": "Learn More",
+    "notFound": "Service Not Found",
+    "backToHome": "Back to Home",
+    "backToServices": "Back to All Services",
+    "whyChooseUs": "Why Partner With Us?",
+    "ourProcess": "Our Simple Work Process",
+    "readyToStart": "Ready to Get Started?",
+    "contactCTA": "Contact us today for a free consultation and a custom quote.",
+    "getQuote": "Request a Quote",
+    "viewPortfolio": "View Our Portfolio",
+    "pricingTitle": "Services & Transparent Pricing",
+    "pricingSubtitle": "Fair Rates for High-Quality Technology Services",
+    "pricingNote": "* Prices are estimated and may vary based on project complexity. Contact us for an accurate, non-binding quote.",
+    "features": {
+      "fastDelivery": "Rapid Project Delivery",
+      "support247": "24/7 Dedicated Support",
+      "professionalTeam": "Experienced Professional Team",
+      "modernTools": "Cutting-Edge Technologies",
+      "qualityGuaranteed": "Quality and Reliability Guaranteed",
+      "bestPractices": "Industry Best Practices"
+    },
+    "items": [
+      {
+        "icon": "Globe",
+        "title": "Web Design & Development",
+        "desc": "Modern, responsive, and high-performance websites"
+      },
+      {
+        "icon": "Code2",
+        "title": "Custom Web Applications",
+        "desc": "Tailored business software solutions for efficiency"
+      },
+      {
+        "icon": "Network",
+        "title": "Local Network Setup",
+        "desc": "Installation, configuration, and optimization for stability"
+      },
+      {
+        "icon": "Camera",
+        "title": "Video Surveillance Systems",
+        "desc": "Reliable and advanced security camera systems"
+      },
+      {
+        "icon": "Smartphone",
+        "title": "Smartphone & Tablet Repair",
+        "desc": "Fast, reliable, and guaranteed repair service"
+      },
+      {
+        "icon": "MonitorSmartphone",
+        "title": "OS Installation & Support",
+        "desc": "Operating system installation, optimization, and maintenance"
+      }
+    ],
+    "pricing": {
+      "web-design": [
+        {
+          "name": "Business Card Website",
+          "price": "from 350 BGN",
+          "description": "Up to 5 pages, responsive design, and contact form"
+        },
+        {
+          "name": "Corporate Website",
+          "price": "from 700 BGN",
+          "description": "10+ pages, admin panel, SEO, and enhanced security"
+        },
+        {
+          "name": "Online Store (E-commerce)",
+          "price": "from 1000 BGN",
+          "description": "Full e-commerce system with payment gateway and product management"
+        },
+        {
+          "name": "Website Redesign",
+          "price": "from 400 BGN",
+          "description": "Modern visual update and improved technical performance"
+        },
+        {
+          "name": "Landing Page",
+          "price": "from 250 BGN",
+          "description": "High-conversion single-page site for marketing campaigns"
+        },
+        {
+          "name": "Website Maintenance Package",
+          "price": "from 60 BGN/month",
+          "description": "Regular updates, automated backups, and technical support"
+        }
+      ],
+      "web-applications": [
+        {
+          "name": "Custom Web Application",
+          "price": "from 1800 BGN",
+          "description": "Fully developed to meet your unique business requirements"
+        },
+        {
+          "name": "CRM System Implementation",
+          "price": "from 2200 BGN",
+          "description": "Manage clients, sales pipeline, and internal processes effectively"
+        },
+        {
+          "name": "API Integration Service",
+          "price": "from 350 BGN",
+          "description": "Connect your existing software to external systems and platforms"
+        },
+        {
+          "name": "Business Process Automation",
+          "price": "from 700 BGN",
+          "description": "Automate repetitive tasks to save time and increase accuracy"
+        },
+        {
+          "name": "Mobile Application Development",
+          "price": "from 2000 BGN",
+          "description": "Professional Android and iOS app development"
+        },
+        {
+          "name": "Database Optimization & Tuning",
+          "price": "from 400 BGN",
+          "description": "Improve performance and structural integrity of your data"
+        }
+      ],
+      "local-networks": [
+        {
+          "name": "Small Office Network Installation",
+          "price": "from 250 BGN",
+          "description": "Up to 10 devices, complete cabling, and configuration"
+        },
+        {
+          "name": "Professional Wi-Fi Setup",
+          "price": "120 BGN",
+          "description": "Expert installation and signal optimization for full coverage"
+        },
+        {
+          "name": "Router & Firewall Configuration",
+          "price": "40 BGN",
+          "description": "Setup, security hardening, and port forwarding"
+        },
+        {
+          "name": "Network Troubleshooting & Diagnostics",
+          "price": "70 BGN",
+          "description": "Identify and quickly resolve connectivity and performance issues"
+        },
+        {
+          "name": "Basic Server Setup",
+          "price": "from 180 BGN",
+          "description": "Configuration for file, print, mail, or domain servers"
+        },
+        {
+          "name": "Enhanced Network Security",
+          "price": "from 200 BGN",
+          "description": "Comprehensive firewall, VPN, and network protection setup"
+        },
+        {
+          "name": "Structured Cabling Installation",
+          "price": "from 8 BGN/point",
+          "description": "Cable installation, precise labeling, and rigorous testing"
+        }
+      ],
+      "video-surveillance": [
+        {
+          "name": "Basic 4-Camera System",
+          "price": "from 650 BGN",
+          "description": "HD cameras, digital video recorder (DVR), and full installation"
+        },
+        {
+          "name": "Advanced 8-Camera System",
+          "price": "from 1100 BGN",
+          "description": "Full HD cameras with secure recording and remote access capabilities"
+        },
+        {
+          "name": "Single IP Camera Installation",
+          "price": "150 BGN",
+          "description": "Individual IP camera installation and initial setup"
+        },
+        {
+          "name": "Add a Camera to Existing System",
+          "price": "120 BGN",
+          "description": "Seamless integration of an additional camera into your current setup"
+        },
+        {
+          "name": "Cloud Storage Service",
+          "price": "25 BGN/month",
+          "description": "Secure 30-day cloud recording backup"
+        },
+        {
+          "name": "Mobile Viewing Access Setup",
+          "price": "40 BGN",
+          "description": "Configuration to view your cameras on your smartphone or tablet"
+        },
+        {
+          "name": "Night Vision Camera Upgrade",
+          "price": "90 BGN/camera",
+          "description": "Replacement with superior IR night vision cameras"
+        }
+      ],
+      "smartphone-repair": [
+        {
+          "name": "Screen Replacement Service",
+          "price": "from 70 BGN",
+          "description": "Use of original or equivalent high-quality replacement screens"
+        },
+        {
+          "name": "Battery Replacement Service",
+          "price": "from 45 BGN",
+          "description": "Installation of long-lasting, quality batteries with warranty"
+        },
+        {
+          "name": "Charging Port Repair/Replacement",
+          "price": "50 BGN",
+          "description": "Thorough cleaning or replacement of the charging port"
+        },
+        {
+          "name": "Camera Module Replacement",
+          "price": "from 60 BGN",
+          "description": "Repair or replacement of the front or rear camera"
+        },
+        {
+          "name": "Software Diagnostics & Repair",
+          "price": "30 BGN",
+          "description": "OS reinstallation, updates, and software troubleshooting"
+        },
+        {
+          "name": "Back Glass Panel Replacement",
+          "price": "40 BGN",
+          "description": "Professional replacement of the rear glass panel"
+        },
+        {
+          "name": "Water Damage Cleaning & Recovery",
+          "price": "70 BGN",
+          "description": "Full diagnostics and recovery attempt after liquid exposure"
+        },
+        {
+          "name": "Network Carrier Unlock",
+          "price": "from 25 BGN",
+          "description": "Unlocking the device from carrier-specific restrictions"
+        }
+      ],
+      "operating-systems": [
+        {
+          "name": "Clean Windows Reinstallation",
+          "price": "35 BGN",
+          "description": "Fresh OS installation and essential driver/software setup"
+        },
+        {
+          "name": "OS Reinstallation with Data Backup",
+          "price": "45 BGN",
+          "description": "Windows setup while preserving all personal files and data"
+        },
+        {
+          "name": "Linux Distribution Installation",
+          "price": "40 BGN",
+          "description": "Installation of Ubuntu, Mint, Debian, or other Linux distributions"
+        },
+        {
+          "name": "Dual Boot System Setup",
+          "price": "55 BGN",
+          "description": "Configuration to run Windows and Linux simultaneously on one system"
+        },
+        {
+          "name": "System Optimization & Tune-up",
+          "price": "25 BGN",
+          "description": "Virus/malware removal and deep performance improvement"
+        },
+        {
+          "name": "Essential Driver Installation",
+          "price": "15 BGN",
+          "description": "Installation of all necessary hardware drivers"
+        },
+        {
+          "name": "Windows Version Upgrade",
+          "price": "30 BGN",
+          "description": "Smooth and safe upgrade to the latest Windows version"
+        },
+        {
+          "name": "Automated Backup System Setup",
+          "price": "35 BGN",
+          "description": "Configuration of reliable, automated data backup solutions"
+        },
+        {
+          "name": "Hardware Component Replacement",
+          "price": "25 BGN",
+          "description": "Installation of RAM, SSD, power supply, etc. (parts not included)"
+        },
+        {
+          "name": "System Migration to SSD",
+          "price": "40 BGN",
+          "description": "Cloning your current system onto a new Solid State Drive (SSD)"
+        },
+        {
+          "name": "PC/Laptop Deep Cleaning",
+          "price": "35 BGN",
+          "description": "Internal dust removal and professional thermal paste replacement"
+        },
+        {
+          "name": "Custom PC Assembly Service",
+          "price": "70 BGN",
+          "description": "Full hardware build and initial software configuration"
+        }
+      ]
+    },
+    "process": {
+      "step1": {
+        "title": "Initial Consultation",
+        "desc": "We discuss your goals, challenges, and needs to define the best technical solution."
+      },
+      "step2": {
+        "title": "Detailed Planning",
+        "desc": "We prepare a detailed implementation plan, timeline, and select the optimal technology stack."
+      },
+      "step3": {
+        "title": "Execution & Delivery",
+        "desc": "Our team executes the project with precision, offering regular updates and communication."
+      },
+      "step4": {
+        "title": "Ongoing Support",
+        "desc": "We provide continuous maintenance, updates, and reliable technical assistance post-launch."
+      }
+    }
+  },
+  "about": {
+    "title": "About Omni Tech Solutions",
+    "mission": {
+      "title": "Our Mission",
+      "text": "Omni Tech Solutions delivers **affordable, reliable, and innovative** IT services for both individuals and businesses. Our mission is to make advanced technology accessible, understandable, and truly useful for everyone."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "text": "To be the most trusted technology partner in Bulgaria, recognized for our **professionalism, quality, and personalized approach** to every client engagement."
+    },
+    "history": {
+      "title": "Our Story",
+      "text": "Omni Tech Solutions was founded with the goal of bringing high-quality IT services even to smaller communities. Over time, we’ve expanded our reach nationwide, staying true to our core belief that modern technology should be **accessible to everyone**."
+    },
+    "stats": [
+      { "value": "500+", "label": "Completed Projects" },
+      { "value": "24/7", "label": "Availability" },
+      { "value": "100+", "label": "Satisfied Clients" }
+    ]
+  },
+  "contact": {
+    "title": "Contact Omni Tech Solutions",
+    "subtitle": "We're Ready to Help You",
+    "name": "Your Full Name",
+    "email": "Your Email Address",
+    "phone": "Your Phone Number",
+    "message": "Your Message/Project Details",
+    "submit": "Send Message",
+    "success": "Thank you for contacting us! We'll get back to you shortly.",
+    "getInTouch": "Get in Touch Today",
+    "sendMessage": "Send Message",
+    "sending": "Sending...",
+    "callUs": "Call Us Now",
+    "emailUs": "Email Us Directly",
+    "contactInfo": {
+      "email": { "title": "Email", "value": "info@omnitech.bg" },
+      "phone": { "title": "Phone", "value": "+359 XXX XXX XXX" },
+      "location": { "title": "Location", "value": "Samuil, Razgrad, Bulgaria" },
+      "hours": { "title": "Working Hours", "value": "Mon–Fri: 9:00 AM – 6:00 PM" }
+    },
+    "whyChooseUs": {
+      "title": "Why Choose Us for Your Needs?",
+      "fastResponse": "Guaranteed response within 24 hours",
+      "professionalConsultation": "Free, no-obligation professional consultation",
+      "transparentPricing": "Clear, honest, and competitive pricing",
+      "qualityGuarantee": "Workmanship and Quality Guaranteed"
+    },
+    "placeholders": {
+      "name": "John Smith",
+      "email": "john@example.com",
+      "phone": "+359 XXX XXX XXX",
+      "message": "Tell us about your project and technical needs..."
+    }
+  },
+  "footer": {
+    "text": "© 2025 Omni Tech Solutions. All rights reserved.",
+    "tagline": "Innovation • Quality • Trust"
+  }
+}

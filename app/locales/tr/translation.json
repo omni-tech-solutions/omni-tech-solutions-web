@@ -1,0 +1,397 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "services": "Hizmetler",
+    "about": "Hakkımızda",
+    "contact": "İletişim"
+  },
+  "hero": {
+    "badge": "7/24 Erişilebilir",
+    "title": "Kişiselleştirilmiş Teknoloji Çözümleri",
+    "subtitle": "Ev ve İşletmeler İçin",
+    "description": "Günlük hayatınızı basitleştirmek ve geliştirmek için tasarlanmış modern BT hizmetleri.",
+    "cta": "Bizimle İletişime Geçin",
+    "learnMore": "Daha Fazla Bilgi Edinin",
+    "rating": "5.0 Puan",
+    "clients": "100+ Mutlu Müşteri",
+    "projects": "500+ Tamamlanmış Proje",
+    "scrollDown": "Aşağı Kaydır"
+  },
+  "services": {
+    "title": "Hizmetlerimiz",
+    "subtitle": "Her İhtiyaca Yönelik Profesyonel Teknoloji Çözümleri",
+    "learnMore": "Daha Fazla Bilgi Edinin",
+    "notFound": "Hizmet bulunamadı",
+    "backToHome": "Ana Sayfaya Dön",
+    "backToServices": "Hizmetlere Geri Dön",
+    "whyChooseUs": "Neden Bizi Tercih Etmelisiniz?",
+    "ourProcess": "Çalışma Sürecimiz",
+    "readyToStart": "Başlamaya Hazır mısınız?",
+    "contactCTA": "Ücretsiz danışmanlık ve özel fiyat teklifi için bugün bize ulaşın.",
+    "getQuote": "Fiyat Teklifi Alın",
+    "viewPortfolio": "Portföyü Görüntüle",
+    "pricingTitle": "Hizmetler ve Fiyatlandırma",
+    "pricingSubtitle": "Kaliteli Hizmetler İçin Şeffaf ve Adil Fiyatlandırma",
+    "pricingNote": "* Fiyatlar gösterge niteliğindedir ve projeye bağlı olarak değişebilir. Doğru bir teklif için bizimle iletişime geçin.",
+    "features": {
+      "fastDelivery": "Hızlı Teslimat",
+      "support247": "7/24 Destek",
+      "professionalTeam": "Profesyonel Ekip",
+      "modernTools": "Modern Teknolojiler",
+      "qualityGuaranteed": "Kalite Garantili",
+      "bestPractices": "Sektörün En İyi Uygulamaları"
+    },
+    "items": [
+      {
+        "icon": "Globe",
+        "title": "Web Tasarımı",
+        "desc": "Modern, duyarlı ve hızlı web siteleri"
+      },
+      {
+        "icon": "Code2",
+        "title": "Web Uygulamaları",
+        "desc": "Özel iş yazılımı çözümleri"
+      },
+      {
+        "icon": "Network",
+        "title": "Yerel Ağlar",
+        "desc": "Kurulum, yapılandırma ve optimizasyon"
+      },
+      {
+        "icon": "Camera",
+        "title": "Video Gözetimi",
+        "desc": "Güvenilir güvenlik kamera sistemleri"
+      },
+      {
+        "icon": "Smartphone",
+        "title": "Akıllı Telefon Tamiri",
+        "desc": "Hızlı, güvenilir ve garantili hizmet"
+      },
+      {
+        "icon": "MonitorSmartphone",
+        "title": "İşletim Sistemleri",
+        "desc": "Kurulum, optimizasyon ve bakım"
+      }
+    ],
+    "pricing": {
+      "web-design": [
+        {
+          "name": "Kartvizit Web Sitesi",
+          "price": "350 BGN",
+          "description": "Up to 5 pages, responsive design, and contact form"
+        },
+        {
+          "name": "Kurumsal Web Sitesi",
+          "price": "700 BGN",
+          "description": "10+ pages, admin panel, SEO, and enhanced security"
+        },
+        {
+          "name": "Online Mağaza",
+          "price": "1000 BGN",
+          "description": "E-commerce system with payments and product management"
+        },
+        {
+          "name": "Web Sitesi Yeniden Tasarımı",
+          "price": "400 BGN",
+          "description": "Modern look and improved performance"
+        },
+        {
+          "name": "Açılış Sayfası (Landing Page)",
+          "price": "250 BGN",
+          "description": "Single-page site for marketing campaigns"
+        },
+        {
+          "name": "Web Sitesi Bakımı",
+          "price": "60 BGN/ay",
+          "description": "Updates, backups, and ongoing technical support"
+        }
+      ],
+      "web-applications": [
+        {
+          "name": "Özel Web Uygulaması",
+          "price": "1800 BGN",
+          "description": "Developed according to your business requirements"
+        },
+        {
+          "name": "CRM Sistemi",
+          "price": "2200 BGN",
+          "description": "Manage clients, sales, and internal processes"
+        },
+        {
+          "name": "API Entegrasyonu",
+          "price": "350 BGN",
+          "description": "Connect your software to external systems"
+        },
+        {
+          "name": "İş Süreçleri Otomasyonu",
+          "price": "700 BGN",
+          "description": "Automate repetitive tasks and save time"
+        },
+        {
+          "name": "Mobil Uygulama",
+          "price": "2000 BGN",
+          "description": "Android and iOS app development"
+        },
+        {
+          "name": "Veritabanı Optimizasyonu",
+          "price": "400 BGN",
+          "description": "Improve performance and structure of your data"
+        }
+      ],
+      "local-networks": [
+        {
+          "name": "Yerel Ağ Kurulumu",
+          "price": "250 BGN",
+          "description": "Up to 10 devices, cabling, and configuration"
+        },
+        {
+          "name": "Wi-Fi Kurulumu",
+          "price": "120 BGN",
+          "description": "Professional installation and signal optimization"
+        },
+        {
+          "name": "Yönlendirici (Router) Yapılandırması",
+          "price": "40 BGN",
+          "description": "Setup, security, and port forwarding"
+        },
+        {
+          "name": "Ağ Tanılama",
+          "price": "70 BGN",
+          "description": "Identify and resolve connectivity issues"
+        },
+        {
+          "name": "Sunucu Kurulumu",
+          "price": "180 BGN",
+          "description": "File, print, mail or domain server configuration"
+        },
+        {
+          "name": "Ağ Güvenliği",
+          "price": "200 BGN",
+          "description": "Firewall, VPN and network protection"
+        },
+        {
+          "name": "Kablo Altyapısı",
+          "price": "8 BGN/nokta",
+          "description": "Cable installation, labeling and testing"
+        }
+      ],
+      "video-surveillance": [
+        {
+          "name": "4 Kameralı Sistem",
+          "price": "650 BGN",
+          "description": "HD cameras, DVR and full installation"
+        },
+        {
+          "name": "8 Kameralı Sistem",
+          "price": "1100 BGN",
+          "description": "Full HD cameras with recording and remote access"
+        },
+        {
+          "name": "IP Kamera Kurulumu",
+          "price": "150 BGN",
+          "description": "Single camera installation and setup"
+        },
+        {
+          "name": "Kamera Ekleme",
+          "price": "120 BGN",
+          "description": "Integration into existing system"
+        },
+        {
+          "name": "Bulut Depolama",
+          "price": "25 BGN/ay",
+          "description": "30-day secure cloud recording"
+        },
+        {
+          "name": "Mobil Erişim",
+          "price": "40 BGN",
+          "description": "View your cameras on your smartphone"
+        },
+        {
+          "name": "Gece Görüşü Yükseltmesi",
+          "price": "90 BGN/kamera",
+          "description": "Replace with better IR night cameras"
+        }
+      ],
+      "smartphone-repair": [
+        {
+          "name": "Ekran Değişimi",
+          "price": "70 BGN",
+          "description": "Original or high-quality replacement screens"
+        },
+        {
+          "name": "Batarya Değişimi",
+          "price": "45 BGN",
+          "description": "Long-lasting, quality batteries with warranty"
+        },
+        {
+          "name": "Şarj Portu Tamiri",
+          "price": "50 BGN",
+          "description": "Cleaning or replacement of the port"
+        },
+        {
+          "name": "Kamera Değişimi",
+          "price": "60 BGN",
+          "description": "Front or rear camera repair"
+        },
+        {
+          "name": "Yazılım Tamiri",
+          "price": "30 BGN",
+          "description": "Reinstallation and software troubleshooting"
+        },
+        {
+          "name": "Arka Cam Değişimi",
+          "price": "40 BGN",
+          "description": "Rear glass panel replacement"
+        },
+        {
+          "name": "Sıvı Hasarı Temizliği",
+          "price": "70 BGN",
+          "description": "Diagnostics and recovery after liquid exposure"
+        },
+        {
+          "name": "Şebeke Kilidi Açma",
+          "price": "25 BGN",
+          "description": "Unlocking from carrier restrictions"
+        }
+      ],
+      "operating-systems": [
+        {
+          "name": "Windows Yeniden Kurulumu",
+          "price": "35 BGN",
+          "description": "Clean installation and basic setup"
+        },
+        {
+          "name": "Veri Yedeklemeli Yeniden Kurulum",
+          "price": "45 BGN",
+          "description": "Windows setup with personal file preservation"
+        },
+        {
+          "name": "Linux Kurulumu",
+          "price": "40 BGN",
+          "description": "Ubuntu, Mint, Debian and others"
+        },
+        {
+          "name": "Çift Önyükleme (Dual Boot) Kurulumu",
+          "price": "55 BGN",
+          "description": "Windows + Linux on one system"
+        },
+        {
+          "name": "Sistem Optimizasyonu",
+          "price": "25 BGN",
+          "description": "Virus removal and performance improvement"
+        },
+        {
+          "name": "Sürücü Kurulumu",
+          "price": "15 BGN",
+          "description": "Install all necessary hardware drivers"
+        },
+        {
+          "name": "Windows Yükseltmesi",
+          "price": "30 BGN",
+          "description": "Upgrade to the latest version"
+        },
+        {
+          "name": "Yedekleme Kurulumu",
+          "price": "35 BGN",
+          "description": "Automated data backup configuration"
+        },
+        {
+          "name": "Donanım Değişimi",
+          "price": "25 BGN",
+          "description": "RAM, SSD, power supply, etc. (excluding parts)"
+        },
+        {
+          "name": "SSD'ye Geçiş",
+          "price": "40 BGN",
+          "description": "Clone your system to an SSD drive"
+        },
+        {
+          "name": "PC/Dizüstü Bilgisayar Temizliği",
+          "price": "35 BGN",
+          "description": "Dust removal and thermal paste replacement"
+        },
+        {
+          "name": "PC Montajı",
+          "price": "70 BGN",
+          "description": "Full build and software setup"
+        }
+      ]
+    },
+    "process": {
+      "step1": {
+        "title": "Danışmanlık",
+        "desc": "En iyi teknik çözümü bulmak için hedeflerinizi ve ihtiyaçlarınızı görüşüyoruz."
+      },
+      "step2": {
+        "title": "Planlama",
+        "desc": "Ayrıntılı bir uygulama planı, zaman çizelgesi ve teknoloji yığını hazırlıyoruz."
+      },
+      "step3": {
+        "title": "Uygulama",
+        "desc": "Ekibimiz, projeyi hassasiyetle ve düzenli iletişimle yürütüyor."
+      },
+      "step4": {
+        "title": "Destek",
+        "desc": "Sürekli bakım, güncellemeler ve teknik yardım sağlıyoruz."
+      }
+    }
+  },
+  "about": {
+    "title": "Hakkımızda",
+    "mission": {
+      "title": "Misyonumuz",
+      "text": "Omni Tech Solutions, hem bireyler hem de işletmeler için uygun fiyatlı, güvenilir ve yenilikçi BT hizmetleri sunar. Misyonumuz, teknolojiyi herkes için erişilebilir, anlaşılır ve gerçekten kullanışlı hale getirmektir."
+    },
+    "vision": {
+      "title": "Vizyonumuz",
+      "text": "Profesyonellik, kalite ve her müşteriye kişisel yaklaşım ile tanınan, Bulgaristan'da güvenilir bir teknoloji ortağı olmaktır."
+    },
+    "history": {
+      "title": "Tarihçemiz",
+      "text": "Omni Tech Solutions, yüksek kaliteli BT hizmetlerini daha küçük topluluklara bile ulaştırma hedefiyle kuruldu. Zamanla, modern teknolojinin herkese açık olması gerektiği inancımıza sadık kalarak ülke çapında genişledik."
+    },
+    "stats": [
+      { "value": "100+", "label": "Tamamlanmış Proje" },
+      { "value": "7/24", "label": "Destek" },
+      { "value": "50+", "label": "Mutlu Müşteri" }
+    ]
+  },
+  "contact": {
+    "title": "Bize Ulaşın",
+    "subtitle": "Yardım etmeye hazırız",
+    "name": "Ad",
+    "email": "E-posta",
+    "phone": "Telefon",
+    "message": "Mesaj",
+    "submit": "Gönder",
+    "success": "Teşekkürler! Size kısa süre içinde geri döneceğiz.",
+    "getInTouch": "İletişime Geçin",
+    "sendMessage": "Mesaj Gönder",
+    "sending": "Gönderiliyor...",
+    "callUs": "Bizi Arayın",
+    "emailUs": "Bize E-posta Gönderin",
+    "contactInfo": {
+      "email": { "title": "E-posta", "value": "info@omnitech.bg" },
+      "phone": { "title": "Telefon", "value": "+359 XXX XXX XXX" },
+      "location": { "title": "Konum", "value": "Samuil, Razgrad, Bulgaristan" },
+      "hours": { "title": "Çalışma Saatleri", "value": "Pzt–Cum: 9:00 – 18:00" }
+    },
+    "whyChooseUs": {
+      "title": "Neden Bizi Tercih Etmelisiniz?",
+      "fastResponse": "24 saat içinde yanıt",
+      "professionalConsultation": "Ücretsiz profesyonel danışmanlık",
+      "transparentPricing": "Açık ve dürüst fiyatlandırma",
+      "qualityGuarantee": "Kalite garantili"
+    },
+    "placeholders": {
+      "name": "Ahmet Yılmaz",
+      "email": "ahmet@ornek.com",
+      "phone": "+359 XXX XXX XXX",
+      "message": "Bize projenizden bahsedin..."
+    }
+  },
+  "footer": {
+    "text": "© 2025 Omni Tech Solutions. Tüm hakları saklıdır.",
+    "tagline": "Yenilik • Kalite • Güven"
+  }
+}
