@@ -9,10 +9,10 @@
     "badge": "7/24 Erişilebilir",
     "title": "Kişiselleştirilmiş Teknoloji Çözümleri",
     "subtitle": "Ev ve İşletmeler İçin",
-    "description": "Günlük hayatınızı basitleştirmek ve geliştirmek için tasarlanmış modern BT hizmetleri.",
+    "description": "Günlük yaşamınızı kolaylaştırmak ve geliştirmek üzere tasarlanmış modern BT hizmetleri.",
     "cta": "Bizimle İletişime Geçin",
     "learnMore": "Daha Fazla Bilgi Edinin",
-    "rating": "5.0 Puan",
+    "rating": "5.0 Müşteri Puanı",
     "clients": "100+ Mutlu Müşteri",
     "projects": "500+ Tamamlanmış Proje",
     "scrollDown": "Aşağı Kaydır"
@@ -77,243 +77,228 @@
       "web-design": [
         {
           "name": "Kartvizit Web Sitesi",
-          "price": "350 BGN",
-          "description": "Up to 5 pages, responsive design, and contact form"
+          "price": "€350'den başlayan fiyatlarla",
+          "description": "5 sayfaya kadar, duyarlı (responsive) tasarım ve iletişim formu."
         },
         {
           "name": "Kurumsal Web Sitesi",
-          "price": "700 BGN",
-          "description": "10+ pages, admin panel, SEO, and enhanced security"
+          "price": "€700'den başlayan fiyatlarla",
+          "description": "10+ sayfa, yönetici paneli, SEO ve gelişmiş güvenlik."
         },
         {
           "name": "Online Mağaza",
-          "price": "1000 BGN",
-          "description": "E-commerce system with payments and product management"
+          "price": "€1000'den başlayan fiyatlarla",
+          "description": "Ödeme sistemleri ve ürün yönetimi ile e-ticaret sistemi."
         },
         {
           "name": "Web Sitesi Yeniden Tasarımı",
-          "price": "400 BGN",
-          "description": "Modern look and improved performance"
+          "price": "€400'den başlayan fiyatlarla",
+          "description": "Modern görünüm ve geliştirilmiş performans."
         },
         {
           "name": "Açılış Sayfası (Landing Page)",
-          "price": "250 BGN",
-          "description": "Single-page site for marketing campaigns"
+          "price": "€250'den başlayan fiyatlarla",
+          "description": "Pazarlama kampanyaları için tek sayfalık site."
         },
         {
           "name": "Web Sitesi Bakımı",
-          "price": "60 BGN/ay",
-          "description": "Updates, backups, and ongoing technical support"
+          "price": "€60/ay'dan başlayan fiyatlarla",
+          "description": "Güncellemeler, yedeklemeler ve sürekli teknik destek."
         }
       ],
       "web-applications": [
         {
           "name": "Özel Web Uygulaması",
-          "price": "1800 BGN",
-          "description": "Developed according to your business requirements"
+          "price": "€1800'den başlayan fiyatlarla",
+          "description": "İş gereksinimlerinize göre geliştirilmiş."
         },
         {
           "name": "CRM Sistemi",
-          "price": "2200 BGN",
-          "description": "Manage clients, sales, and internal processes"
+          "price": "€2200'den başlayan fiyatlarla",
+          "description": "Müşterileri, satışları ve iç süreçleri yönetin."
         },
         {
           "name": "API Entegrasyonu",
-          "price": "350 BGN",
-          "description": "Connect your software to external systems"
+          "price": "€350'den başlayan fiyatlarla",
+          "description": "Yazılımınızı harici sistemlere bağlayın."
         },
         {
           "name": "İş Süreçleri Otomasyonu",
-          "price": "700 BGN",
-          "description": "Automate repetitive tasks and save time"
+          "price": "€700'den başlayan fiyatlarla",
+          "description": "Tekrarlayan görevleri otomatikleştirin ve zamandan tasarruf edin."
         },
         {
           "name": "Mobil Uygulama",
-          "price": "2000 BGN",
-          "description": "Android and iOS app development"
+          "price": "€2000'den başlayan fiyatlarla",
+          "description": "Android ve iOS uygulama geliştirme."
         },
         {
           "name": "Veritabanı Optimizasyonu",
-          "price": "400 BGN",
-          "description": "Improve performance and structure of your data"
+          "price": "€400'den başlayan fiyatlarla",
+          "description": "Verilerinizin performansını ve yapısını iyileştirin."
         }
       ],
       "local-networks": [
         {
           "name": "Yerel Ağ Kurulumu",
-          "price": "250 BGN",
-          "description": "Up to 10 devices, cabling, and configuration"
+          "price": "€250'den başlayan fiyatlarla",
+          "description": "10 cihaza kadar kurulum, kablolama ve yapılandırma."
         },
         {
           "name": "Wi-Fi Kurulumu",
-          "price": "120 BGN",
-          "description": "Professional installation and signal optimization"
+          "price": "€120",
+          "description": "Profesyonel kurulum ve sinyal optimizasyonu."
         },
         {
           "name": "Yönlendirici (Router) Yapılandırması",
-          "price": "40 BGN",
-          "description": "Setup, security, and port forwarding"
+          "price": "€40",
+          "description": "Kurulum, güvenlik ve port yönlendirme."
         },
         {
           "name": "Ağ Tanılama",
-          "price": "70 BGN",
-          "description": "Identify and resolve connectivity issues"
+          "price": "€70",
+          "description": "Bağlantı sorunlarını belirleme ve çözme."
         },
         {
           "name": "Sunucu Kurulumu",
-          "price": "180 BGN",
-          "description": "File, print, mail or domain server configuration"
+          "price": "€180'den başlayan fiyatlarla",
+          "description": "Dosya, yazıcı, e-posta veya alan adı sunucusu yapılandırması."
         },
         {
           "name": "Ağ Güvenliği",
-          "price": "200 BGN",
-          "description": "Firewall, VPN and network protection"
+          "price": "€200'den başlayan fiyatlarla",
+          "description": "Güvenlik duvarı (Firewall), VPN ve ağ koruması."
         },
         {
           "name": "Kablo Altyapısı",
-          "price": "8 BGN/nokta",
-          "description": "Cable installation, labeling and testing"
+          "price": "€8/nokta'dan başlayan fiyatlarla",
+          "description": "Kablo tesisatı, etiketleme ve test etme."
         }
       ],
       "video-surveillance": [
         {
           "name": "4 Kameralı Sistem",
-          "price": "650 BGN",
-          "description": "HD cameras, DVR and full installation"
+          "price": "€650'den başlayan fiyatlarla",
+          "description": "HD kameralar, DVR ve tam kurulum."
         },
         {
           "name": "8 Kameralı Sistem",
-          "price": "1100 BGN",
-          "description": "Full HD cameras with recording and remote access"
+          "price": "€1100'den başlayan fiyatlarla",
+          "description": "Kayıt ve uzaktan erişim özellikli Full HD kameralar."
         },
         {
           "name": "IP Kamera Kurulumu",
-          "price": "150 BGN",
-          "description": "Single camera installation and setup"
+          "price": "€150",
+          "description": "Tek kamera kurulumu ve ayarlanması."
         },
         {
           "name": "Kamera Ekleme",
-          "price": "120 BGN",
-          "description": "Integration into existing system"
+          "price": "€120",
+          "description": "Mevcut sisteme entegrasyon."
         },
         {
           "name": "Bulut Depolama",
-          "price": "25 BGN/ay",
-          "description": "30-day secure cloud recording"
+          "price": "€25/ay",
+          "description": "30 günlük güvenli bulut kaydı."
         },
         {
           "name": "Mobil Erişim",
-          "price": "40 BGN",
-          "description": "View your cameras on your smartphone"
+          "price": "€40",
+          "description": "Kameralarınızı akıllı telefonunuzdan izleyin."
         },
         {
           "name": "Gece Görüşü Yükseltmesi",
-          "price": "90 BGN/kamera",
-          "description": "Replace with better IR night cameras"
+          "price": "€90/kamera",
+          "description": "Daha iyi IR gece görüşlü kameralarla değiştirme."
         }
       ],
       "smartphone-repair": [
         {
-          "name": "Ekran Değişimi",
-          "price": "70 BGN",
-          "description": "Original or high-quality replacement screens"
+          "name": "Yazılım Teşhis ve Servisi",
+          "price": "€30",
+          "description": "Kapsamlı teşhis, sistem güncellemeleri, hız için optimizasyon ve yazılım sorunlarının giderilmesi."
         },
         {
-          "name": "Batarya Değişimi",
-          "price": "45 BGN",
-          "description": "Long-lasting, quality batteries with warranty"
+          "name": "Güvenli Veri Transferi",
+          "price": "€20",
+          "description": "Tüm verilerinizin (fotoğraflar, kişiler, dosyalar) eski ve yeni cihazlar arasında profesyonel transferi."
         },
         {
-          "name": "Şarj Portu Tamiri",
-          "price": "50 BGN",
-          "description": "Cleaning or replacement of the port"
+          "name": "Yeni Cihaz Kurulumu (Telefon/Tablet)",
+          "price": "€25",
+          "description": "Yeni bir telefon veya tabletin anahtar uygulamalar ve hesaplar dahil olmak üzere kapsamlı yapılandırılması."
         },
         {
-          "name": "Kamera Değişimi",
-          "price": "60 BGN",
-          "description": "Front or rear camera repair"
+          "name": "Kaybolan Veri Kurtarma",
+          "price": "€50'den başlayan fiyatlarla",
+          "description": "Cihazdan silinmiş veya erişilemeyen dosyaların, fotoğrafların ve önemli bilgilerin kurtarılması."
         },
         {
-          "name": "Yazılım Tamiri",
-          "price": "30 BGN",
-          "description": "Reinstallation and software troubleshooting"
-        },
-        {
-          "name": "Arka Cam Değişimi",
-          "price": "40 BGN",
-          "description": "Rear glass panel replacement"
-        },
-        {
-          "name": "Sıvı Hasarı Temizliği",
-          "price": "70 BGN",
-          "description": "Diagnostics and recovery after liquid exposure"
-        },
-        {
-          "name": "Şebeke Kilidi Açma",
-          "price": "25 BGN",
-          "description": "Unlocking from carrier restrictions"
+          "name": "Kapsamlı Sistem Optimizasyonu ve Temizliği",
+          "price": "€25",
+          "description": "Cihaz performansının hızlandırılması, gereksiz dosyaların temizlenmesi ve genel verimliliğin artırılması."
         }
       ],
       "operating-systems": [
         {
           "name": "Windows Yeniden Kurulumu",
-          "price": "35 BGN",
-          "description": "Clean installation and basic setup"
+          "price": "€35",
+          "description": "Temiz kurulum ve temel ayarlar."
         },
         {
           "name": "Veri Yedeklemeli Yeniden Kurulum",
-          "price": "45 BGN",
-          "description": "Windows setup with personal file preservation"
+          "price": "€45",
+          "description": "Kişisel dosyaların korunmasıyla Windows kurulumu."
         },
         {
           "name": "Linux Kurulumu",
-          "price": "40 BGN",
-          "description": "Ubuntu, Mint, Debian and others"
+          "price": "€40",
+          "description": "Ubuntu, Mint, Debian ve diğerleri."
         },
         {
           "name": "Çift Önyükleme (Dual Boot) Kurulumu",
-          "price": "55 BGN",
-          "description": "Windows + Linux on one system"
+          "price": "€55",
+          "description": "Tek sistemde Windows + Linux kurulumu."
         },
         {
           "name": "Sistem Optimizasyonu",
-          "price": "25 BGN",
-          "description": "Virus removal and performance improvement"
+          "price": "€25",
+          "description": "Virüs temizleme ve performans iyileştirmesi."
         },
         {
           "name": "Sürücü Kurulumu",
-          "price": "15 BGN",
-          "description": "Install all necessary hardware drivers"
+          "price": "€15",
+          "description": "Gerekli tüm donanım sürücülerini yükleme."
         },
         {
           "name": "Windows Yükseltmesi",
-          "price": "30 BGN",
-          "description": "Upgrade to the latest version"
+          "price": "€30",
+          "description": "En son sürüme yükseltme."
         },
         {
           "name": "Yedekleme Kurulumu",
-          "price": "35 BGN",
-          "description": "Automated data backup configuration"
+          "price": "€35",
+          "description": "Otomatik veri yedekleme yapılandırması."
         },
         {
           "name": "Donanım Değişimi",
-          "price": "25 BGN",
-          "description": "RAM, SSD, power supply, etc. (excluding parts)"
+          "price": "€25",
+          "description": "RAM, SSD, güç kaynağı vb. değişim (parça hariç)."
         },
         {
           "name": "SSD'ye Geçiş",
-          "price": "40 BGN",
-          "description": "Clone your system to an SSD drive"
+          "price": "€40",
+          "description": "Sisteminizi bir SSD sürücüsüne klonlama."
         },
         {
           "name": "PC/Dizüstü Bilgisayar Temizliği",
-          "price": "35 BGN",
-          "description": "Dust removal and thermal paste replacement"
+          "price": "€35",
+          "description": "Toz temizliği ve termal macun değişimi."
         },
         {
-          "name": "PC Montajı",
-          "price": "70 BGN",
-          "description": "Full build and software setup"
+          "name": "Özel Bilgisayar Montajı",
+          "price": "€70",
+          "description": "Tam sistem montajı ve yazılım kurulumu."
         }
       ]
     },
@@ -328,7 +313,7 @@
       },
       "step3": {
         "title": "Uygulama",
-        "desc": "Ekibimiz, projeyi hassasiyetle ve düzenli iletişimle yürütüyor."
+        "desc": "Ekibimiz, projeyi titizlikle ve düzenli iletişimle yürütüyor."
       },
       "step4": {
         "title": "Destek",
@@ -344,11 +329,11 @@
     },
     "vision": {
       "title": "Vizyonumuz",
-      "text": "Profesyonellik, kalite ve her müşteriye kişisel yaklaşım ile tanınan, Bulgaristan'da güvenilir bir teknoloji ortağı olmaktır."
+      "text": "Profesyonellik, kalite ve kişisel müşteri yaklaşımımızla tanınan, güvenilir bir teknoloji ortağı olmaktır."
     },
     "history": {
       "title": "Tarihçemiz",
-      "text": "Omni Tech Solutions, yüksek kaliteli BT hizmetlerini daha küçük topluluklara bile ulaştırma hedefiyle kuruldu. Zamanla, modern teknolojinin herkese açık olması gerektiği inancımıza sadık kalarak ülke çapında genişledik."
+      "text": "Omni Tech Solutions, yüksek kaliteli BT hizmetlerini küçük topluluklara dahi ulaştırma hedefiyle kuruldu. Zamanla, modern teknolojinin herkese açık olması gerektiği inancımıza sadık kalarak ülke çapında genişledik."
     },
     "stats": [
       { "value": "100+", "label": "Tamamlanmış Proje" },
@@ -358,11 +343,11 @@
   },
   "contact": {
     "title": "Bize Ulaşın",
-    "subtitle": "Yardım etmeye hazırız",
-    "name": "Ad",
-    "email": "E-posta",
-    "phone": "Telefon",
-    "message": "Mesaj",
+    "subtitle": "Size Yardımcı Olmaya Hazırız",
+    "name": "Adınız",
+    "email": "E-posta Adresiniz",
+    "phone": "Telefon Numaranız",
+    "message": "Mesajınız",
     "submit": "Gönder",
     "success": "Teşekkürler! Size kısa süre içinde geri döneceğiz.",
     "getInTouch": "İletişime Geçin",
@@ -374,14 +359,14 @@
       "email": { "title": "E-posta", "value": "info@omnitech.bg" },
       "phone": { "title": "Telefon", "value": "+359 XXX XXX XXX" },
       "location": { "title": "Konum", "value": "Samuil, Razgrad, Bulgaristan" },
-      "hours": { "title": "Çalışma Saatleri", "value": "Pzt–Cum: 9:00 – 18:00" }
+      "hours": { "title": "Çalışma Saatleri", "value": "Pazartesi–Cuma: 09:00 – 18:00" }
     },
     "whyChooseUs": {
       "title": "Neden Bizi Tercih Etmelisiniz?",
       "fastResponse": "24 saat içinde yanıt",
       "professionalConsultation": "Ücretsiz profesyonel danışmanlık",
       "transparentPricing": "Açık ve dürüst fiyatlandırma",
-      "qualityGuarantee": "Kalite garantili"
+      "qualityGuarantee": "Kalite garantisi"
     },
     "placeholders": {
       "name": "Ahmet Yılmaz",

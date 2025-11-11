@@ -77,242 +77,227 @@
       "web-design": [
         {
           "name": "Business Card Website",
-          "price": "from 350 BGN",
+          "price": "from €350",
           "description": "Up to 5 pages, responsive design, and contact form"
         },
         {
           "name": "Corporate Website",
-          "price": "from 700 BGN",
+          "price": "from €700",
           "description": "10+ pages, admin panel, SEO, and enhanced security"
         },
         {
           "name": "Online Store (E-commerce)",
-          "price": "from 1000 BGN",
+          "price": "from €1000",
           "description": "Full e-commerce system with payment gateway and product management"
         },
         {
           "name": "Website Redesign",
-          "price": "from 400 BGN",
+          "price": "from €400",
           "description": "Modern visual update and improved technical performance"
         },
         {
           "name": "Landing Page",
-          "price": "from 250 BGN",
+          "price": "from €250",
           "description": "High-conversion single-page site for marketing campaigns"
         },
         {
           "name": "Website Maintenance Package",
-          "price": "from 60 BGN/month",
+          "price": "from €60/month",
           "description": "Regular updates, automated backups, and technical support"
         }
       ],
       "web-applications": [
         {
           "name": "Custom Web Application",
-          "price": "from 1800 BGN",
+          "price": "from €1800",
           "description": "Fully developed to meet your unique business requirements"
         },
         {
           "name": "CRM System Implementation",
-          "price": "from 2200 BGN",
+          "price": "from €2200",
           "description": "Manage clients, sales pipeline, and internal processes effectively"
         },
         {
           "name": "API Integration Service",
-          "price": "from 350 BGN",
+          "price": "from €350",
           "description": "Connect your existing software to external systems and platforms"
         },
         {
           "name": "Business Process Automation",
-          "price": "from 700 BGN",
+          "price": "from €700",
           "description": "Automate repetitive tasks to save time and increase accuracy"
         },
         {
           "name": "Mobile Application Development",
-          "price": "from 2000 BGN",
+          "price": "from €2000",
           "description": "Professional Android and iOS app development"
         },
         {
           "name": "Database Optimization & Tuning",
-          "price": "from 400 BGN",
+          "price": "from €400",
           "description": "Improve performance and structural integrity of your data"
         }
       ],
       "local-networks": [
         {
           "name": "Small Office Network Installation",
-          "price": "from 250 BGN",
+          "price": "from €250",
           "description": "Up to 10 devices, complete cabling, and configuration"
         },
         {
           "name": "Professional Wi-Fi Setup",
-          "price": "120 BGN",
+          "price": "€120",
           "description": "Expert installation and signal optimization for full coverage"
         },
         {
           "name": "Router & Firewall Configuration",
-          "price": "40 BGN",
+          "price": "€40",
           "description": "Setup, security hardening, and port forwarding"
         },
         {
           "name": "Network Troubleshooting & Diagnostics",
-          "price": "70 BGN",
+          "price": "€70",
           "description": "Identify and quickly resolve connectivity and performance issues"
         },
         {
           "name": "Basic Server Setup",
-          "price": "from 180 BGN",
+          "price": "from €180",
           "description": "Configuration for file, print, mail, or domain servers"
         },
         {
           "name": "Enhanced Network Security",
-          "price": "from 200 BGN",
+          "price": "from €200",
           "description": "Comprehensive firewall, VPN, and network protection setup"
         },
         {
           "name": "Structured Cabling Installation",
-          "price": "from 8 BGN/point",
+          "price": "from €8/point",
           "description": "Cable installation, precise labeling, and rigorous testing"
         }
       ],
       "video-surveillance": [
         {
           "name": "Basic 4-Camera System",
-          "price": "from 650 BGN",
+          "price": "from €650",
           "description": "HD cameras, digital video recorder (DVR), and full installation"
         },
         {
           "name": "Advanced 8-Camera System",
-          "price": "from 1100 BGN",
+          "price": "from €1100",
           "description": "Full HD cameras with secure recording and remote access capabilities"
         },
         {
           "name": "Single IP Camera Installation",
-          "price": "150 BGN",
+          "price": "€150",
           "description": "Individual IP camera installation and initial setup"
         },
         {
           "name": "Add a Camera to Existing System",
-          "price": "120 BGN",
+          "price": "€120",
           "description": "Seamless integration of an additional camera into your current setup"
         },
         {
           "name": "Cloud Storage Service",
-          "price": "25 BGN/month",
+          "price": "€25/month",
           "description": "Secure 30-day cloud recording backup"
         },
         {
           "name": "Mobile Viewing Access Setup",
-          "price": "40 BGN",
+          "price": "€40",
           "description": "Configuration to view your cameras on your smartphone or tablet"
         },
         {
           "name": "Night Vision Camera Upgrade",
-          "price": "90 BGN/camera",
+          "price": "€90/camera",
           "description": "Replacement with superior IR night vision cameras"
         }
       ],
       "smartphone-repair": [
         {
-          "name": "Screen Replacement Service",
-          "price": "from 70 BGN",
-          "description": "Use of original or equivalent high-quality replacement screens"
+          "name": "Software Diagnostics and Service",
+          "price": "€30",
+          "description": "Full diagnostics, system updates, optimization for speed, and troubleshooting of software issues."
         },
         {
-          "name": "Battery Replacement Service",
-          "price": "from 45 BGN",
-          "description": "Installation of long-lasting, quality batteries with warranty"
+          "name": "Secure Data Transfer",
+          "price": "€20",
+          "description": "Professional transfer of all your data (photos, contacts, files) between old and new devices."
         },
         {
-          "name": "Charging Port Repair/Replacement",
-          "price": "50 BGN",
-          "description": "Thorough cleaning or replacement of the charging port"
+          "name": "New Device Setup (Phone/Tablet)",
+          "price": "€25",
+          "description": "Comprehensive configuration of a new phone or tablet, including installation of key apps and accounts."
         },
         {
-          "name": "Camera Module Replacement",
-          "price": "from 60 BGN",
-          "description": "Repair or replacement of the front or rear camera"
+          "name": "Lost Data Recovery",
+          "price": "from €50",
+          "description": "Recovery of deleted or inaccessible files, photos, and important information from the device."
         },
         {
-          "name": "Software Diagnostics & Repair",
-          "price": "30 BGN",
-          "description": "OS reinstallation, updates, and software troubleshooting"
-        },
-        {
-          "name": "Back Glass Panel Replacement",
-          "price": "40 BGN",
-          "description": "Professional replacement of the rear glass panel"
-        },
-        {
-          "name": "Water Damage Cleaning & Recovery",
-          "price": "70 BGN",
-          "description": "Full diagnostics and recovery attempt after liquid exposure"
-        },
-        {
-          "name": "Network Carrier Unlock",
-          "price": "from 25 BGN",
-          "description": "Unlocking the device from carrier-specific restrictions"
+          "name": "Complete System Optimization and Cleaning",
+          "price": "€25",
+          "description": "Speeding up device performance, cleaning unnecessary files, and improving overall efficiency."
         }
       ],
       "operating-systems": [
         {
           "name": "Clean Windows Reinstallation",
-          "price": "35 BGN",
+          "price": "€35",
           "description": "Fresh OS installation and essential driver/software setup"
         },
         {
           "name": "OS Reinstallation with Data Backup",
-          "price": "45 BGN",
+          "price": "€45",
           "description": "Windows setup while preserving all personal files and data"
         },
         {
           "name": "Linux Distribution Installation",
-          "price": "40 BGN",
+          "price": "€40",
           "description": "Installation of Ubuntu, Mint, Debian, or other Linux distributions"
         },
         {
           "name": "Dual Boot System Setup",
-          "price": "55 BGN",
+          "price": "€55",
           "description": "Configuration to run Windows and Linux simultaneously on one system"
         },
         {
           "name": "System Optimization & Tune-up",
-          "price": "25 BGN",
+          "price": "€25",
           "description": "Virus/malware removal and deep performance improvement"
         },
         {
           "name": "Essential Driver Installation",
-          "price": "15 BGN",
+          "price": "€15",
           "description": "Installation of all necessary hardware drivers"
         },
         {
           "name": "Windows Version Upgrade",
-          "price": "30 BGN",
+          "price": "€30",
           "description": "Smooth and safe upgrade to the latest Windows version"
         },
         {
           "name": "Automated Backup System Setup",
-          "price": "35 BGN",
+          "price": "€35",
           "description": "Configuration of reliable, automated data backup solutions"
         },
         {
           "name": "Hardware Component Replacement",
-          "price": "25 BGN",
+          "price": "€25",
           "description": "Installation of RAM, SSD, power supply, etc. (parts not included)"
         },
         {
           "name": "System Migration to SSD",
-          "price": "40 BGN",
+          "price": "€40",
           "description": "Cloning your current system onto a new Solid State Drive (SSD)"
         },
         {
           "name": "PC/Laptop Deep Cleaning",
-          "price": "35 BGN",
+          "price": "€35",
           "description": "Internal dust removal and professional thermal paste replacement"
         },
         {
           "name": "Custom PC Assembly Service",
-          "price": "70 BGN",
+          "price": "€70",
           "description": "Full hardware build and initial software configuration"
         }
       ]
@@ -348,7 +333,7 @@
     },
     "history": {
       "title": "Our Story",
-      "text": "Omni Tech Solutions was founded with the goal of bringing high-quality IT services even to smaller communities. Over time, we’ve expanded our reach nationwide, staying true to our core belief that modern technology should be **accessible to everyone**."
+      "text": "Omni Tech Solutions was founded with the goal of bringing high-quality IT services even to smaller communities. Over time, we've expanded our reach nationwide, staying true to our core belief that modern technology should be **accessible to everyone**."
     },
     "stats": [
       { "value": "500+", "label": "Completed Projects" },
