@@ -133,14 +133,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ colors }) => {
                     </p>
 
                     {/* CTA Buttons */}
-                    <div className="flex flex-col sm:flex-row items-stretch sm:items-stretch justify-center gap-3 sm:gap-4 pt-4 sm:pt-6">
+                    <div className="flex flex-col sm:flex-row items-center sm:items-center justify-center gap-3 sm:gap-4 pt-4 sm:pt-6">
                         <a
                             href="#contact"
-                            className="group relative inline-flex items-center justify-center gap-2 px-8 py-3.5 font-semibold text-base sm:text-base text-white overflow-hidden transition-all duration-300 hover:scale-105 shadow-lg w-full sm:w-auto min-h-[52px]"
+                            className="group relative inline-flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-3.5 font-semibold text-sm sm:text-base text-white overflow-hidden transition-all duration-300 hover:scale-105 shadow-lg border border-transparent sm:border-transparent"
                             style={{
                                 background: `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.primaryHover})`,
-                                borderRadius: BORDER_RADIUS.md,
-                                boxShadow: `0 8px 25px ${COLORS.primary}30`
+                                borderRadius: '12px',
+                                boxShadow: `0 8px 25px ${COLORS.primary}30`,
+                                minWidth: '160px',
+                                boxSizing: 'border-box'
                             }}
                             onMouseEnter={(e) => {
                                 e.currentTarget.style.boxShadow = `0 12px 35px ${COLORS.primary}40`;
@@ -163,11 +165,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ colors }) => {
 
                         <a
                             href="#services"
-                            className={`inline-flex items-center justify-center gap-2 px-8 py-3.5 ${colors.card} backdrop-blur-md border-2 font-semibold text-base sm:text-base transition-all duration-300 hover:scale-105 hover:shadow-lg w-full sm:w-auto min-h-[52px]`}
+                            className={`inline-flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-3.5 ${colors.card} backdrop-blur-md border sm:border-2 font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:shadow-lg`}
                             style={{
                                 borderColor: `${COLORS.primary}40`,
                                 color: colors.text,
-                                borderRadius: BORDER_RADIUS.md
+                                borderRadius: '12px',
+                                minWidth: '160px',
+                                boxSizing: 'border-box'
                             }}
                             onMouseEnter={(e) => {
                                 e.currentTarget.style.borderColor = COLORS.primary;
