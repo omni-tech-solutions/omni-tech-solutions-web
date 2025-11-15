@@ -108,9 +108,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ colors }) => {
                     <div className="space-y-3 sm:space-y-4">
                         <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-tight px-2">
                             <span
-                                className="block bg-clip-text text-transparent bg-gradient-to-r"
+                                className="block animate-gradient"
                                 style={{
-                                    backgroundImage: `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.primaryHover})`
+                                    backgroundImage: `linear-gradient(90deg, #ff6b35 0%, #f7931e 20%, #ffa500 40%, #ff8c00 60%, #ff6b35 80%, #f7931e 100%)`,
+                                    backgroundSize: '300% auto',
+                                    WebkitBackgroundClip: 'text',
+                                    WebkitTextFillColor: 'transparent',
+                                    backgroundClip: 'text',
+                                    color: 'transparent',
+                                    display: 'inline-block'
                                 }}
                             >
                                 {t('hero.title')}
@@ -308,6 +314,22 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ colors }) => {
                         opacity: 1;
                         transform: translateY(0);
                     }
+                }
+
+                @keyframes gradient {
+                    0% {
+                        background-position: 0% 50%;
+                    }
+                    50% {
+                        background-position: 100% 50%;
+                    }
+                    100% {
+                        background-position: 0% 50%;
+                    }
+                }
+
+                .animate-gradient {
+                    animation: gradient 6s ease infinite;
                 }
 
                 @keyframes blob {
