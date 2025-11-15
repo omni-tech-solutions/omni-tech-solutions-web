@@ -16,26 +16,26 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ colors }) => {
     return (
         <section
             id="home"
-            className="relative min-h-screen flex items-center justify-center px-0 sm:px-6 lg:px-8 py-10 overflow-hidden"
+            className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12 sm:py-10 overflow-hidden"
         >
             {/* Enhanced Animated Background */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                {/* Gradient Blobs - Smaller on mobile */}
+                {/* Gradient Blobs - More subtle on mobile */}
                 <div
-                    className="absolute top-20 -left-20 w-48 sm:w-72 h-48 sm:h-72 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"
+                    className="absolute top-20 -left-20 w-40 sm:w-72 h-40 sm:h-72 rounded-full mix-blend-multiply filter blur-3xl opacity-15 sm:opacity-20 animate-blob"
                     style={{
                         background: `radial-gradient(circle, ${COLORS.primary}, ${COLORS.primaryHover}30, transparent)`,
                     }}
                 />
                 <div
-                    className="absolute bottom-20 -right-20 w-64 sm:w-96 h-64 sm:h-96 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"
+                    className="absolute bottom-20 -right-20 w-48 sm:w-96 h-48 sm:h-96 rounded-full mix-blend-multiply filter blur-3xl opacity-15 sm:opacity-20 animate-blob"
                     style={{
                         background: `radial-gradient(circle, ${COLORS.primary}dd, ${COLORS.primaryHover}20, transparent)`,
                         animationDelay: '2s'
                     }}
                 />
                 <div
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-56 sm:w-80 h-56 sm:h-80 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-blob"
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-44 sm:w-80 h-44 sm:h-80 rounded-full mix-blend-multiply filter blur-3xl opacity-10 sm:opacity-15 animate-blob"
                     style={{
                         background: `radial-gradient(circle, ${COLORS.primaryHover}, transparent)`,
                         animationDelay: '4s'
@@ -76,19 +76,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ colors }) => {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 max-w-6xl mx-auto text-center w-full pt-20 sm:pt-20">
-                <div className="space-y-5 sm:space-y-6">
+            <div className="relative z-10 max-w-6xl mx-auto text-center w-full pt-16 sm:pt-20">
+                <div className="space-y-6 sm:space-y-8">
                     {/* Badge with Icon */}
-                    <div className="flex justify-center px-4">
+                    <div className="flex justify-center">
                         <div
-                            className={`inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 ${colors.card} backdrop-blur-md border ${BORDER_RADIUS.full} shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer`}
+                            className={`inline-flex items-center gap-2 px-4 sm:px-4 py-2 sm:py-2 ${colors.card} backdrop-blur-md border ${BORDER_RADIUS.full} shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer`}
                             style={{
                                 borderColor: `${COLORS.primary}30`,
                                 boxShadow: `0 4px 20px ${COLORS.primary}15`
                             }}
                         >
-                            <Sparkles className="w-3 sm:w-3.5 h-3 sm:h-3.5 group-hover:rotate-12 transition-transform" style={{ color: COLORS.primary }} />
-                            <span className={`${colors.text} text-xs font-semibold whitespace-nowrap`}>
+                            <Sparkles className="w-3.5 sm:w-3.5 h-3.5 sm:h-3.5 group-hover:rotate-12 transition-transform" style={{ color: COLORS.primary }} />
+                            <span className={`${colors.text} text-xs sm:text-xs font-semibold whitespace-nowrap`}>
                                 {t('hero.badge', 'Available 24/7')}
                             </span>
                             <div className="relative flex h-2 w-2">
@@ -105,10 +105,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ colors }) => {
                     </div>
 
                     {/* Main Title with Gradient */}
-                    <div className="space-y-2 sm:space-y-3 px-2">
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight">
+                    <div className="space-y-3 sm:space-y-4">
+                        <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-tight px-2">
                             <span
-                                className="block bg-clip-text text-transparent bg-gradient-to-r pb-2"
+                                className="block bg-clip-text text-transparent bg-gradient-to-r"
                                 style={{
                                     backgroundImage: `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.primaryHover})`
                                 }}
@@ -116,21 +116,21 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ colors }) => {
                                 {t('hero.title')}
                             </span>
                         </h1>
-                        <h2 className={`${colors.text} text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold tracking-tight px-2`}>
+                        <h2 className={`${colors.text} text-lg sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold tracking-tight leading-relaxed`}>
                             {t('hero.subtitle')}
                         </h2>
                     </div>
 
                     {/* Description */}
-                    <p className={`${colors.textSec} text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed  px-6 sm:px-4`}>
+                    <p className={`${colors.textSec} text-base sm:text-base md:text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed`}>
                         {t('hero.description')}
                     </p>
 
                     {/* CTA Buttons */}
-                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 pt-2 sm:pt-4 px-4 sm:px-0">
+                    <div className="flex flex-col sm:flex-row items-stretch sm:items-stretch justify-center gap-3 sm:gap-4 pt-4 sm:pt-6">
                         <a
                             href="#contact"
-                            className="group relative inline-flex items-center justify-center gap-2 px-6 py-3 font-semibold text-sm sm:text-base text-white overflow-hidden transition-all duration-300 hover:scale-105 shadow-lg w-full sm:w-auto"
+                            className="group relative inline-flex items-center justify-center gap-2 px-8 py-3.5 font-semibold text-base sm:text-base text-white overflow-hidden transition-all duration-300 hover:scale-105 shadow-lg w-full sm:w-auto min-h-[52px]"
                             style={{
                                 background: `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.primaryHover})`,
                                 borderRadius: BORDER_RADIUS.md,
@@ -157,7 +157,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ colors }) => {
 
                         <a
                             href="#services"
-                            className={`inline-flex items-center justify-center gap-2 px-6 py-3 ${colors.card} backdrop-blur-md border-2 font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:shadow-lg w-full sm:w-auto`}
+                            className={`inline-flex items-center justify-center gap-2 px-8 py-3.5 ${colors.card} backdrop-blur-md border-2 font-semibold text-base sm:text-base transition-all duration-300 hover:scale-105 hover:shadow-lg w-full sm:w-auto min-h-[52px]`}
                             style={{
                                 borderColor: `${COLORS.primary}40`,
                                 color: colors.text,
@@ -176,8 +176,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ colors }) => {
                         </a>
                     </div>
 
-                    {/* Enhanced Social Proof Cards - Smaller and more compact */}
-                    <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-2 sm:gap-3 pt-0 sm:pt-8 px-4">
+                    {/* Enhanced Social Proof Cards - Grid layout on mobile */}
+                    <div className="grid grid-cols-3 sm:flex sm:flex-row items-stretch justify-center gap-2 sm:gap-3 pt-4 sm:pt-8 max-w-lg sm:max-w-none mx-auto">
                         {[
                             { icon: Star, text: t('hero.rating', '5.0 Rating'), gradient: true },
                             { icon: Users, text: t('hero.clients', '100+ Clients'), gradient: false },
@@ -187,14 +187,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ colors }) => {
                             return (
                                 <div
                                     key={`${i18n.language}-${item.text}-${index}`}
-                                    className={`flex items-center gap-2 px-3 py-2 ${colors.card} backdrop-blur-md border ${BORDER_RADIUS.lg} cursor-default w-full sm:w-auto justify-center`}
+                                    className={`flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-2.5 ${colors.card} backdrop-blur-md border ${BORDER_RADIUS.lg} cursor-default justify-center h-full`}
                                     style={{
                                         borderColor: `${COLORS.primary}20`,
                                         boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)'
                                     }}
                                 >
                                     <div
-                                        className="w-7 h-7 rounded-lg flex items-center justify-center"
+                                        className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0"
                                         style={{
                                             background: item.gradient
                                                 ? `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.primaryHover})`
@@ -208,9 +208,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ colors }) => {
                                             strokeWidth={2.5}
                                         />
                                     </div>
-                                    <span className={`${colors.text} font-semibold text-xs sm:text-sm whitespace-nowrap`}>
-                    {item.text}
-                </span>
+                                    <span className={`${colors.text} font-semibold text-[10px] sm:text-sm text-center sm:text-left leading-tight sm:whitespace-nowrap`}>
+                                        {item.text}
+                                    </span>
                                 </div>
                             );
                         })}
@@ -225,26 +225,26 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ colors }) => {
                     </div>
                 </div>
                 {/* Beautiful Scroll Indicator - Visible on all screens */}
-                <div className=" mt-20 sm:mt-12 lg:mt-12">
+                <div className="mt-12 sm:mt-12 lg:mt-12">
                     <a
                         href="#services"
                         className="flex flex-col items-center gap-2 sm:gap-3 group cursor-pointer"
                     >
-                        {/* Text - Smaller on mobile */}
+                        {/* Text - Consistent size */}
                         <span
-                            className={`text-[10px] sm:text-xs uppercase tracking-wider font-semibold ${colors.textSec} opacity-60 group-hover:opacity-100 transition-all duration-300`}
+                            className={`text-xs sm:text-xs uppercase tracking-wider font-semibold ${colors.textSec} opacity-60 group-hover:opacity-100 transition-all duration-300`}
                             style={{
                                 letterSpacing: '0.15em'
                             }}
                         >
-                        {t('hero.scrollDown', 'Scroll Down')}
-                    </span>
+                            {t('hero.scrollDown', 'Scroll Down')}
+                        </span>
 
-                        {/* Scroll Container - Smaller on mobile */}
+                        {/* Scroll Container */}
                         <div className="relative flex flex-col items-center">
                             {/* Mouse/Scroll Icon */}
                             <div
-                                className="relative w-6 h-9 sm:w-7 sm:h-11 border-2 rounded-full flex items-start justify-center pt-1.5 sm:pt-2 transition-all duration-300 group-hover:border-[${COLORS.primary}]"
+                                className="relative w-6 h-10 sm:w-7 sm:h-11 border-2 rounded-full flex items-start justify-center pt-2 sm:pt-2 transition-all duration-300 group-hover:border-[${COLORS.primary}]"
                                 style={{
                                     borderColor: `${COLORS.primary}50`
                                 }}
@@ -267,23 +267,23 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ colors }) => {
                             </div>
 
                             {/* Decorative Dots Below */}
-                            <div className="flex flex-col items-center gap-0.5 sm:gap-1 mt-1.5 sm:mt-2 opacity-50 group-hover:opacity-100 transition-opacity duration-300">
+                            <div className="flex flex-col items-center gap-1 sm:gap-1 mt-2 sm:mt-2 opacity-50 group-hover:opacity-100 transition-opacity duration-300">
                                 <div
-                                    className="w-0.5 h-0.5 sm:w-1 sm:h-1 rounded-full animate-pulse-dot"
+                                    className="w-1 h-1 sm:w-1 sm:h-1 rounded-full animate-pulse-dot"
                                     style={{
                                         backgroundColor: COLORS.primary,
                                         animationDelay: '0s'
                                     }}
                                 />
                                 <div
-                                    className="w-0.5 h-0.5 sm:w-1 sm:h-1 rounded-full animate-pulse-dot"
+                                    className="w-1 h-1 sm:w-1 sm:h-1 rounded-full animate-pulse-dot"
                                     style={{
                                         backgroundColor: COLORS.primary,
                                         animationDelay: '0.3s'
                                     }}
                                 />
                                 <div
-                                    className="w-0.5 h-0.5 sm:w-1 sm:h-1 rounded-full animate-pulse-dot"
+                                    className="w-1 h-1 sm:w-1 sm:h-1 rounded-full animate-pulse-dot"
                                     style={{
                                         backgroundColor: COLORS.primary,
                                         animationDelay: '0.6s'
