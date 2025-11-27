@@ -85,7 +85,7 @@ export const Footer: React.FC<FooterProps> = ({ colors }) => {
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className={`${colors.textSec} ${colors.hover} group relative`}
+                  className={`${colors.textSec} group relative`}
                 >
                   <div className={`p-2.5 rounded-xl border ${colors.borderLight} ${colors.cardHover} transition-all duration-300 group-hover:border-opacity-80 group-hover:-translate-y-1 group-hover:shadow-lg`}>
                     <social.icon className="w-[18px] h-[18px]" strokeWidth={1.5} />
@@ -106,9 +106,9 @@ export const Footer: React.FC<FooterProps> = ({ colors }) => {
                   <li key={link.key}>
                     <Link
                       href={link.href}
-                      className={`${colors.textSec} ${colors.hover} text-sm transition-all duration-300 opacity-75 hover:opacity-100 hover:translate-x-1 inline-flex items-center group`}
+                      className={`${colors.textSec}  text-sm transition-all duration-300 opacity-75 hover:opacity-100 hover:translate-x-1 inline-flex items-center group`}
                     >
-                      <span className={`w-0 h-px ${colors.accent} transition-all duration-300 group-hover:w-4 mr-0 group-hover:mr-2`}></span>
+                      <span className={`w-0 h-px transition-all duration-300 group-hover:w-4 mr-0 group-hover:mr-2`}></span>
                       {t(`nav.${link.key}`)}
                     </Link>
                   </li>
@@ -126,7 +126,7 @@ export const Footer: React.FC<FooterProps> = ({ colors }) => {
               <li>
                 <a
                   href="mailto:info@omnitech.bg"
-                  className={`${colors.textSec} ${colors.hover} text-sm flex items-start gap-3 transition-all duration-300 group hover:translate-x-1`}
+                  className={`${colors.textSec} text-sm flex items-start gap-3 transition-all duration-300 group hover:translate-x-1`}
                 >
                   <div className={`mt-0.5 p-1.5 rounded-lg ${colors.cardHover} transition-colors`}>
                     <Mail className="w-4 h-4 opacity-70" strokeWidth={1.5} />
@@ -137,7 +137,7 @@ export const Footer: React.FC<FooterProps> = ({ colors }) => {
               <li>
                 <a
                   href="tel:+359XXXXXXXXX"
-                  className={`${colors.textSec} ${colors.hover} text-sm flex items-start gap-3 transition-all duration-300 group hover:translate-x-1`}
+                  className={`${colors.textSec} text-sm flex items-start gap-3 transition-all duration-300 group hover:translate-x-1`}
                 >
                   <div className={`mt-0.5 p-1.5 rounded-lg ${colors.cardHover} transition-colors`}>
                     <Phone className="w-4 h-4 opacity-70" strokeWidth={1.5} />
@@ -178,11 +178,11 @@ export const Footer: React.FC<FooterProps> = ({ colors }) => {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder={t('footer.newsletter.placeholder')}
                   required
-                  className={`w-full px-4 py-3 pr-12 rounded-xl border ${colors.borderLight} ${colors.section} ${colors.text} text-sm placeholder:text-sm placeholder:opacity-50 focus:outline-none focus:ring-2 focus:ring-offset-0 ${colors.inputFocus} transition-all duration-300`}
+                  className={`w-full px-4 py-3 pr-12 rounded-xl border ${colors.borderLight} ${colors.section} ${colors.text} text-sm placeholder:text-sm placeholder:opacity-50 focus:outline-none focus:ring-2 focus:ring-offset-0 transition-all duration-300`}
                 />
                 <button
                   type="submit"
-                  className={`absolute right-2 top-1/2 -translate-y-1/2 ${colors.button} p-2 rounded-lg ${colors.buttonHover} transition-all duration-300 hover:scale-110 active:scale-95 shadow-sm`}
+                  className={`absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-lg  transition-all duration-300 hover:scale-110 active:scale-95 shadow-sm`}
                 >
                   <Send className="w-4 h-4" strokeWidth={2.5} />
                 </button>
@@ -190,7 +190,7 @@ export const Footer: React.FC<FooterProps> = ({ colors }) => {
 
               {subscribeStatus === 'success' && (
                 <p className={`${colors.textSec} text-xs opacity-70 flex items-center gap-2`}>
-                  <span className={`w-1.5 h-1.5 rounded-full ${colors.accent} animate-pulse`}></span>
+                  <span className={`w-1.5 h-1.5 rounded-full animate-pulse`}></span>
                   {t('footer.newsletter.success')}
                 </p>
               )}
@@ -210,7 +210,7 @@ export const Footer: React.FC<FooterProps> = ({ colors }) => {
             </p>
             <button
               onClick={scrollToTop}
-              className={`${colors.textSec} ${colors.hover} p-2.5 rounded-xl border ${colors.borderLight} ${colors.cardHover} transition-all duration-300 hover:scale-110 hover:-translate-y-1 shadow-sm group`}
+              className={`${colors.textSec}  p-2.5 rounded-xl border ${colors.borderLight} ${colors.cardHover} transition-all duration-300 hover:scale-110 hover:-translate-y-1 shadow-sm group`}
               aria-label="Scroll to top"
             >
               <ArrowUp className="w-4 h-4 transition-transform group-hover:scale-110" strokeWidth={2.5} />
