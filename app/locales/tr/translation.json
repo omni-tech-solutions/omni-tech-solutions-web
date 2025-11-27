@@ -15,7 +15,13 @@
     "rating": "5.0 Müşteri Puanı",
     "clients": "100+ Mutlu Müşteri",
     "projects": "500+ Tamamlanmış Proje",
-    "scrollDown": "Aşağı Kaydır"
+    "scrollDown": "Aşağı Kaydır",
+    "trustBadges": {
+      "secure": "Güvenli",
+      "support": "7/24 Destek",
+      "fastDelivery": "Hızlı Teslimat",
+      "expertTeam": "Uzman Ekip"
+    }
   },
   "services": {
     "title": "Hizmetlerimiz",
@@ -377,6 +383,16 @@
   },
   "footer": {
     "text": "© 2025 Omni Tech Solutions. Tüm hakları saklıdır.",
-    "tagline": "Yenilik • Kalite • Güven"
+    "tagline": "Yenilik • Kalite • Güven",
+    "about": "Bireyler ve işletmeler için uygun fiyatlı, güvenilir ve yenilikçi BT çözümleri sunuyoruz. Güvenilir teknoloji ortağınız.",
+    "quickLinks": "Hızlı Bağlantılar",
+    "contactUs": "Bize Ulaşın",
+    "workingHours": "Pzt–Cum: 09:00 – 18:00",
+    "newsletter": {
+      "title": "Bülten",
+      "description": "En son hizmetlerimiz, teknik ipuçları ve özel teklifler hakkında güncel kalın.",
+      "placeholder": "E-posta adresinizi girin",
+      "success": "Abone olduğunuz için teşekkürler!"
+    }
   }
 }

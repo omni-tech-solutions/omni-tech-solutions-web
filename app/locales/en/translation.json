@@ -15,7 +15,13 @@
     "rating": "5.0 ★ Rating",
     "clients": "100+ Happy Clients",
     "projects": "500+ Completed Projects",
-    "scrollDown": "Scroll Down"
+    "scrollDown": "Scroll Down",
+    "trustBadges": {
+      "secure": "Secure",
+      "support": "24/7 Support",
+      "fastDelivery": "Fast Delivery",
+      "expertTeam": "Expert Team"
+    }
   },
   "services": {
     "title": "Our Expert Services",
@@ -377,6 +383,16 @@
   },
   "footer": {
     "text": "© 2025 Omni Tech Solutions. All rights reserved.",
-    "tagline": "Innovation • Quality • Trust"
+    "tagline": "Innovation • Quality • Trust",
+    "about": "Delivering affordable, reliable, and innovative IT solutions for individuals and businesses. Your trusted technology partner.",
+    "quickLinks": "Quick Links",
+    "contactUs": "Contact Us",
+    "workingHours": "Mon–Fri: 9:00 AM – 6:00 PM",
+    "newsletter": {
+      "title": "Newsletter",
+      "description": "Stay updated with our latest services, tech tips, and special offers.",
+      "placeholder": "Enter your email",
+      "success": "Thank you for subscribing!"
+    }
   }
 }

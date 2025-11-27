@@ -1,10 +1,9 @@
 'use client';
 
-import React, {useEffect} from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Sparkles, ArrowRight, Star, Users, CheckCircle } from 'lucide-react';
-import { COLORS, BORDER_RADIUS } from '@/app/styles/theme';
-import i18n from "i18next";
+import { ArrowRight, Shield, Zap, Award } from 'lucide-react';
+import { COLORS } from '@/app/styles/theme';
 
 interface HeroSectionProps {
     colors: ReturnType<typeof import('@/app/styles/theme').getThemeColors>;
@@ -16,412 +15,199 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ colors }) => {
     return (
         <section
             id="home"
-            className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12 sm:py-10 overflow-hidden"
+            className="relative min-h-screen flex items-center overflow-hidden"
         >
-            {/* Enhanced Animated Background */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                {/* Gradient Blobs - More subtle on mobile */}
+            {/* Background Gradients */}
+            <div className="absolute inset-0 pointer-events-none">
                 <div
-                    className="absolute top-20 -left-20 w-40 sm:w-72 h-40 sm:h-72 rounded-full mix-blend-multiply filter blur-3xl opacity-15 sm:opacity-20 animate-blob"
-                    style={{
-                        background: `radial-gradient(circle, ${COLORS.primary}, ${COLORS.primaryHover}30, transparent)`,
-                    }}
+                    className="absolute top-0 right-0 w-96 h-96 rounded-full blur-3xl opacity-20 animate-pulse-slow"
+                    style={{ background: COLORS.primary }}
                 />
                 <div
-                    className="absolute bottom-20 -right-20 w-48 sm:w-96 h-48 sm:h-96 rounded-full mix-blend-multiply filter blur-3xl opacity-15 sm:opacity-20 animate-blob"
-                    style={{
-                        background: `radial-gradient(circle, ${COLORS.primary}dd, ${COLORS.primaryHover}20, transparent)`,
-                        animationDelay: '2s'
-                    }}
-                />
-                <div
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-44 sm:w-80 h-44 sm:h-80 rounded-full mix-blend-multiply filter blur-3xl opacity-10 sm:opacity-15 animate-blob"
-                    style={{
-                        background: `radial-gradient(circle, ${COLORS.primaryHover}, transparent)`,
-                        animationDelay: '4s'
-                    }}
-                />
-
-                {/* Floating Particles - Hidden on mobile */}
-                {[...Array(6)].map((_, i) => (
-                    <div
-                        key={i}
-                        className="hidden sm:block absolute w-2 h-2 rounded-full animate-float"
-                        style={{
-                            backgroundColor: `${COLORS.primary}40`,
-                            left: `${20 + i * 15}%`,
-                            top: `${30 + (i % 3) * 20}%`,
-                            animationDelay: `${i * 0.8}s`,
-                            animationDuration: `${8 + i}s`
-                        }}
-                    />
-                ))}
-
-                {/* Grid Pattern */}
-                <div
-                    className="absolute inset-0 opacity-[0.02]"
-                    style={{
-                        backgroundImage: `linear-gradient(${colors.border} 1px, transparent 1px), linear-gradient(90deg, ${colors.border} 1px, transparent 1px)`,
-                        backgroundSize: '60px 60px',
-                    }}
-                />
-
-                {/* Radial Gradient Overlay */}
-                <div
-                    className="absolute inset-0"
-                    style={{
-                        background: `radial-gradient(ellipse at center, transparent 0%, ${colors.bg}dd 100%)`
-                    }}
+                    className="absolute bottom-0 left-0 w-96 h-96 rounded-full blur-3xl opacity-15 animate-pulse-slow"
+                    style={{ background: COLORS.primaryHover, animationDelay: '2s' }}
                 />
             </div>
 
             {/* Content */}
-            <div className="relative z-10 max-w-6xl mx-auto text-center w-full pt-16 sm:pt-20">
-                <div className="space-y-6 sm:space-y-8">
-                    {/* Badge with Icon */}
-                    <div className="flex justify-center">
-                        <div
-                            className={`inline-flex items-center gap-2 px-4 sm:px-4 py-2 sm:py-2 ${colors.card} backdrop-blur-md border ${BORDER_RADIUS.full} shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer`}
-                            style={{
-                                borderColor: `${COLORS.primary}30`,
-                                boxShadow: `0 4px 20px ${COLORS.primary}15`
-                            }}
-                        >
-                            <Sparkles className="w-3.5 sm:w-3.5 h-3.5 sm:h-3.5 group-hover:rotate-12 transition-transform" style={{ color: COLORS.primary }} />
-                            <span className={`${colors.text} text-xs sm:text-xs font-semibold whitespace-nowrap`}>
-                                {t('hero.badge', 'Available 24/7')}
-                            </span>
-                            <div className="relative flex h-2 w-2">
-                                <span
-                                    className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75"
-                                    style={{ backgroundColor: COLORS.primary }}
-                                />
-                                <span
-                                    className="relative inline-flex rounded-full h-2 w-2"
-                                    style={{ backgroundColor: COLORS.primary }}
-                                />
-                            </div>
-                        </div>
-                    </div>
+            <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-32">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
-                    {/* Main Title with Gradient */}
-                    <div className="space-y-3 sm:space-y-4">
-                        <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-tight px-2">
-                            <span
-                                className="block animate-gradient"
-                                style={{
-                                    backgroundImage: `linear-gradient(90deg, #ff6b35 0%, #f7931e 20%, #ffa500 40%, #ff8c00 60%, #ff6b35 80%, #f7931e 100%)`,
-                                    backgroundSize: '300% auto',
-                                    WebkitBackgroundClip: 'text',
-                                    WebkitTextFillColor: 'transparent',
-                                    backgroundClip: 'text',
-                                    color: 'transparent',
-                                    display: 'inline-block'
-                                }}
-                            >
+                    {/* Left Content - 6 columns */}
+                    <div className="lg:col-span-6 space-y-6 sm:space-y-7">
+
+                        {/* Heading */}
+                        <div className="space-y-3 sm:space-y-4">
+                            <h1 className={`${colors.text} text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight`}>
                                 {t('hero.title')}
-                            </span>
-                        </h1>
-                        <h2 className={`${colors.text} text-lg sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold tracking-tight leading-relaxed`}>
-                            {t('hero.subtitle')}
-                        </h2>
-                    </div>
+                            </h1>
+                            <p className={`${colors.textSec} text-base sm:text-lg md:text-xl leading-relaxed`}>
+                                {t('hero.subtitle')}
+                            </p>
+                        </div>
 
-                    {/* Description */}
-                    <p className={`${colors.textSec} text-base sm:text-base md:text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed`}>
-                        {t('hero.description')}
-                    </p>
+                        {/* Description */}
+                        <p className={`${colors.textSec} text-sm sm:text-base leading-relaxed max-w-xl`}>
+                            {t('hero.description')}
+                        </p>
 
-                    {/* CTA Buttons */}
-                    <div className="flex flex-col sm:flex-row items-center sm:items-center justify-center gap-3 sm:gap-4 pt-4 sm:pt-6">
-                        <a
-                            href="#contact"
-                            className="group relative inline-flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-3.5 font-semibold text-sm sm:text-base text-white overflow-hidden transition-all duration-300 hover:scale-105 shadow-lg border border-transparent sm:border-transparent"
-                            style={{
-                                background: `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.primaryHover})`,
-                                borderRadius: '12px',
-                                boxShadow: `0 8px 25px ${COLORS.primary}30`,
-                                minWidth: '160px',
-                                boxSizing: 'border-box'
-                            }}
-                            onMouseEnter={(e) => {
-                                e.currentTarget.style.boxShadow = `0 12px 35px ${COLORS.primary}40`;
-                            }}
-                            onMouseLeave={(e) => {
-                                e.currentTarget.style.boxShadow = `0 8px 25px ${COLORS.primary}30`;
-                            }}
-                        >
-                            <span className="relative z-10 flex items-center gap-2">
-                                {t('hero.cta')}
-                                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                            </span>
-                            <div
-                                className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300"
+                        {/* CTA Buttons */}
+                        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                            <a
+                                href="#contact"
+                                className="group relative inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 font-semibold text-sm sm:text-base text-white rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl"
                                 style={{
-                                    background: 'radial-gradient(circle at center, white, transparent)'
-                                }}
-                            />
-                        </a>
-
-                        <a
-                            href="#services"
-                            className={`inline-flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-3.5 ${colors.card} backdrop-blur-md border sm:border-2 font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:shadow-lg`}
-                            style={{
-                                borderColor: `${COLORS.primary}40`,
-                                color: colors.text,
-                                borderRadius: '12px',
-                                minWidth: '160px',
-                                boxSizing: 'border-box'
-                            }}
-                            onMouseEnter={(e) => {
-                                e.currentTarget.style.borderColor = COLORS.primary;
-                                e.currentTarget.style.backgroundColor = `${COLORS.primary}10`;
-                            }}
-                            onMouseLeave={(e) => {
-                                e.currentTarget.style.borderColor = `${COLORS.primary}40`;
-                                e.currentTarget.style.backgroundColor = '';
-                            }}
-                        >
-                            {t('hero.learnMore', 'Learn More')}
-                        </a>
-                    </div>
-
-                    {/* Enhanced Social Proof Cards - Grid layout on mobile */}
-                    <div className="grid grid-cols-3 sm:flex sm:flex-row items-stretch justify-center gap-2 sm:gap-3 pt-4 sm:pt-8 max-w-lg sm:max-w-none mx-auto">
-                        {[
-                            { icon: Star, text: t('hero.rating', '5.0 Rating'), gradient: true },
-                            { icon: Users, text: t('hero.clients', '100+ Clients'), gradient: false },
-                            { icon: CheckCircle, text: t('hero.projects', '500+ Projects'), gradient: false }
-                        ].map((item, index) => {
-                            const IconComponent = item.icon;
-                            return (
-                                <div
-                                    key={`${i18n.language}-${item.text}-${index}`}
-                                    className={`flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-2.5 ${colors.card} backdrop-blur-md border ${BORDER_RADIUS.lg} cursor-default justify-center h-full`}
-                                    style={{
-                                        borderColor: `${COLORS.primary}20`,
-                                        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)'
-                                    }}
-                                >
-                                    <div
-                                        className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0"
-                                        style={{
-                                            background: item.gradient
-                                                ? `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.primaryHover})`
-                                                : `${COLORS.primary}15`
-                                        }}
-                                    >
-                                        <IconComponent
-                                            key={`icon-${i18n.language}-${index}`}
-                                            className="w-3.5 h-3.5"
-                                            style={{ color: item.gradient ? 'white' : COLORS.primary }}
-                                            strokeWidth={2.5}
-                                        />
-                                    </div>
-                                    <span className={`${colors.text} font-semibold text-[10px] sm:text-sm text-center sm:text-left leading-tight sm:whitespace-nowrap`}>
-                                        {item.text}
-                                    </span>
-                                </div>
-                            );
-                        })}
-                    </div>
-
-                    {/* Decorative Elements - Hidden on small screens */}
-                    <div className="hidden lg:block absolute left-1/4 top-1/4 w-16 h-16 animate-spin-slow opacity-20 pointer-events-none">
-                        <div className="w-full h-full rounded-lg border-2" style={{ borderColor: COLORS.primary }} />
-                    </div>
-                    <div className="hidden lg:block absolute right-1/4 bottom-1/3 w-12 h-12 animate-spin-reverse opacity-20 pointer-events-none">
-                        <div className="w-full h-full rounded-full border-2" style={{ borderColor: COLORS.primary }} />
-                    </div>
-                </div>
-                {/* Beautiful Scroll Indicator - Visible on all screens */}
-                <div className="mt-12 sm:mt-12 lg:mt-12">
-                    <a
-                        href="#services"
-                        className="flex flex-col items-center gap-2 sm:gap-3 group cursor-pointer"
-                    >
-                        {/* Text - Consistent size */}
-                        <span
-                            className={`text-xs sm:text-xs uppercase tracking-wider font-semibold ${colors.textSec} opacity-60 group-hover:opacity-100 transition-all duration-300`}
-                            style={{
-                                letterSpacing: '0.15em'
-                            }}
-                        >
-                            {t('hero.scrollDown', 'Scroll Down')}
-                        </span>
-
-                        {/* Scroll Container */}
-                        <div className="relative flex flex-col items-center">
-                            {/* Mouse/Scroll Icon */}
-                            <div
-                                className="relative w-6 h-10 sm:w-7 sm:h-11 border-2 rounded-full flex items-start justify-center pt-2 sm:pt-2 transition-all duration-300 group-hover:border-[${COLORS.primary}]"
-                                style={{
-                                    borderColor: `${COLORS.primary}50`
-                                }}
-                                onMouseEnter={(e) => {
-                                    e.currentTarget.style.borderColor = COLORS.primary;
-                                    e.currentTarget.style.boxShadow = `0 0 15px ${COLORS.primary}30`;
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.currentTarget.style.borderColor = `${COLORS.primary}50`;
-                                    e.currentTarget.style.boxShadow = 'none';
+                                    background: `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.primaryHover})`,
                                 }}
                             >
-                                {/* Animated Scroll Wheel */}
-                                <div
-                                    className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full animate-scroll-wheel"
-                                    style={{
-                                        backgroundColor: COLORS.primary,
-                                    }}
-                                />
+                                <span className="relative z-10">{t('hero.cta')}</span>
+                                <ArrowRight className="relative z-10 w-4 sm:w-5 h-4 sm:h-5 transition-transform group-hover:translate-x-1" strokeWidth={2.5} />
+                                <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity" />
+                            </a>
+
+                            <a
+                                href="#services"
+                                className={`inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 ${colors.card} border-2 ${colors.borderLight} font-semibold text-sm sm:text-base rounded-xl transition-all duration-300 hover:scale-105 ${colors.cardHover} backdrop-blur-sm`}
+                            >
+                                {t('hero.learnMore')}
+                            </a>
+                        </div>
+
+                        {/* Trust Badges */}
+                        <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+                            <div className="flex items-center gap-2">
+                                <div className="p-1.5 rounded-lg" style={{ backgroundColor: `${COLORS.primary}10` }}>
+                                    <Shield className="w-4 h-4" style={{ color: COLORS.primary }} strokeWidth={2} />
+                                </div>
+                                <span className={`${colors.text} text-xs sm:text-sm font-medium`}>{t('hero.trustBadges.secure')}</span>
                             </div>
 
-                            {/* Decorative Dots Below */}
-                            <div className="flex flex-col items-center gap-1 sm:gap-1 mt-2 sm:mt-2 opacity-50 group-hover:opacity-100 transition-opacity duration-300">
-                                <div
-                                    className="w-1 h-1 sm:w-1 sm:h-1 rounded-full animate-pulse-dot"
-                                    style={{
-                                        backgroundColor: COLORS.primary,
-                                        animationDelay: '0s'
-                                    }}
-                                />
-                                <div
-                                    className="w-1 h-1 sm:w-1 sm:h-1 rounded-full animate-pulse-dot"
-                                    style={{
-                                        backgroundColor: COLORS.primary,
-                                        animationDelay: '0.3s'
-                                    }}
-                                />
-                                <div
-                                    className="w-1 h-1 sm:w-1 sm:h-1 rounded-full animate-pulse-dot"
-                                    style={{
-                                        backgroundColor: COLORS.primary,
-                                        animationDelay: '0.6s'
-                                    }}
-                                />
+                            <div className="flex items-center gap-2">
+                                <div className="p-1.5 rounded-lg" style={{ backgroundColor: `${COLORS.primary}10` }}>
+                                    <Zap className="w-4 h-4" style={{ color: COLORS.primary }} strokeWidth={2} />
+                                </div>
+                                <span className={`${colors.text} text-xs sm:text-sm font-medium`}>{t('hero.trustBadges.fastDelivery')}</span>
+                            </div>
+
+                            <div className="flex items-center gap-2">
+                                <div className="p-1.5 rounded-lg" style={{ backgroundColor: `${COLORS.primary}10` }}>
+                                    <Award className="w-4 h-4" style={{ color: COLORS.primary }} strokeWidth={2} />
+                                </div>
+                                <span className={`${colors.text} text-xs sm:text-sm font-medium`}>{t('hero.trustBadges.expertTeam')}</span>
                             </div>
                         </div>
-                    </a>
+                    </div>
+
+                    {/* Right Visual - 6 columns */}
+                    <div className="lg:col-span-6 relative order-first lg:order-last">
+                        <div className="relative aspect-square max-w-md lg:max-w-2xl mx-auto">
+
+                            {/* Glowing Background */}
+                            <div
+                                className="absolute inset-0 rounded-full opacity-30 blur-3xl animate-pulse-slow"
+                                style={{ background: `radial-gradient(circle, ${COLORS.primary}40, transparent)` }}
+                            />
+
+                            {/* Main Illustration */}
+                            <svg
+                                viewBox="0 0 500 500"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="w-full h-full relative z-10"
+                            >
+                                <defs>
+                                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stopColor={COLORS.primary} stopOpacity="0.8"/>
+                                        <stop offset="100%" stopColor={COLORS.primaryHover} stopOpacity="0.6"/>
+                                    </linearGradient>
+                                    <filter id="blur">
+                                        <feGaussianBlur stdDeviation="4"/>
+                                    </filter>
+                                    <filter id="glow">
+                                        <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                                        <feMerge>
+                                            <feMergeNode in="coloredBlur"/>
+                                            <feMergeNode in="SourceGraphic"/>
+                                        </feMerge>
+                                    </filter>
+                                </defs>
+
+                                {/* Central Circle Design */}
+                                <g className="tech-circle">
+                                    <circle cx="250" cy="250" r="140" fill="none" stroke={COLORS.primary} strokeWidth="1" opacity="0.1"/>
+                                    <circle cx="250" cy="250" r="120" fill="none" stroke={COLORS.primary} strokeWidth="1" opacity="0.15"/>
+                                    <circle cx="250" cy="250" r="100" fill="none" stroke={COLORS.primary} strokeWidth="2" opacity="0.2"/>
+                                </g>
+
+                                {/* Code Symbol - Center */}
+                                <g className="code-symbol" filter="url(#glow)">
+                                    <path d="M 220 230 L 200 250 L 220 270" stroke="url(#grad1)" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                                    <path d="M 280 230 L 300 250 L 280 270" stroke="url(#grad1)" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                                    <line x1="265" y1="230" x2="235" y2="270" stroke="url(#grad1)" strokeWidth="6" strokeLinecap="round"/>
+                                </g>
+
+                                {/* Floating Tech Icons */}
+
+                                {/* Cloud - Top */}
+                                <g className="float-1">
+                                    <circle cx="250" cy="100" r="35" fill={colors.card} stroke={COLORS.primary} strokeWidth="2" opacity="0.8" filter="url(#glow)"/>
+                                    <path d="M 235 105 Q 235 100 238 98 Q 240 95 244 95 Q 246 92 250 94 Q 254 94 256 98 Q 259 98 261 101 Q 261 106 256 106 L 238 106 Q 235 106 235 105 Z" fill={COLORS.primary} opacity="0.6"/>
+                                </g>
+
+                                {/* Gear - Right */}
+                                <g className="float-2">
+                                    <circle cx="380" cy="250" r="35" fill={colors.card} stroke={COLORS.primary} strokeWidth="2" opacity="0.8" filter="url(#glow)"/>
+                                    <circle cx="380" cy="250" r="12" fill="none" stroke={COLORS.primary} strokeWidth="3" opacity="0.6"/>
+                                    <circle cx="380" cy="235" r="4" fill={COLORS.primary} opacity="0.6"/>
+                                    <circle cx="395" cy="250" r="4" fill={COLORS.primary} opacity="0.6"/>
+                                    <circle cx="380" cy="265" r="4" fill={COLORS.primary} opacity="0.6"/>
+                                    <circle cx="365" cy="250" r="4" fill={COLORS.primary} opacity="0.6"/>
+                                </g>
+
+                                {/* Database - Bottom */}
+                                <g className="float-3">
+                                    <circle cx="250" cy="400" r="35" fill={colors.card} stroke={COLORS.primary} strokeWidth="2" opacity="0.8" filter="url(#glow)"/>
+                                    <ellipse cx="250" cy="395" rx="15" ry="5" fill={COLORS.primary} opacity="0.4"/>
+                                    <rect x="235" y="395" width="30" height="15" fill={COLORS.primary} opacity="0.3"/>
+                                    <ellipse cx="250" cy="410" rx="15" ry="5" fill={COLORS.primary} opacity="0.5"/>
+                                </g>
+
+                                {/* Lock - Left */}
+                                <g className="float-4">
+                                    <circle cx="120" cy="250" r="35" fill={colors.card} stroke={COLORS.primary} strokeWidth="2" opacity="0.8" filter="url(#glow)"/>
+                                    <rect x="110" y="250" width="20" height="15" rx="2" fill={COLORS.primary} opacity="0.5"/>
+                                    <path d="M 113 250 L 113 245 Q 113 240 120 240 Q 127 240 127 245 L 127 250" stroke={COLORS.primary} strokeWidth="2.5" fill="none" opacity="0.6"/>
+                                </g>
+
+                                {/* Connecting Lines */}
+                                <g className="connections" opacity="0.15">
+                                    <line x1="250" y1="135" x2="250" y2="170" stroke={COLORS.primary} strokeWidth="2" strokeDasharray="5 5"/>
+                                    <line x1="345" y1="250" x2="310" y2="250" stroke={COLORS.primary} strokeWidth="2" strokeDasharray="5 5"/>
+                                    <line x1="250" y1="365" x2="250" y2="330" stroke={COLORS.primary} strokeWidth="2" strokeDasharray="5 5"/>
+                                    <line x1="155" y1="250" x2="190" y2="250" stroke={COLORS.primary} strokeWidth="2" strokeDasharray="5 5"/>
+                                </g>
+
+                                {/* Orbiting Dots */}
+                                <circle cx="250" cy="80" r="4" fill={COLORS.primary} opacity="0.6" className="orbit-dot-1"/>
+                                <circle cx="420" cy="250" r="4" fill={COLORS.primary} opacity="0.6" className="orbit-dot-2"/>
+                                <circle cx="250" cy="420" r="4" fill={COLORS.primary} opacity="0.6" className="orbit-dot-3"/>
+                                <circle cx="80" cy="250" r="4" fill={COLORS.primary} opacity="0.6" className="orbit-dot-4"/>
+                            </svg>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-
-
-            {/* Enhanced Animations */}
             <style jsx>{`
-                @keyframes fadeIn {
-                    from {
-                        opacity: 0;
-                        transform: translateY(15px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-                }
-
-                @keyframes gradient {
-                    0% {
-                        background-position: 0% 50%;
-                    }
-                    50% {
-                        background-position: 100% 50%;
-                    }
-                    100% {
-                        background-position: 0% 50%;
-                    }
-                }
-
-                .animate-gradient {
-                    animation: gradient 6s ease infinite;
-                }
-
-                @keyframes blob {
+                @keyframes pulse-slow {
                     0%, 100% {
-                        transform: translate(0, 0) scale(1);
-                    }
-                    25% {
-                        transform: translate(25px, -35px) scale(1.05);
-                    }
-                    50% {
-                        transform: translate(-15px, 25px) scale(0.95);
-                    }
-                    75% {
-                        transform: translate(35px, 15px) scale(1.02);
-                    }
-                }
-
-                @keyframes float {
-                    0%, 100% {
-                        transform: translateY(0) translateX(0);
-                        opacity: 0.3;
-                    }
-                    50% {
-                        transform: translateY(-100px) translateX(20px);
-                        opacity: 0.6;
-                    }
-                }
-
-                .animate-fadeIn {
-                    animation: fadeIn 0.7s ease-out forwards;
-                    opacity: 0;
-                }
-
-                .animate-blob {
-                    animation: blob 18s ease-in-out infinite;
-                }
-
-                .animate-float {
-                    animation: float linear infinite;
-                }
-
-                .animate-bounce-slow {
-                    animation: bounce 2.5s ease-in-out infinite;
-                }
-
-                .animate-scroll-wheel {
-                    animation: scrollWheel 2s ease-in-out infinite;
-                }
-
-                .animate-pulse-dot {
-                    animation: pulseDot 1.5s ease-in-out infinite;
-                }
-
-                @keyframes scrollWheel {
-                    0% {
-                        transform: translateY(0);
-                        opacity: 0;
-                    }
-                    30% {
-                        opacity: 1;
-                    }
-                    60% {
-                        transform: translateY(16px);
-                        opacity: 1;
-                    }
-                    100% {
-                        transform: translateY(16px);
-                        opacity: 0;
-                    }
-                }
-
-                @keyframes pulseDot {
-                    0%, 100% {
+                        opacity: 0.15;
                         transform: scale(1);
-                        opacity: 0.5;
                     }
                     50% {
-                        transform: scale(1.3);
-                        opacity: 1;
+                        opacity: 0.25;
+                        transform: scale(1.05);
                     }
-                }
-
-                .animate-spin-slow {
-                    animation: spin 20s linear infinite;
-                }
-
-                .animate-spin-reverse {
-                    animation: spin 15s linear infinite reverse;
                 }
 
                 @keyframes spin {
@@ -433,29 +219,82 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ colors }) => {
                     }
                 }
 
-                .animation-delay-100 {
-                    animation-delay: 0.1s;
-                }
-
-                .animation-delay-200 {
-                    animation-delay: 0.2s;
-                }
-
-                .animation-delay-300 {
-                    animation-delay: 0.3s;
-                }
-
-                .animation-delay-400 {
-                    animation-delay: 0.4s;
-                }
-
-                @keyframes bounce {
+                @keyframes float {
                     0%, 100% {
-                        transform: translateY(0);
+                        transform: translateY(0px);
                     }
                     50% {
-                        transform: translateY(-8px);
+                        transform: translateY(-15px);
                     }
+                }
+
+                @keyframes orbit {
+                    0% {
+                        opacity: 0.3;
+                    }
+                    50% {
+                        opacity: 0.8;
+                    }
+                    100% {
+                        opacity: 0.3;
+                    }
+                }
+
+                .animate-pulse-slow {
+                    animation: pulse-slow 6s ease-in-out infinite;
+                }
+
+                /* Central circle rotation */
+                .tech-circle {
+                    transform-origin: center;
+                    animation: spin 60s linear infinite;
+                }
+
+                /* Code symbol pulse */
+                .code-symbol {
+                    animation: pulse-slow 3s ease-in-out infinite;
+                }
+
+                /* Floating tech icons */
+                .float-1 {
+                    animation: float 6s ease-in-out infinite;
+                }
+
+                .float-2 {
+                    animation: float 7s ease-in-out infinite 1s;
+                }
+
+                .float-3 {
+                    animation: float 8s ease-in-out infinite 2s;
+                }
+
+                .float-4 {
+                    animation: float 6.5s ease-in-out infinite 1.5s;
+                }
+
+                /* Orbiting dots */
+                .orbit-dot-1,
+                .orbit-dot-2,
+                .orbit-dot-3,
+                .orbit-dot-4 {
+                    animation: orbit 3s ease-in-out infinite;
+                }
+
+                .orbit-dot-2 {
+                    animation-delay: 0.75s;
+                }
+
+                .orbit-dot-3 {
+                    animation-delay: 1.5s;
+                }
+
+                .orbit-dot-4 {
+                    animation-delay: 2.25s;
+                }
+
+                /* Connection lines subtle pulse */
+                .connections {
+                    animation: orbit 4s ease-in-out infinite;
                 }
             `}</style>
         </section>
