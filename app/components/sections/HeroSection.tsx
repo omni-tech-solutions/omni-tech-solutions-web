@@ -17,18 +17,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ colors }) => {
             id="home"
             className="relative min-h-screen flex items-center overflow-hidden"
         >
-            {/* Background Gradients */}
-            <div className="absolute inset-0 pointer-events-none">
-                <div
-                    className="absolute top-0 right-0 w-96 h-96 rounded-full blur-3xl opacity-20 animate-pulse-slow"
-                    style={{ background: COLORS.primary }}
-                />
-                <div
-                    className="absolute bottom-0 left-0 w-96 h-96 rounded-full blur-3xl opacity-15 animate-pulse-slow"
-                    style={{ background: COLORS.primaryHover, animationDelay: '2s' }}
-                />
-            </div>
-
             {/* Content */}
             <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-32">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -55,19 +43,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ colors }) => {
                         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                             <a
                                 href="#contact"
-                                className="group relative inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 font-semibold text-sm sm:text-base text-white rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                                className="group relative inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 font-semibold text-sm sm:text-base text-white rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-[#ffaa18] focus:ring-offset-2"
                                 style={{
                                     background: `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.primaryHover})`,
                                 }}
                             >
                                 <span className="relative z-10">{t('hero.cta')}</span>
-                                <ArrowRight className="relative z-10 w-4 sm:w-5 h-4 sm:h-5 transition-transform group-hover:translate-x-1" strokeWidth={2.5} />
-                                <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity" />
+                                <ArrowRight className="relative z-10 w-4 sm:w-5 h-4 sm:h-5 transition-transform duration-300 group-hover:translate-x-1" strokeWidth={2.5} />
+                                <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
                             </a>
 
                             <a
                                 href="#services"
-                                className={`inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 ${colors.card} border-2 ${colors.borderLight} font-semibold text-sm sm:text-base rounded-xl transition-all duration-300 hover:scale-105 ${colors.cardHover} backdrop-blur-sm`}
+                                className={`inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 ${colors.card} border-2 ${colors.borderLight} font-semibold text-sm sm:text-base rounded-xl transition-all duration-300 hover:scale-105 ${colors.cardHover} backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[#ffaa18] focus:ring-offset-2`}
                             >
                                 {t('hero.learnMore')}
                             </a>
@@ -100,98 +88,137 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ colors }) => {
 
                     {/* Right Visual - 6 columns */}
                     <div className="lg:col-span-6 relative order-first lg:order-last">
-                        <div className="relative aspect-square max-w-md lg:max-w-2xl mx-auto">
+                        <div className="relative aspect-square max-w-md lg:max-w-2xl mx-auto flex items-center justify-center">
 
-                            {/* Glowing Background */}
-                            <div
-                                className="absolute inset-0 rounded-full opacity-30 blur-3xl animate-pulse-slow"
-                                style={{ background: `radial-gradient(circle, ${COLORS.primary}40, transparent)` }}
-                            />
-
-                            {/* Main Illustration */}
+                            {/* Code Windows Illustration */}
                             <svg
                                 viewBox="0 0 500 500"
                                 fill="none"
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="w-full h-full relative z-10"
+                                className="w-full h-full"
                             >
                                 <defs>
-                                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" stopColor={COLORS.primary} stopOpacity="0.8"/>
-                                        <stop offset="100%" stopColor={COLORS.primaryHover} stopOpacity="0.6"/>
+                                    {/* Code Editor - Primary Yellow gradient */}
+                                    <linearGradient id="codeEditorGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stopColor={COLORS.primary} stopOpacity="0.15"/>
+                                        <stop offset="100%" stopColor={COLORS.primaryHover} stopOpacity="0.05"/>
                                     </linearGradient>
-                                    <filter id="blur">
-                                        <feGaussianBlur stdDeviation="4"/>
-                                    </filter>
-                                    <filter id="glow">
-                                        <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                                        <feMerge>
-                                            <feMergeNode in="coloredBlur"/>
-                                            <feMergeNode in="SourceGraphic"/>
-                                        </feMerge>
+
+                                    {/* Terminal - White gradient */}
+                                    <linearGradient id="terminalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stopColor="#ffffff" stopOpacity="0.15"/>
+                                        <stop offset="100%" stopColor="#f3f4f6" stopOpacity="0.05"/>
+                                    </linearGradient>
+
+                                    {/* Browser - Gray gradient */}
+                                    <linearGradient id="browserGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stopColor="#9ca3af" stopOpacity="0.15"/>
+                                        <stop offset="100%" stopColor="#6b7280" stopOpacity="0.05"/>
+                                    </linearGradient>
+
+                                    {/* Code Snippet - Dark Grey gradient */}
+                                    <linearGradient id="snippetGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stopColor="#4b5563" stopOpacity="0.15"/>
+                                        <stop offset="100%" stopColor="#374151" stopOpacity="0.05"/>
+                                    </linearGradient>
+
+                                    <filter id="shadow">
+                                        <feDropShadow dx="0" dy="4" stdDeviation="8" floodOpacity="0.15"/>
                                     </filter>
                                 </defs>
 
-                                {/* Central Circle Design */}
-                                <g className="tech-circle">
-                                    <circle cx="250" cy="250" r="140" fill="none" stroke={COLORS.primary} strokeWidth="1" opacity="0.1"/>
-                                    <circle cx="250" cy="250" r="120" fill="none" stroke={COLORS.primary} strokeWidth="1" opacity="0.15"/>
-                                    <circle cx="250" cy="250" r="100" fill="none" stroke={COLORS.primary} strokeWidth="2" opacity="0.2"/>
+                                {/* Main Code Editor Window - Primary Yellow */}
+                                <g className="code-window-1" filter="url(#shadow)">
+                                    <rect x="100" y="120" width="280" height="200" rx="8" fill="url(#codeEditorGrad)" stroke={COLORS.primary} strokeWidth="1.5" opacity="0.9"/>
+
+                                    {/* Window header */}
+                                    <rect x="100" y="120" width="280" height="30" rx="8" fill={COLORS.primary} opacity="0.2"/>
+
+                                    {/* Window dots */}
+                                    <circle cx="115" cy="135" r="4" fill={COLORS.primary} opacity="0.6"/>
+                                    <circle cx="130" cy="135" r="4" fill={COLORS.primary} opacity="0.6"/>
+                                    <circle cx="145" cy="135" r="4" fill={COLORS.primary} opacity="0.6"/>
+
+                                    {/* Code lines */}
+                                    <line x1="120" y1="170" x2="220" y2="170" stroke={COLORS.primary} strokeWidth="2" opacity="0.5"/>
+                                    <line x1="130" y1="190" x2="250" y2="190" stroke={COLORS.primary} strokeWidth="2" opacity="0.4"/>
+                                    <line x1="130" y1="210" x2="200" y2="210" stroke={COLORS.primary} strokeWidth="2" opacity="0.4"/>
+                                    <line x1="120" y1="230" x2="270" y2="230" stroke={COLORS.primary} strokeWidth="2" opacity="0.5"/>
+                                    <line x1="130" y1="250" x2="180" y2="250" stroke={COLORS.primary} strokeWidth="2" opacity="0.4"/>
+                                    <line x1="120" y1="270" x2="240" y2="270" stroke={COLORS.primary} strokeWidth="2" opacity="0.5"/>
+                                    <line x1="130" y1="290" x2="210" y2="290" stroke={COLORS.primary} strokeWidth="2" opacity="0.4"/>
                                 </g>
 
-                                {/* Code Symbol - Center */}
-                                <g className="code-symbol" filter="url(#glow)">
-                                    <path d="M 220 230 L 200 250 L 220 270" stroke="url(#grad1)" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-                                    <path d="M 280 230 L 300 250 L 280 270" stroke="url(#grad1)" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-                                    <line x1="265" y1="230" x2="235" y2="270" stroke="url(#grad1)" strokeWidth="6" strokeLinecap="round"/>
+                                {/* Floating Terminal Window - White */}
+                                <g className="terminal-window" filter="url(#shadow)">
+                                    <rect x="280" y="60" width="180" height="120" rx="6" fill="url(#terminalGrad)" stroke="#e5e7eb" strokeWidth="1.5" opacity="0.8"/>
+
+                                    {/* Terminal header */}
+                                    <rect x="280" y="60" width="180" height="24" rx="6" fill="#f3f4f6" opacity="0.2"/>
+                                    <circle cx="292" cy="72" r="3" fill="#d1d5db" opacity="0.6"/>
+                                    <circle cx="304" cy="72" r="3" fill="#d1d5db" opacity="0.6"/>
+                                    <circle cx="316" cy="72" r="3" fill="#d1d5db" opacity="0.6"/>
+
+                                    {/* Terminal prompt */}
+                                    <text x="290" y="105" fill="#9ca3af" opacity="0.7" fontSize="12" fontFamily="monospace">$</text>
+                                    <line x1="300" y1="100" x2="350" y2="100" stroke="#d1d5db" strokeWidth="2" opacity="0.6"/>
+                                    <line x1="290" y1="120" x2="440" y2="120" stroke="#d1d5db" strokeWidth="2" opacity="0.5"/>
+                                    <line x1="290" y1="140" x2="380" y2="140" stroke="#d1d5db" strokeWidth="2" opacity="0.5"/>
+
+                                    {/* Cursor */}
+                                    <rect x="385" y="135" width="8" height="12" fill="#9ca3af" opacity="0.7" className="cursor-blink"/>
                                 </g>
 
-                                {/* Floating Tech Icons */}
+                                {/* Browser Window - Gray */}
+                                <g className="browser-window" filter="url(#shadow)">
+                                    <rect x="40" y="280" width="200" height="140" rx="6" fill="url(#browserGrad)" stroke="#9ca3af" strokeWidth="1.5" opacity="0.8"/>
 
-                                {/* Cloud - Top */}
-                                <g className="float-1">
-                                    <circle cx="250" cy="100" r="35" fill={colors.card} stroke={COLORS.primary} strokeWidth="2" opacity="0.8" filter="url(#glow)"/>
-                                    <path d="M 235 105 Q 235 100 238 98 Q 240 95 244 95 Q 246 92 250 94 Q 254 94 256 98 Q 259 98 261 101 Q 261 106 256 106 L 238 106 Q 235 106 235 105 Z" fill={COLORS.primary} opacity="0.6"/>
+                                    {/* Browser header */}
+                                    <rect x="40" y="280" width="200" height="28" rx="6" fill="#9ca3af" opacity="0.15"/>
+                                    <circle cx="54" cy="294" r="3.5" fill="#9ca3af" opacity="0.5"/>
+                                    <circle cx="67" cy="294" r="3.5" fill="#9ca3af" opacity="0.5"/>
+                                    <circle cx="80" cy="294" r="3.5" fill="#9ca3af" opacity="0.5"/>
+
+                                    {/* Address bar */}
+                                    <rect x="95" y="287" width="135" height="14" rx="7" fill="#9ca3af" opacity="0.1"/>
+                                    <line x1="102" y1="294" x2="140" y2="294" stroke="#9ca3af" strokeWidth="1.5" opacity="0.4"/>
+
+                                    {/* Browser content - simple layout */}
+                                    <rect x="55" y="320" width="170" height="8" rx="2" fill="#9ca3af" opacity="0.3"/>
+                                    <rect x="55" y="340" width="130" height="6" rx="2" fill="#9ca3af" opacity="0.2"/>
+                                    <rect x="55" y="355" width="150" height="6" rx="2" fill="#9ca3af" opacity="0.2"/>
+                                    <rect x="55" y="370" width="110" height="6" rx="2" fill="#9ca3af" opacity="0.2"/>
+
+                                    {/* Image placeholder */}
+                                    <rect x="160" y="335" width="50" height="50" rx="4" fill="#9ca3af" opacity="0.15"/>
                                 </g>
 
-                                {/* Gear - Right */}
-                                <g className="float-2">
-                                    <circle cx="380" cy="250" r="35" fill={colors.card} stroke={COLORS.primary} strokeWidth="2" opacity="0.8" filter="url(#glow)"/>
-                                    <circle cx="380" cy="250" r="12" fill="none" stroke={COLORS.primary} strokeWidth="3" opacity="0.6"/>
-                                    <circle cx="380" cy="235" r="4" fill={COLORS.primary} opacity="0.6"/>
-                                    <circle cx="395" cy="250" r="4" fill={COLORS.primary} opacity="0.6"/>
-                                    <circle cx="380" cy="265" r="4" fill={COLORS.primary} opacity="0.6"/>
-                                    <circle cx="365" cy="250" r="4" fill={COLORS.primary} opacity="0.6"/>
+                                {/* Small Code Snippet - Dark Grey */}
+                                <g className="code-snippet" filter="url(#shadow)">
+                                    <rect x="310" y="320" width="150" height="100" rx="6" fill="url(#snippetGrad)" stroke="#4b5563" strokeWidth="1.5" opacity="0.75"/>
+
+                                    {/* Snippet header */}
+                                    <rect x="310" y="320" width="150" height="22" rx="6" fill="#4b5563" opacity="0.15"/>
+                                    <circle cx="322" cy="331" r="2.5" fill="#4b5563" opacity="0.5"/>
+                                    <circle cx="333" cy="331" r="2.5" fill="#4b5563" opacity="0.5"/>
+
+                                    {/* Code */}
+                                    <line x1="320" y1="355" x2="400" y2="355" stroke="#4b5563" strokeWidth="1.5" opacity="0.5"/>
+                                    <line x1="330" y1="370" x2="380" y2="370" stroke="#4b5563" strokeWidth="1.5" opacity="0.4"/>
+                                    <line x1="330" y1="385" x2="420" y2="385" stroke="#4b5563" strokeWidth="1.5" opacity="0.4"/>
+                                    <line x1="320" y1="400" x2="360" y2="400" stroke="#4b5563" strokeWidth="1.5" opacity="0.5"/>
                                 </g>
 
-                                {/* Database - Bottom */}
-                                <g className="float-3">
-                                    <circle cx="250" cy="400" r="35" fill={colors.card} stroke={COLORS.primary} strokeWidth="2" opacity="0.8" filter="url(#glow)"/>
-                                    <ellipse cx="250" cy="395" rx="15" ry="5" fill={COLORS.primary} opacity="0.4"/>
-                                    <rect x="235" y="395" width="30" height="15" fill={COLORS.primary} opacity="0.3"/>
-                                    <ellipse cx="250" cy="410" rx="15" ry="5" fill={COLORS.primary} opacity="0.5"/>
+                                {/* Decorative code symbols - Yellow, White, Gray, Dark Grey */}
+                                <g opacity="0.4">
+                                    <text x="250" y="50" fill={COLORS.primary} fontSize="24" fontFamily="monospace" fontWeight="bold">{"<>"}</text>
+                                    <text x="460" y="260" fill="#e5e7eb" fontSize="20" fontFamily="monospace">{"{}"}</text>
+                                    <text x="20" y="240" fill="#4b5563" fontSize="20" fontFamily="monospace">{"[]"}</text>
+                                    <text x="80" y="480" fill="#9ca3af" fontSize="18" fontFamily="monospace">{"()"}</text>
                                 </g>
 
-                                {/* Lock - Left */}
-                                <g className="float-4">
-                                    <circle cx="120" cy="250" r="35" fill={colors.card} stroke={COLORS.primary} strokeWidth="2" opacity="0.8" filter="url(#glow)"/>
-                                    <rect x="110" y="250" width="20" height="15" rx="2" fill={COLORS.primary} opacity="0.5"/>
-                                    <path d="M 113 250 L 113 245 Q 113 240 120 240 Q 127 240 127 245 L 127 250" stroke={COLORS.primary} strokeWidth="2.5" fill="none" opacity="0.6"/>
-                                </g>
-
-                                {/* Connecting Lines */}
-                                <g className="connections" opacity="0.15">
-                                    <line x1="250" y1="135" x2="250" y2="170" stroke={COLORS.primary} strokeWidth="2" strokeDasharray="5 5"/>
-                                    <line x1="345" y1="250" x2="310" y2="250" stroke={COLORS.primary} strokeWidth="2" strokeDasharray="5 5"/>
-                                    <line x1="250" y1="365" x2="250" y2="330" stroke={COLORS.primary} strokeWidth="2" strokeDasharray="5 5"/>
-                                    <line x1="155" y1="250" x2="190" y2="250" stroke={COLORS.primary} strokeWidth="2" strokeDasharray="5 5"/>
-                                </g>
-
-                                {/* Orbiting Dots */}
-                                <circle cx="250" cy="80" r="4" fill={COLORS.primary} opacity="0.6" className="orbit-dot-1"/>
-                                <circle cx="420" cy="250" r="4" fill={COLORS.primary} opacity="0.6" className="orbit-dot-2"/>
-                                <circle cx="250" cy="420" r="4" fill={COLORS.primary} opacity="0.6" className="orbit-dot-3"/>
-                                <circle cx="80" cy="250" r="4" fill={COLORS.primary} opacity="0.6" className="orbit-dot-4"/>
+                                {/* Connecting dots */}
+                                <circle cx="250" cy="250" r="5" fill={COLORS.primary} opacity="0.6" className="pulse-dot"/>
                             </svg>
                         </div>
                     </div>
@@ -199,102 +226,72 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ colors }) => {
             </div>
 
             <style jsx>{`
-                @keyframes pulse-slow {
-                    0%, 100% {
-                        opacity: 0.15;
-                        transform: scale(1);
-                    }
-                    50% {
-                        opacity: 0.25;
-                        transform: scale(1.05);
-                    }
-                }
-
-                @keyframes spin {
-                    from {
-                        transform: rotate(0deg);
-                    }
-                    to {
-                        transform: rotate(360deg);
-                    }
-                }
-
-                @keyframes float {
+                @keyframes float-up-down {
                     0%, 100% {
                         transform: translateY(0px);
                     }
                     50% {
-                        transform: translateY(-15px);
+                        transform: translateY(-12px);
                     }
                 }
 
-                @keyframes orbit {
-                    0% {
-                        opacity: 0.3;
+                @keyframes float-gentle {
+                    0%, 100% {
+                        transform: translateY(0px);
+                    }
+                    50% {
+                        transform: translateY(-8px);
+                    }
+                }
+
+                @keyframes cursor-blink {
+                    0%, 49% {
+                        opacity: 1;
+                    }
+                    50%, 100% {
+                        opacity: 0;
+                    }
+                }
+
+                @keyframes pulse-dot {
+                    0%, 100% {
+                        opacity: 0.4;
+                        transform: scale(1);
                     }
                     50% {
                         opacity: 0.8;
-                    }
-                    100% {
-                        opacity: 0.3;
+                        transform: scale(1.3);
                     }
                 }
 
-                .animate-pulse-slow {
-                    animation: pulse-slow 6s ease-in-out infinite;
+                /* Code editor window - main */
+                .code-window-1 {
+                    animation: float-up-down 6s ease-in-out infinite;
                 }
 
-                /* Central circle rotation */
-                .tech-circle {
-                    transform-origin: center;
-                    animation: spin 60s linear infinite;
+                /* Terminal window */
+                .terminal-window {
+                    animation: float-gentle 7s ease-in-out infinite 1s;
                 }
 
-                /* Code symbol pulse */
-                .code-symbol {
-                    animation: pulse-slow 3s ease-in-out infinite;
+                /* Browser window */
+                .browser-window {
+                    animation: float-up-down 8s ease-in-out infinite 2s;
                 }
 
-                /* Floating tech icons */
-                .float-1 {
-                    animation: float 6s ease-in-out infinite;
+                /* Code snippet */
+                .code-snippet {
+                    animation: float-gentle 6.5s ease-in-out infinite 1.5s;
                 }
 
-                .float-2 {
-                    animation: float 7s ease-in-out infinite 1s;
+                /* Cursor blinking */
+                .cursor-blink {
+                    animation: cursor-blink 1s step-end infinite;
                 }
 
-                .float-3 {
-                    animation: float 8s ease-in-out infinite 2s;
-                }
-
-                .float-4 {
-                    animation: float 6.5s ease-in-out infinite 1.5s;
-                }
-
-                /* Orbiting dots */
-                .orbit-dot-1,
-                .orbit-dot-2,
-                .orbit-dot-3,
-                .orbit-dot-4 {
-                    animation: orbit 3s ease-in-out infinite;
-                }
-
-                .orbit-dot-2 {
-                    animation-delay: 0.75s;
-                }
-
-                .orbit-dot-3 {
-                    animation-delay: 1.5s;
-                }
-
-                .orbit-dot-4 {
-                    animation-delay: 2.25s;
-                }
-
-                /* Connection lines subtle pulse */
-                .connections {
-                    animation: orbit 4s ease-in-out infinite;
+                /* Pulse dot */
+                .pulse-dot {
+                    animation: pulse-dot 3s ease-in-out infinite;
                 }
             `}</style>
         </section>

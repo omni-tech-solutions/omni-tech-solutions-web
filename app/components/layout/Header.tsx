@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRouter, usePathname } from 'next/navigation';
+import { Home, Briefcase, Info, Mail, Globe, ChevronDown, Sun, Moon } from 'lucide-react';
 import type { Theme, Language } from '@/app/types';
 import logo from '../../../public/assets/logo.png';
 import { COLORS } from '@/app/styles/theme';
@@ -19,18 +20,33 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, colors, acti
     const router = useRouter();
     const pathname = usePathname();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
+    const langMenuRef = useRef<HTMLDivElement>(null);
 
     const navItems = [
-        { id: 'home', label: t('nav.home') },
-        { id: 'services', label: t('nav.services') },
-        { id: 'about', label: t('nav.about') },
-        { id: 'contact', label: t('nav.contact') },
+        { id: 'home', label: t('nav.home'), icon: Home },
+        { id: 'services', label: t('nav.services'), icon: Briefcase },
+        { id: 'about', label: t('nav.about'), icon: Info },
+        { id: 'contact', label: t('nav.contact'), icon: Mail },
     ];
 
     const changeLanguage = (lang: string) => {
         i18n.changeLanguage(lang);
         setIsMenuOpen(false);
+        setIsLangMenuOpen(false);
     };
+
+    // Close language menu when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (langMenuRef.current && !langMenuRef.current.contains(event.target as Node)) {
+                setIsLangMenuOpen(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
 
     const scrollTo = (id: string) => {
         setIsMenuOpen(false);
@@ -79,44 +95,70 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, colors, acti
 
                     {/* Desktop Menu */}
                     <div className="hidden md:flex items-center gap-5">
-                        {navItems.map((item) => (
-                            <button
-                                key={item.id}
-                                onClick={() => scrollTo(item.id)}
-                                className={`${colors.textSec} hover:text-[#ffaa18] transition-all relative group ${
-                                    activeSection === item.id ? 'text-[#ffaa18]' : ''
-                                }`}
-                            >
-                                {item.label}
-                                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ffaa18] transition-all group-hover:w-full ${
-                                    activeSection === item.id ? 'w-full' : ''
-                                }`} />
-                            </button>
-                        ))}
-
-                        {/* Language Switcher */}
-                        <div className={`flex gap-1 border-l ${colors.borderLight} pl-4`}>
-                            {(['bg', 'en', 'tr'] as Language[]).map(lang => (
+                        {navItems.map((item) => {
+                            const IconComponent = item.icon;
+                            return (
                                 <button
-                                    key={lang}
-                                    onClick={() => changeLanguage(lang)}
-                                    className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
-                                        i18n.language === lang
-                                            ? 'bg-[#ffaa18] text-zinc-900 shadow-lg shadow-[#ffaa18]/30'
-                                            : `${colors.textTer} hover:text-[#ffaa18] hover:bg-[#ffaa18]/10`
+                                    key={item.id}
+                                    onClick={() => scrollTo(item.id)}
+                                    className={`flex items-center gap-2 py-2.5 ${colors.textSec} hover:text-[#ffaa18] transition-all duration-300 relative group focus:outline-none focus:text-[#ffaa18] ${
+                                        activeSection === item.id ? 'text-[#ffaa18]' : ''
                                     }`}
                                 >
-                                    {lang.toUpperCase()}
+                                    <IconComponent className="w-4 h-4" strokeWidth={2} />
+                                    {item.label}
+                                    <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ffaa18] transition-all duration-300 group-hover:w-full ${
+                                        activeSection === item.id ? 'w-full' : ''
+                                    }`} />
                                 </button>
-                            ))}
+                            );
+                        })}
+
+                        {/* Language Dropdown */}
+                        <div className={`relative flex items-center border-l ${colors.borderLight} pl-4`} ref={langMenuRef}>
+                            <button
+                                onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
+                                className={`flex items-center gap-2 px-3 py-2.5 rounded-lg transition-all duration-300 ${colors.textSec} hover:text-[#ffaa18] hover:bg-[#ffaa18]/10 focus:outline-none focus:bg-[#ffaa18]/10`}
+                            >
+                                <Globe className="w-4 h-4" strokeWidth={2} />
+                                <span className="text-xs font-bold">{i18n.language.toUpperCase()}</span>
+                                <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isLangMenuOpen ? 'rotate-180' : ''}`} />
+                            </button>
+
+                            {/* Dropdown Menu */}
+                            {isLangMenuOpen && (
+                                <div className={`absolute top-full right-0 mt-2 ${colors.card} ${colors.border} border rounded-lg shadow-lg overflow-hidden min-w-[120px] backdrop-blur-xl z-50`}>
+                                    {(['bg', 'en', 'tr'] as Language[]).map(lang => (
+                                        <button
+                                            key={lang}
+                                            onClick={() => changeLanguage(lang)}
+                                            className={`w-full px-4 py-2.5 text-left text-sm font-semibold transition-all duration-300 flex items-center justify-between focus:outline-none ${
+                                                i18n.language === lang
+                                                    ? 'bg-[#ffaa18] text-zinc-900'
+                                                    : `${colors.textSec} hover:bg-[#ffaa18]/10 hover:text-[#ffaa18] focus:bg-[#ffaa18]/10`
+                                            }`}
+                                        >
+                                            <span>{lang.toUpperCase()}</span>
+                                            {i18n.language === lang && (
+                                                <span className="text-lg">✓</span>
+                                            )}
+                                        </button>
+                                    ))}
+                                </div>
+                            )}
                         </div>
 
                         {/* Theme Toggle */}
                         <button
                             onClick={toggleTheme}
-                            className={`p-2.5 rounded-lg ${colors.textSec} hover:text-[#ffaa18] hover:bg-[#ffaa18]/10 transition-all`}
+                            className={`p-2.5 rounded-lg ${colors.textSec} hover:text-[#ffaa18] hover:bg-[#ffaa18]/10 transition-all duration-300 group focus:outline-none focus:bg-[#ffaa18]/10`}
+                            aria-label="Toggle theme"
                         >
-                            <span className="text-xl">{theme === 'dark' ? '☀️' : '🌙'}</span>
+                            {theme === 'dark' ? (
+                                <Sun className="w-5 h-5 transition-transform duration-300 group-hover:rotate-45" strokeWidth={2} />
+                            ) : (
+                                <Moon className="w-5 h-5 transition-transform duration-300 group-hover:-rotate-12" strokeWidth={2} />
+                            )}
                         </button>
                     </div>
 
@@ -140,17 +182,21 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, colors, acti
                 {isMenuOpen && (
                     <div className={`md:hidden pb-4 border-t ${colors.borderLight} animate-fadeIn`}>
                         <div className="space-y-1 pt-4">
-                            {navItems.map((item) => (
-                                <button
-                                    key={item.id}
-                                    onClick={() => scrollTo(item.id)}
-                                    className={`block w-full text-left py-3 px-4 rounded-lg ${colors.textSec} hover:text-[#ffaa18] hover:bg-[#ffaa18]/10 transition-all ${
-                                        activeSection === item.id ? 'text-[#ffaa18] bg-[#ffaa18]/10' : ''
-                                    }`}
-                                >
-                                    {item.label}
-                                </button>
-                            ))}
+                            {navItems.map((item) => {
+                                const IconComponent = item.icon;
+                                return (
+                                    <button
+                                        key={item.id}
+                                        onClick={() => scrollTo(item.id)}
+                                        className={`flex items-center gap-3 w-full text-left py-3 px-4 rounded-lg ${colors.textSec} hover:text-[#ffaa18] hover:bg-[#ffaa18]/10 transition-all duration-300 focus:outline-none focus:bg-[#ffaa18]/10 ${
+                                            activeSection === item.id ? 'text-[#ffaa18] bg-[#ffaa18]/10' : ''
+                                        }`}
+                                    >
+                                        <IconComponent className="w-5 h-5" strokeWidth={2} />
+                                        {item.label}
+                                    </button>
+                                );
+                            })}
                         </div>
 
                         <div className={`flex items-center justify-between mt-4 pt-4 border-t ${colors.borderLight}`}>
@@ -159,8 +205,8 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, colors, acti
                                     <button
                                         key={lang}
                                         onClick={() => changeLanguage(lang)}
-                                        className={`px-3 py-2 rounded-lg text-sm font-bold transition-all ${
-                                            i18n.language === lang ? 'bg-[#ffaa18] text-zinc-900' : colors.textSec
+                                        className={`px-3 py-2 rounded-lg text-sm font-bold transition-all duration-300 focus:outline-none ${
+                                            i18n.language === lang ? 'bg-[#ffaa18] text-zinc-900' : `${colors.textSec} hover:bg-[#ffaa18]/10 focus:bg-[#ffaa18]/10`
                                         }`}
                                     >
                                         {lang.toUpperCase()}
@@ -170,9 +216,14 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, colors, acti
 
                             <button
                                 onClick={toggleTheme}
-                                className={`p-2 rounded-lg ${colors.textSec} hover:text-[#ffaa18] hover:bg-[#ffaa18]/10 transition-all`}
+                                className={`p-2.5 rounded-lg ${colors.textSec} hover:text-[#ffaa18] hover:bg-[#ffaa18]/10 transition-all duration-300 group focus:outline-none focus:bg-[#ffaa18]/10`}
+                                aria-label="Toggle theme"
                             >
-                                <span className="text-lg">{theme === 'dark' ? '☀️' : '🌙'}</span>
+                                {theme === 'dark' ? (
+                                    <Sun className="w-5 h-5 transition-transform duration-300 group-hover:rotate-45" strokeWidth={2} />
+                                ) : (
+                                    <Moon className="w-5 h-5 transition-transform duration-300 group-hover:-rotate-12" strokeWidth={2} />
+                                )}
                             </button>
                         </div>
                     </div>

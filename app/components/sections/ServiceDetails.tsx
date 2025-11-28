@@ -16,12 +16,10 @@ import {
     Shield,
     Clock,
     Users,
-    Star,
     Mail,
     Phone,
     Award,
     TrendingUp,
-    Headphones,
     CheckCircle2,
     ChevronRight
 } from 'lucide-react';
@@ -77,7 +75,8 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ colors }) 
                     </h1>
                     <button
                         onClick={() => router.push('/')}
-                        className="px-6 py-3 rounded-lg bg-amber-500 hover:bg-amber-600 text-white font-semibold transition-all"
+                        className={`px-6 py-3 ${BORDER_RADIUS.md} text-white font-semibold transition-all duration-200 hover:opacity-90`}
+                        style={{ backgroundColor: COLORS.primary }}
                     >
                         {t('services.backToHome') || 'Back to Home'}
                     </button>
@@ -92,8 +91,8 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ colors }) 
         { icon: Shield, text: t('services.features.qualityGuaranteed') },
         { icon: Clock, text: t('services.features.support247') },
         { icon: Users, text: t('services.features.professionalTeam') },
-        { icon: Star, text: t('services.features.modernTools') },
-        { icon: Check, text: t('services.features.bestPractices') }
+        { icon: TrendingUp, text: t('services.features.modernTools') },
+        { icon: CheckCircle2, text: t('services.features.bestPractices') }
     ];
 
     // Trust indicators
@@ -110,50 +109,35 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ colors }) 
                 {/* Back Button */}
                 <button
                     onClick={() => router.push('/')}
-                    className={`flex items-center gap-2 mb-8 ${colors.textSec} hover:text-amber-500 transition-colors group`}
+                    className={`flex items-center gap-2 mb-8 ${colors.textSec} transition-all duration-200 group`}
+                    style={{
+                        '--hover-color': COLORS.primary
+                    } as React.CSSProperties}
+                    onMouseEnter={(e) => e.currentTarget.style.color = COLORS.primary}
+                    onMouseLeave={(e) => e.currentTarget.style.color = ''}
                 >
-                    <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+                    <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-200" />
                     <span className="font-semibold">{t('services.backToServices') || 'Back to Services'}</span>
                 </button>
 
                 {/* Hero Section */}
-                <div className={`${colors.card} backdrop-blur-sm ${BORDER_RADIUS.lg} border ${colors.border} overflow-hidden mb-12`}>
-                    <div className="grid md:grid-cols-2 gap-6 md:gap-8 p-6 sm:p-8 md:p-12">
-                        {/* Left: Text Content */}
-                        <div className="flex flex-col justify-center">
-                            <div className="flex items-center gap-3 mb-4 sm:mb-6">
-                                <div
-                                    className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl flex items-center justify-center"
-                                    style={{
-                                        background: `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.primaryHover})`
-                                    }}
-                                >
-                                    <IconComponent className="w-6 h-6 sm:w-8 sm:h-8 text-white" strokeWidth={2} />
-                                </div>
-                                <div
-                                    className="px-3 py-1 sm:px-4 sm:py-1.5 rounded-full text-xs font-bold"
-                                    style={{
-                                        backgroundColor: `${COLORS.primary}20`,
-                                        color: COLORS.primary
-                                    }}
-                                >
-                                    {String(serviceIndex + 1).padStart(2, '0')}
-                                </div>
-                            </div>
-
+                <div className={`${colors.card} rounded-2xl border ${colors.border} overflow-hidden mb-12`} style={{ borderWidth: '1px' }}>
+                    <div className="grid md:grid-cols-5 gap-0">
+                        {/* Left: Text Content - 3 columns */}
+                        <div className="md:col-span-3 flex flex-col justify-center p-8 sm:p-10 md:p-14">
                             <h1
-                                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4"
+                                className="text-3xl sm:text-4xl md:text-5xl font-bold mb-5 leading-tight"
                                 style={{ color: colors.text }}
                             >
                                 {service.title}
                             </h1>
 
-                            <p className={`${colors.textSec} text-base sm:text-lg leading-relaxed mb-4 sm:mb-6`}>
+                            <p className={`${colors.textSec} text-base sm:text-lg leading-relaxed mb-8`}>
                                 {service.desc}
                             </p>
 
                             {/* CTA Buttons */}
-                            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                            <div className="flex flex-col sm:flex-row gap-3">
                                 <button
                                     onClick={() => {
                                         const contactSection = document.getElementById('contact');
@@ -166,12 +150,13 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ colors }) 
                                             router.push('/#contact');
                                         }
                                     }}
-                                    className="w-full sm:w-auto px-6 py-3 rounded-lg font-semibold transition-all hover:scale-105 shadow-lg"
+                                    className={`px-8 py-4 ${BORDER_RADIUS.lg} font-semibold transition-all duration-200 flex items-center justify-center gap-2 hover:opacity-90 hover:shadow-lg hover:scale-[1.02]`}
                                     style={{
-                                        background: `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.primaryHover})`,
+                                        backgroundColor: COLORS.primary,
                                         color: 'white'
                                     }}
                                 >
+                                    <Mail className="w-5 h-5" />
                                     {t('services.getQuote') || 'Get a Quote'}
                                 </button>
 
@@ -182,34 +167,66 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ colors }) 
                                             pricingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                                         }
                                     }}
-                                    className={`w-full sm:w-auto px-6 py-3 rounded-lg border-2 font-semibold transition-all hover:bg-amber-500/10 flex items-center justify-center gap-2`}
-                                    style={{ borderColor: COLORS.primary, color: colors.text }}
+                                    className={`px-8 py-4 ${BORDER_RADIUS.lg} font-semibold transition-all duration-200 flex items-center justify-center gap-2 border group`}
+                                    style={{
+                                        borderWidth: '2px',
+                                        borderColor: `${COLORS.primary}33`,
+                                        color: colors.text
+                                    }}
+                                    onMouseEnter={(e) => {
+                                        e.currentTarget.style.borderColor = COLORS.primary;
+                                        e.currentTarget.style.color = COLORS.primary;
+                                        e.currentTarget.style.backgroundColor = `${COLORS.primary}0D`;
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.currentTarget.style.borderColor = `${COLORS.primary}33`;
+                                        e.currentTarget.style.color = '';
+                                        e.currentTarget.style.backgroundColor = 'transparent';
+                                    }}
                                 >
                                     {t('services.viewPortfolio') || 'View Pricing'}
-                                    <ChevronRight className="w-4 h-4" />
+                                    <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" />
                                 </button>
                             </div>
                         </div>
 
-                        {/* Right: Decorative Visual */}
-                        <div className="relative flex items-center justify-center order-first md:order-last">
-                            <div
-                                className="w-full h-48 sm:h-64 md:h-full md:min-h-[300px] rounded-2xl relative overflow-hidden"
-                                style={{
-                                    background: `radial-gradient(circle at center, ${COLORS.primary}15, transparent 70%)`
-                                }}
-                            >
-                                {/* Large Icon in Background */}
-                                <div className="absolute inset-0 flex items-center justify-center opacity-10">
-                                    <IconComponent className="w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64" strokeWidth={1} />
+                        {/* Right: Illustration - 2 columns */}
+                        <div className="md:col-span-2 relative flex items-center justify-center order-first md:order-last p-8 md:p-12" style={{ background: `linear-gradient(135deg, ${COLORS.primary}05 0%, ${COLORS.primary}12 100%)` }}>
+                            <div className="relative w-full h-full flex items-center justify-center min-h-[280px]">
+                                {/* Decorative grid pattern */}
+                                <div className="absolute inset-0 opacity-20">
+                                    <div
+                                        className="w-full h-full"
+                                        style={{
+                                            backgroundImage: `radial-gradient(${COLORS.primary}40 1px, transparent 1px)`,
+                                            backgroundSize: '24px 24px'
+                                        }}
+                                    />
                                 </div>
 
-                                {/* Floating Elements */}
-                                <div className="absolute top-4 right-4 sm:top-8 sm:right-8 w-12 h-12 sm:w-20 sm:h-20 rounded-full animate-pulse"
-                                     style={{ backgroundColor: `${COLORS.primary}20` }}
+                                {/* Main Icon */}
+                                <div className="relative z-10 flex items-center justify-center">
+                                    <IconComponent
+                                        className="w-32 h-32 sm:w-40 sm:h-40"
+                                        style={{ color: COLORS.primary, filter: 'drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08))' }}
+                                        strokeWidth={1.2}
+                                    />
+                                </div>
+
+                                {/* Floating accent elements */}
+                                <div
+                                    className="absolute top-8 right-8 w-16 h-16 rounded-lg opacity-60 rotate-12"
+                                    style={{
+                                        background: `linear-gradient(135deg, ${COLORS.primary}20, ${COLORS.primary}10)`,
+                                        backdropFilter: 'blur(10px)'
+                                    }}
                                 />
-                                <div className="absolute bottom-6 left-6 sm:bottom-12 sm:left-12 w-10 h-10 sm:w-16 sm:h-16 rounded-full animate-pulse animation-delay-400"
-                                     style={{ backgroundColor: `${COLORS.primary}15` }}
+                                <div
+                                    className="absolute bottom-10 left-10 w-12 h-12 rounded-full opacity-50"
+                                    style={{
+                                        background: `linear-gradient(135deg, ${COLORS.primary}25, ${COLORS.primary}15)`,
+                                        backdropFilter: 'blur(10px)'
+                                    }}
                                 />
                             </div>
                         </div>
@@ -221,14 +238,15 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ colors }) 
                     {trustIndicators.map((item, index) => (
                         <div
                             key={index}
-                            className={`${colors.card} backdrop-blur-sm ${BORDER_RADIUS.lg} border ${colors.border} p-4 sm:p-6 text-center transition-all hover:shadow-lg`}
+                            className={`${colors.card} ${BORDER_RADIUS.lg} border ${colors.border} p-4 sm:p-6 text-center transition-all duration-200 hover:shadow-md`}
+                            style={{ borderWidth: '1px' }}
                         >
                             <div className="flex justify-center mb-2">
                                 <div
-                                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center"
-                                    style={{ backgroundColor: `${COLORS.primary}15` }}
+                                    className={`w-10 h-10 sm:w-12 sm:h-12 ${BORDER_RADIUS.md} flex items-center justify-center`}
+                                    style={{ backgroundColor: `${COLORS.primary}14` }}
                                 >
-                                    <item.icon className="w-5 h-5 sm:w-6 sm:h-6" style={{ color: COLORS.primary }} />
+                                    <item.icon className="w-5 h-5 sm:w-6 sm:h-6" style={{ color: COLORS.primary }} strokeWidth={1.5} />
                                 </div>
                             </div>
                             <div className="text-xl sm:text-2xl font-bold mb-1" style={{ color: COLORS.primary }}>
@@ -241,7 +259,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ colors }) 
                     ))}
                 </div>
 
-                {/* Pricing Section - IMPROVED */}
+                {/* Pricing Section */}
                 {pricing && pricing.length > 0 && (
                     <div className="mb-12" data-pricing-section>
                         <div className="text-center mb-8">
@@ -260,20 +278,11 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ colors }) 
                             {pricing.map((item, index) => (
                                 <div
                                     key={index}
-                                    className={`${colors.card} backdrop-blur-sm ${BORDER_RADIUS.lg} border ${colors.border} transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group relative overflow-hidden`}
+                                    className={`${colors.card} ${BORDER_RADIUS.lg} border ${colors.border} transition-all duration-200 hover:shadow-md`}
+                                    style={{ borderWidth: '1px' }}
                                 >
-                                    {/* Hover glow effect */}
-                                    <div
-                                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                                        style={{
-                                            background: `radial-gradient(circle at top left, ${COLORS.primary}10, transparent 70%)`
-                                        }}
-                                    />
-
-                                    <div className="relative z-10 p-5 sm:p-6">
-                                        {/* Mobile-optimized layout */}
+                                    <div className="p-5 sm:p-6">
                                         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-4">
-                                            {/* Left: Title and Description */}
                                             <div className="flex-1 min-w-0">
                                                 <h3 className={`text-base sm:text-lg font-bold mb-2 ${colors.text}`}>
                                                     {item.name}
@@ -285,7 +294,6 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ colors }) 
                                                 )}
                                             </div>
 
-                                            {/* Right: Price - Better mobile layout */}
                                             <div className="flex items-center justify-between sm:justify-end sm:flex-col sm:items-end gap-3 sm:gap-2 flex-shrink-0">
                                                 <span
                                                     className="text-xl sm:text-2xl font-bold whitespace-nowrap"
@@ -293,20 +301,13 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ colors }) 
                                                 >
                                                     {item.price}
                                                 </span>
-
-                                                {/* Quick action button - mobile friendly */}
                                             </div>
                                         </div>
 
-                                        {/* Visual separator */}
-                                        <div
-                                            className="w-full h-px mt-4"
-                                            style={{ backgroundColor: `${colors.borderLight}` }}
-                                        />
+                                        <div className="w-full h-px mt-4" style={{ backgroundColor: colors.border }}/>
 
-                                        {/* Additional info tag */}
                                         <div className="flex items-center gap-2 mt-3">
-                                            <CheckCircle2 className="w-4 h-4" style={{ color: COLORS.primary }} />
+                                            <CheckCircle2 className="w-4 h-4" style={{ color: COLORS.primary }} strokeWidth={2} />
                                             <span className={`text-xs ${colors.textSec}`}>
                                                 Professional service with warranty
                                             </span>
@@ -317,25 +318,10 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ colors }) 
                         </div>
 
                         {/* Pricing note */}
-                        <div className={`mt-8 p-4 sm:p-6 rounded-xl border ${colors.border}`} style={{ backgroundColor: `${COLORS.primary}05` }}>
-                            <div className="flex items-start gap-3">
-                                <div className="flex-shrink-0 mt-1">
-                                    <div
-                                        className="w-8 h-8 rounded-full flex items-center justify-center"
-                                        style={{ backgroundColor: `${COLORS.primary}20` }}
-                                    >
-                                        <Headphones className="w-4 h-4" style={{ color: COLORS.primary }} />
-                                    </div>
-                                </div>
-                                <div className="flex-1">
-                                    <h4 className={`text-sm font-bold mb-1 ${colors.text}`}>
-                                        Need a Custom Quote?
-                                    </h4>
-                                    <p className={`text-xs sm:text-sm ${colors.textSec}`}>
-                                        {t('services.pricingNote') || '* Prices may vary depending on complexity. Contact us for a detailed quote.'}
-                                    </p>
-                                </div>
-                            </div>
+                        <div className={`mt-8 p-4 sm:p-6 ${BORDER_RADIUS.lg} border ${colors.border}`} style={{ borderWidth: '1px' }}>
+                            <p className={`text-xs sm:text-sm ${colors.textSec}`}>
+                                {t('services.pricingNote') || '* Prices may vary depending on complexity. Contact us for a detailed quote.'}
+                            </p>
                         </div>
                     </div>
                 )}
@@ -355,17 +341,18 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ colors }) 
                         {benefits.map((benefit, index) => (
                             <div
                                 key={index}
-                                className={`${colors.card} backdrop-blur-sm p-5 sm:p-6 ${BORDER_RADIUS.lg} border ${colors.border} transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group`}
+                                className={`${colors.card} p-5 sm:p-6 ${BORDER_RADIUS.lg} border ${colors.border} transition-all duration-200 hover:shadow-md`}
+                                style={{ borderWidth: '1px' }}
                             >
                                 <div className="flex items-start gap-4">
                                     <div
-                                        className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform"
-                                        style={{ backgroundColor: `${COLORS.primary}15` }}
+                                        className={`w-10 h-10 sm:w-12 sm:h-12 ${BORDER_RADIUS.md} flex items-center justify-center flex-shrink-0`}
+                                        style={{ backgroundColor: `${COLORS.primary}14` }}
                                     >
                                         <benefit.icon
                                             className="w-5 h-5 sm:w-6 sm:h-6"
                                             style={{ color: COLORS.primary }}
-                                            strokeWidth={2}
+                                            strokeWidth={1.5}
                                         />
                                     </div>
                                     <div>
@@ -379,8 +366,8 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ colors }) 
                     </div>
                 </div>
 
-                {/* Process/Details Section */}
-                <div className={`${colors.card} backdrop-blur-sm ${BORDER_RADIUS.lg} border ${colors.border} p-6 sm:p-8 md:p-12 mb-12`}>
+                {/* Process Section */}
+                <div className={`${colors.card} ${BORDER_RADIUS.lg} border ${colors.border} p-6 sm:p-8 md:p-12 mb-12`} style={{ borderWidth: '1px' }}>
                     <div className="text-center mb-8">
                         <h2
                             className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3"
@@ -394,8 +381,8 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ colors }) 
                         {[1, 2, 3, 4].map((step) => (
                             <div key={step} className="flex gap-4 sm:gap-6">
                                 <div
-                                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-white text-lg"
-                                    style={{ background: `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.primaryHover})` }}
+                                    className={`w-10 h-10 sm:w-12 sm:h-12 ${BORDER_RADIUS.md} flex items-center justify-center flex-shrink-0 font-bold text-white text-lg`}
+                                    style={{ backgroundColor: COLORS.primary }}
                                 >
                                     {step}
                                 </div>
@@ -414,58 +401,55 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ colors }) 
 
                 {/* Contact CTA */}
                 <div
-                    className={`${colors.card} backdrop-blur-sm ${BORDER_RADIUS.lg} border ${colors.border} p-6 sm:p-8 md:p-12 text-center relative overflow-hidden`}
+                    className={`${colors.card} ${BORDER_RADIUS.lg} border ${colors.border} p-6 sm:p-8 md:p-12 text-center`}
+                    style={{ borderWidth: '1px' }}
                 >
-                    {/* Background decoration */}
-                    <div
-                        className="absolute inset-0 opacity-5"
-                        style={{
-                            background: `radial-gradient(circle at top right, ${COLORS.primary}, transparent 60%)`
-                        }}
-                    />
+                    <h2
+                        className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4"
+                        style={{ color: colors.text }}
+                    >
+                        {t('services.readyToStart') || 'Ready to Get Started?'}
+                    </h2>
+                    <p className={`${colors.textSec} text-base sm:text-lg mb-6 sm:mb-8 max-w-2xl mx-auto`}>
+                        {t('services.contactCTA') || 'Contact us today for a free consultation and quote.'}
+                    </p>
 
-                    <div className="relative z-10">
-                        <h2
-                            className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4"
-                            style={{ color: colors.text }}
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a
+                            href="tel:+359123456789"
+                            className={`flex items-center justify-center gap-2 px-6 py-3 ${BORDER_RADIUS.md} font-semibold transition-all duration-200 hover:opacity-90 hover:shadow-lg`}
+                            style={{
+                                backgroundColor: COLORS.primary,
+                                color: 'white'
+                            }}
                         >
-                            {t('services.readyToStart') || 'Ready to Get Started?'}
-                        </h2>
-                        <p className={`${colors.textSec} text-base sm:text-lg mb-6 sm:mb-8 max-w-2xl mx-auto`}>
-                            {t('services.contactCTA') || 'Contact us today for a free consultation and quote.'}
-                        </p>
+                            <Phone className="w-5 h-5" />
+                            {t('contact.callUs') || 'Call Us'}
+                        </a>
 
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a
-                                href="tel:+359123456789"
-                                className="flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all hover:scale-105 shadow-lg"
-                                style={{
-                                    background: `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.primaryHover})`,
-                                    color: 'white'
-                                }}
-                            >
-                                <Phone className="w-5 h-5" />
-                                {t('contact.callUs') || 'Call Us'}
-                            </a>
-
-                            <a
-                                href="mailto:info@omnitech.bg"
-                                className={`flex items-center justify-center gap-2 px-6 py-3 rounded-lg border-2 font-semibold transition-all hover:bg-amber-500/10`}
-                                style={{ borderColor: COLORS.primary, color: colors.text }}
-                            >
-                                <Mail className="w-5 h-5" />
-                                {t('contact.emailUs') || 'Email Us'}
-                            </a>
-                        </div>
+                        <a
+                            href="mailto:info@omnitech.bg"
+                            className={`flex items-center justify-center gap-2 px-6 py-3 ${BORDER_RADIUS.md} font-semibold transition-all duration-200 border group`}
+                            style={{
+                                borderWidth: '1px',
+                                borderColor: colors.border,
+                                color: colors.text
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.borderColor = COLORS.primary;
+                                e.currentTarget.style.color = COLORS.primary;
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.borderColor = '';
+                                e.currentTarget.style.color = '';
+                            }}
+                        >
+                            <Mail className="w-5 h-5" />
+                            {t('contact.emailUs') || 'Email Us'}
+                        </a>
                     </div>
                 </div>
             </div>
-
-            <style jsx global>{`
-                .animation-delay-400 {
-                    animation-delay: 0.4s;
-                }
-            `}</style>
         </div>
     );
 };

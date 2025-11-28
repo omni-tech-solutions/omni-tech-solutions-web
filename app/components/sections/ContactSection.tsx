@@ -186,7 +186,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ colors }) => {
                                         value={formData.name}
                                         onChange={handleChange}
                                         required
-                                        className={`w-full px-4 py-3 ${colors.input} ${colors.text} ${BORDER_RADIUS.md} border transition-all focus:outline-none`}
+                                        className={`w-full px-4 py-3 ${colors.input} ${colors.text} ${BORDER_RADIUS.md} border transition-all duration-300 focus:outline-none`}
                                         style={{
                                             borderColor: `${COLORS.primary}30`
                                         }}
@@ -213,7 +213,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ colors }) => {
                                         value={formData.email}
                                         onChange={handleChange}
                                         required
-                                        className={`w-full px-4 py-3 ${colors.input} ${colors.text} ${BORDER_RADIUS.md} border transition-all focus:outline-none`}
+                                        className={`w-full px-4 py-3 ${colors.input} ${colors.text} ${BORDER_RADIUS.md} border transition-all duration-300 focus:outline-none`}
                                         style={{
                                             borderColor: `${COLORS.primary}30`
                                         }}
@@ -240,7 +240,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ colors }) => {
                                     name="phone"
                                     value={formData.phone}
                                     onChange={handleChange}
-                                    className={`w-full px-4 py-3 ${colors.input} ${colors.text} ${BORDER_RADIUS.md} border transition-all focus:outline-none`}
+                                    className={`w-full px-4 py-3 ${colors.input} ${colors.text} ${BORDER_RADIUS.md} border transition-all duration-300 focus:outline-none`}
                                     style={{
                                         borderColor: `${COLORS.primary}30`
                                     }}
@@ -267,7 +267,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ colors }) => {
                                     onChange={handleChange}
                                     required
                                     rows={6}
-                                    className={`w-full px-4 py-3 ${colors.input} ${colors.text} ${BORDER_RADIUS.md} border transition-all resize-none focus:outline-none`}
+                                    className={`w-full px-4 py-3 ${colors.input} ${colors.text} ${BORDER_RADIUS.md} border transition-all duration-300 resize-none focus:outline-none`}
                                     style={{
                                         borderColor: `${COLORS.primary}30`
                                     }}
@@ -287,7 +287,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ colors }) => {
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className={`w-full py-4 px-6 ${BORDER_RADIUS.md} font-semibold text-lg text-white transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed`}
+                                className={`w-full py-4 px-6 ${BORDER_RADIUS.md} font-semibold text-lg text-white transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-[#ffaa18] focus:ring-offset-2`}
                                 style={{
                                     background: `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.primaryHover})`,
                                     boxShadow: `0 4px 12px ${COLORS.primary}30`
