@@ -7,14 +7,14 @@
   },
   "hero": {
     "badge": "Available 24/7",
-    "title": "Personalized IT Solutions",
-    "subtitle": "For Your Home and Business",
-    "description": "Modern technology services designed to simplify and enhance your everyday life and operations.",
+    "title": "Modern IT Solutions for Your Home and Business",
+    "subtitle": "",
+    "description": "Custom web applications, websites, automation, and local IT services designed to meet your real needs.",
     "cta": "Start Your Project",
     "learnMore": "Discover More",
     "rating": "5.0 ★ Rating",
-    "clients": "100+ Happy Clients",
-    "projects": "500+ Completed Projects",
+    "clients": "10+ Successful Projects",
+    "projects": "High Quality",
     "scrollDown": "Scroll Down",
     "trustBadges": {
       "secure": "Secure",
@@ -67,11 +67,6 @@
         "icon": "Camera",
         "title": "Video Surveillance Systems",
         "desc": "Reliable and advanced security camera systems"
-      },
-      {
-        "icon": "Smartphone",
-        "title": "Smartphone & Tablet Repair",
-        "desc": "Fast, reliable, and guaranteed repair service"
       },
       {
         "icon": "MonitorSmartphone",
@@ -331,21 +326,66 @@
     "title": "About Omni Tech Solutions",
     "mission": {
       "title": "Our Mission",
-      "text": "Omni Tech Solutions delivers **affordable, reliable, and innovative** IT services for both individuals and businesses. Our mission is to make advanced technology accessible, understandable, and truly useful for everyone."
+      "text": "To provide accessible and personalized IT solutions designed to simplify daily life and business for our clients."
     },
     "vision": {
       "title": "Our Vision",
-      "text": "To be the most trusted technology partner in Bulgaria, recognized for our **professionalism, quality, and personalized approach** to every client engagement."
+      "text": "To be a reliable technology partner that delivers quality services, transparency, and care for every project."
     },
     "history": {
       "title": "Our Story",
-      "text": "Omni Tech Solutions was founded with the goal of bringing high-quality IT services even to smaller communities. Over time, we've expanded our reach nationwide, staying true to our core belief that modern technology should be **accessible to everyone**."
+      "text": "Omni Tech Solutions started as a small but ambitious company focused on creating practical technology solutions for real business needs. Over time, we've expanded our services and built a strong network of satisfied clients."
     },
     "stats": [
-      { "value": "500+", "label": "Completed Projects" },
+      { "value": "10+", "label": "Successfully Completed Projects" },
       { "value": "24/7", "label": "Availability" },
-      { "value": "100+", "label": "Satisfied Clients" }
+      { "value": "High", "label": "Focus on Quality and Reliability" }
     ]
+  },
+  "portfolio": {
+    "title": "Our Projects",
+    "subtitle": "Real solutions built with attention to detail",
+    "viewProject": "View Project",
+    "inDevelopment": "In Development",
+    "completed": "Completed",
+    "items": [
+      {
+        "name": "Omni Stays",
+        "status": "In Development",
+        "description": "SaaS platform for property management – short-term and long-term rentals.",
+        "type": "Web Application"
+      },
+      {
+        "name": "Network Monitoring Tool",
+        "status": "Completed",
+        "description": "Python application with Telegram integration for detecting new devices on the local network.",
+        "type": "Automation"
+      },
+      {
+        "name": "Livano Store Landing Page",
+        "status": "Completed",
+        "description": "Modern marketing website for brand and product presentation.",
+        "type": "Web Design"
+      }
+    ]
+  },
+  "products": {
+    "title": "Our Products",
+    "subtitle": "Innovative SaaS solutions for modern business",
+    "items": [
+      {
+        "name": "Omni Stays",
+        "description": "SaaS platform for managing short-term and long-term properties.",
+        "status": "In Development",
+        "cta": "Learn More"
+      }
+    ]
+  },
+  "trustIndicators": {
+    "experience": "Years Experience",
+    "projects": "Completed Projects",
+    "availability": "Available",
+    "quality": "High Quality"
   },
   "contact": {
     "title": "Contact Omni Tech Solutions",
@@ -364,7 +404,7 @@
     "contactInfo": {
       "email": { "title": "Email", "value": "info@omnitech.bg" },
       "phone": { "title": "Phone", "value": "+359 XXX XXX XXX" },
-      "location": { "title": "Location", "value": "Samuil, Razgrad, Bulgaria" },
+      "location": { "title": "Location", "value": "Samuil, Razgrad Region, Bulgaria" },
       "hours": { "title": "Working Hours", "value": "Mon–Fri: 9:00 AM – 6:00 PM" }
     },
     "whyChooseUs": {

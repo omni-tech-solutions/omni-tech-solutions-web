@@ -8,7 +8,6 @@ import {
     Code2,
     Network,
     Camera,
-    Smartphone,
     MonitorSmartphone,
     ArrowLeft,
     Check,
@@ -38,7 +37,6 @@ const serviceConfig: Record<string, {
     'web-applications': { icon: Code2, iconName: 'Code2' },
     'local-networks': { icon: Network, iconName: 'Network' },
     'video-surveillance': { icon: Camera, iconName: 'Camera' },
-    'smartphone-repair': { icon: Smartphone, iconName: 'Smartphone' },
     'operating-systems': { icon: MonitorSmartphone, iconName: 'MonitorSmartphone' }
 };
 
@@ -97,10 +95,10 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ colors }) 
 
     // Trust indicators
     const trustIndicators = [
-        { icon: Award, value: '5+', label: 'Years Experience' },
-        { icon: Users, value: '100+', label: 'Happy Clients' },
-        { icon: CheckCircle2, value: '500+', label: 'Projects Done' },
-        { icon: TrendingUp, value: '98%', label: 'Success Rate' }
+        { icon: Award, value: '5+', label: t('trustIndicators.experience') || 'Years Experience' },
+        { icon: CheckCircle2, value: '10+', label: t('trustIndicators.projects') || 'Completed Projects' },
+        { icon: Users, value: '24/7', label: t('trustIndicators.availability') || 'Available' },
+        { icon: TrendingUp, value: t('trustIndicators.quality') || 'High Quality', label: '' }
     ];
 
     return (

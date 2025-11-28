@@ -7,14 +7,14 @@
   },
   "hero": {
     "badge": "7/24 Erişilebilir",
-    "title": "Kişiselleştirilmiş Teknoloji Çözümleri",
-    "subtitle": "Ev ve İşletmeler İçin",
-    "description": "Günlük yaşamınızı kolaylaştırmak ve geliştirmek üzere tasarlanmış modern BT hizmetleri.",
+    "title": "Ev ve İşletmeler İçin Modern IT Çözümleri",
+    "subtitle": "",
+    "description": "Gerçek ihtiyaçlarınızı karşılamak üzere tasarlanmış özel web uygulamaları, web siteleri, otomasyon ve yerel BT hizmetleri.",
     "cta": "Bizimle İletişime Geçin",
     "learnMore": "Daha Fazla Bilgi Edinin",
     "rating": "5.0 Müşteri Puanı",
-    "clients": "100+ Mutlu Müşteri",
-    "projects": "500+ Tamamlanmış Proje",
+    "clients": "10+ Başarılı Proje",
+    "projects": "Yüksek Kalite",
     "scrollDown": "Aşağı Kaydır",
     "trustBadges": {
       "secure": "Güvenli",
@@ -67,11 +67,6 @@
         "icon": "Camera",
         "title": "Video Gözetimi",
         "desc": "Güvenilir güvenlik kamera sistemleri"
-      },
-      {
-        "icon": "Smartphone",
-        "title": "Akıllı Telefon Tamiri",
-        "desc": "Hızlı, güvenilir ve garantili hizmet"
       },
       {
         "icon": "MonitorSmartphone",
@@ -331,21 +326,66 @@
     "title": "Hakkımızda",
     "mission": {
       "title": "Misyonumuz",
-      "text": "Omni Tech Solutions, hem bireyler hem de işletmeler için uygun fiyatlı, güvenilir ve yenilikçi BT hizmetleri sunar. Misyonumuz, teknolojiyi herkes için erişilebilir, anlaşılır ve gerçekten kullanışlı hale getirmektir."
+      "text": "Müşterilerimizin günlük yaşamını ve işlerini kolaylaştırmak için tasarlanmış erişilebilir ve kişiselleştirilmiş BT çözümleri sunmak."
     },
     "vision": {
       "title": "Vizyonumuz",
-      "text": "Profesyonellik, kalite ve kişisel müşteri yaklaşımımızla tanınan, güvenilir bir teknoloji ortağı olmaktır."
+      "text": "Her projeye kaliteli hizmetler, şeffaflık ve özen gösteren güvenilir bir teknoloji ortağı olmak."
     },
     "history": {
       "title": "Tarihçemiz",
-      "text": "Omni Tech Solutions, yüksek kaliteli BT hizmetlerini küçük topluluklara dahi ulaştırma hedefiyle kuruldu. Zamanla, modern teknolojinin herkese açık olması gerektiği inancımıza sadık kalarak ülke çapında genişledik."
+      "text": "Omni Tech Solutions, gerçek iş ihtiyaçları için pratik teknoloji çözümleri oluşturmaya odaklanan küçük ama hırslı bir şirket olarak başladı. Zamanla hizmetlerimizi genişlettik ve memnun müşterilerden oluşan güçlü bir ağ oluşturduk."
     },
     "stats": [
-      { "value": "100+", "label": "Tamamlanmış Proje" },
+      { "value": "10+", "label": "Başarıyla Tamamlanan Proje" },
       { "value": "7/24", "label": "Destek" },
-      { "value": "50+", "label": "Mutlu Müşteri" }
+      { "value": "Yüksek", "label": "Kalite ve Güvenilirlik Odağı" }
     ]
+  },
+  "portfolio": {
+    "title": "Projelerimiz",
+    "subtitle": "Detaylara özen gösterilerek oluşturulmuş gerçek çözümler",
+    "viewProject": "Projeyi Görüntüle",
+    "inDevelopment": "Geliştirme Aşamasında",
+    "completed": "Tamamlandı",
+    "items": [
+      {
+        "name": "Omni Stays",
+        "status": "Geliştirme Aşamasında",
+        "description": "Kısa ve uzun süreli mülk yönetimi için SaaS platformu.",
+        "type": "Web Uygulaması"
+      },
+      {
+        "name": "Network Monitoring Tool",
+        "status": "Tamamlandı",
+        "description": "Yerel ağda yeni cihazları tespit etmek için Telegram entegrasyonlu Python uygulaması.",
+        "type": "Otomasyon"
+      },
+      {
+        "name": "Livano Store Landing Page",
+        "status": "Tamamlandı",
+        "description": "Marka ve ürün sunumu için modern pazarlama web sitesi.",
+        "type": "Web Tasarımı"
+      }
+    ]
+  },
+  "products": {
+    "title": "Ürünlerimiz",
+    "subtitle": "Modern işletmeler için yenilikçi SaaS çözümleri",
+    "items": [
+      {
+        "name": "Omni Stays",
+        "description": "Kısa ve uzun süreli mülkleri yönetmek için SaaS platformu.",
+        "status": "Geliştirme Aşamasında",
+        "cta": "Daha Fazla Bilgi"
+      }
+    ]
+  },
+  "trustIndicators": {
+    "experience": "Yıl Deneyim",
+    "projects": "Tamamlanan Proje",
+    "availability": "Erişilebilir",
+    "quality": "Yüksek Kalite"
   },
   "contact": {
     "title": "Bize Ulaşın",
@@ -364,7 +404,7 @@
     "contactInfo": {
       "email": { "title": "E-posta", "value": "info@omnitech.bg" },
       "phone": { "title": "Telefon", "value": "+359 XXX XXX XXX" },
-      "location": { "title": "Konum", "value": "Samuil, Razgrad, Bulgaristan" },
+      "location": { "title": "Konum", "value": "Samuil, Razgrad Bölgesi, Bulgaristan" },
       "hours": { "title": "Çalışma Saatleri", "value": "Pazartesi–Cuma: 09:00 – 18:00" }
     },
     "whyChooseUs": {
