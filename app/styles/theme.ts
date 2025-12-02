@@ -4,9 +4,9 @@
  */
 
 export const COLORS = {
-    primary: '#ffaa18',
-    primaryHover: '#ff9900',
-    primaryDark: '#e69100',
+    primary: '#ff6b1a',
+    primaryHover: '#e85d0f',
+    primaryDark: '#cc5000',
 
     dark: {
         bg: 'bg-zinc-950',
@@ -54,8 +54,8 @@ export const SHADOWS = {
     md: 'shadow-md',
     lg: 'shadow-lg',
     xl: 'shadow-xl',
-    primary: 'shadow-[#ffaa18]/30',
-    primaryHover: 'shadow-[#ffaa18]/40',
+    primary: 'shadow-[#ff6b1a]/30',
+    primaryHover: 'shadow-[#ff6b1a]/40',
 } as const;
 
 export const BORDER_RADIUS = {

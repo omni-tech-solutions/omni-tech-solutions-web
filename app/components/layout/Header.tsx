@@ -5,7 +5,8 @@ import { useTranslation } from 'react-i18next';
 import { useRouter, usePathname } from 'next/navigation';
 import { Home, Briefcase, Info, Mail, Globe, ChevronDown, Sun, Moon } from 'lucide-react';
 import type { Theme, Language } from '@/app/types';
-import logo from '../../../public/assets/logo.png';
+import logoDark from '../../../public/assets/logo_dark.png';
+import logoWhite from '../../../public/assets/logo_white.png';
 import { COLORS } from '@/app/styles/theme';
 
 interface HeaderProps {
@@ -84,11 +85,11 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, colors, acti
                     {/* Logo */}
                     <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollTo('home')}>
                         <img
-                            src={logo.src}
+                            src={theme === 'dark' ? logoWhite.src : logoDark.src}
                             alt="Logo"
                             className="h-8 sm:h-12 lg:h-12 w-auto transition-transform hover:scale-105"
                         />
-                        <span style={{color: colors.text}} className="font-bold text-lg sm:inline">
+                        <span className={`${colors.text} font-bold text-lg sm:inline`}>
               OMNI Tech Solutions
             </span>
                     </div>
@@ -101,15 +102,27 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, colors, acti
                                 <button
                                     key={item.id}
                                     onClick={() => scrollTo(item.id)}
-                                    className={`flex items-center gap-2 py-2.5 ${colors.textSec} hover:text-[#ffaa18] transition-all duration-300 relative group focus:outline-none focus:text-[#ffaa18] ${
-                                        activeSection === item.id ? 'text-[#ffaa18]' : ''
+                                    className={`flex items-center gap-2 py-2.5 ${colors.textSec} transition-all duration-300 relative group focus:outline-none ${
+                                        activeSection === item.id ? '' : ''
                                     }`}
+                                    style={{
+                                        color: activeSection === item.id ? COLORS.primary : undefined
+                                    }}
+                                    onMouseEnter={(e) => e.currentTarget.style.color = COLORS.primary}
+                                    onMouseLeave={(e) => {
+                                        if (activeSection !== item.id) {
+                                            e.currentTarget.style.color = '';
+                                        }
+                                    }}
                                 >
                                     <IconComponent className="w-4 h-4" strokeWidth={2} />
                                     {item.label}
-                                    <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ffaa18] transition-all duration-300 group-hover:w-full ${
-                                        activeSection === item.id ? 'w-full' : ''
-                                    }`} />
+                                    <span
+                                        className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${
+                                            activeSection === item.id ? 'w-full' : ''
+                                        }`}
+                                        style={{ backgroundColor: COLORS.primary }}
+                                    />
                                 </button>
                             );
                         })}
@@ -118,7 +131,20 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, colors, acti
                         <div className={`relative flex items-center border-l ${colors.borderLight} pl-4`} ref={langMenuRef}>
                             <button
                                 onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-                                className={`flex items-center gap-2 px-3 py-2.5 rounded-lg transition-all duration-300 ${colors.textSec} hover:text-[#ffaa18] hover:bg-[#ffaa18]/10 focus:outline-none focus:bg-[#ffaa18]/10`}
+                                className={`flex items-center gap-2 px-3 py-2.5 rounded-lg transition-all duration-300 ${colors.textSec} focus:outline-none`}
+                                style={{
+                                    backgroundColor: isLangMenuOpen ? `${COLORS.primary}1a` : undefined
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.color = COLORS.primary;
+                                    e.currentTarget.style.backgroundColor = `${COLORS.primary}1a`;
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.color = '';
+                                    if (!isLangMenuOpen) {
+                                        e.currentTarget.style.backgroundColor = '';
+                                    }
+                                }}
                             >
                                 <Globe className="w-4 h-4" strokeWidth={2} />
                                 <span className="text-xs font-bold">{i18n.language.toUpperCase()}</span>
@@ -134,9 +160,24 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, colors, acti
                                             onClick={() => changeLanguage(lang)}
                                             className={`w-full px-4 py-2.5 text-left text-sm font-semibold transition-all duration-300 flex items-center justify-between focus:outline-none ${
                                                 i18n.language === lang
-                                                    ? 'bg-[#ffaa18] text-zinc-900'
-                                                    : `${colors.textSec} hover:bg-[#ffaa18]/10 hover:text-[#ffaa18] focus:bg-[#ffaa18]/10`
+                                                    ? 'text-zinc-900'
+                                                    : colors.textSec
                                             }`}
+                                            style={{
+                                                backgroundColor: i18n.language === lang ? COLORS.primary : undefined
+                                            }}
+                                            onMouseEnter={(e) => {
+                                                if (i18n.language !== lang) {
+                                                    e.currentTarget.style.backgroundColor = `${COLORS.primary}1a`;
+                                                    e.currentTarget.style.color = COLORS.primary;
+                                                }
+                                            }}
+                                            onMouseLeave={(e) => {
+                                                if (i18n.language !== lang) {
+                                                    e.currentTarget.style.backgroundColor = '';
+                                                    e.currentTarget.style.color = '';
+                                                }
+                                            }}
                                         >
                                             <span>{lang.toUpperCase()}</span>
                                             {i18n.language === lang && (
@@ -151,8 +192,16 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, colors, acti
                         {/* Theme Toggle */}
                         <button
                             onClick={toggleTheme}
-                            className={`p-2.5 rounded-lg ${colors.textSec} hover:text-[#ffaa18] hover:bg-[#ffaa18]/10 transition-all duration-300 group focus:outline-none focus:bg-[#ffaa18]/10`}
+                            className={`p-2.5 rounded-lg ${colors.textSec} transition-all duration-300 group focus:outline-none`}
                             aria-label="Toggle theme"
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.color = COLORS.primary;
+                                e.currentTarget.style.backgroundColor = `${COLORS.primary}1a`;
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.color = '';
+                                e.currentTarget.style.backgroundColor = '';
+                            }}
                         >
                             {theme === 'dark' ? (
                                 <Sun className="w-5 h-5 transition-transform duration-300 group-hover:rotate-45" strokeWidth={2} />
@@ -165,7 +214,14 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, colors, acti
                     {/* Mobile Menu Button */}
                     <button
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className="md:hidden p-2 text-[#ffaa18] hover:bg-[#ffaa18]/10 rounded-lg transition-all"
+                        className="md:hidden p-2 rounded-lg transition-all"
+                        style={{ color: COLORS.primary }}
+                        onMouseEnter={(e) => {
+                            e.currentTarget.style.backgroundColor = `${COLORS.primary}1a`;
+                        }}
+                        onMouseLeave={(e) => {
+                            e.currentTarget.style.backgroundColor = '';
+                        }}
                     >
                         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path
@@ -188,9 +244,21 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, colors, acti
                                     <button
                                         key={item.id}
                                         onClick={() => scrollTo(item.id)}
-                                        className={`flex items-center gap-3 w-full text-left py-3 px-4 rounded-lg ${colors.textSec} hover:text-[#ffaa18] hover:bg-[#ffaa18]/10 transition-all duration-300 focus:outline-none focus:bg-[#ffaa18]/10 ${
-                                            activeSection === item.id ? 'text-[#ffaa18] bg-[#ffaa18]/10' : ''
-                                        }`}
+                                        className={`flex items-center gap-3 w-full text-left py-3 px-4 rounded-lg ${colors.textSec} transition-all duration-300 focus:outline-none`}
+                                        style={{
+                                            color: activeSection === item.id ? COLORS.primary : undefined,
+                                            backgroundColor: activeSection === item.id ? `${COLORS.primary}1a` : undefined
+                                        }}
+                                        onMouseEnter={(e) => {
+                                            e.currentTarget.style.color = COLORS.primary;
+                                            e.currentTarget.style.backgroundColor = `${COLORS.primary}1a`;
+                                        }}
+                                        onMouseLeave={(e) => {
+                                            if (activeSection !== item.id) {
+                                                e.currentTarget.style.color = '';
+                                                e.currentTarget.style.backgroundColor = '';
+                                            }
+                                        }}
                                     >
                                         <IconComponent className="w-5 h-5" strokeWidth={2} />
                                         {item.label}
@@ -206,8 +274,21 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, colors, acti
                                         key={lang}
                                         onClick={() => changeLanguage(lang)}
                                         className={`px-3 py-2 rounded-lg text-sm font-bold transition-all duration-300 focus:outline-none ${
-                                            i18n.language === lang ? 'bg-[#ffaa18] text-zinc-900' : `${colors.textSec} hover:bg-[#ffaa18]/10 focus:bg-[#ffaa18]/10`
+                                            i18n.language === lang ? 'text-zinc-900' : colors.textSec
                                         }`}
+                                        style={{
+                                            backgroundColor: i18n.language === lang ? COLORS.primary : undefined
+                                        }}
+                                        onMouseEnter={(e) => {
+                                            if (i18n.language !== lang) {
+                                                e.currentTarget.style.backgroundColor = `${COLORS.primary}1a`;
+                                            }
+                                        }}
+                                        onMouseLeave={(e) => {
+                                            if (i18n.language !== lang) {
+                                                e.currentTarget.style.backgroundColor = '';
+                                            }
+                                        }}
                                     >
                                         {lang.toUpperCase()}
                                     </button>
@@ -216,8 +297,16 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, colors, acti
 
                             <button
                                 onClick={toggleTheme}
-                                className={`p-2.5 rounded-lg ${colors.textSec} hover:text-[#ffaa18] hover:bg-[#ffaa18]/10 transition-all duration-300 group focus:outline-none focus:bg-[#ffaa18]/10`}
+                                className={`p-2.5 rounded-lg ${colors.textSec} transition-all duration-300 group focus:outline-none`}
                                 aria-label="Toggle theme"
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.color = COLORS.primary;
+                                    e.currentTarget.style.backgroundColor = `${COLORS.primary}1a`;
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.color = '';
+                                    e.currentTarget.style.backgroundColor = '';
+                                }}
                             >
                                 {theme === 'dark' ? (
                                     <Sun className="w-5 h-5 transition-transform duration-300 group-hover:rotate-45" strokeWidth={2} />
