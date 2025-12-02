@@ -30,7 +30,7 @@ const ServicePage: React.FC = () => {
                 <ServiceDetailPage colors={colors} />
             </main>
 
-            <Footer colors={colors} />
+            <Footer colors={colors} theme={theme} />
 
             <style jsx global>{`
                 @keyframes fadeIn {

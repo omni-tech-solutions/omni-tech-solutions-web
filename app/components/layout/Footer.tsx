@@ -3,7 +3,9 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
-import logo from '@/public/assets/logo.png';
+import logoDark from '@/public/assets/logo_dark.png';
+import logoWhite from '@/public/assets/logo_white.png';
+import { COLORS } from '@/app/styles/theme';
 import {
   Mail,
   Phone,
@@ -19,9 +21,10 @@ import {
 
 interface FooterProps {
   colors: ReturnType<typeof import('@/app/styles/theme').getThemeColors>;
+  theme: 'dark' | 'light';
 }
 
-export const Footer: React.FC<FooterProps> = ({ colors }) => {
+export const Footer: React.FC<FooterProps> = ({ colors, theme }) => {
   const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [subscribeStatus, setSubscribeStatus] = useState<'idle' | 'success' | 'error'>('idle');
@@ -66,7 +69,7 @@ export const Footer: React.FC<FooterProps> = ({ colors }) => {
           <div className="space-y-6">
             <div className="flex items-center gap-3">
               <img
-                src={logo.src}
+                src={theme === 'dark' ? logoWhite.src : logoDark.src}
                 alt="Omni Tech Solutions Logo"
                 className="h-9 w-auto grayscale opacity-60 hover:opacity-80 transition-opacity duration-500"
               />
@@ -87,7 +90,14 @@ export const Footer: React.FC<FooterProps> = ({ colors }) => {
                   aria-label={social.label}
                   className={`${colors.textSec} group relative focus:outline-none`}
                 >
-                  <div className={`p-2.5 rounded-xl border ${colors.borderLight} ${colors.cardHover} transition-all duration-300 group-hover:border-amber-500 group-hover:-translate-y-1 group-hover:shadow-lg group-focus:border-amber-500 group-focus:shadow-lg`}>
+                  <div
+                    className={`p-2.5 rounded-xl border ${colors.borderLight} ${colors.cardHover} transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-lg group-focus:shadow-lg`}
+                    style={{
+                      borderColor: 'inherit'
+                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.borderColor = COLORS.primary}
+                    onMouseLeave={(e) => e.currentTarget.style.borderColor = ''}
+                  >
                     <social.icon className="w-[18px] h-[18px]" strokeWidth={1.5} />
                   </div>
                 </a>
@@ -108,7 +118,10 @@ export const Footer: React.FC<FooterProps> = ({ colors }) => {
                       href={link.href}
                       className={`${colors.textSec} text-sm transition-all duration-300 opacity-75 hover:opacity-100 hover:translate-x-1 inline-flex items-center group focus:outline-none focus:opacity-100`}
                     >
-                      <span className={`w-0 h-px bg-amber-500 transition-all duration-300 group-hover:w-4 mr-0 group-hover:mr-2`}></span>
+                      <span
+                        className={`w-0 h-px transition-all duration-300 group-hover:w-4 mr-0 group-hover:mr-2`}
+                        style={{ backgroundColor: COLORS.primary }}
+                      ></span>
                       {t(`nav.${link.key}`)}
                     </Link>
                   </li>
@@ -178,11 +191,22 @@ export const Footer: React.FC<FooterProps> = ({ colors }) => {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder={t('footer.newsletter.placeholder')}
                   required
-                  className={`w-full px-4 py-3 pr-12 rounded-xl border ${colors.borderLight} ${colors.section} ${colors.text} text-sm placeholder:text-sm placeholder:opacity-50 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-0 focus:border-amber-500 transition-all duration-300`}
+                  className={`w-full px-4 py-3 pr-12 rounded-xl border ${colors.borderLight} ${colors.section} ${colors.text} text-sm placeholder:text-sm placeholder:opacity-50 focus:outline-none focus:ring-2 focus:ring-offset-0 transition-all duration-300`}
+                  style={{
+                    '--tw-ring-color': COLORS.primary
+                  } as React.CSSProperties}
+                  onFocus={(e) => e.currentTarget.style.borderColor = COLORS.primary}
+                  onBlur={(e) => e.currentTarget.style.borderColor = ''}
                 />
                 <button
                   type="submit"
-                  className={`absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-lg transition-all duration-300 hover:scale-110 active:scale-95 shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500 text-amber-500 hover:text-amber-600`}
+                  className={`absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-lg transition-all duration-300 hover:scale-110 active:scale-95 shadow-sm focus:outline-none focus:ring-2`}
+                  style={{
+                    color: COLORS.primary,
+                    '--tw-ring-color': COLORS.primary
+                  } as React.CSSProperties}
+                  onMouseEnter={(e) => e.currentTarget.style.color = COLORS.primaryHover}
+                  onMouseLeave={(e) => e.currentTarget.style.color = COLORS.primary}
                   aria-label="Subscribe to newsletter"
                 >
                   <Send className="w-4 h-4" strokeWidth={2.5} />
@@ -191,7 +215,10 @@ export const Footer: React.FC<FooterProps> = ({ colors }) => {
 
               {subscribeStatus === 'success' && (
                 <p className={`${colors.textSec} text-xs opacity-70 flex items-center gap-2`}>
-                  <span className={`w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse`}></span>
+                  <span
+                    className={`w-1.5 h-1.5 rounded-full animate-pulse`}
+                    style={{ backgroundColor: COLORS.primary }}
+                  ></span>
                   {t('footer.newsletter.success')}
                 </p>
               )}
@@ -211,7 +238,9 @@ export const Footer: React.FC<FooterProps> = ({ colors }) => {
             </p>
             <button
               onClick={scrollToTop}
-              className={`${colors.textSec} p-2.5 rounded-xl border ${colors.borderLight} ${colors.cardHover} transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:border-amber-500 shadow-sm group focus:outline-none focus:border-amber-500 focus:shadow-lg`}
+              className={`${colors.textSec} p-2.5 rounded-xl border ${colors.borderLight} ${colors.cardHover} transition-all duration-300 hover:scale-110 hover:-translate-y-1 shadow-sm group focus:outline-none focus:shadow-lg`}
+              onMouseEnter={(e) => e.currentTarget.style.borderColor = COLORS.primary}
+              onMouseLeave={(e) => e.currentTarget.style.borderColor = ''}
               aria-label="Scroll to top"
             >
               <ArrowUp className="w-4 h-4 transition-transform duration-300 group-hover:scale-110" strokeWidth={2.5} />

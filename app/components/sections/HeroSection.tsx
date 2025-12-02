@@ -88,7 +88,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ colors }) => {
 
                     {/* Right Visual - 6 columns */}
                     <div className="lg:col-span-6 relative order-first lg:order-last">
-                        <div className="relative aspect-square max-w-md lg:max-w-2xl mx-auto flex items-center justify-center p-8 sm:p-12">
+                        <div className="relative aspect-square w-full max-w-lg sm:max-w-xl lg:max-w-2xl mx-auto flex items-center justify-center p-4 sm:p-8 lg:p-12">
 
                             {/* Modern Tech Illustration */}
                             <svg
