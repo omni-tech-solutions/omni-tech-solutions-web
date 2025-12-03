@@ -402,8 +402,8 @@
     "callUs": "Обадете ни се сега",
     "emailUs": "Пишете ни директно",
     "contactInfo": {
-      "email": { "title": "Имейл", "value": "info@omnitech.bg" },
-      "phone": { "title": "Телефон", "value": "+359 XXX XXX XXX" },
+      "email": { "title": "Имейл", "value": "support@omni-solutions.co" },
+      "phone": { "title": "Телефон", "value": "+359899350531" },
       "location": { "title": "Локация", "value": "Самуил, Разградска област, България" },
       "hours": { "title": "Работно време", "value": "Пон–Пет: 9:00 – 18:00" }
     },

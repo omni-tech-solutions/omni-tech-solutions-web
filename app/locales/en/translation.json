@@ -402,8 +402,8 @@
     "callUs": "Call Us Now",
     "emailUs": "Email Us Directly",
     "contactInfo": {
-      "email": { "title": "Email", "value": "info@omnitech.bg" },
-      "phone": { "title": "Phone", "value": "+359 XXX XXX XXX" },
+      "email": { "title": "Email", "value": "support@omni-solutions.co" },
+      "phone": { "title": "Phone", "value": "+359899350531" },
       "location": { "title": "Location", "value": "Samuil, Razgrad Region, Bulgaria" },
       "hours": { "title": "Working Hours", "value": "Mon–Fri: 9:00 AM – 6:00 PM" }
     },

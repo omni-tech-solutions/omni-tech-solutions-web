@@ -402,8 +402,8 @@
     "callUs": "Bizi Arayın",
     "emailUs": "Bize E-posta Gönderin",
     "contactInfo": {
-      "email": { "title": "E-posta", "value": "info@omnitech.bg" },
-      "phone": { "title": "Telefon", "value": "+359 XXX XXX XXX" },
+      "email": { "title": "E-posta", "value": "support@omni-solutions.co" },
+      "phone": { "title": "Telefon", "value": "+359899350531" },
       "location": { "title": "Konum", "value": "Samuil, Razgrad Bölgesi, Bulgaristan" },
       "hours": { "title": "Çalışma Saatleri", "value": "Pazartesi–Cuma: 09:00 – 18:00" }
     },

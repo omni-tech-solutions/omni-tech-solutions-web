@@ -414,7 +414,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ colors }) 
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <a
-                            href="tel:+359123456789"
+                            href="tel:+359899350531"
                             className={`flex items-center justify-center gap-2 px-6 py-3 ${BORDER_RADIUS.md} font-semibold transition-all duration-200 hover:opacity-90 hover:shadow-lg`}
                             style={{
                                 backgroundColor: COLORS.primary,
@@ -426,7 +426,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ colors }) 
                         </a>
 
                         <a
-                            href="mailto:info@omnitech.bg"
+                            href="mailto:support@omni-solutions.co"
                             className={`flex items-center justify-center gap-2 px-6 py-3 ${BORDER_RADIUS.md} font-semibold transition-all duration-200 border group`}
                             style={{
                                 borderWidth: '1px',

@@ -138,24 +138,24 @@ export const Footer: React.FC<FooterProps> = ({ colors, theme }) => {
             <ul className="space-y-4">
               <li>
                 <a
-                  href="mailto:info@omnitech.bg"
+                  href="mailto:support@omni-solutions.co"
                   className={`${colors.textSec} text-sm flex items-start gap-3 transition-all duration-300 group hover:translate-x-1 focus:outline-none focus:translate-x-1`}
                 >
                   <div className={`mt-0.5 p-1.5 rounded-lg ${colors.cardHover} transition-colors duration-300`}>
                     <Mail className="w-4 h-4 opacity-70" strokeWidth={1.5} />
                   </div>
-                  <span className="opacity-75 group-hover:opacity-100 transition-opacity duration-300">info@omnitech.bg</span>
+                  <span className="opacity-75 group-hover:opacity-100 transition-opacity duration-300">support@omni-solutions.co</span>
                 </a>
               </li>
               <li>
                 <a
-                  href="tel:+359XXXXXXXXX"
+                  href="tel:+359899350531"
                   className={`${colors.textSec} text-sm flex items-start gap-3 transition-all duration-300 group hover:translate-x-1 focus:outline-none focus:translate-x-1`}
                 >
                   <div className={`mt-0.5 p-1.5 rounded-lg ${colors.cardHover} transition-colors duration-300`}>
                     <Phone className="w-4 h-4 opacity-70" strokeWidth={1.5} />
                   </div>
-                  <span className="opacity-75 group-hover:opacity-100 transition-opacity duration-300">+359 XXX XXX XXX</span>
+                  <span className="opacity-75 group-hover:opacity-100 transition-opacity duration-300">+359899350531</span>
                 </a>
               </li>
               <li className={`${colors.textSec} text-sm flex items-start gap-3 opacity-75`}>

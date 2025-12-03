@@ -44,13 +44,13 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ colors }) => {
             icon: Mail,
             title: t('contact.contactInfo.email.title'),
             value: t('contact.contactInfo.email.value'),
-            link: 'mailto:info@omnitech.bg'
+            link: 'mailto:support@omni-solutions.co'
         },
         {
             icon: Phone,
             title: t('contact.contactInfo.phone.title'),
             value: t('contact.contactInfo.phone.value'),
-            link: 'tel:+359XXXXXXXXX'
+            link: 'tel:+359899350531'
         },
         {
             icon: MapPin,
