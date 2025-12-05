@@ -15,10 +15,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ colors }) => {
     return (
         <section
             id="home"
-            className="relative min-h-screen flex items-center overflow-hidden"
+            className="relative min-h-[600px] md:min-h-[700px] lg:min-h-[800px] flex items-center overflow-hidden"
         >
             {/* Content */}
-            <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-32">
+            <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
                     {/* Left Content - 6 columns */}
@@ -124,14 +124,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ colors }) => {
                                         <stop offset="100%" stopColor="#ffffff" stopOpacity="0.02"/>
                                     </linearGradient>
                                 </defs>
-
-                                {/* Background Glow Orbs */}
-                                <g className="glow-orb-1" opacity="0.3">
-                                    <circle cx="150" cy="150" r="80" fill="url(#primaryGrad)" filter="blur(40px)"/>
-                                </g>
-                                <g className="glow-orb-2" opacity="0.2">
-                                    <circle cx="450" cy="400" r="100" fill="url(#primaryGrad)" filter="blur(50px)"/>
-                                </g>
 
                                 {/* Central Isometric Device - Laptop */}
                                 <g className="laptop-main" filter="url(#shadow)">
@@ -302,17 +294,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ colors }) => {
                     }
                 }
 
-                @keyframes pulse-glow {
-                    0%, 100% {
-                        opacity: 0.3;
-                        transform: scale(1);
-                    }
-                    50% {
-                        opacity: 0.5;
-                        transform: scale(1.02);
-                    }
-                }
-
                 @keyframes pulse-dot {
                     0%, 100% {
                         opacity: 0.6;
@@ -362,15 +343,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ colors }) => {
                     to {
                         stroke-dashoffset: -8;
                     }
-                }
-
-                /* Glow Orbs */
-                .glow-orb-1 {
-                    animation: pulse-glow 8s ease-in-out infinite;
-                }
-
-                .glow-orb-2 {
-                    animation: pulse-glow 10s ease-in-out infinite 1s;
                 }
 
                 /* Main Laptop */
