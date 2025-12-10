@@ -86,7 +86,7 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, colors, acti
                     <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollTo('home')}>
                         <img
                             src={theme === 'dark' ? logoWhite.src : logoDark.src}
-                            alt="Logo"
+                            alt="OMNI Tech Solutions - Professional Technology Services Logo"
                             className="h-8 sm:h-12 lg:h-12 w-auto transition-transform hover:scale-105"
                         />
                         <span className={`${colors.text} font-bold text-lg sm:inline`}>

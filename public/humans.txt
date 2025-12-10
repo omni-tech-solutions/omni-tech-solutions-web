@@ -1,0 +1,55 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Developer/Designer: Omni Tech Solutions Team
+    Contact: support [at] omni-solutions.co
+    Location: Bulgaria
+
+# THANKS
+
+    To all our clients for trusting us with their projects
+    To the open-source community for amazing tools
+
+# TECHNOLOGY COLOPHON
+
+    Framework: Next.js 14
+    Language: TypeScript
+    UI Library: React 18
+    Styling: Tailwind CSS
+    Icons: Lucide React
+    Internationalization: i18next
+    Hosting: [Your hosting provider]
+    SEO: Comprehensive optimization
+    Performance: Optimized for speed
+
+# STANDARDS
+
+    HTML5, CSS3, JavaScript ES6+
+    Responsive Design
+    Accessibility (WCAG 2.1)
+    SEO Best Practices
+    Mobile-First Approach
+    Progressive Enhancement
+
+# SITE
+
+    Last update: 2024/12/10
+    Languages: Bulgarian, English, Turkish
+    Components: React Components
+    Standards: W3C HTML5, CSS3
+    Software: VS Code, Git
+
+# CREDITS
+
+    Design: Omni Tech Solutions
+    Development: Omni Tech Solutions
+    SEO Optimization: Omni Tech Solutions
+    Content: Omni Tech Solutions
+
+# CONTACT
+
+    Email: support@omni-solutions.co
+    Phone: +359 899 350 531
+    Website: https://tech.omni-solutions.co

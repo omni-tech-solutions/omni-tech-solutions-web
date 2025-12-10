@@ -1,0 +1,26 @@
+# Our security address
+Contact: mailto:support@omni-solutions.co
+
+# Our OpenPGP key (add your actual key if you have one)
+# Encryption: https://tech.omni-solutions.co/pgp-key.txt
+
+# Our security policy
+Policy: https://tech.omni-solutions.co/security-policy
+
+# Preferred languages
+Preferred-Languages: bg, en, tr
+
+# Canonical URI
+Canonical: https://tech.omni-solutions.co/.well-known/security.txt
+
+# Expiry date (update this annually)
+Expires: 2025-12-31T23:59:59.000Z
+
+# Acknowledgments page
+# Acknowledgments: https://tech.omni-solutions.co/security-acknowledgments
+
+# Hiring page (if applicable)
+# Hiring: https://tech.omni-solutions.co/careers
+
+# Response time
+# We aim to respond within 48 hours
