@@ -7,19 +7,19 @@
   },
   "hero": {
     "badge": "7/24 Erişilebilir",
-    "title": "Ev ve İşletmeler İçin Modern IT Çözümleri",
+    "title": "Sizin İçin Çalışan Teknoloji",
     "subtitle": "",
-    "description": "Gerçek ihtiyaçlarınızı karşılamak üzere tasarlanmış özel web uygulamaları, web siteleri, otomasyon ve yerel BT hizmetleri.",
-    "cta": "Bizimle İletişime Geçin",
-    "learnMore": "Daha Fazla Bilgi Edinin",
+    "description": "Gerçek ihtiyaçlarınıza göre tasarlanmış özel web uygulamaları, web siteleri, otomasyon ve yerel BT hizmetleri.",
+    "cta": "Projenize Başlayın",
+    "learnMore": "Daha Fazla Bilgi",
     "rating": "5.0 Müşteri Puanı",
-    "clients": "10+ Başarılı Proje",
+    "clients": "Başarılı Proje",
     "projects": "Yüksek Kalite",
     "scrollDown": "Aşağı Kaydır",
     "trustBadges": {
       "secure": "Güvenli",
       "support": "7/24 Destek",
-      "fastDelivery": "Hızlı Teslimat",
+      "fastDelivery": "Hızlı Teslim",
       "expertTeam": "Uzman Ekip"
     }
   },

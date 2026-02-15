@@ -7,19 +7,19 @@
   },
   "hero": {
     "badge": "Available 24/7",
-    "title": "Modern IT Solutions for Your Home and Business",
+    "title": "Technology That Works for You",
     "subtitle": "",
-    "description": "Custom web applications, websites, automation, and local IT services designed to meet your real needs.",
+    "description": "Custom web applications, websites, automation, and local IT services — designed around your real needs.",
     "cta": "Start Your Project",
     "learnMore": "Discover More",
-    "rating": "5.0 ★ Rating",
-    "clients": "10+ Successful Projects",
-    "projects": "High Quality",
+    "rating": "5.0 Client Rating",
+    "clients": "Successful Projects",
+    "projects": "Premium Quality",
     "scrollDown": "Scroll Down",
     "trustBadges": {
       "secure": "Secure",
       "support": "24/7 Support",
-      "fastDelivery": "Fast Delivery",
+      "fastDelivery": "Fast Turnaround",
       "expertTeam": "Expert Team"
     }
   },
