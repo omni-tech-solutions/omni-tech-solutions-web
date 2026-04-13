@@ -72,6 +72,11 @@
         "icon": "MonitorSmartphone",
         "title": "İşletim Sistemleri",
         "desc": "Kurulum, optimizasyon ve bakım"
+      },
+      {
+        "icon": "Smartphone",
+        "title": "Telefon Tamir Hizmetleri",
+        "desc": "Tüm telefon markaları için yazılım ve donanım tamiri"
       }
     ],
     "pricing": {
@@ -380,6 +385,20 @@
         "cta": "Daha Fazla Bilgi"
       }
     ]
+  },
+  "technologies": {
+    "title": "Modern Teknolojiler",
+    "subtitle": "Ölçeklenebilir ve yüksek performanslı çözümler için sektör lideri araçlar ve framework'ler kullanıyoruz",
+    "categories": {
+      "all": "Tümü",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Veritabanı",
+      "mobile": "Mobil",
+      "devops": "DevOps & Cloud",
+      "ai": "AI & Otomasyon",
+      "tools": "Araçlar"
+    }
   },
   "trustIndicators": {
     "experience": "Yıl Deneyim",

@@ -9,6 +9,7 @@ import {
     Network,
     Camera,
     MonitorSmartphone,
+    Smartphone,
     ArrowLeft,
     Check,
     Zap,
@@ -37,7 +38,8 @@ const serviceConfig: Record<string, {
     'web-applications': { icon: Code2, iconName: 'Code2' },
     'local-networks': { icon: Network, iconName: 'Network' },
     'video-surveillance': { icon: Camera, iconName: 'Camera' },
-    'operating-systems': { icon: MonitorSmartphone, iconName: 'MonitorSmartphone' }
+    'operating-systems': { icon: MonitorSmartphone, iconName: 'MonitorSmartphone' },
+    'smartphone-repair': { icon: Smartphone, iconName: 'Smartphone' }
 };
 
 export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ colors }) => {

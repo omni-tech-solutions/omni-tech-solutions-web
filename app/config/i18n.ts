@@ -18,7 +18,7 @@ i18n
     .use(initReactI18next)
     .init({
         resources,
-        lng: isBrowser ? localStorage.getItem('i18nextLng') || 'bg' : 'bg',
+        lng: 'bg',
         fallbackLng: 'bg',
         debug: false,
 
@@ -27,11 +27,11 @@ i18n
         },
 
         react: {
-            useSuspense: false, // Важно за SSR
+            useSuspense: false,
         },
     });
 
-// Запазване на езика в localStorage само на клиента
+// Persist language changes - only on client
 if (isBrowser) {
     i18n.on('languageChanged', (lng) => {
         localStorage.setItem('i18nextLng', lng);

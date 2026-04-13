@@ -3,7 +3,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/navigation';
-import { Globe, Code2, Network, Camera, MonitorSmartphone, LucideIcon, ArrowUpRight } from 'lucide-react';
+import { Globe, Code2, Network, Camera, MonitorSmartphone, Smartphone, LucideIcon, ArrowUpRight } from 'lucide-react';
 import { COLORS, BORDER_RADIUS } from '@/app/styles/theme';
 
 interface ServicesSectionProps {
@@ -16,7 +16,8 @@ const iconMap: Record<string, LucideIcon> = {
     Code2,
     Network,
     Camera,
-    MonitorSmartphone
+    MonitorSmartphone,
+    Smartphone
 };
 
 // Service IDs for routing
@@ -25,7 +26,8 @@ const serviceIds = [
     'web-applications',
     'local-networks',
     'video-surveillance',
-    'operating-systems'
+    'operating-systems',
+    'smartphone-repair'
 ];
 
 export const ServicesSection: React.FC<ServicesSectionProps> = ({ colors }) => {

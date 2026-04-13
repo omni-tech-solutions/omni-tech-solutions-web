@@ -72,6 +72,11 @@
         "icon": "MonitorSmartphone",
         "title": "OS Installation & Support",
         "desc": "Operating system installation, optimization, and maintenance"
+      },
+      {
+        "icon": "Smartphone",
+        "title": "Phone Repair Services",
+        "desc": "Software troubleshooting and hardware repairs for all phone brands"
       }
     ],
     "pricing": {
@@ -380,6 +385,20 @@
         "cta": "Learn More"
       }
     ]
+  },
+  "technologies": {
+    "title": "Powered by Modern Technologies",
+    "subtitle": "We use industry-leading tools and frameworks to build scalable, high-performance solutions",
+    "categories": {
+      "all": "All",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Database",
+      "mobile": "Mobile App",
+      "devops": "DevOps & Cloud",
+      "ai": "AI & Automation",
+      "tools": "Tools"
+    }
   },
   "trustIndicators": {
     "experience": "Years Experience",

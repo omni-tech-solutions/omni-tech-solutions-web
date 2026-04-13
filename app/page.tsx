@@ -8,6 +8,7 @@ import {useActiveSection} from "@/app/hooks/useActiveSection";
 import {Header} from "@/app/components/layout/Header";
 import {HeroSection} from "@/app/components/sections/HeroSection";
 import {ServicesSection} from "@/app/components/sections/ServicesSection";
+import {TechnologiesSection} from "@/app/components/sections/TechnologiesSection";
 import {AboutSection} from "@/app/components/sections/AboutSection";
 import {ContactSection} from "@/app/components/sections/ContactSection";
 import {Footer} from "@/app/components/layout/Footer";
@@ -76,6 +77,7 @@ const OmniTechSolutions: React.FC = () => {
             <main>
                 <HeroSection colors={colors} />
                 <ServicesSection colors={colors} />
+                <TechnologiesSection colors={colors} />
                 <AboutSection colors={colors} />
                 <ContactSection colors={colors} />
             </main>

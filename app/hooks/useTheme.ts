@@ -3,29 +3,30 @@ import type { Theme } from '@/app/types';
 import { getThemeColors } from '@/app/styles/theme';
 
 export const useTheme = () => {
-    // Initialize theme from localStorage immediately (before first render)
-    const [theme, setTheme] = useState<Theme>(() => {
-        // Only access localStorage in browser
-        if (typeof window !== 'undefined') {
-            const savedTheme = localStorage.getItem('theme') as Theme | null;
-            return savedTheme || 'light'; // Default to 'light' if no saved theme
+    const [theme, setTheme] = useState<Theme>('light');
+    const [mounted, setMounted] = useState(false);
+
+    // Sync theme from localStorage after mount to avoid hydration mismatch
+    useEffect(() => {
+        const savedTheme = localStorage.getItem('theme') as Theme | null;
+        if (savedTheme) {
+            setTheme(savedTheme);
         }
-        return 'light'; // SSR fallback
-    });
+        setMounted(true);
+    }, []);
 
     // Apply theme changes to document
     useEffect(() => {
-        // Apply theme class to html element
+        if (!mounted) return;
+
         document.documentElement.classList.remove('light', 'dark');
         document.documentElement.classList.add(theme);
 
-        // Apply background color
         document.body.style.backgroundColor = theme === 'dark' ? '#18181b' : '#ffffff';
         document.body.style.color = theme === 'dark' ? '#ffffff' : '#18181b';
 
-        // Save to localStorage
         localStorage.setItem('theme', theme);
-    }, [theme]);
+    }, [theme, mounted]);
 
     const toggleTheme = () => {
         const newTheme = theme === 'dark' ? 'light' : 'dark';
