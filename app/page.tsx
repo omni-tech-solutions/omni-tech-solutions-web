@@ -77,7 +77,7 @@ const OmniTechSolutions: React.FC = () => {
             <main>
                 <HeroSection colors={colors} />
                 <ServicesSection colors={colors} />
-                <TechnologiesSection colors={colors} />
+                <TechnologiesSection colors={colors} theme={theme} />
                 <AboutSection colors={colors} />
                 <ContactSection colors={colors} />
             </main>
