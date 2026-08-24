@@ -35,10 +35,14 @@
     "readyToStart": "Başlamaya Hazır mısınız?",
     "contactCTA": "Ücretsiz danışmanlık ve özel fiyat teklifi için bugün bize ulaşın.",
     "getQuote": "Fiyat Teklifi Alın",
-    "viewPortfolio": "Portföyü Görüntüle",
-    "pricingTitle": "Hizmetler ve Fiyatlandırma",
-    "pricingSubtitle": "Kaliteli Hizmetler İçin Şeffaf ve Adil Fiyatlandırma",
-    "pricingNote": "* Fiyatlar gösterge niteliğindedir ve projeye bağlı olarak değişebilir. Doğru bir teklif için bizimle iletişime geçin.",
+    "offeringsTitle": "Neler Sunuyoruz",
+    "offeringsSubtitle": "Projenizin kapsamına göre uyarlanmış eksiksiz bir çözüm yelpazesi",
+    "offeringsNote": "* Her proje ayrı ayrı değerlendirilir. Ücretsiz danışmanlık ve ihtiyaçlarınıza özel bir teklif için bizimle iletişime geçin.",
+    "exploreOfferings": "Çözümleri İnceleyin",
+    "warranty": "Garantili profesyonel hizmet",
+    "solutionsLabel": "çözüm",
+    "talkToUs": "Bir uzmanla görüşün",
+    "freeConsultation": "Ücretsiz danışmanlık · Yükümlülük yok",
     "features": {
       "fastDelivery": "Hızlı Teslimat",
       "support247": "7/24 Destek",
@@ -79,231 +83,188 @@
         "desc": "Tüm telefon markaları için yazılım ve donanım tamiri"
       }
     ],
-    "pricing": {
+    "offerings": {
       "web-design": [
         {
           "name": "Kartvizit Web Sitesi",
-          "price": "€350'den başlayan fiyatlarla",
           "description": "5 sayfaya kadar, duyarlı (responsive) tasarım ve iletişim formu."
         },
         {
           "name": "Kurumsal Web Sitesi",
-          "price": "€700'den başlayan fiyatlarla",
           "description": "10+ sayfa, yönetici paneli, SEO ve gelişmiş güvenlik."
         },
         {
           "name": "Online Mağaza",
-          "price": "€1000'den başlayan fiyatlarla",
           "description": "Ödeme sistemleri ve ürün yönetimi ile e-ticaret sistemi."
         },
         {
           "name": "Web Sitesi Yeniden Tasarımı",
-          "price": "€400'den başlayan fiyatlarla",
           "description": "Modern görünüm ve geliştirilmiş performans."
         },
         {
           "name": "Açılış Sayfası (Landing Page)",
-          "price": "€250'den başlayan fiyatlarla",
           "description": "Pazarlama kampanyaları için tek sayfalık site."
         },
         {
           "name": "Web Sitesi Bakımı",
-          "price": "€60/ay'dan başlayan fiyatlarla",
           "description": "Güncellemeler, yedeklemeler ve sürekli teknik destek."
         }
       ],
       "web-applications": [
         {
           "name": "Özel Web Uygulaması",
-          "price": "€1800'den başlayan fiyatlarla",
           "description": "İş gereksinimlerinize göre geliştirilmiş."
         },
         {
           "name": "CRM Sistemi",
-          "price": "€2200'den başlayan fiyatlarla",
           "description": "Müşterileri, satışları ve iç süreçleri yönetin."
         },
         {
           "name": "API Entegrasyonu",
-          "price": "€350'den başlayan fiyatlarla",
           "description": "Yazılımınızı harici sistemlere bağlayın."
         },
         {
           "name": "İş Süreçleri Otomasyonu",
-          "price": "€700'den başlayan fiyatlarla",
           "description": "Tekrarlayan görevleri otomatikleştirin ve zamandan tasarruf edin."
         },
         {
           "name": "Mobil Uygulama",
-          "price": "€2000'den başlayan fiyatlarla",
           "description": "Android ve iOS uygulama geliştirme."
         },
         {
           "name": "Veritabanı Optimizasyonu",
-          "price": "€400'den başlayan fiyatlarla",
           "description": "Verilerinizin performansını ve yapısını iyileştirin."
         }
       ],
       "local-networks": [
         {
           "name": "Yerel Ağ Kurulumu",
-          "price": "€250'den başlayan fiyatlarla",
           "description": "10 cihaza kadar kurulum, kablolama ve yapılandırma."
         },
         {
           "name": "Wi-Fi Kurulumu",
-          "price": "€120",
           "description": "Profesyonel kurulum ve sinyal optimizasyonu."
         },
         {
           "name": "Yönlendirici (Router) Yapılandırması",
-          "price": "€40",
           "description": "Kurulum, güvenlik ve port yönlendirme."
         },
         {
           "name": "Ağ Tanılama",
-          "price": "€70",
           "description": "Bağlantı sorunlarını belirleme ve çözme."
         },
         {
           "name": "Sunucu Kurulumu",
-          "price": "€180'den başlayan fiyatlarla",
           "description": "Dosya, yazıcı, e-posta veya alan adı sunucusu yapılandırması."
         },
         {
           "name": "Ağ Güvenliği",
-          "price": "€200'den başlayan fiyatlarla",
           "description": "Güvenlik duvarı (Firewall), VPN ve ağ koruması."
         },
         {
           "name": "Kablo Altyapısı",
-          "price": "€8/nokta'dan başlayan fiyatlarla",
           "description": "Kablo tesisatı, etiketleme ve test etme."
         }
       ],
       "video-surveillance": [
         {
           "name": "4 Kameralı Sistem",
-          "price": "€650'den başlayan fiyatlarla",
           "description": "HD kameralar, DVR ve tam kurulum."
         },
         {
           "name": "8 Kameralı Sistem",
-          "price": "€1100'den başlayan fiyatlarla",
           "description": "Kayıt ve uzaktan erişim özellikli Full HD kameralar."
         },
         {
           "name": "IP Kamera Kurulumu",
-          "price": "€150",
           "description": "Tek kamera kurulumu ve ayarlanması."
         },
         {
           "name": "Kamera Ekleme",
-          "price": "€120",
           "description": "Mevcut sisteme entegrasyon."
         },
         {
           "name": "Bulut Depolama",
-          "price": "€25/ay",
           "description": "30 günlük güvenli bulut kaydı."
         },
         {
           "name": "Mobil Erişim",
-          "price": "€40",
           "description": "Kameralarınızı akıllı telefonunuzdan izleyin."
         },
         {
           "name": "Gece Görüşü Yükseltmesi",
-          "price": "€90/kamera",
           "description": "Daha iyi IR gece görüşlü kameralarla değiştirme."
         }
       ],
       "smartphone-repair": [
         {
           "name": "Yazılım Teşhis ve Servisi",
-          "price": "€30",
           "description": "Kapsamlı teşhis, sistem güncellemeleri, hız için optimizasyon ve yazılım sorunlarının giderilmesi."
         },
         {
           "name": "Güvenli Veri Transferi",
-          "price": "€20",
           "description": "Tüm verilerinizin (fotoğraflar, kişiler, dosyalar) eski ve yeni cihazlar arasında profesyonel transferi."
         },
         {
           "name": "Yeni Cihaz Kurulumu (Telefon/Tablet)",
-          "price": "€25",
           "description": "Yeni bir telefon veya tabletin anahtar uygulamalar ve hesaplar dahil olmak üzere kapsamlı yapılandırılması."
         },
         {
           "name": "Kaybolan Veri Kurtarma",
-          "price": "€50'den başlayan fiyatlarla",
           "description": "Cihazdan silinmiş veya erişilemeyen dosyaların, fotoğrafların ve önemli bilgilerin kurtarılması."
         },
         {
           "name": "Kapsamlı Sistem Optimizasyonu ve Temizliği",
-          "price": "€25",
           "description": "Cihaz performansının hızlandırılması, gereksiz dosyaların temizlenmesi ve genel verimliliğin artırılması."
         }
       ],
       "operating-systems": [
         {
           "name": "Windows Yeniden Kurulumu",
-          "price": "€35",
           "description": "Temiz kurulum ve temel ayarlar."
         },
         {
           "name": "Veri Yedeklemeli Yeniden Kurulum",
-          "price": "€45",
           "description": "Kişisel dosyaların korunmasıyla Windows kurulumu."
         },
         {
           "name": "Linux Kurulumu",
-          "price": "€40",
           "description": "Ubuntu, Mint, Debian ve diğerleri."
         },
         {
           "name": "Çift Önyükleme (Dual Boot) Kurulumu",
-          "price": "€55",
           "description": "Tek sistemde Windows + Linux kurulumu."
         },
         {
           "name": "Sistem Optimizasyonu",
-          "price": "€25",
           "description": "Virüs temizleme ve performans iyileştirmesi."
         },
         {
           "name": "Sürücü Kurulumu",
-          "price": "€15",
           "description": "Gerekli tüm donanım sürücülerini yükleme."
         },
         {
           "name": "Windows Yükseltmesi",
-          "price": "€30",
           "description": "En son sürüme yükseltme."
         },
         {
           "name": "Yedekleme Kurulumu",
-          "price": "€35",
           "description": "Otomatik veri yedekleme yapılandırması."
         },
         {
           "name": "Donanım Değişimi",
-          "price": "€25",
-          "description": "RAM, SSD, güç kaynağı vb. değişim (parça hariç)."
+          "description": "RAM, SSD, güç kaynağı vb. değişim."
         },
         {
           "name": "SSD'ye Geçiş",
-          "price": "€40",
           "description": "Sisteminizi bir SSD sürücüsüne klonlama."
         },
         {
           "name": "PC/Dizüstü Bilgisayar Temizliği",
-          "price": "€35",
           "description": "Toz temizliği ve termal macun değişimi."
         },
         {
           "name": "Özel Bilgisayar Montajı",
-          "price": "€70",
           "description": "Tam sistem montajı ve yazılım kurulumu."
         }
       ]
@@ -329,6 +290,7 @@
   },
   "about": {
     "title": "Hakkımızda",
+    "subtitle": "Tek bir sözü olan küçük ve odaklı bir ekip — sessizce çalışan teknoloji.",
     "mission": {
       "title": "Misyonumuz",
       "text": "Müşterilerimizin günlük yaşamını ve işlerini kolaylaştırmak için tasarlanmış erişilebilir ve kişiselleştirilmiş BT çözümleri sunmak."
@@ -342,9 +304,18 @@
       "text": "Omni Tech Solutions, gerçek iş ihtiyaçları için pratik teknoloji çözümleri oluşturmaya odaklanan küçük ama hırslı bir şirket olarak başladı. Zamanla hizmetlerimizi genişlettik ve memnun müşterilerden oluşan güçlü bir ağ oluşturduk."
     },
     "stats": [
-      { "value": "10+", "label": "Başarıyla Tamamlanan Proje" },
-      { "value": "7/24", "label": "Destek" },
-      { "value": "Yüksek", "label": "Kalite ve Güvenilirlik Odağı" }
+      {
+        "value": "10+",
+        "label": "Başarıyla Tamamlanan Proje"
+      },
+      {
+        "value": "7/24",
+        "label": "Destek"
+      },
+      {
+        "value": "Yüksek",
+        "label": "Kalite ve Güvenilirlik Odağı"
+      }
     ]
   },
   "portfolio": {
@@ -388,7 +359,9 @@
   },
   "technologies": {
     "title": "Modern Teknolojiler",
+    "badge": "Teknoloji Yığınımız",
     "subtitle": "Ölçeklenebilir ve yüksek performanslı çözümler için sektör lideri araçlar ve framework'ler kullanıyoruz",
+    "countLabel": "teknoloji",
     "categories": {
       "all": "Tümü",
       "frontend": "Frontend",
@@ -409,6 +382,9 @@
   "contact": {
     "title": "Bize Ulaşın",
     "subtitle": "Size Yardımcı Olmaya Hazırız",
+    "required": "Zorunlu alanlar",
+    "successTitle": "Mesaj gönderildi",
+    "responseNote": "Genellikle 24 saat içinde yanıt veriyoruz",
     "name": "Adınız",
     "email": "E-posta Adresiniz",
     "phone": "Telefon Numaranız",
@@ -421,10 +397,22 @@
     "callUs": "Bizi Arayın",
     "emailUs": "Bize E-posta Gönderin",
     "contactInfo": {
-      "email": { "title": "E-posta", "value": "support@omni-solutions.co" },
-      "phone": { "title": "Telefon", "value": "+359899350531" },
-      "location": { "title": "Konum", "value": "Samuil, Razgrad Bölgesi, Bulgaristan" },
-      "hours": { "title": "Çalışma Saatleri", "value": "Pazartesi–Cuma: 09:00 – 18:00" }
+      "email": {
+        "title": "E-posta",
+        "value": "support@omni-solutions.co"
+      },
+      "phone": {
+        "title": "Telefon",
+        "value": "+359899350531"
+      },
+      "location": {
+        "title": "Konum",
+        "value": "Samuil, Razgrad Bölgesi, Bulgaristan"
+      },
+      "hours": {
+        "title": "Çalışma Saatleri",
+        "value": "Pazartesi–Cuma: 09:00 – 18:00"
+      }
     },
     "whyChooseUs": {
       "title": "Neden Bizi Tercih Etmelisiniz?",

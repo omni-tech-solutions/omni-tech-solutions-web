@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ChevronDown, HelpCircle } from 'lucide-react';
+import { ChevronDown, HelpCircle, ArrowRight } from 'lucide-react';
 import { COLORS } from '@/app/styles/theme';
 
 interface FAQSectionProps {
@@ -12,6 +12,7 @@ interface FAQSectionProps {
 export const FAQSection: React.FC<FAQSectionProps> = ({ colors }) => {
   const { t } = useTranslation();
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const isDark = colors.text === 'text-zinc-100';
 
   // FAQ data - should be moved to translations
   const faqs = [
@@ -54,57 +55,109 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ colors }) => {
   };
 
   return (
-    <section id="faq" className={`py-20 ${colors.section}`}>
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="faq" className={`relative py-20 overflow-hidden ${colors.section}`}>
+      {/* Background decoration */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div
+          className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full opacity-[0.05]"
+          style={{ background: `radial-gradient(circle, ${COLORS.primary}, transparent 65%)` }}
+        />
+        <div
+          className="absolute inset-0 opacity-[0.025]"
+          style={{
+            backgroundImage: `radial-gradient(circle, ${isDark ? '#fff' : '#000'} 1px, transparent 1px)`,
+            backgroundSize: '32px 32px',
+          }}
+        />
+      </div>
+
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 mb-4">
-            <HelpCircle style={{ color: COLORS.primary }} className="w-8 h-8" />
+        <div className="flex flex-col items-center text-center mb-12 sm:mb-14">
+          <div
+            className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium mb-5"
+            style={{
+              backgroundColor: `${COLORS.primary}15`,
+              border: `1px solid ${COLORS.primary}33`,
+              color: COLORS.primary,
+            }}
+          >
+            <HelpCircle className="w-3.5 h-3.5" strokeWidth={2} />
+            {t('faq.badge', 'FAQ')}
           </div>
-          <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-4 ${colors.text}`}>
+
+          <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight ${colors.text}`}>
             {t('faq.title', 'Frequently Asked Questions')}
           </h2>
-          <p className={`text-lg ${colors.textSec}`}>
+
+          <div
+            className="w-14 h-1 rounded-full mt-5 mb-5"
+            style={{ background: `linear-gradient(90deg, ${COLORS.primary}, ${COLORS.primaryHover})` }}
+          />
+
+          <p className={`${colors.textSec} text-base sm:text-lg max-w-2xl`}>
             {t('faq.subtitle', 'Find answers to common questions about our services')}
           </p>
         </div>
 
         {/* FAQ Items */}
-        <div className="space-y-4">
-          {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className={`${colors.card} rounded-xl border ${colors.border} overflow-hidden transition-all duration-300`}
-            >
-              <button
-                onClick={() => toggleFAQ(index)}
-                className={`w-full px-6 py-5 flex items-center justify-between text-left transition-all duration-300 hover:bg-opacity-50 ${colors.cardHover}`}
-                aria-expanded={openIndex === index}
-                aria-controls={`faq-answer-${index}`}
-              >
-                <h3 className={`text-lg font-semibold ${colors.text} pr-8`}>
-                  {faq.question}
-                </h3>
-                <ChevronDown
-                  className={`w-5 h-5 flex-shrink-0 transition-transform duration-300 ${
-                    openIndex === index ? 'rotate-180' : ''
-                  }`}
-                  style={{ color: COLORS.primary }}
-                />
-              </button>
+        <div className="space-y-3">
+          {faqs.map((faq, index) => {
+            const isOpen = openIndex === index;
 
+            return (
               <div
-                id={`faq-answer-${index}`}
-                className={`transition-all duration-300 overflow-hidden ${
-                  openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                key={index}
+                className={`omni-reveal ${colors.card} rounded-2xl border ${colors.border} overflow-hidden transition-all duration-300 ${
+                  isOpen ? 'shadow-[0_16px_36px_-18px_rgba(255,107,26,0.5)]' : ''
                 }`}
+                style={{
+                  animationDelay: `${Math.min(index * 60, 360)}ms`,
+                  borderColor: isOpen ? COLORS.primary : undefined,
+                }}
               >
-                <div className={`px-6 pb-5 ${colors.textSec}`}>
-                  <p className="leading-relaxed">{faq.answer}</p>
+                <button
+                  onClick={() => toggleFAQ(index)}
+                  className={`w-full px-5 sm:px-6 py-5 flex items-center justify-between gap-4 text-left transition-colors duration-300 ${colors.cardHover} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#ff6b1a]`}
+                  aria-expanded={isOpen}
+                  aria-controls={`faq-answer-${index}`}
+                >
+                  <h3 className={`text-base sm:text-lg font-semibold ${colors.text}`}>
+                    {faq.question}
+                  </h3>
+                  <span
+                    className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300"
+                    style={{
+                      backgroundColor: isOpen ? COLORS.primary : `${COLORS.primary}14`,
+                    }}
+                  >
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+                      style={{ color: isOpen ? '#fff' : COLORS.primary }}
+                      strokeWidth={2.5}
+                    />
+                  </span>
+                </button>
+
+                {/* Answer — grid-rows keeps the transition accurate at any length */}
+                <div
+                  id={`faq-answer-${index}`}
+                  className="grid transition-all duration-300 ease-out"
+                  style={{ gridTemplateRows: isOpen ? '1fr' : '0fr', opacity: isOpen ? 1 : 0 }}
+                >
+                  <div className="overflow-hidden">
+                    <div className={`px-5 sm:px-6 pb-5 ${colors.textSec}`}>
+                      <div
+                        className="w-full h-px mb-4"
+                        style={{ background: `linear-gradient(90deg, ${COLORS.primary}33, transparent)` }}
+                      />
+                      <p className="leading-relaxed text-sm sm:text-base">{faq.answer}</p>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Contact CTA */}
@@ -114,12 +167,14 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ colors }) => {
           </p>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 px-6 py-3 font-semibold text-white rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            className="group inline-flex items-center gap-2 px-7 py-3.5 font-semibold text-white rounded-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff6b1a] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
             style={{
-              background: `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.primaryHover})`
+              background: `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.primaryHover})`,
+              boxShadow: `0 10px 24px -8px ${COLORS.primary}80`,
             }}
           >
             {t('faq.contactButton', 'Contact Us')}
+            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" strokeWidth={2.5} />
           </a>
         </div>
       </div>

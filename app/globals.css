@@ -19,3 +19,25 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* Shared section reveal — stagger it with an inline animation-delay */
+.omni-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: omniReveal 0.6s ease-out forwards;
+}
+
+@keyframes omniReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .omni-reveal {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}

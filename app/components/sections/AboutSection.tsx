@@ -2,174 +2,160 @@
 
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Target, Rocket, History, Users, LucideIcon } from 'lucide-react';
 import { COLORS, BORDER_RADIUS } from '@/app/styles/theme';
 
 interface AboutSectionProps {
     colors: ReturnType<typeof import('@/app/styles/theme').getThemeColors>;
 }
 
+// Mission / Vision / Story — same shape, rendered from one array
+const pillars: Array<{ key: 'mission' | 'vision' | 'history'; icon: LucideIcon }> = [
+    { key: 'mission', icon: Target },
+    { key: 'vision', icon: Rocket },
+    { key: 'history', icon: History }
+];
+
 export const AboutSection: React.FC<AboutSectionProps> = ({ colors }) => {
     const { t } = useTranslation();
+    const isDark = colors.text === 'text-zinc-100';
+
+    const stats = t('about.stats', { returnObjects: true }) as Array<{
+        value: string;
+        label: string;
+    }>;
 
     return (
         <section id="about" className="relative py-20 px-0 sm:px-6 lg:px-8 overflow-hidden">
             {/* Background decoration */}
-            <div className="absolute inset-0 pointer-events-none opacity-5">
-                <div className="absolute top-20 right-20 w-72 h-72 rounded-full" style={{ background: `radial-gradient(circle, ${COLORS.primary}, transparent)` }} />
-                <div className="absolute bottom-20 left-20 w-96 h-96 rounded-full" style={{ background: `radial-gradient(circle, ${COLORS.primary}, transparent)` }} />
+            <div className="absolute inset-0 pointer-events-none">
+                <div
+                    className="absolute top-10 right-0 w-[560px] h-[560px] rounded-full opacity-[0.05]"
+                    style={{ background: `radial-gradient(circle, ${COLORS.primary}, transparent 65%)` }}
+                />
+                <div
+                    className="absolute bottom-0 left-0 w-[480px] h-[480px] rounded-full opacity-[0.04]"
+                    style={{ background: `radial-gradient(circle, ${COLORS.primaryHover}, transparent 65%)` }}
+                />
+                <div
+                    className="absolute inset-0 opacity-[0.025]"
+                    style={{
+                        backgroundImage: `radial-gradient(circle, ${isDark ? '#fff' : '#000'} 1px, transparent 1px)`,
+                        backgroundSize: '32px 32px',
+                    }}
+                />
             </div>
 
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-                        <span style={{ color: colors.text }}>{t('about.title')}</span>
+                <div className="flex flex-col items-center text-center mb-14 sm:mb-16">
+                    <div
+                        className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium mb-5"
+                        style={{
+                            backgroundColor: `${COLORS.primary}15`,
+                            border: `1px solid ${COLORS.primary}33`,
+                            color: COLORS.primary,
+                        }}
+                    >
+                        <Users className="w-3.5 h-3.5" strokeWidth={2} />
+                        {t('nav.about')}
+                    </div>
+
+                    <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight ${colors.text}`}>
+                        {t('about.title')}
                     </h2>
+
+                    <div
+                        className="w-14 h-1 rounded-full mt-5 mb-5"
+                        style={{ background: `linear-gradient(90deg, ${COLORS.primary}, ${COLORS.primaryHover})` }}
+                    />
+
+                    <p className={`${colors.textSec} text-base sm:text-lg max-w-2xl`}>
+                        {t('about.subtitle')}
+                    </p>
                 </div>
 
-                {/* Mission, Vision, History Cards with Illustrations */}
-                <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
-
-                    {/* Mission Card */}
-                    <div className="group relative flex">
+                {/* Mission, Vision, Story */}
+                <div className="grid md:grid-cols-3 gap-5 sm:gap-6 mb-12 sm:mb-16">
+                    {pillars.map(({ key, icon: Icon }, index) => (
                         <div
-                            className={`${colors.card} backdrop-blur-sm p-8 ${BORDER_RADIUS.lg} border ${colors.border} transition-all duration-300 hover:shadow-lg hover:-translate-y-2 hover:border-amber-500 focus-within:shadow-lg focus-within:border-amber-500 flex flex-col w-full`}
+                            key={key}
+                            className={`omni-reveal group relative flex flex-col overflow-hidden ${colors.card} backdrop-blur-sm p-7 sm:p-8 ${BORDER_RADIUS.lg} border ${colors.border} transition-all duration-300 hover:-translate-y-1.5 hover:border-[#ff6b1a] hover:shadow-[0_18px_40px_-12px_rgba(255,107,26,0.35)]`}
+                            style={{ animationDelay: `${index * 80}ms` }}
                         >
-                            {/* Illustration */}
-                            <div className="mb-6 flex justify-center">
-                                <svg viewBox="0 0 80 80" className="w-20 h-20">
-                                    {/* Single circle */}
-                                    <circle cx="40" cy="40" r="30" stroke={COLORS.primary} strokeWidth="3" fill="none" opacity="0.6" className="mission-ring"/>
+                            {/* Top accent line — grows on hover */}
+                            <span
+                                className="absolute top-0 left-0 h-[3px] w-0 group-hover:w-full transition-all duration-500 ease-out"
+                                style={{ background: `linear-gradient(90deg, ${COLORS.primary}, ${COLORS.primaryHover})` }}
+                            />
 
-                                    {/* Center dot */}
-                                    <circle cx="40" cy="40" r="10" fill={COLORS.primary} opacity="0.9"/>
-                                </svg>
+                            {/* Corner glow */}
+                            <span
+                                className="absolute -top-16 -right-16 w-40 h-40 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                                style={{ background: `radial-gradient(circle, ${COLORS.primary}26, transparent 70%)` }}
+                            />
+
+                            <div className="relative flex flex-col items-center text-center flex-1">
+                                {/* Icon tile */}
+                                <div
+                                    className="w-14 h-14 rounded-xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3"
+                                    style={{
+                                        background: `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.primaryHover})`,
+                                        boxShadow: `0 8px 20px ${COLORS.primary}33`,
+                                    }}
+                                >
+                                    <Icon className="w-7 h-7 text-white" strokeWidth={1.8} />
+                                </div>
+
+                                <h3 className={`text-xl sm:text-2xl font-bold mb-3 ${colors.text}`}>
+                                    {t(`about.${key}.title`)}
+                                </h3>
+                                <p className={`${colors.textSec} leading-relaxed text-sm flex-1`}>
+                                    {t(`about.${key}.text`)}
+                                </p>
+
+                                {/* Accent bar */}
+                                <div
+                                    className="mt-6 h-1 w-16 rounded-full transition-all duration-300 group-hover:w-24"
+                                    style={{ background: `linear-gradient(90deg, ${COLORS.primary}, ${COLORS.primaryHover})`, opacity: 0.7 }}
+                                />
                             </div>
-
-                            {/* Content */}
-                            <h3 className="text-2xl font-bold mb-3 text-center" style={{ color: colors.text }}>
-                                {t('about.mission.title')}
-                            </h3>
-                            <p className={`${colors.textSec} leading-relaxed text-sm text-center flex-1`}>
-                                {t('about.mission.text')}
-                            </p>
-
-                            {/* Accent bar */}
-                            <div className="mt-6 mx-auto h-1 w-16 rounded-full transition-all duration-300 group-hover:w-24" style={{ backgroundColor: COLORS.primary, opacity: 0.6 }} />
                         </div>
-                    </div>
-
-                    {/* Vision Card */}
-                    <div className="group relative flex">
-                        <div
-                            className={`${colors.card} backdrop-blur-sm p-8 ${BORDER_RADIUS.lg} border ${colors.border} transition-all duration-300 hover:shadow-lg hover:-translate-y-2 hover:border-amber-500 focus-within:shadow-lg focus-within:border-amber-500 flex flex-col w-full`}
-                        >
-                            {/* Illustration */}
-                            <div className="mb-6 flex justify-center">
-                                <svg viewBox="0 0 80 80" className="w-20 h-20">
-                                    {/* Simple upward arrow/rocket */}
-                                    <path d="M 40 15 L 50 55 L 40 50 L 30 55 Z" fill={COLORS.primary} opacity="0.9" className="rocket-body"/>
-
-                                    {/* Trail lines */}
-                                    <line x1="40" y1="55" x2="40" y2="65" stroke={COLORS.primary} strokeWidth="2" opacity="0.5" className="rocket-trail"/>
-                                </svg>
-                            </div>
-
-                            {/* Content */}
-                            <h3 className="text-2xl font-bold mb-3 text-center" style={{ color: colors.text }}>
-                                {t('about.vision.title')}
-                            </h3>
-                            <p className={`${colors.textSec} leading-relaxed text-sm text-center flex-1`}>
-                                {t('about.vision.text')}
-                            </p>
-
-                            {/* Accent bar */}
-                            <div className="mt-6 mx-auto h-1 w-16 rounded-full transition-all duration-300 group-hover:w-24" style={{ backgroundColor: COLORS.primary, opacity: 0.6 }} />
-                        </div>
-                    </div>
-
-                    {/* History Card */}
-                    <div className="group relative flex">
-                        <div
-                            className={`${colors.card} backdrop-blur-sm p-8 ${BORDER_RADIUS.lg} border ${colors.border} transition-all duration-300 hover:shadow-lg hover:-translate-y-2 hover:border-amber-500 focus-within:shadow-lg focus-within:border-amber-500 flex flex-col w-full`}
-                        >
-                            {/* Illustration */}
-                            <div className="mb-6 flex justify-center">
-                                <svg viewBox="0 0 80 80" className="w-20 h-20">
-                                    {/* Vertical line */}
-                                    <line x1="40" y1="20" x2="40" y2="60" stroke={COLORS.primary} strokeWidth="3" opacity="0.6"/>
-
-                                    {/* Growing dots */}
-                                    <circle cx="40" cy="25" r="5" fill={COLORS.primary} opacity="0.7" className="timeline-dot-1"/>
-                                    <circle cx="40" cy="40" r="6" fill={COLORS.primary} opacity="0.8" className="timeline-dot-2"/>
-                                    <circle cx="40" cy="55" r="7" fill={COLORS.primary} opacity="0.9" className="timeline-dot-3"/>
-                                </svg>
-                            </div>
-
-                            {/* Content */}
-                            <h3 className="text-2xl font-bold mb-3 text-center" style={{ color: colors.text }}>
-                                {t('about.history.title')}
-                            </h3>
-                            <p className={`${colors.textSec} leading-relaxed text-sm text-center flex-1`}>
-                                {t('about.history.text')}
-                            </p>
-
-                            {/* Accent bar */}
-                            <div className="mt-6 mx-auto h-1 w-16 rounded-full transition-all duration-300 group-hover:w-24" style={{ backgroundColor: COLORS.primary, opacity: 0.6 }} />
-                        </div>
-                    </div>
-
+                    ))}
                 </div>
+
+                {/* Stats strip */}
+                {Array.isArray(stats) && stats.length > 0 && (
+                    <div
+                        className={`relative overflow-hidden ${colors.card} ${BORDER_RADIUS.lg} border ${colors.border} p-6 sm:p-8`}
+                    >
+                        <div
+                            className="absolute inset-0 pointer-events-none"
+                            style={{ background: `linear-gradient(135deg, ${COLORS.primary}0D, transparent 55%)` }}
+                        />
+
+                        <div className="relative grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-4">
+                            {stats.map((stat, index) => (
+                                <div
+                                    key={index}
+                                    className={`text-center ${index > 0 ? 'border-t sm:border-t-0 sm:border-l pt-6 sm:pt-0' : ''}`}
+                                    style={index > 0 ? { borderColor: isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.08)' } : undefined}
+                                >
+                                    <div
+                                        className="text-3xl sm:text-4xl font-bold mb-1.5 bg-clip-text text-transparent"
+                                        style={{ backgroundImage: `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.primaryHover})` }}
+                                    >
+                                        {stat.value}
+                                    </div>
+                                    <div className={`text-sm ${colors.textSec} max-w-[16rem] mx-auto`}>
+                                        {stat.label}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
             </div>
-
-            <style jsx>{`
-                @keyframes pulse-simple {
-                    0%, 100% {
-                        opacity: 0.6;
-                    }
-                    50% {
-                        opacity: 0.9;
-                    }
-                }
-
-                @keyframes float-gentle {
-                    0%, 100% {
-                        transform: translateY(0px);
-                    }
-                    50% {
-                        transform: translateY(-4px);
-                    }
-                }
-
-                /* Mission */
-                .mission-ring {
-                    animation: pulse-simple 2s ease-in-out infinite;
-                }
-
-                /* Vision rocket */
-                .rocket-body {
-                    animation: float-gentle 2.5s ease-in-out infinite;
-                }
-
-                .rocket-trail {
-                    animation: pulse-simple 1.5s ease-in-out infinite;
-                }
-
-                /* History timeline */
-                .timeline-dot-1,
-                .timeline-dot-2,
-                .timeline-dot-3 {
-                    animation: pulse-simple 2s ease-in-out infinite;
-                }
-
-                .timeline-dot-2 {
-                    animation-delay: 0.3s;
-                }
-
-                .timeline-dot-3 {
-                    animation-delay: 0.6s;
-                }
-            `}</style>
         </section>
     );
 };

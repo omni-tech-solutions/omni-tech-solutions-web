@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Layers } from 'lucide-react';
 import { COLORS } from '@/app/styles/theme';
 
 interface TechnologiesSectionProps {
@@ -67,77 +68,98 @@ export const TechnologiesSection: React.FC<TechnologiesSectionProps> = ({ colors
     return (
         <section className="relative py-20 px-0 sm:px-6 lg:px-8 overflow-hidden">
             {/* Background decoration */}
-            <div className="absolute inset-0 pointer-events-none opacity-5">
-                <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full" style={{ background: `radial-gradient(circle, ${COLORS.primary}, transparent)` }} />
+            <div className="absolute inset-0 pointer-events-none">
+                <div
+                    className="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full opacity-[0.05]"
+                    style={{ background: `radial-gradient(circle, ${COLORS.primary}, transparent 65%)` }}
+                />
+                <div
+                    className="absolute inset-0 opacity-[0.025]"
+                    style={{
+                        backgroundImage: `radial-gradient(circle, ${theme === 'dark' ? '#fff' : '#000'} 1px, transparent 1px)`,
+                        backgroundSize: '32px 32px',
+                    }}
+                />
             </div>
 
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
-                <div className="text-center mb-12">
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-                        <span className={colors.text}>{t('technologies.title')}</span>
+                <div className="flex flex-col items-center text-center mb-12">
+                    <div
+                        className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium mb-5"
+                        style={{
+                            backgroundColor: `${COLORS.primary}15`,
+                            border: `1px solid ${COLORS.primary}33`,
+                            color: COLORS.primary,
+                        }}
+                    >
+                        <Layers className="w-3.5 h-3.5" strokeWidth={2} />
+                        {t('technologies.badge')}
+                    </div>
+
+                    <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight ${colors.text}`}>
+                        {t('technologies.title')}
                     </h2>
-                    <p className={`${colors.textSec} text-lg max-w-2xl mx-auto`}>
+
+                    <div
+                        className="w-14 h-1 rounded-full mt-5 mb-5"
+                        style={{ background: `linear-gradient(90deg, ${COLORS.primary}, ${COLORS.primaryHover})` }}
+                    />
+
+                    <p className={`${colors.textSec} text-base sm:text-lg max-w-2xl`}>
                         {t('technologies.subtitle')}
                     </p>
                 </div>
 
                 {/* Category Filter */}
-                <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12">
-                    {categoryKeys.map((cat) => (
-                        <button
-                            key={cat}
-                            onClick={() => setActiveCategory(cat)}
-                            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 border focus:outline-none`}
-                            style={{
-                                backgroundColor: activeCategory === cat ? COLORS.primary : 'transparent',
-                                color: activeCategory === cat ? '#fff' : undefined,
-                                borderColor: activeCategory === cat ? COLORS.primary : theme === 'dark' ? 'rgb(161, 161, 170)' : undefined,
-                            }}
-                            onMouseEnter={(e) => {
-                                if (activeCategory !== cat) {
-                                    e.currentTarget.style.borderColor = COLORS.primary;
-                                    e.currentTarget.style.color = COLORS.primary;
-                                }
-                            }}
-                            onMouseLeave={(e) => {
-                                if (activeCategory !== cat) {
-                                    e.currentTarget.style.borderColor = '';
-                                    e.currentTarget.style.color = '';
-                                }
-                            }}
-                        >
-                            {t(`technologies.categories.${cat}`)}
-                        </button>
-                    ))}
+                <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-4">
+                    {categoryKeys.map((cat) => {
+                        const isActive = activeCategory === cat;
+
+                        return (
+                            <button
+                                key={cat}
+                                onClick={() => setActiveCategory(cat)}
+                                aria-pressed={isActive}
+                                className={`px-4 py-2 rounded-full text-sm font-medium border transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff6b1a] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${
+                                    isActive
+                                        ? 'text-white border-transparent shadow-[0_8px_20px_-8px_rgba(255,107,26,0.8)]'
+                                        : `${colors.textSec} ${colors.borderLight} hover:border-[#ff6b1a] hover:text-[#ff6b1a]`
+                                }`}
+                                style={isActive ? {
+                                    background: `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.primaryHover})`,
+                                } : undefined}
+                            >
+                                {t(`technologies.categories.${cat}`)}
+                            </button>
+                        );
+                    })}
                 </div>
+
+                {/* Result count */}
+                <p className={`text-center text-xs sm:text-sm ${colors.textTer} mb-10`}>
+                    {filtered.length} {t('technologies.countLabel')}
+                </p>
 
                 {/* Technologies */}
                 <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
-                    {filtered.map((tech) => (
+                    {filtered.map((tech, index) => (
                         <div
                             key={tech.name}
-                            className={`flex items-center gap-3 px-5 py-3 rounded-xl border transition-all duration-300 group cursor-default ${
+                            className={`omni-reveal group flex items-center gap-3 px-5 py-3 rounded-xl border transition-all duration-300 cursor-default hover:-translate-y-1 hover:border-[#ff6b1a] hover:shadow-[0_12px_28px_-14px_rgba(255,107,26,0.6)] ${
                                 theme === 'dark'
-                                    ? 'bg-zinc-900/60 hover:bg-zinc-800/80 border-white/30'
-                                    : `${colors.borderLight} ${colors.cardHover}`
+                                    ? 'bg-zinc-900/60 hover:bg-zinc-800/80 border-zinc-700'
+                                    : `${colors.card} ${colors.border} ${colors.cardHover}`
                             }`}
-                            onMouseEnter={(e) => {
-                                e.currentTarget.style.borderColor = COLORS.primary;
-                                e.currentTarget.style.transform = 'translateY(-2px)';
-                                e.currentTarget.style.boxShadow = `0 8px 25px ${COLORS.primary}15`;
-                            }}
-                            onMouseLeave={(e) => {
-                                e.currentTarget.style.borderColor = '';
-                                e.currentTarget.style.transform = '';
-                                e.currentTarget.style.boxShadow = '';
-                            }}
+                            style={{ animationDelay: `${Math.min(index * 25, 400)}ms` }}
                         >
                             <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center">
                                 <img
-                                    src={tech.icon}
+                                    src={theme === 'dark' && tech.darkIcon ? tech.darkIcon : tech.icon}
                                     alt={tech.name}
-                                    className="w-7 h-7 object-contain"
+                                    className={`w-7 h-7 object-contain transition-transform duration-300 group-hover:scale-110 ${
+                                        theme === 'dark' && tech.invertInDark && !tech.darkIcon ? 'invert' : ''
+                                    }`}
                                     loading="lazy"
                                 />
                             </div>
