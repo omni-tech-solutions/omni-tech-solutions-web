@@ -6,84 +6,142 @@
     "contact": "Contact Us"
   },
   "hero": {
-    "badge": "Available 24/7",
-    "title": "Technology That Works for You",
+    "badge": "Software & IT infrastructure",
+    "title": "Software solutions and IT infrastructure for business",
     "subtitle": "",
-    "description": "Custom web applications, websites, automation, and local IT services — designed around your real needs.",
-    "cta": "Start Your Project",
-    "learnMore": "Discover More",
+    "description": "We build software for clients in Bulgaria and abroad, and the IT infrastructure that runs it.",
+    "cta": "Get in touch",
+    "learnMore": "See what we do",
     "rating": "5.0 Client Rating",
     "clients": "Successful Projects",
     "projects": "Premium Quality",
-    "scrollDown": "Scroll Down",
+    "scrollDown": "Explore",
     "trustBadges": {
-      "secure": "Secure",
-      "support": "24/7 Support",
-      "fastDelivery": "Fast Turnaround",
-      "expertTeam": "Expert Team"
+      "secure": "Guaranteed workmanship",
+      "support": "Support after installation",
+      "fastDelivery": "Fast response",
+      "expertTeam": "Survey, installation and support"
+    },
+    "localBadge": "Bulgaria and abroad",
+    "localBadgeLabel": "We work with clients at home and beyond",
+    "responseValue": "24h",
+    "responseLabel": "Reply to every enquiry",
+    "ownerTitle": "End to end",
+    "ownerLabel": "From development through to support",
+    "titleLead": "Software solutions",
+    "titleRest": "and IT infrastructure for business",
+    "visual": {
+      "statusTitle": "System status",
+      "online": "online",
+      "wifi": "Wi-Fi coverage",
+      "cameras": "Cameras 8/8",
+      "backup": "Nightly backup",
+      "deployed": "Version 2.4 deployed"
     }
   },
   "services": {
-    "title": "Our Expert Services",
-    "subtitle": "Professional Technology Solutions for Every Need",
+    "title": "Services",
+    "subtitle": "Software and IT services under one roof",
     "learnMore": "Learn More",
     "notFound": "Service Not Found",
     "backToHome": "Back to Home",
     "backToServices": "Back to All Services",
-    "whyChooseUs": "Why Partner With Us?",
-    "ourProcess": "Our Simple Work Process",
-    "readyToStart": "Ready to Get Started?",
-    "contactCTA": "Contact us today for a free consultation and a custom quote.",
-    "getQuote": "Request a Quote",
+    "whyChooseUs": "Why choose us",
+    "ourProcess": "How the work goes",
+    "readyToStart": "Shall we look at your site?",
+    "contactCTA": "Contact us for a free consultation and a clear quote.",
+    "getQuote": "Request a quote",
     "offeringsTitle": "What We Deliver",
-    "offeringsSubtitle": "A complete range of solutions, tailored to the scope of your project",
-    "offeringsNote": "* Every project is scoped individually. Get in touch for a free consultation and a quote built around your exact needs.",
+    "offeringsSubtitle": "Pick the scope that matches your property",
+    "offeringsNote": "* The exact scope and price are set out in a written quote for your project.",
     "exploreOfferings": "Explore Solutions",
-    "warranty": "Professional service with warranty",
+    "warranty": "Guaranteed workmanship",
     "solutionsLabel": "solutions",
-    "talkToUs": "Talk to a specialist",
+    "talkToUs": "Write to us directly",
     "freeConsultation": "Free consultation · No obligation",
     "features": {
-      "fastDelivery": "Rapid Project Delivery",
-      "support247": "24/7 Dedicated Support",
-      "professionalTeam": "Experienced Professional Team",
-      "modernTools": "Cutting-Edge Technologies",
-      "qualityGuaranteed": "Quality and Reliability Guaranteed",
-      "bestPractices": "Industry Best Practices"
+      "fastDelivery": "Fast response to a call-out",
+      "support247": "Support after the installation too",
+      "professionalTeam": "Direct contact with the specialist on your project",
+      "modernTools": "Equipment from proven manufacturers",
+      "qualityGuaranteed": "Warranty on labour and materials",
+      "bestPractices": "Concealed cabling and a tidy installation"
     },
     "items": [
       {
-        "icon": "Globe",
-        "title": "Web Design & Development",
-        "desc": "Modern, responsive, and high-performance websites"
-      },
-      {
+        "id": "web-applications",
         "icon": "Code2",
-        "title": "Custom Web Applications",
-        "desc": "Tailored business software solutions for efficiency"
+        "title": "Web, desktop and mobile applications",
+        "desc": "Custom software for browser, desktop and phone, with integrations and business process automation."
       },
       {
+        "id": "web-design",
+        "icon": "Globe",
+        "title": "Informative websites and online stores",
+        "desc": "Presentation websites for your business and online stores with payments, fast and optimised for search engines."
+      },
+      {
+        "id": "local-networks",
         "icon": "Network",
-        "title": "Local Network Setup",
-        "desc": "Installation, configuration, and optimization for stability"
+        "title": "Networks and Wi-Fi coverage",
+        "desc": "Wired and wireless networks with a stable connection in every room."
       },
       {
-        "icon": "Camera",
-        "title": "Video Surveillance Systems",
-        "desc": "Reliable and advanced security camera systems"
-      },
-      {
+        "id": "operating-systems",
         "icon": "MonitorSmartphone",
-        "title": "OS Installation & Support",
-        "desc": "Operating system installation, optimization, and maintenance"
+        "title": "Windows and PC support",
+        "desc": "Installation, repair, upgrades and optimisation for desktops and laptops."
       },
       {
-        "icon": "Smartphone",
-        "title": "Phone Repair Services",
-        "desc": "Software troubleshooting and hardware repairs for all phone brands"
+        "id": "video-surveillance",
+        "icon": "Camera",
+        "title": "Video surveillance and IP cameras",
+        "desc": "Design, installation and setup of cameras with secure remote access."
+      },
+      {
+        "id": "maintenance-support",
+        "icon": "ShieldCheck",
+        "title": "Maintenance plan",
+        "desc": "Monthly checks, updates and remote help for the systems we installed."
+      },
+      {
+        "id": "network-security-audit",
+        "icon": "ShieldAlert",
+        "title": "Network security audit",
+        "desc": "A review of the network, router and cameras with a clear report on what to fix."
       }
     ],
     "offerings": {
+      "web-applications": [
+        {
+          "name": "Custom Web Application",
+          "description": "Fully developed to meet your unique business requirements"
+        },
+        {
+          "name": "Desktop Application Development",
+          "description": "Applications for Windows, macOS and Linux that work offline too"
+        },
+        {
+          "name": "Mobile Application Development",
+          "description": "Professional Android and iOS app development"
+        },
+        {
+          "name": "CRM System Implementation",
+          "description": "Manage clients, sales pipeline, and internal processes effectively"
+        },
+        {
+          "name": "API Integration Service",
+          "description": "Connect your existing software to external systems and platforms"
+        },
+        {
+          "name": "Business Process Automation",
+          "description": "Automate repetitive tasks to save time and increase accuracy"
+        },
+        {
+          "name": "Database Optimization & Tuning",
+          "description": "Improve performance and structural integrity of your data"
+        }
+      ],
       "web-design": [
         {
           "name": "Business Card Website",
@@ -108,32 +166,6 @@
         {
           "name": "Website Maintenance Package",
           "description": "Regular updates, automated backups, and technical support"
-        }
-      ],
-      "web-applications": [
-        {
-          "name": "Custom Web Application",
-          "description": "Fully developed to meet your unique business requirements"
-        },
-        {
-          "name": "CRM System Implementation",
-          "description": "Manage clients, sales pipeline, and internal processes effectively"
-        },
-        {
-          "name": "API Integration Service",
-          "description": "Connect your existing software to external systems and platforms"
-        },
-        {
-          "name": "Business Process Automation",
-          "description": "Automate repetitive tasks to save time and increase accuracy"
-        },
-        {
-          "name": "Mobile Application Development",
-          "description": "Professional Android and iOS app development"
-        },
-        {
-          "name": "Database Optimization & Tuning",
-          "description": "Improve performance and structural integrity of your data"
         }
       ],
       "local-networks": [
@@ -164,58 +196,6 @@
         {
           "name": "Structured Cabling Installation",
           "description": "Cable installation, precise labeling, and rigorous testing"
-        }
-      ],
-      "video-surveillance": [
-        {
-          "name": "Basic 4-Camera System",
-          "description": "HD cameras, digital video recorder (DVR), and full installation"
-        },
-        {
-          "name": "Advanced 8-Camera System",
-          "description": "Full HD cameras with secure recording and remote access capabilities"
-        },
-        {
-          "name": "Single IP Camera Installation",
-          "description": "Individual IP camera installation and initial setup"
-        },
-        {
-          "name": "Add a Camera to Existing System",
-          "description": "Seamless integration of an additional camera into your current setup"
-        },
-        {
-          "name": "Cloud Storage Service",
-          "description": "Secure 30-day cloud recording backup"
-        },
-        {
-          "name": "Mobile Viewing Access Setup",
-          "description": "Configuration to view your cameras on your smartphone or tablet"
-        },
-        {
-          "name": "Night Vision Camera Upgrade",
-          "description": "Replacement with superior IR night vision cameras"
-        }
-      ],
-      "smartphone-repair": [
-        {
-          "name": "Software Diagnostics and Service",
-          "description": "Full diagnostics, system updates, optimization for speed, and troubleshooting of software issues."
-        },
-        {
-          "name": "Secure Data Transfer",
-          "description": "Professional transfer of all your data (photos, contacts, files) between old and new devices."
-        },
-        {
-          "name": "New Device Setup (Phone/Tablet)",
-          "description": "Comprehensive configuration of a new phone or tablet, including installation of key apps and accounts."
-        },
-        {
-          "name": "Lost Data Recovery",
-          "description": "Recovery of deleted or inaccessible files, photos, and important information from the device."
-        },
-        {
-          "name": "Complete System Optimization and Cleaning",
-          "description": "Speeding up device performance, cleaning unnecessary files, and improving overall efficiency."
         }
       ],
       "operating-systems": [
@@ -267,54 +247,569 @@
           "name": "Custom PC Assembly Service",
           "description": "Full hardware build and initial software configuration"
         }
+      ],
+      "video-surveillance": [
+        {
+          "name": "Basic 4-Camera System",
+          "description": "HD cameras, digital video recorder (DVR), and full installation"
+        },
+        {
+          "name": "Advanced 8-Camera System",
+          "description": "Full HD cameras with secure recording and remote access capabilities"
+        },
+        {
+          "name": "Single IP Camera Installation",
+          "description": "Individual IP camera installation and initial setup"
+        },
+        {
+          "name": "Add a Camera to Existing System",
+          "description": "Seamless integration of an additional camera into your current setup"
+        },
+        {
+          "name": "Cloud Storage Service",
+          "description": "Secure 30-day cloud recording backup"
+        },
+        {
+          "name": "Mobile Viewing Access Setup",
+          "description": "Configuration to view your cameras on your smartphone or tablet"
+        },
+        {
+          "name": "Night Vision Camera Upgrade",
+          "description": "Replacement with superior IR night vision cameras"
+        }
+      ],
+      "maintenance-support": [
+        {
+          "name": "Monthly surveillance check",
+          "description": "Recording, camera angles, lenses and free disk space all verified."
+        },
+        {
+          "name": "Updates and password rotation",
+          "description": "Firmware and settings refreshed on routers, NVRs and computers."
+        },
+        {
+          "name": "Remote help",
+          "description": "Remote support when something goes wrong, without waiting for a visit."
+        },
+        {
+          "name": "Priority on-site visit",
+          "description": "Subscribers are served first when a fault occurs."
+        },
+        {
+          "name": "Backup verification",
+          "description": "Checking that automatic backups actually run and restore."
+        },
+        {
+          "name": "Short monthly report",
+          "description": "What was checked, what was fixed and what is coming up."
+        }
+      ],
+      "network-security-audit": [
+        {
+          "name": "Network and device inventory",
+          "description": "A list of everything connected and detection of unknown devices."
+        },
+        {
+          "name": "Router and firewall review",
+          "description": "Passwords, open ports, remote access and firmware."
+        },
+        {
+          "name": "Surveillance security",
+          "description": "Factory passwords, unnecessary internet exposure and protection of recordings."
+        },
+        {
+          "name": "Wi-Fi security and guest network",
+          "description": "Encryption and separation of work devices from personal ones."
+        },
+        {
+          "name": "Backup review",
+          "description": "Whether a working backup exists and how fast data can be restored."
+        },
+        {
+          "name": "Prioritised report",
+          "description": "A clear list of findings and what to fix first."
+        }
       ]
     },
     "process": {
       "step1": {
-        "title": "Initial Consultation",
-        "desc": "We discuss your goals, challenges, and needs to define the best technical solution."
+        "title": "On-site survey",
+        "desc": "We come to the site, look at the conditions and agree with you on exactly what is needed."
       },
       "step2": {
-        "title": "Detailed Planning",
-        "desc": "We prepare a detailed implementation plan, timeline, and select the optimal technology stack."
+        "title": "Quote and plan",
+        "desc": "You get a clear quote with equipment, timeline and price — no hidden extras."
       },
       "step3": {
-        "title": "Execution & Delivery",
-        "desc": "Our team executes the project with precision, offering regular updates and communication."
+        "title": "Installation and setup",
+        "desc": "We do the work, test everything and show you how to use it."
       },
       "step4": {
-        "title": "Ongoing Support",
-        "desc": "We provide continuous maintenance, updates, and reliable technical assistance post-launch."
+        "title": "Support afterwards",
+        "desc": "We stay available for questions, checks and extending the system."
+      }
+    },
+    "priceFrom": "from",
+    "priceOnRequest": "By agreement",
+    "pricePerMonth": "/month",
+    "priceNote": "Labour prices, final — the company is not VAT-registered. Equipment is paid separately.",
+    "priceNoteShort": "Labour only, equipment extra.",
+    "freeConsultationSecondary": "The consultation is free",
+    "onSiteBadge": "On-site service at your place",
+    "groups": {
+      "software": {
+        "title": "Software solutions",
+        "desc": "Web, desktop and mobile applications, websites and automation for clients in Bulgaria and abroad."
+      },
+      "infrastructure": {
+        "title": "IT infrastructure",
+        "desc": "Networks, computers and video surveillance — installed and configured on site."
+      },
+      "support": {
+        "title": "Support and security",
+        "desc": "Monthly care for the systems already running at your place."
+      }
+    },
+    "cta": {
+      "software": {
+        "title": "Have a software idea?",
+        "text": "Tell us what you need — you will get an estimate of scope, timeline and price.",
+        "note": "Free consultation · No obligation",
+        "action": "Request a quote"
+      },
+      "infrastructure": {
+        "title": "Shall we look at your site?",
+        "text": "Contact us for a free consultation and a clear quote.",
+        "note": "Free consultation · No obligation",
+        "action": "Request a quote"
+      },
+      "support": {
+        "title": "Want your systems under control?",
+        "text": "Get in touch for a review of the current state and a monthly plan matched to your systems.",
+        "note": "Initial review · No obligation",
+        "action": "Request a review"
+      }
+    },
+    "details": {
+      "web-applications": {
+        "processTitle": "How we build your software",
+        "process": [
+          {
+            "title": "Discovery and scope",
+            "desc": "We map your workflow, users and integrations and agree on what the first version must do."
+          },
+          {
+            "title": "Prototype and estimate",
+            "desc": "You click through the key screens and get a fixed scope, timeline and price before coding starts."
+          },
+          {
+            "title": "Iterative development",
+            "desc": "We build in short cycles and show you working features every one to two weeks."
+          },
+          {
+            "title": "Launch and support",
+            "desc": "We deploy, train your team and keep the software updated and secure."
+          }
+        ],
+        "benefits": [
+          "Direct contact with the developer building your project",
+          "Working demos every sprint, not only at the end",
+          "You own the source code and your data",
+          "Modern, maintainable stack: TypeScript, React, Node.js",
+          "Integrations with the tools and APIs you already use",
+          "Fixes and new features after launch"
+        ],
+        "cta": {
+          "title": "Have a software idea?",
+          "text": "Tell us what you need and you will get an estimate of scope, timeline and price.",
+          "note": "Free consultation · No obligation"
+        }
+      },
+      "web-design": {
+        "processTitle": "From brief to a live website",
+        "process": [
+          {
+            "title": "Brief and structure",
+            "desc": "We agree on goals, audience, pages and content, so the site is planned around your customers."
+          },
+          {
+            "title": "Design",
+            "desc": "You approve the look of the key pages on desktop and mobile before we build anything."
+          },
+          {
+            "title": "Build and SEO",
+            "desc": "We build a fast, responsive site with SEO basics, analytics and a contact form."
+          },
+          {
+            "title": "Launch and care",
+            "desc": "We handle domain, hosting and launch, then keep the site backed up and updated."
+          }
+        ],
+        "benefits": [
+          "Fast loading, mobile-first design",
+          "SEO basics built in from day one",
+          "Easy content editing for your team",
+          "Domain, hosting and SSL handled for you",
+          "Online payments and shop setup on request",
+          "Backups and updates after launch"
+        ],
+        "cta": {
+          "title": "Ready for a website that brings customers?",
+          "text": "Tell us about your business and we will propose the right type of site with a clear price.",
+          "note": "Free consultation · No obligation"
+        }
+      },
+      "local-networks": {
+        "processTitle": "How we build your network",
+        "process": [
+          {
+            "title": "Site survey",
+            "desc": "We check the rooms, walls and devices, measure your current Wi-Fi and find the weak spots."
+          },
+          {
+            "title": "Network design",
+            "desc": "You get a plan with cable routes, access point positions, equipment and price."
+          },
+          {
+            "title": "Cabling and setup",
+            "desc": "We lay and label the cabling, install the equipment and configure router, Wi-Fi and security."
+          },
+          {
+            "title": "Testing and handover",
+            "desc": "We measure speed and coverage in every room and hand over the passwords and a network diagram."
+          }
+        ],
+        "benefits": [
+          "Stable Wi-Fi coverage in every room",
+          "Neat, hidden and labelled cabling",
+          "Separate guest and camera networks",
+          "Firewall and secure router configuration",
+          "Business-grade equipment from proven brands",
+          "Remote help when something stops working"
+        ],
+        "cta": {
+          "title": "Weak Wi-Fi or dropped connections?",
+          "text": "Book a site survey. We will find the cause and give you a clear quote.",
+          "note": "Free consultation · No obligation"
+        }
+      },
+      "operating-systems": {
+        "processTitle": "How we service your computer",
+        "process": [
+          {
+            "title": "Diagnosis",
+            "desc": "We check the hardware, disk health and software and tell you exactly what is wrong."
+          },
+          {
+            "title": "Backup",
+            "desc": "We back up your personal files before any change, so nothing gets lost."
+          },
+          {
+            "title": "Repair and install",
+            "desc": "We reinstall or repair the system and install the drivers and programs you use."
+          },
+          {
+            "title": "Handover",
+            "desc": "You get back a fast, clean, updated computer with your files where you left them."
+          }
+        ],
+        "benefits": [
+          "Your files are backed up before any work",
+          "Licensed Windows and official drivers",
+          "Virus and malware removal",
+          "Hardware upgrades: SSD, RAM and more",
+          "Clear price before we start",
+          "Remote help for small issues"
+        ],
+        "cta": {
+          "title": "Slow or broken computer?",
+          "text": "Write to us. We will diagnose it and tell you the price before any work begins.",
+          "note": "Free diagnosis quote · No obligation"
+        }
+      },
+      "video-surveillance": {
+        "processTitle": "How we install your cameras",
+        "process": [
+          {
+            "title": "Site survey",
+            "desc": "We walk the property with you and define which areas must be covered, day and night."
+          },
+          {
+            "title": "Camera plan",
+            "desc": "You get a plan with camera positions, resolution, recording time and a clear price."
+          },
+          {
+            "title": "Installation",
+            "desc": "We mount the cameras, hide the cabling and set up the recorder."
+          },
+          {
+            "title": "Phone access and training",
+            "desc": "We connect the system to your phone and show you how to watch live and play back recordings."
+          }
+        ],
+        "benefits": [
+          "Live view and recordings on your phone",
+          "High resolution and clear night vision",
+          "Hidden, weatherproof cabling",
+          "Motion alerts straight to your phone",
+          "Recording storage sized to your needs",
+          "Proven brands with warranty"
+        ],
+        "cta": {
+          "title": "Want to see your property from your phone?",
+          "text": "Book a site survey and get a camera plan with a clear price.",
+          "note": "Free consultation · No obligation"
+        }
+      },
+      "maintenance-support": {
+        "processTitle": "How the subscription works",
+        "process": [
+          {
+            "title": "Initial review",
+            "desc": "We go through your computers, network and cameras and note everything that needs attention."
+          },
+          {
+            "title": "Tailored plan",
+            "desc": "We agree on which devices are covered, how often we check them and how fast we respond."
+          },
+          {
+            "title": "Regular care",
+            "desc": "Updates, backup checks and preventive maintenance every month, on site or remotely."
+          },
+          {
+            "title": "Fast help",
+            "desc": "When something breaks, you message us and get priority response."
+          }
+        ],
+        "benefits": [
+          "Priority response for subscribers",
+          "Monthly updates and backup checks",
+          "Remote help without waiting for a visit",
+          "One fixed monthly price, no surprises",
+          "A short report on what was done",
+          "Problems caught before they stop your work"
+        ],
+        "cta": {
+          "title": "Want your IT to just work?",
+          "text": "Tell us what systems you have and we will propose a subscription that fits.",
+          "note": "Free initial review · No obligation"
+        }
+      },
+      "network-security-audit": {
+        "processTitle": "How the audit works",
+        "process": [
+          {
+            "title": "Scope",
+            "desc": "We agree which networks, devices and cameras will be checked."
+          },
+          {
+            "title": "Inspection",
+            "desc": "We check router settings, open ports, passwords, firmware and devices exposed to the internet."
+          },
+          {
+            "title": "Report",
+            "desc": "You get a clear, prioritised report written without jargon."
+          },
+          {
+            "title": "Fixes and re-checks",
+            "desc": "On request we fix the findings and repeat the check regularly."
+          }
+        ],
+        "benefits": [
+          "Router, Wi-Fi, camera and open-port checks",
+          "Report in plain language",
+          "Clear priorities: what to fix first",
+          "Non-disruptive checks, your work keeps running",
+          "Fixes by the same team on request",
+          "Regular re-checks to stay protected"
+        ],
+        "cta": {
+          "title": "Is your network really secure?",
+          "text": "Order an audit and get a clear report on what to fix first.",
+          "note": "Free consultation · No obligation"
+        }
+      }
+    },
+    "priceList": {
+      "title": "Price list",
+      "subtitle": "Labour prices in euro. Equipment is paid separately.",
+      "termsTitle": "General terms",
+      "terms": [
+        "Prices are final — the company is not VAT-registered. The written quote for the specific site is binding.",
+        "Visit fee: 10 € — waived for jobs over 100 € and for subscribers. Longer distances by agreement.",
+        "Work on days off or after 18:00 — 50% surcharge.",
+        "Payment by bank transfer. Warranty on equipment and installation — 2 years; on repairs and installations — 3 months."
+      ],
+      "items": {
+        "web-applications": [
+          {
+            "name": "Custom web application",
+            "detail": "after analysing the requirements",
+            "price": "by agreement"
+          },
+          {
+            "name": "Development — hourly rate",
+            "detail": "changes to an existing project",
+            "price": "30 € / hour"
+          }
+        ],
+        "web-design": [
+          {
+            "name": "Informative website",
+            "detail": "up to 5 pages, responsive, SEO basics",
+            "price": "from 450 €"
+          },
+          {
+            "name": "Development — hourly rate",
+            "detail": "changes to an existing project",
+            "price": "30 € / hour"
+          },
+          {
+            "name": "Website support",
+            "detail": "hosting, updates, backups, small changes",
+            "price": "from 20 € / month"
+          }
+        ],
+        "local-networks": [
+          {
+            "name": "Router and Wi-Fi setup",
+            "detail": "configuration, security, coverage",
+            "price": "30 €"
+          },
+          {
+            "name": "Network build — per point",
+            "detail": "cable, socket, testing, materials not included",
+            "price": "25 €"
+          },
+          {
+            "name": "Network audit for businesses",
+            "detail": "scanning, vulnerabilities, written report",
+            "price": "from 150 €"
+          }
+        ],
+        "operating-systems": [
+          {
+            "name": "Windows installation",
+            "detail": "system, drivers, basic software",
+            "price": "25 – 30 €"
+          },
+          {
+            "name": "Data backup and restore",
+            "detail": "backup before the installation",
+            "price": "+ 15 €"
+          },
+          {
+            "name": "HDD to SSD replacement",
+            "detail": "fitting and system transfer, drive not included",
+            "price": "25 €"
+          },
+          {
+            "name": "Cleaning and thermal paste replacement",
+            "detail": "desktop or laptop",
+            "price": "20 €"
+          },
+          {
+            "name": "\"Refresh\" bundle",
+            "detail": "SSD fitting + clean system + transfer + cleaning",
+            "price": "65 €"
+          },
+          {
+            "name": "Virus removal",
+            "detail": "without reinstalling, where possible",
+            "price": "25 €"
+          },
+          {
+            "name": "Diagnosis",
+            "detail": "deducted if you go ahead with the repair",
+            "price": "10 €"
+          }
+        ],
+        "video-surveillance": [
+          {
+            "name": "Camera installation",
+            "detail": "cabling, mounting, setup — per camera",
+            "price": "40 – 50 €"
+          },
+          {
+            "name": "Recorder installation",
+            "detail": "NVR/DVR, recording and disk setup",
+            "price": "40 €"
+          },
+          {
+            "name": "Remote access setup",
+            "detail": "phone and computer, training",
+            "price": "20 €"
+          },
+          {
+            "name": "System maintenance",
+            "detail": "cleaning, recording and connection checks",
+            "price": "30 €"
+          },
+          {
+            "name": "Recording export on request",
+            "detail": "finding and exporting footage",
+            "price": "20 €"
+          }
+        ],
+        "maintenance-support": [
+          {
+            "name": "Support — household",
+            "detail": "remote help, up to 4 visits, 1 maintenance check",
+            "price": "10 € / month"
+          },
+          {
+            "name": "Support — business",
+            "detail": "priority, up to 8 visits, 2 maintenance checks",
+            "price": "from 35 € / month"
+          },
+          {
+            "name": "Website support",
+            "detail": "hosting, updates, backups, small changes",
+            "price": "from 20 € / month"
+          }
+        ],
+        "network-security-audit": [
+          {
+            "name": "Network audit for businesses",
+            "detail": "scanning, vulnerabilities, written report",
+            "price": "from 150 €"
+          },
+          {
+            "name": "Router and Wi-Fi setup",
+            "detail": "configuration, security, coverage",
+            "price": "30 €"
+          }
+        ]
       }
     }
   },
   "about": {
     "title": "About Omni Tech Solutions",
-    "subtitle": "A small, focused team with one simple promise — technology that quietly works.",
+    "subtitle": "We build software for clients in Bulgaria and abroad, and the IT infrastructure that runs it.",
     "mission": {
       "title": "Our Mission",
-      "text": "To provide accessible and personalized IT solutions designed to simplify daily life and business for our clients."
+      "text": "To build reliable software and IT infrastructure that make our clients' daily work and business easier — without needless complexity or surprises in the price."
     },
     "vision": {
       "title": "Our Vision",
-      "text": "To be a reliable technology partner that delivers quality services, transparency, and care for every project."
+      "text": "To be the technology partner clients call first — with quality work, transparent communication and care for every project long after it is handed over."
     },
     "history": {
       "title": "Our Story",
-      "text": "Omni Tech Solutions started as a small but ambitious company focused on creating practical technology solutions for real business needs. Over time, we've expanded our services and built a strong network of satisfied clients."
+      "text": "We started with on-site IT services for homes and small businesses. Today we work on two fronts: local infrastructure and software for clients in Bulgaria and abroad."
     },
     "stats": [
       {
-        "value": "10+",
-        "label": "Successfully Completed Projects"
+        "value": "Software + infrastructure",
+        "label": "Both sides under one roof"
       },
       {
-        "value": "24/7",
-        "label": "Availability"
+        "value": "24h",
+        "label": "Reply to every enquiry"
       },
       {
-        "value": "High",
-        "label": "Focus on Quality and Reliability"
+        "value": "No subcontractors",
+        "label": "We deliver the project from start to finish"
       }
     ]
   },
@@ -358,19 +853,25 @@
     ]
   },
   "technologies": {
-    "title": "Powered by Modern Technologies",
-    "badge": "Our Tech Stack",
-    "subtitle": "We use industry-leading tools and frameworks to build scalable, high-performance solutions",
+    "title": "Technologies we work with",
+    "badge": "Technologies",
+    "subtitle": "The tools and systems we build and maintain projects with.",
     "countLabel": "technologies",
     "categories": {
       "all": "All",
       "frontend": "Frontend",
       "backend": "Backend",
       "database": "Database",
-      "mobile": "Mobile App",
+      "mobile": "Mobile",
       "devops": "DevOps & Cloud",
       "ai": "AI & Automation",
-      "tools": "Tools"
+      "tools": "Tools",
+      "web": "Web",
+      "infrastructure": "Networks & systems"
+    },
+    "items": {
+      "networking": "Networking & IP cameras",
+      "windows": "Windows / Windows Server"
     }
   },
   "trustIndicators": {
@@ -380,34 +881,26 @@
     "quality": "High Quality"
   },
   "contact": {
-    "title": "Contact Omni Tech Solutions",
-    "subtitle": "We're Ready to Help You",
+    "title": "Get in touch with Omni Tech Solutions",
+    "subtitle": "Describe what you need — you will get a reply within 24 hours",
     "required": "Required fields",
-    "successTitle": "Message sent",
-    "responseNote": "We usually reply within 24 hours",
+    "successTitle": "Opening your email app",
+    "responseNote": "We reply to every enquiry within 24 hours",
     "name": "Your Full Name",
     "email": "Your Email Address",
     "phone": "Your Phone Number",
     "message": "Your Message/Project Details",
     "submit": "Send Message",
-    "success": "Thank you for contacting us! We'll get back to you shortly.",
-    "getInTouch": "Get in Touch Today",
+    "success": "Your message is ready in a new email to support@omni-solutions.co — just press \"Send\" there. If nothing opens, write to us directly at support@omni-solutions.co.",
+    "getInTouch": "Direct contact",
     "sendMessage": "Send Message",
     "sending": "Sending...",
-    "callUs": "Call Us Now",
+    "callUs": "Send an enquiry",
     "emailUs": "Email Us Directly",
     "contactInfo": {
       "email": {
         "title": "Email",
         "value": "support@omni-solutions.co"
-      },
-      "phone": {
-        "title": "Phone",
-        "value": "+359899350531"
-      },
-      "location": {
-        "title": "Location",
-        "value": "Samuil, Razgrad Region, Bulgaria"
       },
       "hours": {
         "title": "Working Hours",
@@ -415,23 +908,24 @@
       }
     },
     "whyChooseUs": {
-      "title": "Why Choose Us for Your Needs?",
-      "fastResponse": "Guaranteed response within 24 hours",
-      "professionalConsultation": "Free, no-obligation professional consultation",
-      "transparentPricing": "Clear, honest, and competitive pricing",
-      "qualityGuarantee": "Workmanship and Quality Guaranteed"
+      "title": "Why choose us",
+      "fastResponse": "A reply to every enquiry within 24 hours",
+      "professionalConsultation": "Free consultation and a clear written quote",
+      "transparentPricing": "Transparent prices, no hidden extras",
+      "qualityGuarantee": "Warranty on labour and materials"
     },
     "placeholders": {
       "name": "John Smith",
       "email": "john@example.com",
       "phone": "+359 XXX XXX XXX",
       "message": "Tell us about your project and technical needs..."
-    }
+    },
+    "mailSubject": "Website enquiry — {{name}}"
   },
   "footer": {
-    "text": "© 2025 Omni Tech Solutions. All rights reserved.",
-    "tagline": "Innovation • Quality • Trust",
-    "about": "Delivering affordable, reliable, and innovative IT solutions for individuals and businesses. Your trusted technology partner.",
+    "text": "© {{year}} Omni Tech Solutions. All rights reserved.",
+    "tagline": "Software • Infrastructure • Support",
+    "about": "We build software for clients in Bulgaria and abroad, and the IT infrastructure — networks, computers and video surveillance — for homes and businesses.",
     "quickLinks": "Quick Links",
     "contactUs": "Contact Us",
     "workingHours": "Mon–Fri: 9:00 AM – 6:00 PM",
@@ -440,6 +934,10 @@
       "description": "Stay updated with our latest services, tech tips, and special offers.",
       "placeholder": "Enter your email",
       "success": "Thank you for subscribing!"
+    },
+    "social": {
+      "facebook": "Facebook",
+      "instagram": "Instagram"
     }
   }
 }

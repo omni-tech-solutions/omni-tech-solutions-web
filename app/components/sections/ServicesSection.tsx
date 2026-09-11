@@ -3,48 +3,35 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
-import { Globe, Code2, Network, Camera, MonitorSmartphone, Smartphone, LucideIcon, ArrowUpRight, Sparkles, Layers } from 'lucide-react';
+import { ArrowUpRight, Sparkles } from 'lucide-react';
 import { COLORS, BORDER_RADIUS } from '@/app/styles/theme';
+import { SERVICES, type ServiceCopy, type ServiceConfig } from '@/app/config/services';
+import { ServicePrice } from '@/app/components/ui/ServicePrice';
 
 interface ServicesSectionProps {
     colors: ReturnType<typeof import('@/app/styles/theme').getThemeColors>;
 }
 
-// Icon mapping for the services
-const iconMap: Record<string, LucideIcon> = {
-    Globe,
-    Code2,
-    Network,
-    Camera,
-    MonitorSmartphone,
-    Smartphone
-};
-
-// Service IDs for routing
-const serviceIds = [
-    'web-design',
-    'web-applications',
-    'local-networks',
-    'video-surveillance',
-    'operating-systems',
-    'smartphone-repair'
-];
+// Desktop grid has 6 columns and each area fills exactly one row:
+// 2 cards → half width, 3 cards → a third. Full class names so Tailwind keeps them.
+const LG_SPAN: Record<number, string> = { 1: 'lg:col-span-6', 2: 'lg:col-span-3', 3: 'lg:col-span-2' };
 
 export const ServicesSection: React.FC<ServicesSectionProps> = ({ colors }) => {
     const { t } = useTranslation();
     const isDark = colors.text === 'text-zinc-100';
 
-    const services = t('services.items', { returnObjects: true }) as Array<{
-        icon: string;
-        title: string;
-        desc: string;
-    }>;
+    // Copy comes from the locale files, grouping and icons from the service config
+    const copy = t('services.items', { returnObjects: true }) as ServiceCopy[];
+    const findCopy = (id: string) =>
+        Array.isArray(copy) ? copy.find((item) => item.id === id) : undefined;
 
-    // Number of concrete solutions listed on each service page
-    const getSolutionCount = (serviceId: string) => {
-        const offerings = t(`services.offerings.${serviceId}`, { returnObjects: true });
-        return Array.isArray(offerings) ? offerings.length : 0;
-    };
+    // Config order already runs software → infrastructure → support
+    const services = SERVICES
+        .map((config) => ({ config, copy: findCopy(config.id) }))
+        .filter((e): e is { config: ServiceConfig; copy: ServiceCopy } => Boolean(e.copy));
+
+    const groupSize = (group: ServiceConfig['group']) =>
+        services.filter((s) => s.config.group === group).length;
 
     return (
         <section id="services" className={`relative py-20 px-0 sm:px-6 lg:px-8 overflow-hidden ${colors.section}`}>
@@ -88,94 +75,84 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ colors }) => {
                     />
                 </div>
 
-                {/* Services Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-                    {services.map((service, index) => {
-                        const IconComponent = iconMap[service.icon];
-                        const serviceId = serviceIds[index];
-                        const solutionCount = getSolutionCount(serviceId);
+                {/*
+                  * One flat grid with no empty cells. Desktop: one row per area
+                  * (3+3 / 2+2+2 / 3+3 of 6 columns). Tablet: with an odd count the
+                  * first card goes full width so the rest pair up.
+                  * Cards stay short on purpose — the details live on each service page.
+                  */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-5 sm:gap-6">
+                    {services.map(({ config, copy: service }, index) => {
+                        const IconComponent = config.icon;
+                        const fullOnTablet = index === 0 && services.length % 2 === 1;
+                        // The headline service gets a solid brand card so the grid has one focal point
+                        const featured = index === 0;
 
                         return (
                             <Link
-                                key={serviceId}
-                                href={`/services/${serviceId}`}
-                                className={`omni-reveal group relative flex flex-col overflow-hidden ${colors.card} backdrop-blur-sm p-6 sm:p-7 ${BORDER_RADIUS.lg} border ${colors.border} transition-all duration-300 hover:-translate-y-1.5 hover:border-[#ff6b1a] hover:shadow-[0_18px_40px_-12px_rgba(255,107,26,0.35)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff6b1a] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent`}
-                                style={{ animationDelay: `${index * 80}ms` }}
+                                key={config.id}
+                                href={`/services/${config.id}`}
+                                className={`omni-reveal group relative flex flex-col overflow-hidden ${fullOnTablet ? 'sm:col-span-2' : ''} ${LG_SPAN[groupSize(config.group)] ?? 'lg:col-span-2'} ${featured ? 'border-transparent' : `${colors.card} ${colors.border}`} backdrop-blur-sm p-6 sm:p-7 ${BORDER_RADIUS.lg} border shadow-[0_2px_10px_-2px_rgba(0,0,0,0.12)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[#ff6b1a] hover:shadow-[0_18px_40px_-12px_rgba(255,107,26,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff6b1a] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent`}
+                                style={{
+                                    animationDelay: `${index * 60}ms`,
+                                    ...(featured && {
+                                        background: `linear-gradient(135deg, ${COLORS.primary} 0%, ${COLORS.primaryHover} 55%, ${COLORS.primaryDark} 100%)`,
+                                    }),
+                                }}
                             >
-                                {/* Top accent line — grows on hover */}
-                                <span
-                                    className="absolute top-0 left-0 h-[3px] w-0 group-hover:w-full transition-all duration-500 ease-out"
-                                    style={{ background: `linear-gradient(90deg, ${COLORS.primary}, ${COLORS.primaryHover})` }}
+                                {/* Oversized watermark icon — turns slightly on hover */}
+                                <IconComponent
+                                    aria-hidden
+                                    className={`absolute -bottom-8 -right-8 w-44 h-44 rotate-12 pointer-events-none transition-all duration-500 group-hover:rotate-0 group-hover:scale-105 ${featured ? 'text-white opacity-[0.14] group-hover:opacity-20' : 'opacity-[0.05] group-hover:opacity-[0.1]'}`}
+                                    style={featured ? undefined : { color: COLORS.primary }}
+                                    strokeWidth={1.2}
                                 />
 
-                                {/* Corner glow */}
+                                {/* Soft light behind the watermark */}
                                 <span
-                                    className="absolute -top-16 -right-16 w-40 h-40 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                                    style={{ background: `radial-gradient(circle, ${COLORS.primary}26, transparent 70%)` }}
+                                    className="absolute -bottom-20 -right-20 w-56 h-56 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                                    style={{ background: `radial-gradient(circle, ${featured ? 'rgba(255,255,255,0.18)' : `${COLORS.primary}22`}, transparent 70%)` }}
                                 />
 
-                                {/* Watermark index */}
-                                <span
-                                    className={`absolute top-5 right-6 text-4xl font-bold leading-none select-none transition-all duration-300 ${isDark ? 'opacity-10' : 'opacity-[0.07]'} group-hover:opacity-20`}
-                                    style={{ color: COLORS.primary }}
-                                    aria-hidden="true"
-                                >
-                                    {String(index + 1).padStart(2, '0')}
-                                </span>
-
-                                {/* Icon Container */}
-                                <div className="relative mb-5">
+                                <div className="relative flex items-start justify-between mb-6">
                                     <div
-                                        className="w-14 h-14 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3"
-                                        style={{
-                                            background: `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.primaryHover})`,
-                                            boxShadow: `0 8px 20px ${COLORS.primary}33`,
-                                        }}
+                                        className="w-12 h-12 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6"
+                                        style={featured
+                                            ? { backgroundColor: 'rgba(255,255,255,0.18)', boxShadow: 'inset 0 0 0 1px rgba(255,255,255,0.25)' }
+                                            : { background: `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.primaryHover})`, boxShadow: `0 8px 20px ${COLORS.primary}33` }}
                                     >
-                                        {IconComponent && (
-                                            <IconComponent
-                                                className="w-7 h-7 text-white"
-                                                strokeWidth={1.8}
-                                            />
-                                        )}
+                                        <IconComponent className="w-6 h-6 text-white" strokeWidth={1.8} />
                                     </div>
+                                    <span
+                                        className={`font-mono text-sm font-semibold tracking-widest ${featured ? 'text-white/70' : colors.textTer}`}
+                                    >
+                                        {String(index + 1).padStart(2, '0')}
+                                    </span>
                                 </div>
 
-                                {/* Content */}
-                                <div className="relative flex flex-col flex-1">
-                                    <h3 className={`text-xl font-bold mb-2.5 ${colors.text}`}>
-                                        {service.title}
-                                    </h3>
-                                    <p className={`${colors.textSec} leading-relaxed text-sm mb-5 flex-1`}>
-                                        {service.desc}
-                                    </p>
+                                <h3 className={`relative text-xl font-bold mb-2 ${featured ? 'text-white' : colors.text}`}>
+                                    {service.title}
+                                </h3>
+                                <p className={`relative leading-relaxed text-sm mb-6 flex-1 max-w-md ${featured ? 'text-white/85' : colors.textSec}`}>
+                                    {service.desc}
+                                </p>
 
-                                    {/* Footer — solutions count + learn more */}
-                                    <div className={`flex items-center justify-between gap-3 mt-auto pt-4 border-t ${colors.borderLight}`}>
-                                        {solutionCount > 0 ? (
-                                            <span
-                                                className={`inline-flex items-center gap-1.5 text-xs font-medium ${colors.textSec}`}
-                                            >
-                                                <Layers className="w-3.5 h-3.5" style={{ color: COLORS.primary }} strokeWidth={2} />
-                                                {solutionCount} {t('services.solutionsLabel')}
-                                            </span>
-                                        ) : <span />}
-
-                                        <span
-                                            className="inline-flex items-center gap-1.5 text-sm font-semibold"
-                                            style={{ color: COLORS.primary }}
-                                        >
-                                            {t('services.learnMore')}
-                                            <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-                                        </span>
-                                    </div>
+                                {/* Starting price + link — the only other things on the card */}
+                                <div className={`relative flex items-center justify-between gap-3 pt-4 border-t ${featured ? 'border-white/25' : colors.borderLight}`}>
+                                    <ServicePrice service={config} colors={colors} tone={featured ? 'inverse' : 'default'} />
+                                    <span
+                                        className={`inline-flex items-center gap-1.5 text-sm font-semibold whitespace-nowrap ${featured ? 'text-white' : ''}`}
+                                        style={featured ? undefined : { color: COLORS.primary }}
+                                    >
+                                        {t('services.learnMore')}
+                                        <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                                    </span>
                                 </div>
                             </Link>
                         );
                     })}
                 </div>
             </div>
-
         </section>
     );
 };

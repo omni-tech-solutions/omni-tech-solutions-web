@@ -2,13 +2,15 @@
 
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Mail, Phone, MapPin, Clock, Send, MessageSquare, Check, CheckCircle2 } from 'lucide-react';
+import { Mail, Clock, Send, MessageSquare, Check, CheckCircle2 } from 'lucide-react';
 import { COLORS, BORDER_RADIUS } from '@/app/styles/theme';
 import type { FormData } from '@/app/types';
 
 interface ContactSectionProps {
     colors: ReturnType<typeof import('@/app/styles/theme').getThemeColors>;
 }
+
+const CONTACT_EMAIL = 'support@omni-solutions.co';
 
 // Shared input styling — focus ring handled with classes instead of inline handlers
 const fieldClasses = 'w-full px-4 py-3 rounded-xl border border-[#ff6b1a]/30 transition-all duration-300 outline-none focus:border-[#ff6b1a] focus:ring-4 focus:ring-[#ff6b1a]/10';
@@ -21,19 +23,24 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ colors }) => {
         phone: '',
         message: '',
     });
-    const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSent, setIsSent] = useState(false);
     const isDark = colors.text === 'text-zinc-100';
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    // No backend: the form opens the visitor's mail app with a ready-to-send
+    // email to us. The fields are kept, in case no mail app opens.
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        setIsSubmitting(true);
 
-        // Simulate form submission
-        await new Promise(resolve => setTimeout(resolve, 1000));
+        const subject = t('contact.mailSubject', { name: formData.name.trim() });
+        const body = [
+            `${t('contact.name')}: ${formData.name.trim()}`,
+            `${t('contact.email')}: ${formData.email.trim()}`,
+            ...(formData.phone.trim() ? [`${t('contact.phone')}: ${formData.phone.trim()}`] : []),
+            '',
+            formData.message.trim(),
+        ].join('\n');
 
-        setFormData({ name: '', email: '', phone: '', message: '' });
-        setIsSubmitting(false);
+        window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         setIsSent(true);
     };
 
@@ -53,18 +60,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ colors }) => {
             link: 'mailto:support@omni-solutions.co'
         },
         {
-            icon: Phone,
-            title: t('contact.contactInfo.phone.title'),
-            value: t('contact.contactInfo.phone.value'),
-            link: 'tel:+359899350531'
-        },
-        {
-            icon: MapPin,
-            title: t('contact.contactInfo.location.title'),
-            value: t('contact.contactInfo.location.value'),
-            link: 'https://www.google.com/maps/search/?api=1&query=Samuil%2C+Razgrad%2C+Bulgaria'
-        },
-        {
             icon: Clock,
             title: t('contact.contactInfo.hours.title'),
             value: t('contact.contactInfo.hours.value'),
@@ -75,6 +70,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ colors }) => {
     const whyChooseUs = [
         t('contact.whyChooseUs.fastResponse'),
         t('contact.whyChooseUs.professionalConsultation'),
+        t('contact.whyChooseUs.transparentPricing'),
         t('contact.whyChooseUs.qualityGuarantee')
     ];
 
@@ -126,7 +122,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ colors }) => {
 
                 <div className="grid lg:grid-cols-5 gap-6 lg:gap-8">
                     {/* Contact Information - Left Side */}
-                    <div className="lg:col-span-2 space-y-6">
+                    {/* Flex column so the left side ends level with the form */}
+                    <div className="lg:col-span-2 flex flex-col gap-6">
                         {/* Contact Info Cards */}
                         <div
                             className={`omni-reveal ${colors.card} backdrop-blur-sm p-6 sm:p-7 ${BORDER_RADIUS.lg} border ${colors.border}`}
@@ -185,7 +182,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ colors }) => {
 
                         {/* Why choose us */}
                         <div
-                            className={`omni-reveal relative overflow-hidden ${colors.card} backdrop-blur-sm p-6 sm:p-7 ${BORDER_RADIUS.lg} border ${colors.border}`}
+                            className={`omni-reveal relative overflow-hidden flex-1 ${colors.card} backdrop-blur-sm p-6 sm:p-7 ${BORDER_RADIUS.lg} border ${colors.border}`}
                             style={{ animationDelay: '80ms' }}
                         >
                             <div
@@ -328,24 +325,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ colors }) => {
                             {/* Submit Button */}
                             <button
                                 type="submit"
-                                disabled={isSubmitting}
-                                className={`group w-full py-4 px-6 ${BORDER_RADIUS.md} font-semibold text-lg text-white transition-all duration-300 flex items-center justify-center gap-2 hover:-translate-y-0.5 hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff6b1a] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent`}
+                                className={`group w-full py-4 px-6 ${BORDER_RADIUS.md} font-semibold text-lg text-white transition-all duration-300 flex items-center justify-center gap-2 hover:-translate-y-0.5 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff6b1a] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent`}
                                 style={{
                                     background: `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.primaryHover})`,
                                     boxShadow: `0 10px 24px -8px ${COLORS.primary}80`,
                                 }}
                             >
-                                {isSubmitting ? (
-                                    <>
-                                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                                        <span>{t('contact.sending')}</span>
-                                    </>
-                                ) : (
-                                    <>
-                                        <span>{t('contact.submit')}</span>
-                                        <Send className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-                                    </>
-                                )}
+                                <span>{t('contact.submit')}</span>
+                                <Send className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
                             </button>
 
                             <p className={`mt-4 text-xs ${colors.textTer} text-center`}>

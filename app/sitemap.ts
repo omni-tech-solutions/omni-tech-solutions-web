@@ -1,18 +1,12 @@
 import { MetadataRoute } from 'next';
+import { SERVICE_IDS } from '@/app/config/services';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://tech.omni-solutions.co';
   const lastModified = new Date();
 
-  // Define your services - you can make this dynamic by reading from your translations
-  const services = [
-    'web-design',
-    'local-networks',
-    'video-surveillance',
-    'smartphone-repair',
-    'software-development',
-    'it-consulting'
-  ];
+  // Services come straight from the service config so the sitemap cannot drift
+  const services = SERVICE_IDS;
 
   const locales = ['bg', 'en', 'tr'];
 

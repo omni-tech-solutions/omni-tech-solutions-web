@@ -20,11 +20,6 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ colors }) => {
     const { t } = useTranslation();
     const isDark = colors.text === 'text-zinc-100';
 
-    const stats = t('about.stats', { returnObjects: true }) as Array<{
-        value: string;
-        label: string;
-    }>;
-
     return (
         <section id="about" className="relative py-20 px-0 sm:px-6 lg:px-8 overflow-hidden">
             {/* Background decoration */}
@@ -76,11 +71,11 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ colors }) => {
                 </div>
 
                 {/* Mission, Vision, Story */}
-                <div className="grid md:grid-cols-3 gap-5 sm:gap-6 mb-12 sm:mb-16">
+                <div className="grid md:grid-cols-3 gap-5 sm:gap-6">
                     {pillars.map(({ key, icon: Icon }, index) => (
                         <div
                             key={key}
-                            className={`omni-reveal group relative flex flex-col overflow-hidden ${colors.card} backdrop-blur-sm p-7 sm:p-8 ${BORDER_RADIUS.lg} border ${colors.border} transition-all duration-300 hover:-translate-y-1.5 hover:border-[#ff6b1a] hover:shadow-[0_18px_40px_-12px_rgba(255,107,26,0.35)]`}
+                            className={`omni-reveal group relative flex flex-col overflow-hidden ${colors.card} backdrop-blur-sm p-7 sm:p-8 ${BORDER_RADIUS.lg} border ${colors.border} shadow-[0_2px_10px_-2px_rgba(0,0,0,0.12)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[#ff6b1a] hover:shadow-[0_18px_40px_-12px_rgba(255,107,26,0.35)]`}
                             style={{ animationDelay: `${index * 80}ms` }}
                         >
                             {/* Top accent line — grows on hover */}
@@ -123,38 +118,6 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ colors }) => {
                         </div>
                     ))}
                 </div>
-
-                {/* Stats strip */}
-                {Array.isArray(stats) && stats.length > 0 && (
-                    <div
-                        className={`relative overflow-hidden ${colors.card} ${BORDER_RADIUS.lg} border ${colors.border} p-6 sm:p-8`}
-                    >
-                        <div
-                            className="absolute inset-0 pointer-events-none"
-                            style={{ background: `linear-gradient(135deg, ${COLORS.primary}0D, transparent 55%)` }}
-                        />
-
-                        <div className="relative grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-4">
-                            {stats.map((stat, index) => (
-                                <div
-                                    key={index}
-                                    className={`text-center ${index > 0 ? 'border-t sm:border-t-0 sm:border-l pt-6 sm:pt-0' : ''}`}
-                                    style={index > 0 ? { borderColor: isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.08)' } : undefined}
-                                >
-                                    <div
-                                        className="text-3xl sm:text-4xl font-bold mb-1.5 bg-clip-text text-transparent"
-                                        style={{ backgroundImage: `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.primaryHover})` }}
-                                    >
-                                        {stat.value}
-                                    </div>
-                                    <div className={`text-sm ${colors.textSec} max-w-[16rem] mx-auto`}>
-                                        {stat.label}
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                )}
             </div>
         </section>
     );

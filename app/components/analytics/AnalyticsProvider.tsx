@@ -55,7 +55,7 @@ export const trackConversion = (conversionName: string, conversionValue?: number
     window.gtag('event', 'conversion', {
       send_to: 'G-XXXXXXXXXX/' + conversionName,
       value: conversionValue,
-      currency: 'BGN'
+      currency: 'EUR'
     });
   }
 };

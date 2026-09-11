@@ -11,18 +11,17 @@ export const siteConfig = {
   url: 'https://tech.omni-solutions.co',
   ogImage: 'https://tech.omni-solutions.co/og-image.jpg',
   description: {
-    en: 'Professional technology services for businesses and homes. Web design, local networks, video surveillance, smartphone repair, and more.',
-    bg: 'Професионални технологични услуги за бизнеса и дома. Уеб дизайн, локални мрежи, видеонаблюдение, ремонт на смартфони и още.',
-    tr: 'İşletmeler ve evler için profesyonel teknoloji hizmetleri. Web tasarım, yerel ağlar, video gözetim, akıllı telefon tamiri ve daha fazlası.'
+    en: 'Custom software and network installation, plus websites, PC support and video surveillance for homes and businesses in Bulgaria. Free consultation.',
+    bg: 'Софтуер по поръчка и изграждане на мрежи, плюс уебсайтове, компютърна поддръжка и видеонаблюдение за дома и бизнеса в България. Безплатна консултация.',
+    tr: 'Özel yazılım ve ağ kurulumu; ayrıca Bulgaristan\'da evler ve işletmeler için web siteleri, bilgisayar desteği ve güvenlik kameraları. Ücretsiz danışmanlık.'
   },
   keywords: {
-    en: 'technology services, web design, local networks, video surveillance, smartphone repair, IT solutions, web development, network setup, CCTV installation',
-    bg: 'технологични услуги, уеб дизайн, локални мрежи, видеонаблюдение, ремонт смартфони, IT решения, уеб разработка, мрежова настройка, видеонаблюдение',
-    tr: 'teknoloji hizmetleri, web tasarım, yerel ağlar, video gözetim, akıllı telefon tamiri, BT çözümleri, web geliştirme, ağ kurulumu, CCTV kurulumu'
+    en: 'custom software Bulgaria, network setup Bulgaria, IT services Bulgaria, website for business, computer repair, video surveillance, CCTV installation',
+    bg: 'софтуер по поръчка България, изграждане на мрежи, ИТ услуги, изработка на сайт, компютърен сервиз, видеонаблюдение, монтаж на камери',
+    tr: 'özel yazılım Bulgaristan, ağ kurulumu, BT hizmetleri, web sitesi, bilgisayar servisi, güvenlik kamerası, kamera montajı'
   },
   social: {
-    email: 'support@omni-solutions.co',
-    phone: '+359899350531'
+    email: 'support@omni-solutions.co'
   }
 };
 
@@ -58,7 +57,6 @@ export const structuredData = {
     logo: 'https://tech.omni-solutions.co/assets/logo.png',
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+359899350531',
       contactType: 'customer service',
       email: 'support@omni-solutions.co',
       availableLanguage: ['Bulgarian', 'English', 'Turkish']
@@ -74,12 +72,12 @@ export const structuredData = {
     '@id': 'https://tech.omni-solutions.co',
     name: 'Omni Tech Solutions',
     image: 'https://tech.omni-solutions.co/assets/logo.png',
-    telephone: '+359899350531',
     email: 'support@omni-solutions.co',
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'BG'
     },
+    areaServed: { '@type': 'Country', name: 'България' },
     geo: {
       '@type': 'GeoCoordinates'
       // Add coordinates when available
@@ -108,7 +106,7 @@ export const structuredData = {
     '@id': 'https://tech.omni-solutions.co/#website',
     url: 'https://tech.omni-solutions.co',
     name: 'Omni Tech Solutions',
-    description: 'Professional technology services for businesses and homes',
+    description: 'Софтуерни решения, мрежи и ИТ услуги за дома и бизнеса',
     publisher: {
       '@id': 'https://tech.omni-solutions.co/#organization'
     },
@@ -138,13 +136,13 @@ export const generateServiceStructuredData = (service: {
   description: service.description,
   areaServed: {
     '@type': 'Country',
-    name: 'Bulgaria'
+    name: 'България'
   },
   ...(service.price && {
     offers: {
       '@type': 'Offer',
       price: service.price,
-      priceCurrency: 'BGN'
+      priceCurrency: 'EUR'
     }
   })
 });

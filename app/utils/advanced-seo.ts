@@ -70,7 +70,7 @@ export const generateOfferSchema = (service: {
   },
   ...(service.price && {
     price: service.price,
-    priceCurrency: service.priceCurrency || 'BGN'
+    priceCurrency: service.priceCurrency || 'EUR'
   }),
   availability: service.availability || 'https://schema.org/InStock',
   url: siteConfig.url,
@@ -168,7 +168,6 @@ export const generateEnhancedLocalBusinessSchema = (options?: {
   '@id': `${siteConfig.url}/#localbusiness`,
   name: 'OMNI Tech Solutions',
   image: `${siteConfig.url}/assets/logo.png`,
-  telephone: siteConfig.social.phone,
   email: siteConfig.social.email,
   url: siteConfig.url,
   priceRange: '$$',
@@ -274,7 +273,6 @@ export const generateContactPointSchema = () => ({
     contactPoint: [
       {
         '@type': 'ContactPoint',
-        telephone: siteConfig.social.phone,
         contactType: 'customer service',
         email: siteConfig.social.email,
         availableLanguage: ['Bulgarian', 'English', 'Turkish'],
@@ -304,7 +302,6 @@ export const generateContactPointSchema = () => ({
         '@type': 'ContactPoint',
         contactType: 'sales',
         email: siteConfig.social.email,
-        telephone: siteConfig.social.phone,
         availableLanguage: ['Bulgarian', 'English', 'Turkish']
       }
     ]
@@ -319,7 +316,6 @@ export const generateProfessionalServiceSchema = () => ({
   url: siteConfig.url,
   logo: `${siteConfig.url}/assets/logo.png`,
   image: `${siteConfig.url}/assets/logo.png`,
-  telephone: siteConfig.social.phone,
   email: siteConfig.social.email,
   priceRange: '$$',
   address: {

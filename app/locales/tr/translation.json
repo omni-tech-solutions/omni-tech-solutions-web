@@ -6,84 +6,142 @@
     "contact": "İletişim"
   },
   "hero": {
-    "badge": "7/24 Erişilebilir",
-    "title": "Sizin İçin Çalışan Teknoloji",
+    "badge": "Yazılım ve BT altyapısı",
+    "title": "İşletmeler için yazılım çözümleri ve BT altyapısı",
     "subtitle": "",
-    "description": "Gerçek ihtiyaçlarınıza göre tasarlanmış özel web uygulamaları, web siteleri, otomasyon ve yerel BT hizmetleri.",
-    "cta": "Projenize Başlayın",
-    "learnMore": "Daha Fazla Bilgi",
+    "description": "Bulgaristan ve yurt dışındaki müşteriler için yazılım geliştiriyor, onu çalıştıran BT altyapısını kuruyoruz.",
+    "cta": "Bize ulaşın",
+    "learnMore": "Ne yaptığımızı görün",
     "rating": "5.0 Müşteri Puanı",
     "clients": "Başarılı Proje",
     "projects": "Yüksek Kalite",
-    "scrollDown": "Aşağı Kaydır",
+    "scrollDown": "Keşfedin",
     "trustBadges": {
-      "secure": "Güvenli",
-      "support": "7/24 Destek",
-      "fastDelivery": "Hızlı Teslim",
-      "expertTeam": "Uzman Ekip"
+      "secure": "Garantili işçilik",
+      "support": "Kurulumdan sonra da destek",
+      "fastDelivery": "Hızlı müdahale",
+      "expertTeam": "Keşif, kurulum ve bakım"
+    },
+    "localBadge": "Bulgaristan ve yurt dışı",
+    "localBadgeLabel": "Yurt içi ve yurt dışı müşterilerle çalışıyoruz",
+    "responseValue": "24s",
+    "responseLabel": "Her talebe yanıt",
+    "ownerTitle": "Baştan sona",
+    "ownerLabel": "Geliştirmeden bakıma kadar",
+    "titleLead": "Yazılım çözümleri",
+    "titleRest": "ve işletmeniz için BT altyapısı",
+    "visual": {
+      "statusTitle": "Sistem durumu",
+      "online": "çevrimiçi",
+      "wifi": "Wi-Fi kapsaması",
+      "cameras": "Kameralar 8/8",
+      "backup": "Gece yedeği",
+      "deployed": "Sürüm 2.4 yayında"
     }
   },
   "services": {
-    "title": "Hizmetlerimiz",
-    "subtitle": "Her İhtiyaca Yönelik Profesyonel Teknoloji Çözümleri",
+    "title": "Hizmetler",
+    "subtitle": "Yazılım ve BT hizmetleri tek çatı altında",
     "learnMore": "Daha Fazla Bilgi Edinin",
     "notFound": "Hizmet bulunamadı",
     "backToHome": "Ana Sayfaya Dön",
     "backToServices": "Hizmetlere Geri Dön",
-    "whyChooseUs": "Neden Bizi Tercih Etmelisiniz?",
-    "ourProcess": "Çalışma Sürecimiz",
-    "readyToStart": "Başlamaya Hazır mısınız?",
-    "contactCTA": "Ücretsiz danışmanlık ve özel fiyat teklifi için bugün bize ulaşın.",
-    "getQuote": "Fiyat Teklifi Alın",
+    "whyChooseUs": "Neden biz",
+    "ourProcess": "İş nasıl ilerliyor",
+    "readyToStart": "Adresinize bir bakalım mı?",
+    "contactCTA": "Ücretsiz danışmanlık ve net teklif için bize ulaşın.",
+    "getQuote": "Teklif isteyin",
     "offeringsTitle": "Neler Sunuyoruz",
-    "offeringsSubtitle": "Projenizin kapsamına göre uyarlanmış eksiksiz bir çözüm yelpazesi",
-    "offeringsNote": "* Her proje ayrı ayrı değerlendirilir. Ücretsiz danışmanlık ve ihtiyaçlarınıza özel bir teklif için bizimle iletişime geçin.",
+    "offeringsSubtitle": "Adresinize uygun kapsamı seçin",
+    "offeringsNote": "* Kesin kapsam ve fiyat, projeniz için yazılı teklifte belirtilir.",
     "exploreOfferings": "Çözümleri İnceleyin",
-    "warranty": "Garantili profesyonel hizmet",
+    "warranty": "Garantili işçilik",
     "solutionsLabel": "çözüm",
-    "talkToUs": "Bir uzmanla görüşün",
+    "talkToUs": "Bize doğrudan yazın",
     "freeConsultation": "Ücretsiz danışmanlık · Yükümlülük yok",
     "features": {
-      "fastDelivery": "Hızlı Teslimat",
-      "support247": "7/24 Destek",
-      "professionalTeam": "Profesyonel Ekip",
-      "modernTools": "Modern Teknolojiler",
-      "qualityGuaranteed": "Kalite Garantili",
-      "bestPractices": "Sektörün En İyi Uygulamaları"
+      "fastDelivery": "Çağrıya hızlı müdahale",
+      "support247": "Kurulumdan sonra da destek",
+      "professionalTeam": "Projenizdeki uzmanla doğrudan iletişim",
+      "modernTools": "Denenmiş üreticilerin ekipmanları",
+      "qualityGuaranteed": "İşçilik ve malzeme garantisi",
+      "bestPractices": "Gizli kablolama ve düzenli montaj"
     },
     "items": [
       {
-        "icon": "Globe",
-        "title": "Web Tasarımı",
-        "desc": "Modern, duyarlı ve hızlı web siteleri"
-      },
-      {
+        "id": "web-applications",
         "icon": "Code2",
-        "title": "Web Uygulamaları",
-        "desc": "Özel iş yazılımı çözümleri"
+        "title": "Web, masaüstü ve mobil uygulamalar",
+        "desc": "Tarayıcı, masaüstü ve telefon için özel yazılım; entegrasyonlar ve iş süreci otomasyonu."
       },
       {
+        "id": "web-design",
+        "icon": "Globe",
+        "title": "Tanıtım siteleri ve online mağazalar",
+        "desc": "İşletmeniz için tanıtım siteleri ve ödeme alan online mağazalar; hızlı ve arama motorları için optimize."
+      },
+      {
+        "id": "local-networks",
         "icon": "Network",
-        "title": "Yerel Ağlar",
-        "desc": "Kurulum, yapılandırma ve optimizasyon"
+        "title": "Ağ kurulumu ve Wi-Fi kapsama",
+        "desc": "Her odada kararlı bağlantı için kablolu ve kablosuz ağlar."
       },
       {
-        "icon": "Camera",
-        "title": "Video Gözetimi",
-        "desc": "Güvenilir güvenlik kamera sistemleri"
-      },
-      {
+        "id": "operating-systems",
         "icon": "MonitorSmartphone",
-        "title": "İşletim Sistemleri",
-        "desc": "Kurulum, optimizasyon ve bakım"
+        "title": "Windows ve bilgisayar desteği",
+        "desc": "Masaüstü ve dizüstülerde kurulum, onarım, yükseltme ve optimizasyon."
       },
       {
-        "icon": "Smartphone",
-        "title": "Telefon Tamir Hizmetleri",
-        "desc": "Tüm telefon markaları için yazılım ve donanım tamiri"
+        "id": "video-surveillance",
+        "icon": "Camera",
+        "title": "Güvenlik kameraları (CCTV)",
+        "desc": "Uzaktan erişimli kamera sistemlerinin projelendirilmesi, montajı ve ayarı."
+      },
+      {
+        "id": "maintenance-support",
+        "icon": "ShieldCheck",
+        "title": "Bakım aboneliği",
+        "desc": "Kurulmuş sistemler için aylık kontroller, güncellemeler ve uzaktan yardım."
+      },
+      {
+        "id": "network-security-audit",
+        "icon": "ShieldAlert",
+        "title": "Ağ güvenliği denetimi",
+        "desc": "Ağ, router ve kameraların incelenmesi ve nelerin düzeltileceğine dair net rapor."
       }
     ],
     "offerings": {
+      "web-applications": [
+        {
+          "name": "Özel Web Uygulaması",
+          "description": "İş gereksinimlerinize göre geliştirilmiş."
+        },
+        {
+          "name": "Masaüstü Uygulama Geliştirme",
+          "description": "Windows, macOS ve Linux için internetsiz de çalışan uygulamalar"
+        },
+        {
+          "name": "Mobil Uygulama",
+          "description": "Android ve iOS uygulama geliştirme."
+        },
+        {
+          "name": "CRM Sistemi",
+          "description": "Müşterileri, satışları ve iç süreçleri yönetin."
+        },
+        {
+          "name": "API Entegrasyonu",
+          "description": "Yazılımınızı harici sistemlere bağlayın."
+        },
+        {
+          "name": "İş Süreçleri Otomasyonu",
+          "description": "Tekrarlayan görevleri otomatikleştirin ve zamandan tasarruf edin."
+        },
+        {
+          "name": "Veritabanı Optimizasyonu",
+          "description": "Verilerinizin performansını ve yapısını iyileştirin."
+        }
+      ],
       "web-design": [
         {
           "name": "Kartvizit Web Sitesi",
@@ -108,32 +166,6 @@
         {
           "name": "Web Sitesi Bakımı",
           "description": "Güncellemeler, yedeklemeler ve sürekli teknik destek."
-        }
-      ],
-      "web-applications": [
-        {
-          "name": "Özel Web Uygulaması",
-          "description": "İş gereksinimlerinize göre geliştirilmiş."
-        },
-        {
-          "name": "CRM Sistemi",
-          "description": "Müşterileri, satışları ve iç süreçleri yönetin."
-        },
-        {
-          "name": "API Entegrasyonu",
-          "description": "Yazılımınızı harici sistemlere bağlayın."
-        },
-        {
-          "name": "İş Süreçleri Otomasyonu",
-          "description": "Tekrarlayan görevleri otomatikleştirin ve zamandan tasarruf edin."
-        },
-        {
-          "name": "Mobil Uygulama",
-          "description": "Android ve iOS uygulama geliştirme."
-        },
-        {
-          "name": "Veritabanı Optimizasyonu",
-          "description": "Verilerinizin performansını ve yapısını iyileştirin."
         }
       ],
       "local-networks": [
@@ -164,58 +196,6 @@
         {
           "name": "Kablo Altyapısı",
           "description": "Kablo tesisatı, etiketleme ve test etme."
-        }
-      ],
-      "video-surveillance": [
-        {
-          "name": "4 Kameralı Sistem",
-          "description": "HD kameralar, DVR ve tam kurulum."
-        },
-        {
-          "name": "8 Kameralı Sistem",
-          "description": "Kayıt ve uzaktan erişim özellikli Full HD kameralar."
-        },
-        {
-          "name": "IP Kamera Kurulumu",
-          "description": "Tek kamera kurulumu ve ayarlanması."
-        },
-        {
-          "name": "Kamera Ekleme",
-          "description": "Mevcut sisteme entegrasyon."
-        },
-        {
-          "name": "Bulut Depolama",
-          "description": "30 günlük güvenli bulut kaydı."
-        },
-        {
-          "name": "Mobil Erişim",
-          "description": "Kameralarınızı akıllı telefonunuzdan izleyin."
-        },
-        {
-          "name": "Gece Görüşü Yükseltmesi",
-          "description": "Daha iyi IR gece görüşlü kameralarla değiştirme."
-        }
-      ],
-      "smartphone-repair": [
-        {
-          "name": "Yazılım Teşhis ve Servisi",
-          "description": "Kapsamlı teşhis, sistem güncellemeleri, hız için optimizasyon ve yazılım sorunlarının giderilmesi."
-        },
-        {
-          "name": "Güvenli Veri Transferi",
-          "description": "Tüm verilerinizin (fotoğraflar, kişiler, dosyalar) eski ve yeni cihazlar arasında profesyonel transferi."
-        },
-        {
-          "name": "Yeni Cihaz Kurulumu (Telefon/Tablet)",
-          "description": "Yeni bir telefon veya tabletin anahtar uygulamalar ve hesaplar dahil olmak üzere kapsamlı yapılandırılması."
-        },
-        {
-          "name": "Kaybolan Veri Kurtarma",
-          "description": "Cihazdan silinmiş veya erişilemeyen dosyaların, fotoğrafların ve önemli bilgilerin kurtarılması."
-        },
-        {
-          "name": "Kapsamlı Sistem Optimizasyonu ve Temizliği",
-          "description": "Cihaz performansının hızlandırılması, gereksiz dosyaların temizlenmesi ve genel verimliliğin artırılması."
         }
       ],
       "operating-systems": [
@@ -267,54 +247,569 @@
           "name": "Özel Bilgisayar Montajı",
           "description": "Tam sistem montajı ve yazılım kurulumu."
         }
+      ],
+      "video-surveillance": [
+        {
+          "name": "4 Kameralı Sistem",
+          "description": "HD kameralar, DVR ve tam kurulum."
+        },
+        {
+          "name": "8 Kameralı Sistem",
+          "description": "Kayıt ve uzaktan erişim özellikli Full HD kameralar."
+        },
+        {
+          "name": "IP Kamera Kurulumu",
+          "description": "Tek kamera kurulumu ve ayarlanması."
+        },
+        {
+          "name": "Kamera Ekleme",
+          "description": "Mevcut sisteme entegrasyon."
+        },
+        {
+          "name": "Bulut Depolama",
+          "description": "30 günlük güvenli bulut kaydı."
+        },
+        {
+          "name": "Mobil Erişim",
+          "description": "Kameralarınızı akıllı telefonunuzdan izleyin."
+        },
+        {
+          "name": "Gece Görüşü Yükseltmesi",
+          "description": "Daha iyi IR gece görüşlü kameralarla değiştirme."
+        }
+      ],
+      "maintenance-support": [
+        {
+          "name": "Aylık kamera sistemi kontrolü",
+          "description": "Kayıt, kamera açıları, lensler ve disk alanı kontrol edilir."
+        },
+        {
+          "name": "Güncellemeler ve şifre yenileme",
+          "description": "Router, NVR ve bilgisayarlarda yazılım ve ayarlar güncellenir."
+        },
+        {
+          "name": "Uzaktan yardım",
+          "description": "Bir sorun çıktığında ziyaret beklemeden uzaktan destek."
+        },
+        {
+          "name": "Öncelikli yerinde müdahale",
+          "description": "Arıza durumunda aboneler öncelikli olarak hizmet alır."
+        },
+        {
+          "name": "Yedeklerin kontrolü",
+          "description": "Otomatik yedeklemenin çalıştığı ve geri yüklenebildiği doğrulanır."
+        },
+        {
+          "name": "Kısa aylık rapor",
+          "description": "Ne kontrol edildi, ne düzeltildi ve sırada ne var."
+        }
+      ],
+      "network-security-audit": [
+        {
+          "name": "Ağ ve cihaz envanteri",
+          "description": "Bağlı olan her şeyin listesi ve bilinmeyen cihazların tespiti."
+        },
+        {
+          "name": "Router ve güvenlik duvarı incelemesi",
+          "description": "Şifreler, açık portlar, uzaktan erişim ve yazılım sürümü."
+        },
+        {
+          "name": "Kamera sistemi güvenliği",
+          "description": "Fabrika şifreleri, gereksiz internet erişimi ve kayıtların korunması."
+        },
+        {
+          "name": "Wi-Fi güvenliği ve misafir ağı",
+          "description": "Şifreleme ve iş cihazlarının kişisel cihazlardan ayrılması."
+        },
+        {
+          "name": "Yedekleme incelemesi",
+          "description": "Çalışan bir yedek var mı ve veriler ne kadar hızlı geri gelir."
+        },
+        {
+          "name": "Öncelikli bulgular raporu",
+          "description": "Bulguların net listesi ve önce nelerin düzeltilmesi gerektiği."
+        }
       ]
     },
     "process": {
       "step1": {
-        "title": "Danışmanlık",
-        "desc": "En iyi teknik çözümü bulmak için hedeflerinizi ve ihtiyaçlarınızı görüşüyoruz."
+        "title": "Yerinde keşif",
+        "desc": "Adrese geliriz, koşulları inceler ve tam olarak neyin gerektiğini birlikte belirleriz."
       },
       "step2": {
-        "title": "Planlama",
-        "desc": "Ayrıntılı bir uygulama planı, zaman çizelgesi ve teknoloji yığını hazırlıyoruz."
+        "title": "Teklif ve plan",
+        "desc": "Ekipman, süre ve fiyatı net yazan bir teklif alırsınız — gizli ek yok."
       },
       "step3": {
-        "title": "Uygulama",
-        "desc": "Ekibimiz, projeyi titizlikle ve düzenli iletişimle yürütüyor."
+        "title": "Montaj ve ayar",
+        "desc": "İşi yapar, her şeyi test eder ve nasıl kullanılacağını gösteririz."
       },
       "step4": {
-        "title": "Destek",
-        "desc": "Sürekli bakım, güncellemeler ve teknik yardım sağlıyoruz."
+        "title": "Sonrasında destek",
+        "desc": "Sorular, kontroller ve sistemi genişletmek için ulaşılabilir kalırız."
+      }
+    },
+    "priceFrom": "başlangıç",
+    "priceOnRequest": "Anlaşmaya göre",
+    "pricePerMonth": "/ay",
+    "priceNote": "İşçilik fiyatlarıdır ve nihaidir — şirket KDV mükellefi değildir. Ekipman ayrıca ödenir.",
+    "priceNoteShort": "Yalnızca işçilik, ekipman hariç.",
+    "freeConsultationSecondary": "Danışmanlık ücretsizdir",
+    "onSiteBadge": "Adresinizde yerinde hizmet",
+    "groups": {
+      "software": {
+        "title": "Yazılım çözümleri",
+        "desc": "Bulgaristan ve yurt dışındaki müşteriler için web, masaüstü ve mobil uygulamalar, web siteleri ve otomasyon."
+      },
+      "infrastructure": {
+        "title": "BT altyapısı",
+        "desc": "Ağlar, bilgisayarlar ve güvenlik kameraları — yerinde kurulur ve ayarlanır."
+      },
+      "support": {
+        "title": "Bakım ve güvenlik",
+        "desc": "Hâlihazırda çalışan sistemleriniz için aylık bakım."
+      }
+    },
+    "cta": {
+      "software": {
+        "title": "Bir yazılım fikriniz mi var?",
+        "text": "Neye ihtiyacınız olduğunu anlatın — kapsam, süre ve fiyat tahmini alın.",
+        "note": "Ücretsiz danışmanlık · Yükümlülük yok",
+        "action": "Teklif isteyin"
+      },
+      "infrastructure": {
+        "title": "Adresinize bir bakalım mı?",
+        "text": "Ücretsiz danışmanlık ve net teklif için bize ulaşın.",
+        "note": "Ücretsiz danışmanlık · Yükümlülük yok",
+        "action": "Teklif isteyin"
+      },
+      "support": {
+        "title": "Sistemleriniz kontrol altında olsun ister misiniz?",
+        "text": "Mevcut durumun incelenmesi ve sistemlerinize uygun aylık plan için bize ulaşın.",
+        "note": "İlk inceleme · Yükümlülük yok",
+        "action": "İnceleme talep edin"
+      }
+    },
+    "details": {
+      "web-applications": {
+        "processTitle": "Yazılımınızı nasıl geliştiriyoruz",
+        "process": [
+          {
+            "title": "Analiz ve kapsam",
+            "desc": "İş akışınızı, kullanıcılarınızı ve entegrasyonları inceler, ilk sürümün ne yapması gerektiğini belirleriz."
+          },
+          {
+            "title": "Prototip ve fiyat",
+            "desc": "Temel ekranları görür, kodlamaya başlamadan önce net kapsam, süre ve fiyat alırsınız."
+          },
+          {
+            "title": "Aşamalı geliştirme",
+            "desc": "Kısa döngülerle çalışır, her bir iki haftada çalışan özellikleri size gösteririz."
+          },
+          {
+            "title": "Yayın ve destek",
+            "desc": "Sistemi yayına alır, ekibinizi eğitir, yazılımı güncel ve güvenli tutarız."
+          }
+        ],
+        "benefits": [
+          "Projeyi geliştiren yazılımcıyla doğrudan iletişim",
+          "Sadece sonda değil, her aşamada çalışan demo",
+          "Kaynak kod ve veriler sizindir",
+          "Modern teknolojiler: TypeScript, React, Node.js",
+          "Kullandığınız araç ve sistemlerle entegrasyon",
+          "Yayından sonra düzeltmeler ve yeni özellikler"
+        ],
+        "cta": {
+          "title": "Bir yazılım fikriniz mi var?",
+          "text": "Neye ihtiyacınız olduğunu anlatın; kapsam, süre ve fiyat tahmini alın.",
+          "note": "Ücretsiz danışmanlık · Yükümlülük yok"
+        }
+      },
+      "web-design": {
+        "processTitle": "Fikirden yayındaki siteye",
+        "process": [
+          {
+            "title": "Brif ve yapı",
+            "desc": "Hedefleri, kitleyi, sayfaları ve içeriği birlikte belirleriz; site müşterilerinize göre planlanır."
+          },
+          {
+            "title": "Tasarım",
+            "desc": "Geliştirmeye başlamadan önce ana sayfaların masaüstü ve mobil görünümünü onaylarsınız."
+          },
+          {
+            "title": "Geliştirme ve SEO",
+            "desc": "Temel SEO, istatistik ve iletişim formu içeren hızlı, uyumlu bir site kurarız."
+          },
+          {
+            "title": "Yayın ve bakım",
+            "desc": "Alan adı, hosting ve yayını üstleniriz; sonra siteyi yedekli ve güncel tutarız."
+          }
+        ],
+        "benefits": [
+          "Hızlı açılış ve önce mobil düşünülmüş tasarım",
+          "İlk günden temel SEO",
+          "Ekibiniz için kolay içerik düzenleme",
+          "Alan adı, hosting ve SSL bizden",
+          "İstenirse online ödeme ve mağaza",
+          "Yayından sonra yedekleme ve güncelleme"
+        ],
+        "cta": {
+          "title": "Müşteri getiren bir siteye hazır mısınız?",
+          "text": "İşinizi anlatın, size uygun site türünü net bir fiyatla önerelim.",
+          "note": "Ücretsiz danışmanlık · Yükümlülük yok"
+        }
+      },
+      "local-networks": {
+        "processTitle": "Ağınızı nasıl kuruyoruz",
+        "process": [
+          {
+            "title": "Yerinde keşif",
+            "desc": "Odaları, duvarları ve cihazları inceler, mevcut Wi-Fi sinyalini ölçer ve zayıf noktaları buluruz."
+          },
+          {
+            "title": "Ağ tasarımı",
+            "desc": "Kablo güzergâhları, erişim noktası yerleri, ekipman ve fiyatı içeren bir plan alırsınız."
+          },
+          {
+            "title": "Kablolama ve kurulum",
+            "desc": "Kabloları çeker ve etiketler, ekipmanı monte eder, modem, Wi-Fi ve güvenliği ayarlarız."
+          },
+          {
+            "title": "Test ve teslim",
+            "desc": "Her odada hız ve kapsamayı ölçer, şifreleri ve ağ şemasını size teslim ederiz."
+          }
+        ],
+        "benefits": [
+          "Her odada kararlı Wi-Fi",
+          "Düzenli, gizli ve etiketli kablolama",
+          "Misafir ve kamera için ayrı ağlar",
+          "Güvenlik duvarı ve güvenli modem ayarı",
+          "Güvenilir markalardan profesyonel ekipman",
+          "Bir şey çalışmadığında uzaktan destek"
+        ],
+        "cta": {
+          "title": "Zayıf Wi-Fi veya kopan bağlantı mı?",
+          "text": "Keşif isteyin; sebebi bulalım ve net bir teklif verelim.",
+          "note": "Ücretsiz danışmanlık · Yükümlülük yok"
+        }
+      },
+      "operating-systems": {
+        "processTitle": "Bilgisayarınıza nasıl servis veriyoruz",
+        "process": [
+          {
+            "title": "Arıza tespiti",
+            "desc": "Donanımı, disk sağlığını ve yazılımı kontrol eder, sorunun ne olduğunu size söyleriz."
+          },
+          {
+            "title": "Yedekleme",
+            "desc": "Hiçbir şey kaybolmasın diye her değişiklikten önce kişisel dosyalarınızı yedekleriz."
+          },
+          {
+            "title": "Onarım ve kurulum",
+            "desc": "Sistemi yeniden kurar veya onarır, kullandığınız sürücü ve programları yükleriz."
+          },
+          {
+            "title": "Teslim",
+            "desc": "Dosyaları yerinde, hızlı, temiz ve güncel bir bilgisayar teslim alırsınız."
+          }
+        ],
+        "benefits": [
+          "Her işlemden önce dosyalarınız yedeklenir",
+          "Lisanslı Windows ve resmi sürücüler",
+          "Virüs ve kötü amaçlı yazılım temizliği",
+          "Donanım yükseltme: SSD, RAM ve daha fazlası",
+          "Başlamadan önce net fiyat",
+          "Küçük sorunlar için uzaktan destek"
+        ],
+        "cta": {
+          "title": "Bilgisayarınız yavaş mı, bozuk mu?",
+          "text": "Bize yazın; arızayı tespit edelim ve işe başlamadan önce fiyatı söyleyelim.",
+          "note": "Önceden net fiyat · Yükümlülük yok"
+        }
+      },
+      "video-surveillance": {
+        "processTitle": "Kameralarınızı nasıl kuruyoruz",
+        "process": [
+          {
+            "title": "Yerinde keşif",
+            "desc": "Mülkü birlikte gezer, gece ve gündüz hangi alanların görülmesi gerektiğini belirleriz."
+          },
+          {
+            "title": "Kamera planı",
+            "desc": "Kamera yerleri, çözünürlük, kayıt süresi ve net fiyatı içeren bir plan alırsınız."
+          },
+          {
+            "title": "Montaj",
+            "desc": "Kameraları monte eder, kabloları gizler ve kayıt cihazını kurarız."
+          },
+          {
+            "title": "Telefondan erişim",
+            "desc": "Sistemi telefonunuza bağlar, canlı izlemeyi ve kayıtları geri oynatmayı gösteririz."
+          }
+        ],
+        "benefits": [
+          "Telefondan canlı izleme ve kayıtlar",
+          "Yüksek çözünürlük ve net gece görüşü",
+          "Gizli, hava koşullarına dayanıklı kablolama",
+          "Hareket bildirimleri doğrudan telefonunuza",
+          "İhtiyacınıza göre kayıt kapasitesi",
+          "Garantili, güvenilir markalar"
+        ],
+        "cta": {
+          "title": "Mülkünüzü telefonunuzdan görmek ister misiniz?",
+          "text": "Keşif isteyin, net fiyatlı bir kamera planı alın.",
+          "note": "Ücretsiz danışmanlık · Yükümlülük yok"
+        }
+      },
+      "maintenance-support": {
+        "processTitle": "Abonelik nasıl işler",
+        "process": [
+          {
+            "title": "İlk inceleme",
+            "desc": "Bilgisayarlarınızı, ağınızı ve kameralarınızı inceler, ilgilenilmesi gerekenleri not ederiz."
+          },
+          {
+            "title": "Size özel plan",
+            "desc": "Hangi cihazların kapsandığını, ne sıklıkla kontrol edildiğini ve ne kadar hızlı müdahale ettiğimizi belirleriz."
+          },
+          {
+            "title": "Düzenli bakım",
+            "desc": "Her ay güncellemeler, yedek kontrolleri ve önleyici bakım; yerinde veya uzaktan."
+          },
+          {
+            "title": "Hızlı yardım",
+            "desc": "Bir şey bozulduğunda bize yazarsınız ve önceliklisiniz."
+          }
+        ],
+        "benefits": [
+          "Abonelere öncelikli müdahale",
+          "Aylık güncellemeler ve yedek kontrolleri",
+          "Ziyaret beklemeden uzaktan destek",
+          "Tek sabit aylık fiyat, sürpriz yok",
+          "Yapılanlar hakkında kısa rapor",
+          "Sorunlar işinizi durdurmadan yakalanır"
+        ],
+        "cta": {
+          "title": "BT sistemlerinizin sorunsuz çalışmasını mı istiyorsunuz?",
+          "text": "Hangi sistemleri kullandığınızı söyleyin, size uygun bir abonelik önerelim.",
+          "note": "Ücretsiz ilk inceleme · Yükümlülük yok"
+        }
+      },
+      "network-security-audit": {
+        "processTitle": "Denetim nasıl işler",
+        "process": [
+          {
+            "title": "Kapsam",
+            "desc": "Hangi ağların, cihazların ve kameraların kontrol edileceğini belirleriz."
+          },
+          {
+            "title": "İnceleme",
+            "desc": "Modem ayarlarını, açık portları, şifreleri, yazılım sürümlerini ve internete açık cihazları kontrol ederiz."
+          },
+          {
+            "title": "Rapor",
+            "desc": "Teknik jargon olmadan yazılmış, öncelikli ve net bir rapor alırsınız."
+          },
+          {
+            "title": "Düzeltme ve tekrar kontrol",
+            "desc": "İsterseniz bulguları düzeltir ve kontrolü düzenli olarak tekrarlarız."
+          }
+        ],
+        "benefits": [
+          "Modem, Wi-Fi, kamera ve açık port kontrolleri",
+          "Anlaşılır dilde rapor",
+          "Net öncelikler: önce ne düzeltilmeli",
+          "İşinizi durdurmayan kontroller",
+          "İsterseniz düzeltmeler aynı ekipten",
+          "Kalıcı koruma için düzenli kontroller"
+        ],
+        "cta": {
+          "title": "Ağınız gerçekten güvende mi?",
+          "text": "Denetim isteyin, önce neyin düzeltileceğini gösteren net bir rapor alın.",
+          "note": "Ücretsiz danışmanlık · Yükümlülük yok"
+        }
+      }
+    },
+    "priceList": {
+      "title": "Fiyat listesi",
+      "subtitle": "Euro cinsinden işçilik fiyatları. Ekipman ayrıca ödenir.",
+      "termsTitle": "Genel koşullar",
+      "terms": [
+        "Fiyatlar nihaidir — şirket KDV mükellefi değildir. Bağlayıcı olan, adrese özel yazılı tekliftir.",
+        "Ziyaret ücreti: 10 € — 100 € üzeri işlerde ve abonelerde alınmaz. Uzak adresler için anlaşmaya göre.",
+        "Tatil günlerinde veya 18:00'den sonra çalışma — %50 ek ücret.",
+        "Ödeme banka havalesi ile. Ekipman ve montaj garantisi 2 yıl; onarım ve kurulum garantisi 3 ay."
+      ],
+      "items": {
+        "web-applications": [
+          {
+            "name": "Özel web uygulaması",
+            "detail": "gereksinim analizinden sonra",
+            "price": "anlaşmaya göre"
+          },
+          {
+            "name": "Geliştirme — saatlik ücret",
+            "detail": "mevcut projede değişiklikler",
+            "price": "30 € / saat"
+          }
+        ],
+        "web-design": [
+          {
+            "name": "Tanıtım web sitesi",
+            "detail": "5 sayfaya kadar, uyumlu, temel SEO",
+            "price": "450 €'dan"
+          },
+          {
+            "name": "Geliştirme — saatlik ücret",
+            "detail": "mevcut projede değişiklikler",
+            "price": "30 € / saat"
+          },
+          {
+            "name": "Web sitesi bakımı",
+            "detail": "hosting, güncellemeler, yedekler, küçük değişiklikler",
+            "price": "20 € / ay'dan"
+          }
+        ],
+        "local-networks": [
+          {
+            "name": "Modem ve Wi-Fi ayarı",
+            "detail": "yapılandırma, güvenlik, kapsama",
+            "price": "30 €"
+          },
+          {
+            "name": "Ağ kurulumu — nokta başına",
+            "detail": "kablo, priz, test, malzeme hariç",
+            "price": "25 €"
+          },
+          {
+            "name": "İşletmeler için ağ denetimi",
+            "detail": "tarama, güvenlik açıkları, yazılı rapor",
+            "price": "150 €'dan"
+          }
+        ],
+        "operating-systems": [
+          {
+            "name": "Windows kurulumu",
+            "detail": "sistem, sürücüler, temel yazılımlar",
+            "price": "25 – 30 €"
+          },
+          {
+            "name": "Veri yedekleme ve geri yükleme",
+            "detail": "kurulumdan önce yedek",
+            "price": "+ 15 €"
+          },
+          {
+            "name": "HDD yerine SSD takılması",
+            "detail": "montaj ve sistem taşıma, disk hariç",
+            "price": "25 €"
+          },
+          {
+            "name": "Temizlik ve termal macun değişimi",
+            "detail": "masaüstü veya dizüstü",
+            "price": "20 €"
+          },
+          {
+            "name": "\"Yenileme\" paketi",
+            "detail": "SSD montajı + temiz sistem + taşıma + temizlik",
+            "price": "65 €"
+          },
+          {
+            "name": "Virüs temizleme",
+            "detail": "mümkünse yeniden kurulum olmadan",
+            "price": "25 €"
+          },
+          {
+            "name": "Arıza tespiti",
+            "detail": "onarım yaptırırsanız ücretten düşülür",
+            "price": "10 €"
+          }
+        ],
+        "video-surveillance": [
+          {
+            "name": "Kamera montajı",
+            "detail": "kablolama, montaj, ayar — kamera başına",
+            "price": "40 – 50 €"
+          },
+          {
+            "name": "Kayıt cihazı montajı",
+            "detail": "NVR/DVR, kayıt ve disk ayarları",
+            "price": "40 €"
+          },
+          {
+            "name": "Uzaktan erişim kurulumu",
+            "detail": "telefon ve bilgisayar, eğitim",
+            "price": "20 €"
+          },
+          {
+            "name": "Sistem bakımı",
+            "detail": "temizlik, kayıt ve bağlantı kontrolü",
+            "price": "30 €"
+          },
+          {
+            "name": "Talep üzerine kayıt çıkarma",
+            "detail": "görüntü bulma ve dışa aktarma",
+            "price": "20 €"
+          }
+        ],
+        "maintenance-support": [
+          {
+            "name": "Destek — ev",
+            "detail": "uzaktan destek, 4 ziyarete kadar, 1 bakım",
+            "price": "10 € / ay"
+          },
+          {
+            "name": "Destek — işletme",
+            "detail": "öncelik, 8 ziyarete kadar, 2 bakım",
+            "price": "35 € / ay'dan"
+          },
+          {
+            "name": "Web sitesi bakımı",
+            "detail": "hosting, güncellemeler, yedekler, küçük değişiklikler",
+            "price": "20 € / ay'dan"
+          }
+        ],
+        "network-security-audit": [
+          {
+            "name": "İşletmeler için ağ denetimi",
+            "detail": "tarama, güvenlik açıkları, yazılı rapor",
+            "price": "150 €'dan"
+          },
+          {
+            "name": "Modem ve Wi-Fi ayarı",
+            "detail": "yapılandırma, güvenlik, kapsama",
+            "price": "30 €"
+          }
+        ]
       }
     }
   },
   "about": {
-    "title": "Hakkımızda",
-    "subtitle": "Tek bir sözü olan küçük ve odaklı bir ekip — sessizce çalışan teknoloji.",
+    "title": "Omni Tech Solutions Hakkında",
+    "subtitle": "Bulgaristan ve yurt dışındaki müşteriler için yazılım geliştiriyor, onu çalıştıran BT altyapısını kuruyoruz.",
     "mission": {
       "title": "Misyonumuz",
-      "text": "Müşterilerimizin günlük yaşamını ve işlerini kolaylaştırmak için tasarlanmış erişilebilir ve kişiselleştirilmiş BT çözümleri sunmak."
+      "text": "Müşterilerimizin günlük işini ve işletmesini kolaylaştıran güvenilir yazılım ve BT altyapısı kurmak — gereksiz karmaşa ve fiyatta sürpriz olmadan."
     },
     "vision": {
       "title": "Vizyonumuz",
-      "text": "Her projeye kaliteli hizmetler, şeffaflık ve özen gösteren güvenilir bir teknoloji ortağı olmak."
+      "text": "Müşterilerin ilk aradığı teknoloji ortağı olmak — kaliteli iş, şeffaf iletişim ve teslimden sonra da her projeye gösterilen özenle."
     },
     "history": {
-      "title": "Tarihçemiz",
-      "text": "Omni Tech Solutions, gerçek iş ihtiyaçları için pratik teknoloji çözümleri oluşturmaya odaklanan küçük ama hırslı bir şirket olarak başladı. Zamanla hizmetlerimizi genişlettik ve memnun müşterilerden oluşan güçlü bir ağ oluşturduk."
+      "title": "Hikayemiz",
+      "text": "Evler ve küçük işletmeler için yerinde BT hizmetleriyle başladık. Bugün iki alanda çalışıyoruz: yerel altyapı ve Bulgaristan ile yurt dışındaki müşteriler için yazılım."
     },
     "stats": [
       {
-        "value": "10+",
-        "label": "Başarıyla Tamamlanan Proje"
+        "value": "Yazılım + altyapı",
+        "label": "Her iki alan tek çatı altında"
       },
       {
-        "value": "7/24",
-        "label": "Destek"
+        "value": "24s",
+        "label": "Her talebe yanıt"
       },
       {
-        "value": "Yüksek",
-        "label": "Kalite ve Güvenilirlik Odağı"
+        "value": "Taşeron yok",
+        "label": "Projeyi baştan sona biz yürütüyoruz"
       }
     ]
   },
@@ -358,9 +853,9 @@
     ]
   },
   "technologies": {
-    "title": "Modern Teknolojiler",
-    "badge": "Teknoloji Yığınımız",
-    "subtitle": "Ölçeklenebilir ve yüksek performanslı çözümler için sektör lideri araçlar ve framework'ler kullanıyoruz",
+    "title": "Çalıştığımız teknolojiler",
+    "badge": "Teknolojiler",
+    "subtitle": "Projeleri kurduğumuz ve bakımını yaptığımız araçlar ve sistemler.",
     "countLabel": "teknoloji",
     "categories": {
       "all": "Tümü",
@@ -370,7 +865,13 @@
       "mobile": "Mobil",
       "devops": "DevOps & Cloud",
       "ai": "AI & Otomasyon",
-      "tools": "Araçlar"
+      "tools": "Araçlar",
+      "web": "Web",
+      "infrastructure": "Ağ ve sistemler"
+    },
+    "items": {
+      "networking": "Ağ ve IP kameralar",
+      "windows": "Windows / Windows Server"
     }
   },
   "trustIndicators": {
@@ -380,34 +881,26 @@
     "quality": "Yüksek Kalite"
   },
   "contact": {
-    "title": "Bize Ulaşın",
-    "subtitle": "Size Yardımcı Olmaya Hazırız",
+    "title": "Omni Tech Solutions ile iletişime geçin",
+    "subtitle": "Neye ihtiyacınız olduğunu yazın — 24 saat içinde yanıt alırsınız",
     "required": "Zorunlu alanlar",
-    "successTitle": "Mesaj gönderildi",
-    "responseNote": "Genellikle 24 saat içinde yanıt veriyoruz",
+    "successTitle": "E-posta uygulamanız açılıyor",
+    "responseNote": "Her talebe 24 saat içinde yanıt veriyoruz",
     "name": "Adınız",
     "email": "E-posta Adresiniz",
     "phone": "Telefon Numaranız",
     "message": "Mesajınız",
     "submit": "Gönder",
-    "success": "Teşekkürler! Size kısa süre içinde geri döneceğiz.",
-    "getInTouch": "İletişime Geçin",
+    "success": "Mesajınız support@omni-solutions.co adresine yeni bir e-postaya hazırlandı — orada \"Gönder\"e basın. Hiçbir şey açılmazsa bize doğrudan support@omni-solutions.co adresinden yazın.",
+    "getInTouch": "Doğrudan iletişim",
     "sendMessage": "Mesaj Gönder",
     "sending": "Gönderiliyor...",
-    "callUs": "Bizi Arayın",
+    "callUs": "Talep gönderin",
     "emailUs": "Bize E-posta Gönderin",
     "contactInfo": {
       "email": {
         "title": "E-posta",
         "value": "support@omni-solutions.co"
-      },
-      "phone": {
-        "title": "Telefon",
-        "value": "+359899350531"
-      },
-      "location": {
-        "title": "Konum",
-        "value": "Samuil, Razgrad Bölgesi, Bulgaristan"
       },
       "hours": {
         "title": "Çalışma Saatleri",
@@ -415,23 +908,24 @@
       }
     },
     "whyChooseUs": {
-      "title": "Neden Bizi Tercih Etmelisiniz?",
-      "fastResponse": "24 saat içinde yanıt",
-      "professionalConsultation": "Ücretsiz profesyonel danışmanlık",
-      "transparentPricing": "Açık ve dürüst fiyatlandırma",
-      "qualityGuarantee": "Kalite garantisi"
+      "title": "Neden biz",
+      "fastResponse": "Her talebe 24 saat içinde yanıt",
+      "professionalConsultation": "Ücretsiz danışmanlık ve net yazılı teklif",
+      "transparentPricing": "Şeffaf fiyatlar, gizli ek yok",
+      "qualityGuarantee": "İşçilik ve malzeme garantisi"
     },
     "placeholders": {
       "name": "Ahmet Yılmaz",
       "email": "ahmet@ornek.com",
       "phone": "+359 XXX XXX XXX",
       "message": "Bize projenizden bahsedin..."
-    }
+    },
+    "mailSubject": "Web sitesinden talep — {{name}}"
   },
   "footer": {
-    "text": "© 2025 Omni Tech Solutions. Tüm hakları saklıdır.",
-    "tagline": "Yenilik • Kalite • Güven",
-    "about": "Bireyler ve işletmeler için uygun fiyatlı, güvenilir ve yenilikçi BT çözümleri sunuyoruz. Güvenilir teknoloji ortağınız.",
+    "text": "© {{year}} Omni Tech Solutions. Tüm hakları saklıdır.",
+    "tagline": "Yazılım • Altyapı • Destek",
+    "about": "Bulgaristan ve yurt dışındaki müşteriler için yazılım geliştiriyor; evler ve işletmeler için ağ, bilgisayar ve güvenlik kamerası altyapısı kuruyoruz.",
     "quickLinks": "Hızlı Bağlantılar",
     "contactUs": "Bize Ulaşın",
     "workingHours": "Pzt–Cum: 09:00 – 18:00",
@@ -440,6 +934,10 @@
       "description": "En son hizmetlerimiz, teknik ipuçları ve özel teklifler hakkında güncel kalın.",
       "placeholder": "E-posta adresinizi girin",
       "success": "Abone olduğunuz için teşekkürler!"
+    },
+    "social": {
+      "facebook": "Facebook",
+      "instagram": "Instagram"
     }
   }
 }

@@ -8,13 +8,9 @@ import logoWhite from '@/public/assets/logo_white.png';
 import { COLORS } from '@/app/styles/theme';
 import {
   Mail,
-  Phone,
-  MapPin,
   Clock,
   Facebook,
-  Twitter,
   Instagram,
-  Linkedin,
   ArrowUp,
   Send,
   CheckCircle2
@@ -32,11 +28,11 @@ const quickLinks = [
   { key: 'contact', href: '/#contact' }
 ];
 
-const socialLinks = [
-  { icon: Facebook, href: '#', label: 'Facebook' },
-  { icon: Twitter, href: '#', label: 'Twitter' },
-  { icon: Instagram, href: '#', label: 'Instagram' },
-  { icon: Linkedin, href: '#', label: 'LinkedIn' }
+// TODO(Deniz): the real Facebook and Instagram profile URLs.
+// A link stays hidden until its `href` is filled in, so nothing points at "#".
+const socialLinks: Array<{ icon: typeof Facebook; href: string | null; label: string }> = [
+  { icon: Facebook, href: null, label: 'Facebook' },
+  { icon: Instagram, href: null, label: 'Instagram' }
 ];
 
 export const Footer: React.FC<FooterProps> = ({ colors, theme }) => {
@@ -71,8 +67,6 @@ export const Footer: React.FC<FooterProps> = ({ colors, theme }) => {
 
   const contactDetails = [
     { icon: Mail, text: 'support@omni-solutions.co', href: 'mailto:support@omni-solutions.co' },
-    { icon: Phone, text: '+359899350531', href: 'tel:+359899350531' },
-    { icon: MapPin, text: 'Samuil, Razgrad, Bulgaria', href: null },
     { icon: Clock, text: t('footer.workingHours'), href: null }
   ];
 
@@ -113,10 +107,12 @@ export const Footer: React.FC<FooterProps> = ({ colors, theme }) => {
             </p>
 
             <div className="flex gap-3 pt-1">
-              {socialLinks.map((social) => (
+              {socialLinks.filter((social) => social.href).map((social) => (
                 <a
                   key={social.label}
-                  href={social.href}
+                  href={social.href as string}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={social.label}
                   className={`${colors.textSec} p-2.5 rounded-xl border ${colors.borderLight} transition-all duration-300 hover:-translate-y-1 hover:border-[#ff6b1a] hover:text-[#ff6b1a] hover:shadow-[0_10px_24px_-12px_rgba(255,107,26,0.8)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff6b1a] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent`}
                 >
@@ -231,7 +227,7 @@ export const Footer: React.FC<FooterProps> = ({ colors, theme }) => {
         {/* Bottom Bar */}
         <div className={`pt-10 border-t ${colors.borderLight} flex flex-col sm:flex-row justify-between items-center gap-6`}>
           <p className={`${colors.textSec} text-sm text-center sm:text-left`}>
-            {t('footer.text')}
+            {t('footer.text', { year: new Date().getFullYear() })}
           </p>
 
           <div className="flex items-center gap-6 sm:gap-8">

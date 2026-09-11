@@ -15,27 +15,24 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://tech.omni-solutions.co'),
   title: {
-    default: 'Omni Tech Solutions - Professional Technology Services',
+    default: 'Omni Tech Solutions — софтуерни решения, мрежи и ИТ услуги',
     template: '%s | Omni Tech Solutions'
   },
-  description: 'Professional technology services for businesses and homes. Web design, local networks, video surveillance, smartphone repair, custom software development, and IT solutions.',
+  description: 'Софтуер по поръчка и изграждане на мрежи, плюс уебсайтове, компютърна поддръжка и видеонаблюдение за дома и бизнеса в България. Безплатна консултация.',
   keywords: [
-    'technology services',
-    'web design',
-    'web development',
-    'local networks',
-    'video surveillance',
-    'CCTV installation',
-    'smartphone repair',
-    'IT solutions',
-    'network setup',
-    'custom software',
-    'Bulgaria',
-    'технологични услуги',
-    'уеб дизайн',
-    'локални мрежи',
+    'софтуер по поръчка България',
+    'изграждане на мрежи',
+    'Wi-Fi покритие',
+    'ИТ услуги',
+    'изработка на сайт',
     'видеонаблюдение',
-    'ремонт смартфони'
+    'монтаж на камери',
+    'IP камери',
+    'компютърен сервиз',
+    'инсталация на Windows',
+    'ИТ поддръжка',
+    'IT services Bulgaria',
+    'CCTV installation Bulgaria'
   ],
   authors: [{ name: 'Omni Tech Solutions' }],
   creator: 'Omni Tech Solutions',
@@ -65,8 +62,8 @@ export const metadata: Metadata = {
     alternateLocale: ['en_US', 'tr_TR'],
     url: 'https://tech.omni-solutions.co',
     siteName: 'Omni Tech Solutions',
-    title: 'Omni Tech Solutions - Professional Technology Services',
-    description: 'Professional technology services for businesses and homes. Web design, local networks, video surveillance, smartphone repair, and IT solutions.',
+    title: 'Omni Tech Solutions — софтуер, мрежи и ИТ услуги',
+    description: 'Софтуер по поръчка и мрежи, плюс уебсайтове, компютърна поддръжка и видеонаблюдение за дома и бизнеса.',
     images: [
       {
         url: '/og-image-placeholder.svg',
@@ -78,8 +75,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Omni Tech Solutions - Professional Technology Services',
-    description: 'Professional technology services for businesses and homes. Web design, local networks, video surveillance, smartphone repair, and IT solutions.',
+    title: 'Omni Tech Solutions — софтуер, мрежи и ИТ услуги',
+    description: 'Софтуер по поръчка и мрежи, плюс уебсайтове, компютърна поддръжка и видеонаблюдение за дома и бизнеса.',
     images: ['/og-image-placeholder.svg'],
   },
   verification: {

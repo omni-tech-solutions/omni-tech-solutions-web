@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Layers } from 'lucide-react';
+import { Layers, Network, type LucideIcon } from 'lucide-react';
 import { COLORS } from '@/app/styles/theme';
 
 interface TechnologiesSectionProps {
@@ -10,52 +10,34 @@ interface TechnologiesSectionProps {
     theme: 'dark' | 'light';
 }
 
-type Category = 'all' | 'frontend' | 'backend' | 'database' | 'mobile' | 'devops' | 'ai' | 'tools';
+type Category = 'all' | 'web' | 'mobile' | 'backend' | 'infrastructure';
 
 interface Technology {
+    /** Display name for proper nouns; `nameKey` takes over for anything translatable. */
     name: string;
-    icon: string;
-    darkIcon?: string;
+    nameKey?: string;
+    icon?: string;
+    lucideIcon?: LucideIcon;
     invertInDark?: boolean;
     category: Category[];
 }
 
-// Shuffled order like the reference design — mixed across categories
+// TODO(Deniz): confirm — this is the short list of what is actually used day to day.
+// Add or remove entries here; the category filter below adjusts automatically.
 const technologies: Technology[] = [
-    { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', category: ['frontend'] },
-    { name: 'NestJS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg', category: ['backend'] },
-    { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg', category: ['devops'] },
-    { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg', invertInDark: true, category: ['frontend'] },
-    { name: 'PostgreSQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg', category: ['database'] },
-    { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg', category: ['backend', 'ai'] },
-    { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg', category: ['frontend', 'backend'] },
-    { name: 'Claude AI', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/claude/claude-original.svg', category: ['ai'] },
-    { name: 'Angular', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg', category: ['frontend'] },
-    { name: 'MongoDB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg', category: ['database'] },
-    { name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg', category: ['backend'] },
-    { name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg', category: ['frontend'] },
+    { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg', category: ['web', 'backend', 'mobile'] },
+    { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', category: ['web'] },
+    { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg', invertInDark: true, category: ['web'] },
     { name: 'React Native', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', category: ['mobile'] },
-    { name: 'Kubernetes', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg', category: ['devops'] },
-    { name: 'Firebase', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg', category: ['database', 'backend'] },
-    { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg', category: ['tools'] },
-    { name: 'Material UI', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg', category: ['frontend'] },
-    { name: 'Express', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg', invertInDark: true, category: ['backend'] },
-    { name: 'AWS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg', category: ['devops'] },
-    { name: 'Figma', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg', category: ['tools'] },
-    { name: 'GraphQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg', category: ['backend'] },
-    { name: 'Expo', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/expo/expo-original.svg', invertInDark: true, category: ['mobile'] },
-    { name: 'Linux', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg', category: ['devops'] },
-    { name: 'Redis', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg', category: ['database'] },
-    { name: 'C#', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg', category: ['backend'] },
-    { name: 'Framer Motion', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/framermotion/framermotion-original.svg', invertInDark: true, category: ['frontend'] },
-    { name: 'OpenAI', icon: 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/openai.svg', invertInDark: true, category: ['ai'] },
-    { name: 'Nginx', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg', category: ['devops'] },
-    { name: 'Java', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg', category: ['backend'] },
-    { name: 'VS Code', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg', category: ['tools'] },
-    { name: 'Sanity', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sanity/sanity-original.svg', category: ['tools', 'backend'] },
+    { name: 'NestJS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg', category: ['backend'] },
+    { name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg', category: ['backend'] },
+    { name: 'PostgreSQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg', category: ['backend'] },
+    { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg', category: ['backend'] },
+    { name: 'Windows', nameKey: 'technologies.items.windows', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows11/windows11-original.svg', category: ['infrastructure'] },
+    { name: 'Networking', nameKey: 'technologies.items.networking', lucideIcon: Network, category: ['infrastructure'] },
 ];
 
-const categoryKeys: Category[] = ['all', 'frontend', 'backend', 'database', 'mobile', 'devops', 'ai', 'tools'];
+const categoryKeys: Category[] = ['all', 'web', 'backend', 'mobile', 'infrastructure'];
 
 export const TechnologiesSection: React.FC<TechnologiesSectionProps> = ({ colors, theme }) => {
     const { t } = useTranslation();
@@ -154,17 +136,25 @@ export const TechnologiesSection: React.FC<TechnologiesSectionProps> = ({ colors
                             style={{ animationDelay: `${Math.min(index * 25, 400)}ms` }}
                         >
                             <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center">
-                                <img
-                                    src={theme === 'dark' && tech.darkIcon ? tech.darkIcon : tech.icon}
-                                    alt={tech.name}
-                                    className={`w-7 h-7 object-contain transition-transform duration-300 group-hover:scale-110 ${
-                                        theme === 'dark' && tech.invertInDark && !tech.darkIcon ? 'invert' : ''
-                                    }`}
-                                    loading="lazy"
-                                />
+                                {tech.lucideIcon ? (
+                                    <tech.lucideIcon
+                                        className="w-7 h-7 transition-transform duration-300 group-hover:scale-110"
+                                        style={{ color: COLORS.primary }}
+                                        strokeWidth={1.6}
+                                    />
+                                ) : (
+                                    <img
+                                        src={tech.icon}
+                                        alt={tech.name}
+                                        className={`w-7 h-7 object-contain transition-transform duration-300 group-hover:scale-110 ${
+                                            theme === 'dark' && tech.invertInDark ? 'invert' : ''
+                                        }`}
+                                        loading="lazy"
+                                    />
+                                )}
                             </div>
                             <span className={`${colors.text} text-sm font-medium truncate`}>
-                                {tech.name}
+                                {tech.nameKey ? t(tech.nameKey) : tech.name}
                             </span>
                         </div>
                     ))}
