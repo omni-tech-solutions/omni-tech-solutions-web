@@ -18,7 +18,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ colors }) => {
     const { t } = useTranslation();
 
     return (
-        <section id="home" className="relative flex items-center min-h-[80svh] pt-20 overflow-hidden max-sm:bg-[#242428]">
+        <section id="home" className="relative flex items-center min-h-[80svh] pt-20 overflow-hidden max-sm:bg-[#1d1d20]">
             <div className={`omni-reveal relative ${CONTAINER} w-full py-20 sm:py-28 text-center`}>
                 <p className={`text-sm font-semibold uppercase tracking-wider mb-5 ${colors.textTer} max-sm:text-[#f9a427]`}>
                     {t('hero.badge')}

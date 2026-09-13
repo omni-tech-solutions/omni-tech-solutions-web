@@ -12,7 +12,7 @@ export default function NotFound() {
   const router = useRouter();
 
   useEffect(() => {
-    document.body.style.backgroundColor = theme === 'dark' ? '#242428' : '#ffffff';
+    document.body.style.backgroundColor = theme === 'dark' ? '#1d1d20' : '#ffffff';
   }, [theme]);
 
   return (

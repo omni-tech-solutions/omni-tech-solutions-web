@@ -21,14 +21,14 @@ html {
 }
 
 html.dark {
-  background-color: #242428;
+  background-color: #1d1d20;
   color-scheme: dark;
 }
 
 @media (max-width: 767px) {
   html,
   html.dark {
-    background-color: #242428;
+    background-color: #1d1d20;
   }
 }
 
@@ -38,7 +38,7 @@ body {
 }
 
 html.dark body {
-  background-color: #242428;
+  background-color: #1d1d20;
 }
 
 body {

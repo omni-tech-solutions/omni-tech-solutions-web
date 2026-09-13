@@ -13,12 +13,12 @@ const ServicePage: React.FC = () => {
     const activeSection = useActiveSection();
 
     useEffect(() => {
-        document.body.style.backgroundColor = theme === 'dark' ? '#242428' : '#ffffff';
+        document.body.style.backgroundColor = theme === 'dark' ? '#1d1d20' : '#ffffff';
         document.body.style.color = theme === 'dark' ? '#ffffff' : '#18181b';
     }, [theme]);
 
     return (
-        <div className={`min-h-screen ${theme === 'dark' ? 'bg-[#242428]' : 'bg-white'}`}>
+        <div className={`min-h-screen ${theme === 'dark' ? 'bg-[#1d1d20]' : 'bg-white'}`}>
             <Header
                 theme={theme}
                 toggleTheme={toggleTheme}

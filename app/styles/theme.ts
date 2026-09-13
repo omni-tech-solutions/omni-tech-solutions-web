@@ -11,9 +11,9 @@ export const COLORS = {
     primaryDark: '#a86400',
 
     dark: {
-        bg: 'bg-[#242428]',
-        bgGradient: 'bg-[#242428]',
-        nav: 'bg-[#242428]/80',
+        bg: 'bg-[#1d1d20]',
+        bgGradient: 'bg-[#1d1d20]',
+        nav: 'bg-[#1d1d20]/80',
         card: 'bg-zinc-700/50',
         cardHover: 'hover:bg-zinc-700',
         section: 'bg-zinc-700/30',
