@@ -59,7 +59,8 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ colors }) 
     const goToContact = () => router.push('/#contact');
 
     const primaryButton = `group inline-flex items-center justify-center gap-2 px-7 py-3.5 font-semibold text-white ${BORDER_RADIUS.md} transition-colors duration-200 hover:bg-[#e85d0f] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ff6b1a] focus-visible:ring-offset-2`;
-    const secondaryButton = `inline-flex items-center justify-center gap-2 px-7 py-3.5 font-semibold ${BORDER_RADIUS.md} border ${colors.border} ${colors.text} transition-colors duration-200 hover:border-zinc-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ff6b1a] focus-visible:ring-offset-2`;
+    // Both places the buttons appear are dark bands on phones, hence the max-sm colours
+    const secondaryButton = `inline-flex items-center justify-center gap-2 px-7 py-3.5 font-semibold ${BORDER_RADIUS.md} border ${colors.border} ${colors.text} max-sm:border-zinc-700 max-sm:text-white max-sm:bg-white/5 transition-colors duration-200 hover:border-zinc-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ff6b1a] focus-visible:ring-offset-2`;
 
     if (!service || !config || !IconComponent) {
         return (
@@ -121,50 +122,54 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ colors }) 
     );
 
     return (
-        <div className={`pt-20 ${CONTAINER}`}>
-            {/* Hero */}
-            <section className="py-10 sm:py-14">
-                <Link
-                    href="/#services"
-                    className={`inline-flex items-center gap-2 text-sm font-medium ${colors.textSec} hover:underline`}
-                >
-                    <ArrowLeft className="w-4 h-4" />
-                    {t('services.backToServices')}
-                </Link>
+        <div className="pt-20">
+            {/* Hero — on phones a full-width solid dark band, like the homepage hero */}
+            <section className="max-sm:bg-zinc-950">
+                <div className={`${CONTAINER} py-10 sm:py-14`}>
+                    <Link
+                        href="/#services"
+                        className={`inline-flex items-center gap-2 text-sm font-medium ${colors.textSec} max-sm:text-zinc-300 hover:underline`}
+                    >
+                        <ArrowLeft className="w-4 h-4" />
+                        {t('services.backToServices')}
+                    </Link>
 
-                <div className="mt-10 max-w-3xl">
-                    <div className="flex items-center gap-3 mb-5">
-                        <span className={`w-12 h-12 rounded-xl flex items-center justify-center ${isDark ? 'bg-zinc-700/60' : 'bg-gray-100'}`}>
-                            <IconComponent className={`w-6 h-6 ${colors.text}`} strokeWidth={2} />
-                        </span>
-                        <span className={`text-sm font-semibold uppercase tracking-wider ${colors.textTer}`}>
-                            {t(`services.groups.${config.group}.title`)}
-                        </span>
-                    </div>
+                    <div className="mt-10 max-w-3xl">
+                        <div className="flex items-center gap-3 mb-5">
+                            <span className={`w-12 h-12 rounded-xl flex items-center justify-center ${isDark ? 'bg-zinc-700/60' : 'bg-gray-100'} max-sm:bg-[#ff6b1a]/15`}>
+                                <IconComponent className={`w-6 h-6 ${colors.text} max-sm:text-[#ff8a58]`} strokeWidth={2} />
+                            </span>
+                            <span className={`text-sm font-semibold uppercase tracking-wider ${colors.textTer} max-sm:text-[#ff8a58]`}>
+                                {t(`services.groups.${config.group}.title`)}
+                            </span>
+                        </div>
 
-                    <h1 className={`text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight ${colors.text}`}>
-                        {service.title}
-                    </h1>
-                    <p className={`mt-5 text-lg leading-relaxed ${colors.textSec}`}>
-                        {service.desc}
-                    </p>
-                    {config.onSite && (
-                        <p className={`mt-4 flex items-center gap-2 text-sm ${colors.textTer}`}>
-                            <MapPin className="w-4 h-4" strokeWidth={2} />
-                            {t('services.onSiteBadge')}
+                        <h1 className={`text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight ${colors.text} max-sm:text-white`}>
+                            {service.title}
+                        </h1>
+                        <p className={`mt-5 text-lg leading-relaxed ${colors.textSec} max-sm:text-zinc-300`}>
+                            {service.desc}
                         </p>
-                    )}
+                        {config.onSite && (
+                            <p className={`mt-4 flex items-center gap-2 text-sm ${colors.textTer} max-sm:text-zinc-400`}>
+                                <MapPin className="w-4 h-4" strokeWidth={2} />
+                                {t('services.onSiteBadge')}
+                            </p>
+                        )}
 
-                    <div className={`mt-8 pt-6 border-t ${colors.borderLight}`}>
-                        <ServicePrice service={config} colors={colors} variant="detail" />
-                        <p className={`mt-2 text-sm leading-relaxed ${colors.textTer} max-w-xl`}>
-                            {t('services.priceNote')}
-                        </p>
+                        <div className={`mt-8 pt-6 border-t ${colors.borderLight} max-sm:border-zinc-800`}>
+                            <ServicePrice service={config} colors={colors} variant="detail" onDarkMobile />
+                            <p className={`mt-2 text-sm leading-relaxed ${colors.textTer} max-sm:text-zinc-400 max-w-xl`}>
+                                {t('services.priceNote')}
+                            </p>
+                        </div>
+
+                        <div className="mt-8 flex flex-col sm:flex-row gap-3">{actions}</div>
                     </div>
-
-                    <div className="mt-8 flex flex-col sm:flex-row gap-3">{actions}</div>
                 </div>
             </section>
+
+            <div className={CONTAINER}>
 
             {/* What's included */}
             {offerings.length > 0 && (
@@ -241,15 +246,17 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ colors }) 
             </section>
 
             {/* Closing call to action */}
-            <section className={`${sectionClass} text-center`}>
-                <h2 className={`text-2xl sm:text-3xl font-bold tracking-tight ${colors.text}`}>
+            {/* On phones: a full-width dark band that flows into the dark footer */}
+            <section className={`${sectionClass} text-center max-sm:-mx-4 max-sm:px-4 max-sm:bg-zinc-950 max-sm:border-t-0`}>
+                <h2 className={`text-2xl sm:text-3xl font-bold tracking-tight ${colors.text} max-sm:text-white`}>
                     {detail?.cta?.title || t('services.readyToStart')}
                 </h2>
-                <p className={`mt-4 text-lg ${colors.textSec} max-w-2xl mx-auto`}>
+                <p className={`mt-4 text-lg ${colors.textSec} max-sm:text-zinc-300 max-w-2xl mx-auto`}>
                     {detail?.cta?.text || t('services.contactCTA')}
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">{actions}</div>
             </section>
+            </div>
         </div>
     );
 };

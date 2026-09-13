@@ -19,11 +19,12 @@ const quickLinks = [
   { key: 'contact', href: '/#contact' }
 ];
 
-export const Footer: React.FC<FooterProps> = ({ colors, theme }) => {
+// On phones and tablets the footer is a dark band that mirrors the dark header
+export const Footer: React.FC<FooterProps> = ({ colors }) => {
   const { t } = useTranslation();
 
   return (
-    <footer className={`border-t ${colors.borderLight}`}>
+    <footer className={`border-t ${colors.borderLight} max-md:bg-zinc-950 max-md:border-zinc-800`}>
       <div className={`${CONTAINER} py-10`}>
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="flex items-center gap-3">
@@ -34,7 +35,7 @@ export const Footer: React.FC<FooterProps> = ({ colors, theme }) => {
               alt="OMNI Tech Solutions"
               className="h-8 w-8"
             />
-            <span className={`${colors.text} font-bold`}>OMNI Tech Solutions</span>
+            <span className={`${colors.text} max-md:text-white font-bold`}>OMNI Tech Solutions</span>
           </div>
 
           <nav>
@@ -43,7 +44,7 @@ export const Footer: React.FC<FooterProps> = ({ colors, theme }) => {
                 <li key={link.key}>
                   <Link
                     href={link.href}
-                    className={`${colors.textSec} text-sm hover:underline`}
+                    className={`${colors.textSec} max-md:text-zinc-300 text-sm hover:underline`}
                   >
                     {t(`nav.${link.key}`)}
                   </Link>
@@ -54,13 +55,13 @@ export const Footer: React.FC<FooterProps> = ({ colors, theme }) => {
 
           <a
             href={`mailto:${CONTACT_EMAIL}`}
-            className={`${colors.textSec} text-sm hover:underline`}
+            className={`${colors.textSec} max-md:text-zinc-300 text-sm hover:underline`}
           >
             {CONTACT_EMAIL}
           </a>
         </div>
 
-        <p className={`mt-8 pt-6 border-t ${colors.borderLight} ${colors.textTer} text-sm`}>
+        <p className={`mt-8 pt-6 border-t ${colors.borderLight} ${colors.textTer} max-md:border-zinc-800 max-md:text-zinc-500 text-sm`}>
           {t('footer.text', { year: new Date().getFullYear() })}
         </p>
       </div>

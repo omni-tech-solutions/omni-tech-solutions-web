@@ -78,8 +78,9 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, colors, acti
         }
     };
 
+    // Phones/tablets: always a dark bar with white text for contrast; desktop follows the theme
     return (
-        <nav className={`fixed w-full ${colors.nav} backdrop-blur-xl z-50 border-b ${colors.borderLight} transition-all duration-300`}>
+        <nav className={`fixed w-full ${colors.nav} backdrop-blur-xl z-50 border-b ${colors.borderLight} max-md:bg-zinc-950/90 max-md:border-zinc-800 transition-all duration-300`}>
             <div className={CONTAINER}>
                 <div className="flex justify-between items-center h-20">
                     {/* Logo */}
@@ -92,7 +93,7 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, colors, acti
                             alt="OMNI Tech Solutions"
                             className="h-8 w-8 sm:h-12 sm:w-12 transition-transform hover:scale-105"
                         />
-                        <span className={`${colors.text} font-bold text-lg sm:inline`}>
+                        <span className={`${colors.text} max-md:text-white font-bold text-lg`}>
               OMNI Tech Solutions
             </span>
                     </div>
@@ -182,14 +183,14 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, colors, acti
 
                 {/* Mobile Menu */}
                 {isMenuOpen && (
-                    <div className={`md:hidden pb-4 border-t ${colors.borderLight} animate-fadeIn`}>
+                    <div className="md:hidden pb-4 border-t border-zinc-800 animate-fadeIn">
                         <div className="space-y-1 pt-4">
                             {navItems.map((item) => {
                                 return (
                                     <button
                                         key={item.id}
                                         onClick={() => scrollTo(item.id)}
-                                        className={`flex items-center gap-3 w-full text-left py-3 px-4 rounded-lg ${activeSection === item.id ? 'text-[#ff6b1a] bg-[#ff6b1a]/10' : `${colors.textSec} hover:text-[#ff6b1a] hover:bg-[#ff6b1a]/10`} transition-all duration-300 focus:outline-none`}
+                                        className={`flex items-center gap-3 w-full text-left py-3 px-4 rounded-lg ${activeSection === item.id ? 'text-[#ff6b1a] bg-[#ff6b1a]/10' : 'text-zinc-200 hover:text-[#ff6b1a] hover:bg-[#ff6b1a]/10'} transition-all duration-300 focus:outline-none`}
                                     >
                                         {item.label}
                                     </button>
@@ -197,14 +198,14 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, colors, acti
                             })}
                         </div>
 
-                        <div className={`flex items-center justify-between mt-4 pt-4 border-t ${colors.borderLight}`}>
+                        <div className="flex items-center justify-between mt-4 pt-4 border-t border-zinc-800">
                             <div className="flex gap-2">
                                 {(['bg', 'en', 'tr'] as Language[]).map(lang => (
                                     <button
                                         key={lang}
                                         onClick={() => changeLanguage(lang)}
                                         className={`px-3 py-2 rounded-lg text-sm font-bold transition-all duration-300 focus:outline-none ${
-                                            i18n.language === lang ? `${colors.text} bg-gray-500/10` : `${colors.textSec} hover:bg-gray-500/10`
+                                            i18n.language === lang ? 'text-white bg-white/10' : 'text-zinc-400 hover:bg-white/10'
                                         }`}
                                     >
                                         {lang.toUpperCase()}
@@ -214,7 +215,7 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, colors, acti
 
                             <button
                                 onClick={toggleTheme}
-                                className={`p-2.5 rounded-lg ${colors.textSec} hover:bg-gray-500/10 transition-all duration-300 group focus:outline-none`}
+                                className="p-2.5 rounded-lg text-zinc-300 hover:bg-white/10 transition-all duration-300 group focus:outline-none"
                                 aria-label="Toggle theme"
                             >
                                 {theme === 'dark' ? (
