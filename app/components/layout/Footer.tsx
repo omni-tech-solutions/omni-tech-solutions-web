@@ -3,8 +3,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
-import logoDark from '@/public/assets/logo_dark.png';
-import logoWhite from '@/public/assets/logo_white.png';
 import { CONTAINER } from '@/app/styles/theme';
 
 interface FooterProps {
@@ -30,9 +28,11 @@ export const Footer: React.FC<FooterProps> = ({ colors, theme }) => {
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="flex items-center gap-3">
             <img
-              src={theme === 'dark' ? logoWhite.src : logoDark.src}
-              alt="Omni Tech Solutions Logo"
-              className="h-8 w-auto"
+              src="/assets/brand/logo-96.png"
+              width={32}
+              height={32}
+              alt="OMNI Tech Solutions"
+              className="h-8 w-8"
             />
             <span className={`${colors.text} font-bold`}>OMNI Tech Solutions</span>
           </div>
@@ -43,7 +43,7 @@ export const Footer: React.FC<FooterProps> = ({ colors, theme }) => {
                 <li key={link.key}>
                   <Link
                     href={link.href}
-                    className={`${colors.textSec} text-sm transition-colors hover:text-[#ff6b1a]`}
+                    className={`${colors.textSec} text-sm hover:underline`}
                   >
                     {t(`nav.${link.key}`)}
                   </Link>
@@ -54,7 +54,7 @@ export const Footer: React.FC<FooterProps> = ({ colors, theme }) => {
 
           <a
             href={`mailto:${CONTACT_EMAIL}`}
-            className={`${colors.textSec} text-sm transition-colors hover:text-[#ff6b1a]`}
+            className={`${colors.textSec} text-sm hover:underline`}
           >
             {CONTACT_EMAIL}
           </a>

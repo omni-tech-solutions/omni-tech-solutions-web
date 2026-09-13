@@ -10,8 +10,8 @@ interface ServicePriceProps {
     colors: ReturnType<typeof import('@/app/styles/theme').getThemeColors>;
     /** `card` is the compact form used on the service grid, `detail` the large one. */
     variant?: 'card' | 'detail';
-    /** `inverse` is white text, for use on a solid brand-coloured background. */
-    tone?: 'default' | 'inverse';
+    /** `inverse` is white text for a solid brand background; `accent` is the brand colour (homepage cards). */
+    tone?: 'default' | 'inverse' | 'accent';
 }
 
 /**
@@ -38,8 +38,8 @@ export const ServicePrice: React.FC<ServicePriceProps> = ({ service, colors, var
                 {t('services.priceFrom')}
             </span>
             <span
-                className={`${isDetail ? 'text-3xl sm:text-4xl' : 'text-xl'} font-bold ${inverse ? 'text-white' : 'bg-clip-text text-transparent'}`}
-                style={inverse ? undefined : { backgroundImage: `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.primaryHover})` }}
+                className={`${isDetail ? 'text-3xl sm:text-4xl' : 'text-xl'} font-bold ${inverse ? 'text-white' : tone === 'accent' ? 'bg-clip-text text-transparent' : colors.text}`}
+                style={tone === 'accent' ? { backgroundImage: `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.primaryHover})` } : undefined}
             >
                 {service.priceFrom} €
             </span>

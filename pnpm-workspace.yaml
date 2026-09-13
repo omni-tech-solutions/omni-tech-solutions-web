@@ -1,0 +1,12 @@
+# Single-package project — this file only carries pnpm settings (pnpm 10+ reads them here).
+
+# Next.js, Tailwind and autoprefixer ship older copies of these; force the patched
+# versions (PostCSS arbitrary file read / path traversal / XSS, nanoid infinite loop,
+# browserslist memory growth + prototype write, baseline-browser-mapping crash,
+# postcss-selector-parser DoS). Selector parser stays on 6.x — Tailwind 3 needs it.
+overrides:
+  postcss: ^8.5.28
+  nanoid: ^3.3.19
+  browserslist: ^4.28.9
+  baseline-browser-mapping: ^2.11.23
+  postcss-selector-parser: ^6.1.4

@@ -1,13 +1,9 @@
-import {
-    Camera,
-    Network,
-    MonitorSmartphone,
-    Globe,
-    ShieldCheck,
-    ShieldAlert,
-    Code2,
-    LucideIcon,
-} from 'lucide-react';
+import type { ComponentType, CSSProperties } from 'react';
+import { Cctv, Wifi, Globe, ShieldCheck, Wrench, Code2 } from 'lucide-react';
+import { WindowsIcon } from '@/app/components/ui/WindowsIcon';
+
+/** A lucide icon or any icon component with the same basic props (e.g. the Windows logo). */
+export type ServiceIcon = ComponentType<{ className?: string; style?: CSSProperties; strokeWidth?: number | string }>;
 
 /**
  * Single source of truth for the services.
@@ -38,7 +34,8 @@ export type PricingPeriod = 'once' | 'month';
 export interface ServiceConfig {
     id: ServiceId;
     group: ServiceGroup;
-    icon: LucideIcon;
+    /** One simple, recognisable icon — a visitor should know the service before reading. */
+    icon: ServiceIcon;
     /**
      * True when the work physically requires a visit. Only these services show
      * the service area — software work is sold to clients anywhere.
@@ -62,13 +59,13 @@ export const SERVICES: ServiceConfig[] = [
     { id: 'web-design', group: 'software', icon: Globe, onSite: false, priceFrom: 450, period: 'once' },
 
     // 2 — Infrastructure: the on-site work that runs it
-    { id: 'local-networks', group: 'infrastructure', icon: Network, onSite: true, priceFrom: 25, period: 'once' },
-    { id: 'operating-systems', group: 'infrastructure', icon: MonitorSmartphone, onSite: true, priceFrom: 20, period: 'once' },
-    { id: 'video-surveillance', group: 'infrastructure', icon: Camera, onSite: true, priceFrom: 20, period: 'once' },
+    { id: 'local-networks', group: 'infrastructure', icon: Wifi, onSite: true, priceFrom: 25, period: 'once' },
+    { id: 'operating-systems', group: 'infrastructure', icon: WindowsIcon, onSite: true, priceFrom: 20, period: 'once' },
+    { id: 'video-surveillance', group: 'infrastructure', icon: Cctv, onSite: true, priceFrom: 20, period: 'once' },
 
     // 3 — Ongoing: what keeps the two above working
-    { id: 'maintenance-support', group: 'support', icon: ShieldCheck, onSite: true, priceFrom: 10, period: 'month' },
-    { id: 'network-security-audit', group: 'support', icon: ShieldAlert, onSite: true, priceFrom: 150, period: 'once' },
+    { id: 'maintenance-support', group: 'support', icon: Wrench, onSite: true, priceFrom: 10, period: 'month' },
+    { id: 'network-security-audit', group: 'support', icon: ShieldCheck, onSite: true, priceFrom: 150, period: 'once' },
 ];
 
 export const SERVICE_GROUPS: ServiceGroup[] = ['software', 'infrastructure', 'support'];

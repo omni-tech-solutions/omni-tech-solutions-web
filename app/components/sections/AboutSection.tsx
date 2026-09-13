@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { COLORS, CONTAINER } from '@/app/styles/theme';
+import { CONTAINER } from '@/app/styles/theme';
 
 interface AboutSectionProps {
     colors: ReturnType<typeof import('@/app/styles/theme').getThemeColors>;
@@ -20,7 +20,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ colors }) => {
     return (
         <section id="about" className="py-20 sm:py-24">
             <div className={`${CONTAINER} text-center`}>
-                <p className="text-sm font-semibold uppercase tracking-wider mb-3" style={{ color: COLORS.primary }}>
+                <p className={`text-sm font-semibold uppercase tracking-wider mb-3 ${colors.textTer}`}>
                     {t('nav.about')}
                 </p>
                 <h2 className={`text-3xl sm:text-4xl font-bold tracking-tight ${colors.text}`}>

@@ -1,17 +1,29 @@
+const isDev = process.env.NODE_ENV !== 'production';
+
+// 'unsafe-eval' is only needed by the dev server's hot reload — never in production.
+// 'unsafe-inline' scripts stay: Next's App Router inlines its bootstrap scripts.
+const CONTENT_SECURITY_POLICY = [
+  "default-src 'self'",
+  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ''}`,
+  "style-src 'self' 'unsafe-inline'",
+  "font-src 'self'",
+  "img-src 'self' data: https:",
+  `connect-src 'self'${isDev ? ' ws:' : ''}`,
+  "object-src 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "frame-ancestors 'self'",
+  ...(isDev ? [] : ['upgrade-insecure-requests']),
+].join('; ');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  // The site doesn't use next/image. Turning the optimizer off removes the
+  // /_next/image endpoint, which is where Next 14's image-optimizer
+  // vulnerabilities live (remote code execution via AVIF, disk exhaustion, DoS).
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'tech.omni-solutions.co',
-      },
-    ],
-    formats: ['image/avif', 'image/webp'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    minimumCacheTTL: 60,
+    unoptimized: true,
   },
   compress: true,
   poweredByHeader: false,
@@ -39,8 +51,9 @@ const nextConfig = {
             value: 'nosniff'
           },
           {
+            // The old browser XSS filter could itself be abused; modern advice is to switch it off and rely on the CSP
             key: 'X-XSS-Protection',
-            value: '1; mode=block'
+            value: '0'
           },
           {
             key: 'Referrer-Policy',
@@ -52,7 +65,7 @@ const nextConfig = {
           },
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'self';"
+            value: CONTENT_SECURITY_POLICY
           }
         ],
       },

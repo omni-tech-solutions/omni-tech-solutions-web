@@ -9,10 +9,10 @@ export interface SEOMetadata {
 export const siteConfig = {
   name: 'Omni Tech Solutions',
   url: 'https://tech.omni-solutions.co',
-  ogImage: 'https://tech.omni-solutions.co/og-image.jpg',
+  ogImage: 'https://tech.omni-solutions.co/og/home.png',
   description: {
     en: 'Custom software and network installation, plus websites, PC support and video surveillance for homes and businesses in Bulgaria. Free consultation.',
-    bg: 'Софтуер по поръчка и изграждане на мрежи, плюс уебсайтове, компютърна поддръжка и видеонаблюдение за дома и бизнеса в България. Безплатна консултация.',
+    bg: 'Софтуер по поръчка и изграждане на мрежи, както и уебсайтове, компютърна поддръжка и видеонаблюдение за дома и бизнеса в България. Безплатна консултация.',
     tr: 'Özel yazılım ve ağ kurulumu; ayrıca Bulgaristan\'da evler ve işletmeler için web siteleri, bilgisayar desteği ve güvenlik kameraları. Ücretsiz danışmanlık.'
   },
   keywords: {
@@ -52,9 +52,18 @@ export const structuredData = {
   organization: {
     '@context': 'https://schema.org',
     '@type': 'Organization',
+    '@id': 'https://tech.omni-solutions.co/#organization',
     name: 'Omni Tech Solutions',
     url: 'https://tech.omni-solutions.co',
-    logo: 'https://tech.omni-solutions.co/assets/logo.png',
+    // Square PNG of the same coral mark as the header (scripts/brand/generate-icons.py)
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://tech.omni-solutions.co/assets/brand/logo-512.png',
+      width: 512,
+      height: 512
+    },
+    image: 'https://tech.omni-solutions.co/assets/brand/logo-512.png',
+    description: 'Софтуерни решения и ИТ инфраструктура за дома и бизнеса',
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer service',
@@ -69,34 +78,24 @@ export const structuredData = {
   localBusiness: {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    '@id': 'https://tech.omni-solutions.co',
+    '@id': 'https://tech.omni-solutions.co/#localbusiness',
     name: 'Omni Tech Solutions',
-    image: 'https://tech.omni-solutions.co/assets/logo.png',
+    image: 'https://tech.omni-solutions.co/assets/brand/logo-512.png',
+    logo: 'https://tech.omni-solutions.co/assets/brand/logo-512.png',
     email: 'support@omni-solutions.co',
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'BG'
     },
     areaServed: { '@type': 'Country', name: 'България' },
-    geo: {
-      '@type': 'GeoCoordinates'
-      // Add coordinates when available
-    },
     url: 'https://tech.omni-solutions.co',
     priceRange: '$$',
+    // Same hours as the site shows: Mon–Fri 9:00–18:00
     openingHoursSpecification: {
       '@type': 'OpeningHoursSpecification',
-      dayOfWeek: [
-        'Monday',
-        'Tuesday',
-        'Wednesday',
-        'Thursday',
-        'Friday',
-        'Saturday',
-        'Sunday'
-      ],
-      opens: '00:00',
-      closes: '23:59'
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '09:00',
+      closes: '18:00'
     }
   },
 
@@ -110,12 +109,7 @@ export const structuredData = {
     publisher: {
       '@id': 'https://tech.omni-solutions.co/#organization'
     },
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: 'https://tech.omni-solutions.co/?s={search_term_string}',
-      'query-input': 'required name=search_term_string'
-    },
-    inLanguage: ['bg', 'en', 'tr']
+    inLanguage: 'bg'
   }
 };
 

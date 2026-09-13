@@ -29,7 +29,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ colors }) => {
         <section id="services" className={`py-20 sm:py-24 ${colors.section}`}>
             <div className={CONTAINER}>
                 <div className="text-center mb-14">
-                    <p className="text-sm font-semibold uppercase tracking-wider mb-3" style={{ color: COLORS.primary }}>
+                    <p className={`text-sm font-semibold uppercase tracking-wider mb-3 ${colors.textTer}`}>
                         {t('services.title')}
                     </p>
                     <h2 className={`text-3xl sm:text-4xl font-bold tracking-tight ${colors.text}`}>
@@ -65,7 +65,12 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ colors }) => {
                                                 href={`/services/${config.id}`}
                                                 className={`group flex flex-col ${colors.card} border ${colors.border} p-6 ${BORDER_RADIUS.lg} transition-colors duration-200 hover:border-[#ff6b1a] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff6b1a]`}
                                             >
-                                                <Icon className="w-7 h-7 mb-4" style={{ color: COLORS.primary }} strokeWidth={1.8} />
+                                                <span
+                                                    className="w-12 h-12 mb-5 rounded-xl flex items-center justify-center transition-transform duration-200 group-hover:scale-105"
+                                                    style={{ backgroundColor: `${COLORS.primary}14` }}
+                                                >
+                                                    <Icon className="w-6 h-6" style={{ color: COLORS.primary }} strokeWidth={2} />
+                                                </span>
                                                 <h4 className={`text-lg font-semibold mb-2 ${colors.text}`}>
                                                     {service.title}
                                                 </h4>
@@ -73,7 +78,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ colors }) => {
                                                     {service.desc}
                                                 </p>
                                                 <div className={`mt-5 pt-4 border-t ${colors.borderLight} flex items-center justify-between gap-3`}>
-                                                    <ServicePrice service={config} colors={colors} />
+                                                    <ServicePrice service={config} colors={colors} tone="accent" />
                                                     <ArrowRight
                                                         className={`w-5 h-5 ${colors.textTer} transition-all duration-200 group-hover:translate-x-1 group-hover:text-[#ff6b1a]`}
                                                         aria-hidden

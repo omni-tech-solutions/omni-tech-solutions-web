@@ -56,7 +56,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ colors }) => {
                 <div className="grid lg:grid-cols-5 gap-10 lg:gap-12">
                     {/* Left — what to expect and how to reach us */}
                     <div className="lg:col-span-2">
-                        <p className="text-sm font-semibold uppercase tracking-wider mb-3" style={{ color: COLORS.primary }}>
+                        <p className={`text-sm font-semibold uppercase tracking-wider mb-3 ${colors.textTer}`}>
                             {t('nav.contact')}
                         </p>
                         <h2 className={`text-3xl sm:text-4xl font-bold tracking-tight ${colors.text}`}>
@@ -70,14 +70,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ colors }) => {
                             <li>
                                 <a
                                     href={`mailto:${CONTACT_EMAIL}`}
-                                    className={`inline-flex items-center gap-3 font-medium ${colors.text} hover:text-[#ff6b1a] transition-colors`}
+                                    className={`inline-flex items-center gap-3 font-medium ${colors.text} hover:underline`}
                                 >
-                                    <Mail className="w-5 h-5" style={{ color: COLORS.primary }} strokeWidth={2} />
+                                    <Mail className={`w-5 h-5 ${colors.textTer}`} strokeWidth={2} />
                                     {CONTACT_EMAIL}
                                 </a>
                             </li>
                             <li className={`flex items-center gap-3 ${colors.textSec}`}>
-                                <Clock className="w-5 h-5" style={{ color: COLORS.primary }} strokeWidth={2} />
+                                <Clock className={`w-5 h-5 ${colors.textTer}`} strokeWidth={2} />
                                 {t('contact.contactInfo.hours.value')}
                             </li>
                         </ul>
