@@ -26,9 +26,9 @@ export const useTheme = () => {
         // dark-gray media-query entry from app/layout.tsx
         document
             .querySelectorAll('meta[name="theme-color"]:not([media])')
-            .forEach((meta) => meta.setAttribute('content', theme === 'dark' ? '#2f2f34' : '#ffffff'));
+            .forEach((meta) => meta.setAttribute('content', theme === 'dark' ? '#242428' : '#ffffff'));
 
-        document.body.style.backgroundColor = theme === 'dark' ? '#2f2f34' : '#ffffff';
+        document.body.style.backgroundColor = theme === 'dark' ? '#242428' : '#ffffff';
         document.body.style.color = theme === 'dark' ? '#ffffff' : '#18181b';
 
         localStorage.setItem('theme', theme);

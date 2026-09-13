@@ -9,7 +9,7 @@ interface ServicePriceProps {
     colors: ReturnType<typeof import('@/app/styles/theme').getThemeColors>;
     /** `card` is the compact form used on the service grid, `detail` the large one. */
     variant?: 'card' | 'detail';
-    /** `inverse` is white text for a solid brand background; `accent` is the brand colour (homepage cards). */
+    /** `inverse` is white text for a solid brand background; `accent` is logo yellow on dark cards and plain dark text on light ones (one brand yellow, readable prices). */
     tone?: 'default' | 'inverse' | 'accent';
     /** Light text on phones, for the dark mobile hero band of the service page. */
     onDarkMobile?: boolean;
@@ -41,7 +41,7 @@ export const ServicePrice: React.FC<ServicePriceProps> = ({ service, colors, var
                 {t('services.priceFrom')}
             </span>
             <span
-                className={`${isDetail ? 'text-3xl sm:text-4xl' : 'text-xl'} font-bold ${inverse ? 'text-white' : tone === 'accent' ? colors.accentText : colors.text}${darkMobileMain}`}
+                className={`${isDetail ? 'text-3xl sm:text-4xl' : 'text-xl'} font-bold ${inverse ? 'text-white' : tone === 'accent' && colors.text === 'text-zinc-100' ? colors.accentText : colors.text}${darkMobileMain}`}
             >
                 {service.priceFrom} €
             </span>

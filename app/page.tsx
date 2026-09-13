@@ -20,7 +20,7 @@ const OmniTechSolutions: React.FC = () => {
     const [renderKey, setRenderKey] = React.useState(0);
 
     useEffect(() => {
-        document.body.style.backgroundColor = theme === 'dark' ? '#2f2f34' : '#ffffff';
+        document.body.style.backgroundColor = theme === 'dark' ? '#242428' : '#ffffff';
         document.body.style.color = theme === 'dark' ? '#ffffff' : '#18181b';
     }, [theme]);
 
@@ -65,7 +65,7 @@ const OmniTechSolutions: React.FC = () => {
     }, []);
 
     return (
-        <div className={`min-h-screen ${theme === 'dark' ? 'bg-[#2f2f34]' : 'bg-white'}`}>
+        <div className={`min-h-screen ${theme === 'dark' ? 'bg-[#242428]' : 'bg-white'}`}>
             <Header
                 theme={theme}
                 toggleTheme={toggleTheme}

@@ -11,9 +11,9 @@ export const COLORS = {
     primaryDark: '#a86400',
 
     dark: {
-        bg: 'bg-[#2f2f34]',
-        bgGradient: 'bg-[#2f2f34]',
-        nav: 'bg-[#2f2f34]/80',
+        bg: 'bg-[#242428]',
+        bgGradient: 'bg-[#242428]',
+        nav: 'bg-[#242428]/80',
         card: 'bg-zinc-700/50',
         cardHover: 'hover:bg-zinc-700',
         section: 'bg-zinc-700/30',
@@ -24,7 +24,7 @@ export const COLORS = {
         accentText: 'text-[#f9a427]',
         border: 'border-zinc-600',
         borderLight: 'border-zinc-600/60',
-        input: 'bg-zinc-800',
+        input: 'bg-zinc-900',
         inputBorder: 'border-zinc-700',
         shadow: 'shadow-zinc-950/50',
     },
@@ -60,8 +60,8 @@ export const SHADOWS = {
     md: 'shadow-md',
     lg: 'shadow-lg',
     xl: 'shadow-xl',
-    primary: 'shadow-[#ff6b1a]/30',
-    primaryHover: 'shadow-[#ff6b1a]/40',
+    primary: 'shadow-[#f9a427]/30',
+    primaryHover: 'shadow-[#f9a427]/40',
 } as const;
 
 /**

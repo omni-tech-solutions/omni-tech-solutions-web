@@ -17,13 +17,13 @@ export const PreloadResources: React.FC = () => {
       {/* Preload critical assets */}
       <link
         rel="preload"
-        href="/assets/logo_dark.png"
+        href="/assets/brand/logo-96.png"
         as="image"
         type="image/png"
       />
       <link
         rel="preload"
-        href="/assets/logo_white.png"
+        href="/assets/brand/logo-512.png"
         as="image"
         type="image/png"
       />

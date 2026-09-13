@@ -80,7 +80,7 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, colors, acti
 
     // Phones/tablets: always a dark bar with white text for contrast; desktop follows the theme
     return (
-        <nav className={`fixed w-full ${colors.nav} backdrop-blur-xl z-50 border-b ${colors.borderLight} max-md:bg-[#2f2f34]/90 max-md:border-zinc-600 transition-all duration-300`}>
+        <nav className={`fixed w-full ${colors.nav} backdrop-blur-xl z-50 border-b ${colors.borderLight} max-md:bg-[#242428]/90 max-md:border-zinc-600 transition-all duration-300`}>
             <div className={CONTAINER}>
                 <div className="flex justify-between items-center h-20">
                     {/* Logo */}

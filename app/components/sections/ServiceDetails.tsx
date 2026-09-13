@@ -124,7 +124,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ colors }) 
     return (
         <div className="pt-20">
             {/* Hero — on phones a full-width solid dark band, like the homepage hero */}
-            <section className="max-sm:bg-[#2f2f34]">
+            <section className="max-sm:bg-[#242428]">
                 <div className={`${CONTAINER} py-10 sm:py-14`}>
                     <Link
                         href="/#services"
@@ -247,7 +247,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ colors }) 
 
             {/* Closing call to action */}
             {/* On phones: a full-width dark band that flows into the dark footer */}
-            <section className={`${sectionClass} text-center max-sm:-mx-4 max-sm:px-4 max-sm:bg-[#2f2f34] max-sm:border-t-0`}>
+            <section className={`${sectionClass} text-center max-sm:-mx-4 max-sm:px-4 max-sm:bg-[#242428] max-sm:border-t-0`}>
                 <h2 className={`text-2xl sm:text-3xl font-bold tracking-tight ${colors.text} max-sm:text-white`}>
                     {detail?.cta?.title || t('services.readyToStart')}
                 </h2>

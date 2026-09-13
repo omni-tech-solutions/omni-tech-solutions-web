@@ -71,7 +71,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ colors }) => {
                                                         className="w-12 h-12 flex-shrink-0 sm:mb-5 rounded-xl flex items-center justify-center transition-transform duration-200 group-hover:scale-105"
                                                         style={{ backgroundColor: `${COLORS.primary}24` }}
                                                     >
-                                                        <Icon className={`w-6 h-6 ${colors.accentText}`} strokeWidth={2} />
+                                                        <Icon className="w-6 h-6" style={{ color: COLORS.primary }} strokeWidth={2} />
                                                     </span>
                                                     <h4 className={`text-lg font-semibold leading-snug sm:mb-2 ${colors.text}`}>
                                                         {service.title}

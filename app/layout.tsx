@@ -10,7 +10,7 @@ export const viewport: Viewport = {
   // Larger screens: the entry without a media query, kept in sync with the
   // site theme toggle by the pre-paint script below and by useTheme.
   themeColor: [
-    { media: '(max-width: 767px)', color: '#2f2f34' },
+    { media: '(max-width: 767px)', color: '#242428' },
     { color: '#ffffff' }
   ]
 };
@@ -118,7 +118,7 @@ export default function RootLayout({
         */}
         <script
           dangerouslySetInnerHTML={{
-            __html: "try{var t=localStorage.getItem('theme')==='dark'?'dark':'light';document.documentElement.classList.add(t);if(t==='dark'){var m=document.querySelector('meta[name=\"theme-color\"]:not([media])');if(m)m.setAttribute('content','#2f2f34')}}catch(e){}"
+            __html: "try{var t=localStorage.getItem('theme')==='dark'?'dark':'light';document.documentElement.classList.add(t);if(t==='dark'){var m=document.querySelector('meta[name=\"theme-color\"]:not([media])');if(m)m.setAttribute('content','#242428')}}catch(e){}"
           }}
         />
         {/* Structured Data */}
