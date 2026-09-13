@@ -58,6 +58,12 @@ export const SHADOWS = {
     primaryHover: 'shadow-[#ff6b1a]/40',
 } as const;
 
+/**
+ * The one page container. Header, every section and the footer use it so all
+ * left/right edges line up — don't add another max-width wrapper at page level.
+ */
+export const CONTAINER = 'max-w-6xl mx-auto px-4 sm:px-6 lg:px-8';
+
 export const BORDER_RADIUS = {
     sm: 'rounded-lg',
     md: 'rounded-xl',

@@ -3,11 +3,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRouter, usePathname } from 'next/navigation';
-import { Home, Briefcase, Info, Mail, Globe, ChevronDown, Sun, Moon } from 'lucide-react';
+import { Globe, ChevronDown, Sun, Moon } from 'lucide-react';
 import type { Theme, Language } from '@/app/types';
 import logoDark from '../../../public/assets/logo_dark.png';
 import logoWhite from '../../../public/assets/logo_white.png';
-import { COLORS } from '@/app/styles/theme';
+import { COLORS, CONTAINER } from '@/app/styles/theme';
 
 interface HeaderProps {
     theme: Theme;
@@ -25,10 +25,10 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, colors, acti
     const langMenuRef = useRef<HTMLDivElement>(null);
 
     const navItems = [
-        { id: 'home', label: t('nav.home'), icon: Home },
-        { id: 'services', label: t('nav.services'), icon: Briefcase },
-        { id: 'about', label: t('nav.about'), icon: Info },
-        { id: 'contact', label: t('nav.contact'), icon: Mail },
+        { id: 'home', label: t('nav.home') },
+        { id: 'services', label: t('nav.services') },
+        { id: 'about', label: t('nav.about') },
+        { id: 'contact', label: t('nav.contact') },
     ];
 
     const changeLanguage = (lang: string) => {
@@ -80,7 +80,7 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, colors, acti
 
     return (
         <nav className={`fixed w-full ${colors.nav} backdrop-blur-xl z-50 border-b ${colors.borderLight} transition-all duration-300`}>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className={CONTAINER}>
                 <div className="flex justify-between items-center h-20">
                     {/* Logo */}
                     <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollTo('home')}>
@@ -97,7 +97,6 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, colors, acti
                     {/* Desktop Menu */}
                     <div className="hidden md:flex items-center gap-5">
                         {navItems.map((item) => {
-                            const IconComponent = item.icon;
                             return (
                                 <button
                                     key={item.id}
@@ -115,7 +114,6 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, colors, acti
                                         }
                                     }}
                                 >
-                                    <IconComponent className="w-4 h-4" strokeWidth={2} />
                                     {item.label}
                                     <span
                                         className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${
@@ -239,7 +237,6 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, colors, acti
                     <div className={`md:hidden pb-4 border-t ${colors.borderLight} animate-fadeIn`}>
                         <div className="space-y-1 pt-4">
                             {navItems.map((item) => {
-                                const IconComponent = item.icon;
                                 return (
                                     <button
                                         key={item.id}
@@ -260,7 +257,6 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, colors, acti
                                             }
                                         }}
                                     >
-                                        <IconComponent className="w-5 h-5" strokeWidth={2} />
                                         {item.label}
                                     </button>
                                 );

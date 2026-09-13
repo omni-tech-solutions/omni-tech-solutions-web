@@ -49,7 +49,7 @@ import {
     ListOrdered,
     type LucideIcon
 } from 'lucide-react';
-import { COLORS, BORDER_RADIUS } from '@/app/styles/theme';
+import { COLORS, BORDER_RADIUS, CONTAINER } from '@/app/styles/theme';
 import { getServiceConfig, type ServiceCopy, type ServiceId } from '@/app/config/services';
 import { ServicePrice } from '@/app/components/ui/ServicePrice';
 
@@ -205,7 +205,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ colors }) 
                 />
             </div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className={`relative z-10 ${CONTAINER}`}>
                 {/* Back Button */}
                 <Link
                     href="/#services"
