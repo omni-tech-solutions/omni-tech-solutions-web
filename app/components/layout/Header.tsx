@@ -85,7 +85,7 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, colors, acti
                 <div className="flex justify-between items-center h-20">
                     {/* Logo */}
                     <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollTo('home')}>
-                        {/* Same coral mark in both themes; 96 px file for a 48 px slot (scripts/brand/generate-icons.py) */}
+                        {/* Same yellow mark in both themes; 96 px file for a 48 px slot (scripts/brand/generate-icons.py) */}
                         <img
                             src="/assets/brand/logo-96.png"
                             width={48}
@@ -105,11 +105,11 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, colors, acti
                                 <button
                                     key={item.id}
                                     onClick={() => scrollTo(item.id)}
-                                    className={`flex items-center gap-2 py-2.5 ${activeSection === item.id ? 'text-[#ff6b1a]' : `${colors.textSec} hover:text-[#ff6b1a]`} transition-all duration-300 relative group focus:outline-none`}
+                                    className={`flex items-center gap-2 py-2.5 ${activeSection === item.id ? colors.accentText : `${colors.textSec} ${theme === 'dark' ? 'hover:text-[#f9a427]' : 'hover:text-[#a86400]'}`} transition-all duration-300 relative group focus:outline-none`}
                                 >
                                     {item.label}
                                     <span
-                                        className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ff6b1a] transition-all duration-300 group-hover:w-full ${
+                                        className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-[#f9a427] transition-all duration-300 group-hover:w-full ${
                                             activeSection === item.id ? 'w-full' : ''
                                         }`}
                                     />
@@ -168,7 +168,7 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, colors, acti
                     {/* Mobile Menu Button */}
                     <button
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className="md:hidden p-2 rounded-lg transition-all text-[#ff6b1a] hover:bg-[#ff6b1a]/10"
+                        className="md:hidden p-2 rounded-lg transition-all text-[#f9a427] hover:bg-[#f9a427]/10"
                     >
                         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path
@@ -190,7 +190,7 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, colors, acti
                                     <button
                                         key={item.id}
                                         onClick={() => scrollTo(item.id)}
-                                        className={`flex items-center gap-3 w-full text-left py-3 px-4 rounded-lg ${activeSection === item.id ? 'text-[#ff6b1a] bg-[#ff6b1a]/10' : 'text-zinc-200 hover:text-[#ff6b1a] hover:bg-[#ff6b1a]/10'} transition-all duration-300 focus:outline-none`}
+                                        className={`flex items-center gap-3 w-full text-left py-3 px-4 rounded-lg ${activeSection === item.id ? 'text-[#f9a427] bg-[#f9a427]/10' : 'text-zinc-200 hover:text-[#f9a427] hover:bg-[#f9a427]/10'} transition-all duration-300 focus:outline-none`}
                                     >
                                         {item.label}
                                     </button>

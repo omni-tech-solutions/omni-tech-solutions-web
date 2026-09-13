@@ -63,15 +63,15 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ colors }) => {
                                             <Link
                                                 key={config.id}
                                                 href={`/services/${config.id}`}
-                                                className={`group flex flex-col ${colors.card} border ${colors.border} p-5 sm:p-6 ${BORDER_RADIUS.lg} max-sm:shadow-[0_6px_20px_-8px_rgba(0,0,0,0.18)] transition-colors duration-200 hover:border-[#ff6b1a] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff6b1a]`}
+                                                className={`group flex flex-col ${colors.card} border ${colors.border} p-5 sm:p-6 ${BORDER_RADIUS.lg} max-sm:shadow-[0_6px_20px_-8px_rgba(0,0,0,0.18)] transition-colors duration-200 hover:border-[#f9a427] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f9a427]`}
                                             >
                                                 {/* Phones: icon beside the title for a compact, scannable list; larger screens: stacked */}
                                                 <div className="flex items-center gap-4 sm:block">
                                                     <span
                                                         className="w-12 h-12 flex-shrink-0 sm:mb-5 rounded-xl flex items-center justify-center transition-transform duration-200 group-hover:scale-105"
-                                                        style={{ backgroundColor: `${COLORS.primary}14` }}
+                                                        style={{ backgroundColor: `${COLORS.primary}24` }}
                                                     >
-                                                        <Icon className="w-6 h-6" style={{ color: COLORS.primary }} strokeWidth={2} />
+                                                        <Icon className={`w-6 h-6 ${colors.accentText}`} strokeWidth={2} />
                                                     </span>
                                                     <h4 className={`text-lg font-semibold leading-snug sm:mb-2 ${colors.text}`}>
                                                         {service.title}
@@ -83,7 +83,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ colors }) => {
                                                 <div className={`mt-5 pt-4 border-t ${colors.borderLight} flex items-center justify-between gap-3`}>
                                                     <ServicePrice service={config} colors={colors} tone="accent" />
                                                     <ArrowRight
-                                                        className={`w-5 h-5 ${colors.textTer} transition-all duration-200 group-hover:translate-x-1 group-hover:text-[#ff6b1a]`}
+                                                        className={`w-5 h-5 ${colors.textTer} transition-all duration-200 group-hover:translate-x-1 group-hover:text-[#f9a427]`}
                                                         aria-hidden
                                                     />
                                                 </div>

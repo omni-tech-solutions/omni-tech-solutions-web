@@ -15,7 +15,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const OUT = join(ROOT, 'public', 'og');
-const LOGO = pathToFileURL(join(ROOT, 'public', 'assets', 'logo_dark.png')).href;
+const LOGO = pathToFileURL(join(ROOT, 'public', 'assets', 'logo.png')).href;
 const WIDTH = 1200;
 const HEIGHT = 630;
 
@@ -50,13 +50,13 @@ const html = ({ eyebrow, title, text }) => `<!doctype html>
   .brand { display: flex; align-items: center; gap: 16px; font-size: 30px; font-weight: 700; }
   .brand img { width: 56px; height: 56px; }
   .main { margin-top: auto; margin-bottom: auto; padding-right: 24px; }
-  .eyebrow { color: #ff8a58; font-size: 24px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
+  .eyebrow { color: #f9a427; font-size: 24px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
   h1 { margin-top: 18px; font-size: 60px; line-height: 1.1; font-weight: 700; letter-spacing: -1px; }
   p { margin-top: 22px; font-size: 28px; line-height: 1.4; color: #d4d4d8; max-width: 760px; }
   .url { font-size: 24px; color: #a1a1aa; }
   .mark { width: 330px; display: flex; align-items: center; justify-content: flex-start; }
   .mark img { width: 300px; height: 300px; }
-  .bar { position: absolute; left: 0; right: 0; bottom: 0; height: 10px; background: #ff6b1a; }
+  .bar { position: absolute; left: 0; right: 0; bottom: 0; height: 10px; background: #f9a427; }
 </style></head><body>
   <div class="content">
     <div class="brand"><img src="${LOGO}" alt="">OMNI Tech Solutions</div>

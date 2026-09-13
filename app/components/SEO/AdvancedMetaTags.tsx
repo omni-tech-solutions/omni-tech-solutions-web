@@ -58,7 +58,7 @@ export const AdvancedMetaTags: React.FC<AdvancedMetaTagsProps> = ({
       <meta name="format-detection" content="telephone=yes" />
 
       {/* Microsoft-specific tags */}
-      <meta name="msapplication-TileColor" content="#ff6b1a" />
+      <meta name="msapplication-TileColor" content="#f9a427" />
       <meta name="msapplication-config" content="/browserconfig.xml" />
 
       {/* PWA tags */}

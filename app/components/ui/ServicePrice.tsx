@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { COLORS } from '@/app/styles/theme';
 import type { ServiceConfig } from '@/app/config/services';
 
 interface ServicePriceProps {
@@ -42,8 +41,7 @@ export const ServicePrice: React.FC<ServicePriceProps> = ({ service, colors, var
                 {t('services.priceFrom')}
             </span>
             <span
-                className={`${isDetail ? 'text-3xl sm:text-4xl' : 'text-xl'} font-bold ${inverse ? 'text-white' : tone === 'accent' ? 'bg-clip-text text-transparent' : colors.text}${darkMobileMain}`}
-                style={tone === 'accent' ? { backgroundImage: `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.primaryHover})` } : undefined}
+                className={`${isDetail ? 'text-3xl sm:text-4xl' : 'text-xl'} font-bold ${inverse ? 'text-white' : tone === 'accent' ? colors.accentText : colors.text}${darkMobileMain}`}
             >
                 {service.priceFrom} €
             </span>

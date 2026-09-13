@@ -57,7 +57,7 @@ export default function NotFound() {
 
           <Link
             href="/"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-zinc-950 transition-all duration-300 hover:scale-105 hover:shadow-lg"
             style={{
               background: `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.primaryHover})`
             }}

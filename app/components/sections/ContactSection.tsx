@@ -12,7 +12,7 @@ interface ContactSectionProps {
 
 const CONTACT_EMAIL = 'support@omni-solutions.co';
 
-const fieldClasses = 'w-full px-4 py-3 rounded-xl border transition-colors duration-200 outline-none focus:border-[#ff6b1a] focus:ring-4 focus:ring-[#ff6b1a]/10';
+const fieldClasses = 'w-full px-4 py-3 rounded-xl border transition-colors duration-200 outline-none focus:border-[#f9a427] focus:ring-4 focus:ring-[#f9a427]/10';
 
 export const ContactSection: React.FC<ContactSectionProps> = ({ colors }) => {
     const { t } = useTranslation();
@@ -147,7 +147,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ colors }) => {
 
                         <button
                             type="submit"
-                            className={`group w-full py-3.5 px-6 ${BORDER_RADIUS.md} font-semibold text-white transition-colors duration-200 hover:bg-[#e85d0f] flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff6b1a] focus-visible:ring-offset-2`}
+                            className={`group w-full py-3.5 px-6 ${BORDER_RADIUS.md} font-semibold text-zinc-950 transition-colors duration-200 hover:bg-[#e8930f] flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f9a427] focus-visible:ring-offset-2`}
                             style={{ backgroundColor: COLORS.primary }}
                         >
                             {t('contact.submit')}

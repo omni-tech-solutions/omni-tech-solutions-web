@@ -55,7 +55,7 @@ export const structuredData = {
     '@id': 'https://tech.omni-solutions.co/#organization',
     name: 'Omni Tech Solutions',
     url: 'https://tech.omni-solutions.co',
-    // Square PNG of the same coral mark as the header (scripts/brand/generate-icons.py)
+    // Square PNG of the yellow brand mark used in the header (scripts/brand/generate-icons.py)
     logo: {
       '@type': 'ImageObject',
       url: 'https://tech.omni-solutions.co/assets/brand/logo-512.png',

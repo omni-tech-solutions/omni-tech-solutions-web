@@ -109,7 +109,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ colors }) => {
               <div
                 key={index}
                 className={`omni-reveal ${colors.card} rounded-2xl border ${colors.border} overflow-hidden transition-all duration-300 ${
-                  isOpen ? 'shadow-[0_16px_36px_-18px_rgba(255,107,26,0.5)]' : ''
+                  isOpen ? 'shadow-[0_16px_36px_-18px_rgba(249,164,39,0.5)]' : ''
                 }`}
                 style={{
                   animationDelay: `${Math.min(index * 60, 360)}ms`,
@@ -118,7 +118,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ colors }) => {
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className={`w-full px-5 sm:px-6 py-5 flex items-center justify-between gap-4 text-left transition-colors duration-300 ${colors.cardHover} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#ff6b1a]`}
+                  className={`w-full px-5 sm:px-6 py-5 flex items-center justify-between gap-4 text-left transition-colors duration-300 ${colors.cardHover} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#f9a427]`}
                   aria-expanded={isOpen}
                   aria-controls={`faq-answer-${index}`}
                 >
@@ -167,7 +167,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ colors }) => {
           </p>
           <a
             href="#contact"
-            className="group inline-flex items-center gap-2 px-7 py-3.5 font-semibold text-white rounded-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff6b1a] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+            className="group inline-flex items-center gap-2 px-7 py-3.5 font-semibold text-white rounded-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f9a427] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
             style={{
               background: `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.primaryHover})`,
               boxShadow: `0 10px 24px -8px ${COLORS.primary}80`,

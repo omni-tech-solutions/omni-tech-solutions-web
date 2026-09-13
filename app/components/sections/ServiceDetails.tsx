@@ -38,7 +38,7 @@ interface ServiceDetailPageProps {
 /**
  * Service page, kept as plain as the homepage: what it is and what it costs,
  * what's included, the price list, how the work goes, and one call to action.
- * Orange is reserved for the primary button.
+ * The brand yellow is reserved for the primary button.
  */
 export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ colors }) => {
     const { t } = useTranslation();
@@ -58,9 +58,9 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ colors }) 
     // The contact form lives on the homepage
     const goToContact = () => router.push('/#contact');
 
-    const primaryButton = `group inline-flex items-center justify-center gap-2 px-7 py-3.5 font-semibold text-white ${BORDER_RADIUS.md} transition-colors duration-200 hover:bg-[#e85d0f] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ff6b1a] focus-visible:ring-offset-2`;
+    const primaryButton = `group inline-flex items-center justify-center gap-2 px-7 py-3.5 font-semibold text-zinc-950 ${BORDER_RADIUS.md} transition-colors duration-200 hover:bg-[#e8930f] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f9a427] focus-visible:ring-offset-2`;
     // Both places the buttons appear are dark bands on phones, hence the max-sm colours
-    const secondaryButton = `inline-flex items-center justify-center gap-2 px-7 py-3.5 font-semibold ${BORDER_RADIUS.md} border ${colors.border} ${colors.text} max-sm:border-zinc-700 max-sm:text-white max-sm:bg-white/5 transition-colors duration-200 hover:border-zinc-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ff6b1a] focus-visible:ring-offset-2`;
+    const secondaryButton = `inline-flex items-center justify-center gap-2 px-7 py-3.5 font-semibold ${BORDER_RADIUS.md} border ${colors.border} ${colors.text} max-sm:border-zinc-700 max-sm:text-white max-sm:bg-white/5 transition-colors duration-200 hover:border-zinc-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f9a427] focus-visible:ring-offset-2`;
 
     if (!service || !config || !IconComponent) {
         return (
@@ -136,10 +136,10 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ colors }) 
 
                     <div className="mt-10 max-w-3xl">
                         <div className="flex items-center gap-3 mb-5">
-                            <span className={`w-12 h-12 rounded-xl flex items-center justify-center ${isDark ? 'bg-zinc-700/60' : 'bg-gray-100'} max-sm:bg-[#ff6b1a]/15`}>
-                                <IconComponent className={`w-6 h-6 ${colors.text} max-sm:text-[#ff8a58]`} strokeWidth={2} />
+                            <span className={`w-12 h-12 rounded-xl flex items-center justify-center ${isDark ? 'bg-zinc-700/60' : 'bg-gray-100'} max-sm:bg-[#f9a427]/15`}>
+                                <IconComponent className={`w-6 h-6 ${colors.text} max-sm:text-[#f9a427]`} strokeWidth={2} />
                             </span>
-                            <span className={`text-sm font-semibold uppercase tracking-wider ${colors.textTer} max-sm:text-[#ff8a58]`}>
+                            <span className={`text-sm font-semibold uppercase tracking-wider ${colors.textTer} max-sm:text-[#f9a427]`}>
                                 {t(`services.groups.${config.group}.title`)}
                             </span>
                         </div>

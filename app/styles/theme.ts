@@ -4,9 +4,11 @@
  */
 
 export const COLORS = {
-    primary: '#ff6b1a',
-    primaryHover: '#e85d0f',
-    primaryDark: '#cc5000',
+    // The logo's yellow. Put near-black text on it — white on yellow is unreadable.
+    primary: '#f9a427',
+    primaryHover: '#e8930f',
+    // Readable amber for yellow-ish text on light backgrounds (4.7:1 on white)
+    primaryDark: '#a86400',
 
     dark: {
         bg: 'bg-zinc-950',
@@ -18,6 +20,8 @@ export const COLORS = {
         text: 'text-zinc-100',
         textSec: 'text-zinc-300',
         textTer: 'text-zinc-400',
+        /** Brand-coloured text (prices, active nav, icons) — plain yellow reads well on dark */
+        accentText: 'text-[#f9a427]',
         border: 'border-zinc-700',
         borderLight: 'border-zinc-700/70',
         input: 'bg-zinc-900',
@@ -35,6 +39,8 @@ export const COLORS = {
         text: 'text-gray-900',
         textSec: 'text-gray-700',
         textTer: 'text-gray-600',
+        /** Brand-coloured text on light backgrounds — darker amber, since yellow on white is 2:1 */
+        accentText: 'text-[#a86400]',
         border: 'border-gray-300',
         borderLight: 'border-gray-200',
         input: 'bg-white',

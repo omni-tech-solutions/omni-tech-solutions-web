@@ -103,10 +103,10 @@ export const TechnologiesSection: React.FC<TechnologiesSectionProps> = ({ colors
                                 key={cat}
                                 onClick={() => setActiveCategory(cat)}
                                 aria-pressed={isActive}
-                                className={`px-4 py-2 rounded-full text-sm font-medium border transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff6b1a] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${
+                                className={`px-4 py-2 rounded-full text-sm font-medium border transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f9a427] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${
                                     isActive
-                                        ? 'text-white border-transparent shadow-[0_8px_20px_-8px_rgba(255,107,26,0.8)]'
-                                        : `${colors.textSec} ${colors.borderLight} hover:border-[#ff6b1a] hover:text-[#ff6b1a]`
+                                        ? 'text-white border-transparent shadow-[0_8px_20px_-8px_rgba(249,164,39,0.8)]'
+                                        : `${colors.textSec} ${colors.borderLight} hover:border-[#f9a427] hover:text-[#f9a427]`
                                 }`}
                                 style={isActive ? {
                                     background: `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.primaryHover})`,
@@ -128,7 +128,7 @@ export const TechnologiesSection: React.FC<TechnologiesSectionProps> = ({ colors
                     {filtered.map((tech, index) => (
                         <div
                             key={tech.name}
-                            className={`omni-reveal group flex items-center gap-3 px-5 py-3 rounded-xl border transition-all duration-300 cursor-default hover:-translate-y-1 hover:border-[#ff6b1a] hover:shadow-[0_12px_28px_-14px_rgba(255,107,26,0.6)] ${
+                            className={`omni-reveal group flex items-center gap-3 px-5 py-3 rounded-xl border transition-all duration-300 cursor-default hover:-translate-y-1 hover:border-[#f9a427] hover:shadow-[0_12px_28px_-14px_rgba(249,164,39,0.6)] ${
                                 theme === 'dark'
                                     ? 'bg-zinc-900/60 hover:bg-zinc-800/80 border-zinc-700'
                                     : `${colors.card} ${colors.border} ${colors.cardHover}`

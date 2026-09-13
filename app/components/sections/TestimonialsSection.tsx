@@ -154,7 +154,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ colors
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className={`omni-reveal group relative flex flex-col overflow-hidden ${colors.card} rounded-2xl border ${colors.border} p-6 sm:p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-[#ff6b1a] hover:shadow-[0_18px_40px_-12px_rgba(255,107,26,0.35)]`}
+              className={`omni-reveal group relative flex flex-col overflow-hidden ${colors.card} rounded-2xl border ${colors.border} p-6 sm:p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-[#f9a427] hover:shadow-[0_18px_40px_-12px_rgba(249,164,39,0.35)]`}
               style={{ animationDelay: `${index * 80}ms` }}
             >
               {/* Top accent line — grows on hover */}
@@ -211,7 +211,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ colors
           </p>
           <a
             href="#contact"
-            className="group inline-flex items-center gap-2 px-8 py-4 font-semibold text-white rounded-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl text-base sm:text-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff6b1a] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+            className="group inline-flex items-center gap-2 px-8 py-4 font-semibold text-white rounded-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl text-base sm:text-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f9a427] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
             style={{
               background: `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.primaryHover})`,
               boxShadow: `0 10px 24px -8px ${COLORS.primary}80`,

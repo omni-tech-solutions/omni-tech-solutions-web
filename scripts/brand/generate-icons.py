@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Generates every icon and logo size from the one official logo
-(public/assets/logo_dark.png — the coral mark used in the header).
+(public/assets/logo.png — the yellow brand mark).
 
     python3 scripts/brand/generate-icons.py
 
@@ -23,7 +23,7 @@ PUBLIC = ROOT / 'public'
 BRAND = PUBLIC / 'assets' / 'brand'
 WHITE = (255, 255, 255, 255)
 
-source = Image.open(PUBLIC / 'assets' / 'logo_dark.png').convert('RGBA')
+source = Image.open(PUBLIC / 'assets' / 'logo.png').convert('RGBA')
 source = source.crop(source.getbbox())  # trim transparent margins so every size is centred
 
 
@@ -32,7 +32,9 @@ def fit(size: int, padding: float = 0.0, background=None) -> Image.Image:
     canvas = Image.new('RGBA', (size, size), background or (0, 0, 0, 0))
     inner = round(size * (1 - 2 * padding))
     logo = source.copy()
-    logo.thumbnail((inner, inner), Image.LANCZOS)
+    # LANCZOS sharpens, which pushes tiny favicons brighter than the brand yellow;
+    # BOX averages pixels, so small sizes keep the exact logo colour
+    logo.thumbnail((inner, inner), Image.BOX if size <= 64 else Image.LANCZOS)
     canvas.alpha_composite(logo, ((size - logo.width) // 2, (size - logo.height) // 2))
     return canvas
 

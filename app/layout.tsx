@@ -6,9 +6,12 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
+  // Browser bar colour. Phones: black, to match the always-dark mobile header.
+  // Larger screens: the entry without a media query, kept in sync with the
+  // site theme toggle by the pre-paint script below and by useTheme.
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#18181b' }
+    { media: '(max-width: 767px)', color: '#09090b' },
+    { color: '#ffffff' }
   ]
 };
 
@@ -106,8 +109,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="bg">
+    // suppressHydrationWarning: the pre-paint script adds the theme class before React loads
+    <html lang="bg" suppressHydrationWarning>
       <head>
+        {/*
+          Apply the saved theme before the first paint, so the page canvas and the
+          browser bar never flash white for visitors who chose the dark theme.
+        */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "try{var t=localStorage.getItem('theme')==='dark'?'dark':'light';document.documentElement.classList.add(t);if(t==='dark'){var m=document.querySelector('meta[name=\"theme-color\"]:not([media])');if(m)m.setAttribute('content','#18181b')}}catch(e){}"
+          }}
+        />
         {/* Structured Data */}
         <script
           type="application/ld+json"
