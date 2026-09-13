@@ -60,7 +60,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ colors }) 
 
     const primaryButton = `group inline-flex items-center justify-center gap-2 px-7 py-3.5 font-semibold text-zinc-950 ${BORDER_RADIUS.md} transition-colors duration-200 hover:bg-[#e8930f] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f9a427] focus-visible:ring-offset-2`;
     // Both places the buttons appear are dark bands on phones, hence the max-sm colours
-    const secondaryButton = `inline-flex items-center justify-center gap-2 px-7 py-3.5 font-semibold ${BORDER_RADIUS.md} border ${colors.border} ${colors.text} max-sm:border-zinc-700 max-sm:text-white max-sm:bg-white/5 transition-colors duration-200 hover:border-zinc-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f9a427] focus-visible:ring-offset-2`;
+    const secondaryButton = `inline-flex items-center justify-center gap-2 px-7 py-3.5 font-semibold ${BORDER_RADIUS.md} border ${colors.border} ${colors.text} max-sm:border-zinc-500 max-sm:text-white max-sm:bg-white/5 transition-colors duration-200 hover:border-zinc-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f9a427] focus-visible:ring-offset-2`;
 
     if (!service || !config || !IconComponent) {
         return (
@@ -124,7 +124,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ colors }) 
     return (
         <div className="pt-20">
             {/* Hero — on phones a full-width solid dark band, like the homepage hero */}
-            <section className="max-sm:bg-zinc-950">
+            <section className="max-sm:bg-[#2f2f34]">
                 <div className={`${CONTAINER} py-10 sm:py-14`}>
                     <Link
                         href="/#services"
@@ -136,7 +136,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ colors }) 
 
                     <div className="mt-10 max-w-3xl">
                         <div className="flex items-center gap-3 mb-5">
-                            <span className={`w-12 h-12 rounded-xl flex items-center justify-center ${isDark ? 'bg-zinc-700/60' : 'bg-gray-100'} max-sm:bg-[#f9a427]/15`}>
+                            <span className={`w-12 h-12 rounded-xl flex items-center justify-center ${isDark ? 'bg-zinc-600/60' : 'bg-gray-100'} max-sm:bg-[#f9a427]/15`}>
                                 <IconComponent className={`w-6 h-6 ${colors.text} max-sm:text-[#f9a427]`} strokeWidth={2} />
                             </span>
                             <span className={`text-sm font-semibold uppercase tracking-wider ${colors.textTer} max-sm:text-[#f9a427]`}>
@@ -157,7 +157,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ colors }) 
                             </p>
                         )}
 
-                        <div className={`mt-8 pt-6 border-t ${colors.borderLight} max-sm:border-zinc-800`}>
+                        <div className={`mt-8 pt-6 border-t ${colors.borderLight} max-sm:border-zinc-600`}>
                             <ServicePrice service={config} colors={colors} variant="detail" onDarkMobile />
                             <p className={`mt-2 text-sm leading-relaxed ${colors.textTer} max-sm:text-zinc-400 max-w-xl`}>
                                 {t('services.priceNote')}
@@ -247,7 +247,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ colors }) 
 
             {/* Closing call to action */}
             {/* On phones: a full-width dark band that flows into the dark footer */}
-            <section className={`${sectionClass} text-center max-sm:-mx-4 max-sm:px-4 max-sm:bg-zinc-950 max-sm:border-t-0`}>
+            <section className={`${sectionClass} text-center max-sm:-mx-4 max-sm:px-4 max-sm:bg-[#2f2f34] max-sm:border-t-0`}>
                 <h2 className={`text-2xl sm:text-3xl font-bold tracking-tight ${colors.text} max-sm:text-white`}>
                     {detail?.cta?.title || t('services.readyToStart')}
                 </h2>

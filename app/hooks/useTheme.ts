@@ -23,12 +23,12 @@ export const useTheme = () => {
         document.documentElement.classList.add(theme);
 
         // Browser bar colour on larger screens follows the theme; phones keep the
-        // black media-query entry from app/layout.tsx
+        // dark-gray media-query entry from app/layout.tsx
         document
             .querySelectorAll('meta[name="theme-color"]:not([media])')
-            .forEach((meta) => meta.setAttribute('content', theme === 'dark' ? '#18181b' : '#ffffff'));
+            .forEach((meta) => meta.setAttribute('content', theme === 'dark' ? '#2f2f34' : '#ffffff'));
 
-        document.body.style.backgroundColor = theme === 'dark' ? '#18181b' : '#ffffff';
+        document.body.style.backgroundColor = theme === 'dark' ? '#2f2f34' : '#ffffff';
         document.body.style.color = theme === 'dark' ? '#ffffff' : '#18181b';
 
         localStorage.setItem('theme', theme);

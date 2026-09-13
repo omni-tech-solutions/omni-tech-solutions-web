@@ -18,7 +18,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ colors }) => {
     const { t } = useTranslation();
 
     return (
-        <section id="home" className="relative flex items-center min-h-[80svh] pt-20 overflow-hidden max-sm:bg-zinc-950">
+        <section id="home" className="relative flex items-center min-h-[80svh] pt-20 overflow-hidden max-sm:bg-[#2f2f34]">
             <div className={`omni-reveal relative ${CONTAINER} w-full py-20 sm:py-28 text-center`}>
                 <p className={`text-sm font-semibold uppercase tracking-wider mb-5 ${colors.textTer} max-sm:text-[#f9a427]`}>
                     {t('hero.badge')}
@@ -36,7 +36,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ colors }) => {
                 <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
                     <a
                         href="#contact"
-                        className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 font-semibold text-zinc-950 rounded-xl transition-colors duration-200 hover:bg-[#e8930f] max-sm:shadow-[0_12px_30px_-10px_rgba(249,164,39,0.7)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f9a427] focus-visible:ring-offset-2"
+                        className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 font-semibold text-zinc-950 rounded-xl transition-colors duration-200 hover:bg-[#e8930f] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f9a427] focus-visible:ring-offset-2"
                         style={{ backgroundColor: COLORS.primary }}
                     >
                         {t('hero.cta')}
@@ -44,7 +44,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ colors }) => {
                     </a>
                     <a
                         href="#services"
-                        className={`inline-flex items-center justify-center px-7 py-3.5 font-semibold rounded-xl border ${colors.border} ${colors.text} max-sm:border-zinc-700 max-sm:text-white max-sm:bg-white/5 transition-colors duration-200 hover:border-zinc-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f9a427] focus-visible:ring-offset-2`}
+                        className={`inline-flex items-center justify-center px-7 py-3.5 font-semibold rounded-xl border ${colors.border} ${colors.text} max-sm:border-zinc-500 max-sm:text-white max-sm:bg-white/5 transition-colors duration-200 hover:border-zinc-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f9a427] focus-visible:ring-offset-2`}
                     >
                         {t('hero.learnMore')}
                     </a>

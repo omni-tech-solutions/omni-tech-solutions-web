@@ -11,7 +11,7 @@
 /*
  * Page canvas — the colour a browser shows around the page (overscroll bounce,
  * before the app has loaded). It follows the site theme through the class on
- * <html>, which app/layout.tsx sets before the first paint. Phones are black to
+ * <html>, which app/layout.tsx sets before the first paint. Phones are dark gray to
  * match the always-dark mobile header and footer.
  */
 html {
@@ -21,14 +21,14 @@ html {
 }
 
 html.dark {
-  background-color: #18181b;
+  background-color: #2f2f34;
   color-scheme: dark;
 }
 
 @media (max-width: 767px) {
   html,
   html.dark {
-    background-color: #09090b;
+    background-color: #2f2f34;
   }
 }
 
@@ -38,7 +38,7 @@ body {
 }
 
 html.dark body {
-  background-color: #18181b;
+  background-color: #2f2f34;
 }
 
 body {

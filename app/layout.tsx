@@ -6,11 +6,11 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
-  // Browser bar colour. Phones: black, to match the always-dark mobile header.
+  // Browser bar colour. Phones: dark gray, to match the always-dark mobile header.
   // Larger screens: the entry without a media query, kept in sync with the
   // site theme toggle by the pre-paint script below and by useTheme.
   themeColor: [
-    { media: '(max-width: 767px)', color: '#09090b' },
+    { media: '(max-width: 767px)', color: '#2f2f34' },
     { color: '#ffffff' }
   ]
 };
@@ -118,7 +118,7 @@ export default function RootLayout({
         */}
         <script
           dangerouslySetInnerHTML={{
-            __html: "try{var t=localStorage.getItem('theme')==='dark'?'dark':'light';document.documentElement.classList.add(t);if(t==='dark'){var m=document.querySelector('meta[name=\"theme-color\"]:not([media])');if(m)m.setAttribute('content','#18181b')}}catch(e){}"
+            __html: "try{var t=localStorage.getItem('theme')==='dark'?'dark':'light';document.documentElement.classList.add(t);if(t==='dark'){var m=document.querySelector('meta[name=\"theme-color\"]:not([media])');if(m)m.setAttribute('content','#2f2f34')}}catch(e){}"
           }}
         />
         {/* Structured Data */}

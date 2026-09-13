@@ -24,7 +24,7 @@ export const Footer: React.FC<FooterProps> = ({ colors }) => {
   const { t } = useTranslation();
 
   return (
-    <footer className={`border-t ${colors.borderLight} max-md:bg-zinc-950 max-md:border-zinc-800`}>
+    <footer className={`border-t ${colors.borderLight} max-md:bg-[#2f2f34] max-md:border-zinc-600`}>
       <div className={`${CONTAINER} py-10`}>
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="flex items-center gap-3">
@@ -61,7 +61,7 @@ export const Footer: React.FC<FooterProps> = ({ colors }) => {
           </a>
         </div>
 
-        <p className={`mt-8 pt-6 border-t ${colors.borderLight} ${colors.textTer} max-md:border-zinc-800 max-md:text-zinc-500 text-sm`}>
+        <p className={`mt-8 pt-6 border-t ${colors.borderLight} ${colors.textTer} max-md:border-zinc-600 max-md:text-zinc-400 text-sm`}>
           {t('footer.text', { year: new Date().getFullYear() })}
         </p>
       </div>

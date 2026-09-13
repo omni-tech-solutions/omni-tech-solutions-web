@@ -80,7 +80,7 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, colors, acti
 
     // Phones/tablets: always a dark bar with white text for contrast; desktop follows the theme
     return (
-        <nav className={`fixed w-full ${colors.nav} backdrop-blur-xl z-50 border-b ${colors.borderLight} max-md:bg-zinc-950/90 max-md:border-zinc-800 transition-all duration-300`}>
+        <nav className={`fixed w-full ${colors.nav} backdrop-blur-xl z-50 border-b ${colors.borderLight} max-md:bg-[#2f2f34]/90 max-md:border-zinc-600 transition-all duration-300`}>
             <div className={CONTAINER}>
                 <div className="flex justify-between items-center h-20">
                     {/* Logo */}
@@ -183,7 +183,7 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, colors, acti
 
                 {/* Mobile Menu */}
                 {isMenuOpen && (
-                    <div className="md:hidden pb-4 border-t border-zinc-800 animate-fadeIn">
+                    <div className="md:hidden pb-4 border-t border-zinc-600 animate-fadeIn">
                         <div className="space-y-1 pt-4">
                             {navItems.map((item) => {
                                 return (
@@ -198,7 +198,7 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, colors, acti
                             })}
                         </div>
 
-                        <div className="flex items-center justify-between mt-4 pt-4 border-t border-zinc-800">
+                        <div className="flex items-center justify-between mt-4 pt-4 border-t border-zinc-600">
                             <div className="flex gap-2">
                                 {(['bg', 'en', 'tr'] as Language[]).map(lang => (
                                     <button
