@@ -8,6 +8,7 @@ import { ArrowLeft, ArrowRight, Check, Mail, MapPin } from 'lucide-react';
 import { COLORS, BORDER_RADIUS, CONTAINER } from '@/app/styles/theme';
 import { getServiceConfig, type ServiceCopy } from '@/app/config/services';
 import { ServicePrice } from '@/app/components/ui/ServicePrice';
+import { getTechnology, TECHNOLOGY_CATEGORIES, type Technology } from '@/app/config/technologies';
 
 const CONTACT_EMAIL = 'support@omni-solutions.co';
 
@@ -93,6 +94,14 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ colors }) 
     const priceRows = Array.isArray(priceRowsRaw) ? priceRowsRaw : [];
     const priceTermsRaw = t('services.priceList.terms', { returnObjects: true }) as string[] | string;
     const priceTerms = Array.isArray(priceTermsRaw) ? priceTermsRaw : [];
+
+    // Technologies this service is built with (only software services have a stack)
+    const stack = (config.stack ?? [])
+        .map((id) => getTechnology(id))
+        .filter((tech): tech is Technology => Boolean(tech));
+    const stackGroups = TECHNOLOGY_CATEGORIES
+        .map((category) => ({ category, items: stack.filter((tech) => tech.category === category) }))
+        .filter((group) => group.items.length > 0);
 
     const processSteps = detail?.process ?? [1, 2, 3, 4].map((step) => ({
         title: t(`services.process.step${step}.title`),
@@ -189,6 +198,42 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ colors }) 
                         ))}
                     </ul>
                     <p className={`mt-8 text-sm ${colors.textTer}`}>{t('services.offeringsNote')}</p>
+                </section>
+            )}
+
+            {/* Technologies */}
+            {stack.length > 0 && (
+                <section id="technologies" className={`${sectionClass} scroll-mt-24`}>
+                    {heading(t('services.techStack'), t('services.techStackSubtitle'))}
+                    <div className="space-y-7">
+                        {stackGroups.map(({ category, items }) => (
+                            <div key={category}>
+                                <h3 className={`mb-3 text-sm font-semibold uppercase tracking-wider ${colors.text}`}>
+                                    {t(`technologies.categories.${category}`)}
+                                </h3>
+                                <ul className="flex flex-wrap gap-2.5 sm:gap-3">
+                                    {items.map((tech) => (
+                                        <li
+                                            key={tech.id}
+                                            className={`inline-flex items-center gap-2.5 px-3.5 sm:px-4 py-2 sm:py-2.5 ${BORDER_RADIUS.md} border ${isDark ? 'border-zinc-400 bg-zinc-800' : 'border-gray-500 bg-gray-100'} text-sm font-semibold ${colors.text}`}
+                                        >
+                                            {tech.lucideIcon ? (
+                                                <tech.lucideIcon className={`w-5 h-5 ${colors.text}`} strokeWidth={2.25} aria-hidden />
+                                            ) : tech.icon && (
+                                                <img
+                                                    src={tech.icon}
+                                                    alt=""
+                                                    className={`w-5 h-5 object-contain ${tech.invertInDark && isDark ? 'invert' : ''} ${isDark ? '' : '[filter:saturate(1.6)_brightness(0.65)_contrast(1.2)]'}`}
+                                                    loading="lazy"
+                                                />
+                                            )}
+                                            {tech.nameKey ? t(tech.nameKey) : tech.name}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
                 </section>
             )}
 

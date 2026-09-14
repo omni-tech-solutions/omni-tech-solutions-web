@@ -1,6 +1,7 @@
 import type { ComponentType, CSSProperties } from 'react';
 import { Cctv, Wifi, Globe, ShieldCheck, Wrench, Code2 } from 'lucide-react';
 import { WindowsIcon } from '@/app/components/ui/WindowsIcon';
+import type { TechnologyId } from '@/app/config/technologies';
 
 /** A lucide icon or any icon component with the same basic props (e.g. the Windows logo). */
 export type ServiceIcon = ComponentType<{ className?: string; style?: CSSProperties; strokeWidth?: number | string }>;
@@ -47,6 +48,8 @@ export interface ServiceConfig {
      */
     priceFrom: number | null;
     period: PricingPeriod;
+    /** Technologies shown as chips on the service card, in display order. */
+    stack?: TechnologyId[];
 }
 
 // Starting prices = the cheapest standard job in the price list
@@ -55,8 +58,24 @@ export interface ServiceConfig {
 // `null` shows "by agreement" (custom software is quoted after analysis).
 export const SERVICES: ServiceConfig[] = [
     // 1 — Software: the headline offering, sold anywhere
-    { id: 'web-applications', group: 'software', icon: Code2, onSite: false, priceFrom: null, period: 'once' },
-    { id: 'web-design', group: 'software', icon: Globe, onSite: false, priceFrom: 450, period: 'once' },
+    {
+        id: 'web-applications', group: 'software', icon: Code2, onSite: false, priceFrom: null, period: 'once',
+        stack: [
+            'typescript', 'javascript', 'react', 'nextjs', 'angular', 'redux', 'tanstack-query', 'mui', 'tailwind',
+            'nodejs', 'nestjs', 'express', 'dotnet', 'typeorm',
+            'postgresql', 'mysql', 'firebase',
+            'electron', 'react-native', 'chrome-extensions',
+            'docker', 'kubernetes', 'linux', 'git', 'github',
+        ],
+    },
+    {
+        id: 'web-design', group: 'software', icon: Globe, onSite: false, priceFrom: 450, period: 'once',
+        stack: [
+            'nextjs', 'react', 'typescript', 'javascript', 'tailwind', 'sass',
+            'nodejs', 'postgresql', 'firebase',
+            'docker', 'vercel', 'git', 'github',
+        ],
+    },
 
     // 2 — Infrastructure: the on-site work that runs it
     { id: 'local-networks', group: 'infrastructure', icon: Wifi, onSite: true, priceFrom: 25, period: 'once' },

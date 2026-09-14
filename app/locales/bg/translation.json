@@ -781,7 +781,9 @@
           }
         ]
       }
-    }
+    },
+    "techStack": "Технологии",
+    "techStackSubtitle": "С какво изграждаме проектите по тази услуга."
   },
   "about": {
     "title": "За Omni Tech Solutions",
@@ -867,7 +869,8 @@
       "ai": "AI & Автоматизация",
       "tools": "Инструменти",
       "web": "Уеб",
-      "infrastructure": "Мрежи и системи"
+      "infrastructure": "Мрежи и системи",
+      "apps": "Десктоп, мобилни и разширения"
     },
     "items": {
       "networking": "Мрежи и IP камери",

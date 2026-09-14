@@ -781,7 +781,9 @@
           }
         ]
       }
-    }
+    },
+    "techStack": "Teknolojiler",
+    "techStackSubtitle": "Bu hizmetteki projeleri hangi teknolojilerle geliştiriyoruz."
   },
   "about": {
     "title": "Omni Tech Solutions Hakkında",
@@ -867,7 +869,8 @@
       "ai": "AI & Otomasyon",
       "tools": "Araçlar",
       "web": "Web",
-      "infrastructure": "Ağ ve sistemler"
+      "infrastructure": "Ağ ve sistemler",
+      "apps": "Masaüstü, mobil ve eklentiler"
     },
     "items": {
       "networking": "Ağ ve IP kameralar",

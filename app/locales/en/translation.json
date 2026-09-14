@@ -781,7 +781,9 @@
           }
         ]
       }
-    }
+    },
+    "techStack": "Technologies",
+    "techStackSubtitle": "What we build projects for this service with."
   },
   "about": {
     "title": "About Omni Tech Solutions",
@@ -867,7 +869,8 @@
       "ai": "AI & Automation",
       "tools": "Tools",
       "web": "Web",
-      "infrastructure": "Networks & systems"
+      "infrastructure": "Networks & systems",
+      "apps": "Desktop, mobile & extensions"
     },
     "items": {
       "networking": "Networking & IP cameras",

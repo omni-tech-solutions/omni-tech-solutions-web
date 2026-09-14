@@ -7,7 +7,6 @@ import { ArrowRight } from 'lucide-react';
 import { COLORS, BORDER_RADIUS, CONTAINER } from '@/app/styles/theme';
 import { SERVICES, SERVICE_GROUPS, type ServiceCopy } from '@/app/config/services';
 import { ServicePrice } from '@/app/components/ui/ServicePrice';
-
 interface ServicesSectionProps {
     colors: ReturnType<typeof import('@/app/styles/theme').getThemeColors>;
 }

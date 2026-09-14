@@ -2,42 +2,21 @@
 
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Layers, Network, type LucideIcon } from 'lucide-react';
+import { Layers } from 'lucide-react';
 import { COLORS } from '@/app/styles/theme';
+import { TECHNOLOGIES, TECHNOLOGY_CATEGORIES, type TechnologyCategory } from '@/app/config/technologies';
 
 interface TechnologiesSectionProps {
     colors: ReturnType<typeof import('@/app/styles/theme').getThemeColors>;
     theme: 'dark' | 'light';
 }
 
-type Category = 'all' | 'web' | 'mobile' | 'backend' | 'infrastructure';
+type Category = 'all' | TechnologyCategory;
 
-interface Technology {
-    /** Display name for proper nouns; `nameKey` takes over for anything translatable. */
-    name: string;
-    nameKey?: string;
-    icon?: string;
-    lucideIcon?: LucideIcon;
-    invertInDark?: boolean;
-    category: Category[];
-}
+// Add or remove entries in app/config/technologies.ts; the category filter below adjusts automatically.
+const technologies = TECHNOLOGIES;
 
-// TODO(Deniz): confirm — this is the short list of what is actually used day to day.
-// Add or remove entries here; the category filter below adjusts automatically.
-const technologies: Technology[] = [
-    { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg', category: ['web', 'backend', 'mobile'] },
-    { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', category: ['web'] },
-    { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg', invertInDark: true, category: ['web'] },
-    { name: 'React Native', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', category: ['mobile'] },
-    { name: 'NestJS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg', category: ['backend'] },
-    { name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg', category: ['backend'] },
-    { name: 'PostgreSQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg', category: ['backend'] },
-    { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg', category: ['backend'] },
-    { name: 'Windows', nameKey: 'technologies.items.windows', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows11/windows11-original.svg', category: ['infrastructure'] },
-    { name: 'Networking', nameKey: 'technologies.items.networking', lucideIcon: Network, category: ['infrastructure'] },
-];
-
-const categoryKeys: Category[] = ['all', 'web', 'backend', 'mobile', 'infrastructure'];
+const categoryKeys: Category[] = ['all', ...TECHNOLOGY_CATEGORIES];
 
 export const TechnologiesSection: React.FC<TechnologiesSectionProps> = ({ colors, theme }) => {
     const { t } = useTranslation();
@@ -45,7 +24,7 @@ export const TechnologiesSection: React.FC<TechnologiesSectionProps> = ({ colors
 
     const filtered = activeCategory === 'all'
         ? technologies
-        : technologies.filter(tech => tech.category.includes(activeCategory));
+        : technologies.filter(tech => tech.category === activeCategory);
 
     return (
         <section className="relative py-20 px-0 sm:px-6 lg:px-8 overflow-hidden">
